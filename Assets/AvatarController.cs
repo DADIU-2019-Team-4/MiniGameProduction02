@@ -33,9 +33,9 @@ public class AvatarController : MonoBehaviour
     }
 
 
-    private void Throw(ThrownFrom hand, ThrowMove move, ThrownItem item)
+    public void Throw(ThrownFrom hand, ThrowMove move, ThrownItem item)
     {
-
+        
     }
 
 

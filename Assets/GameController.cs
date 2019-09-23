@@ -26,10 +26,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        InputController.Tick();
-        OptionController.Tick();
-        AvatarController.Tick();
-        ScoreController.Tick();
+        //InputController.Tick();
+        //OptionController.Tick();
+        //AvatarController.Tick();
+        //ScoreController.Tick();
 
         // Maybe we don't need these?
         //GraphicController.Tick();
