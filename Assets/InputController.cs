@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
-    private AvatarController AC;
     public Hand leftHand;
     public Hand rightHand;
+    public GameObject ball1;
     void Start()
     {
-        AC = GetComponent<AvatarController>();
+   
     }
 
     void Update()
@@ -48,5 +48,17 @@ public class InputController : MonoBehaviour
         {
             rightHand.Throw("Right","Left");
         }
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("SpaceBar pressed");
+            LevelReset();
+        }
+    }
+    public void LevelReset()
+    {
+        Debug.Log("Level reset");
+        var ball = GameObject.FindGameObjectWithTag("Ball");
+        Destroy(ball);
+        Instantiate(ball1);
     }
 }

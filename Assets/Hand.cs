@@ -10,6 +10,13 @@ public class Hand : MonoBehaviour
     Rigidbody ball;
     bool isInCatchZone;
     public GameObject indication;
+    public Vector3 throwUpLeftHand;
+    public Vector3 throwUpRightHand;
+    public Vector3 throwDownLeftHand;
+    public Vector3 throwDownRightHand;
+    public Vector3 throwLeft;
+    public Vector3 throwRight;
+    public float throwForce;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +34,7 @@ public class Hand : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered");
+
         ball =  other.gameObject.GetComponent<Rigidbody>();
         isInCatchZone = true;
         indication.SetActive(true);
@@ -55,33 +62,33 @@ public class Hand : MonoBehaviour
                     if (hand == "Left")
                     {
                         ball.isKinematic = false;
-                        ball.AddForce(new Vector3(-1, 7, 0) * 72f);
+                        ball.AddForce(throwUpLeftHand * throwForce);
                     }
                     else
                     {
                         ball.isKinematic = false;
-                        ball.AddForce(new Vector3(1, 7, 0) * 72f);
+                        ball.AddForce(throwUpRightHand * throwForce);
                     }
                     break;
                 case "Down":
                     if (hand == "Left")
                     {
                         ball.isKinematic = false;
-                        ball.AddForce(new Vector3(-4f, -1, 0) * 72f);
+                        ball.AddForce(throwDownLeftHand * throwForce);
                     }
                     else
                     {
                         ball.isKinematic = false;
-                        ball.AddForce(new Vector3(4f, -1, 0) * 72f);
+                        ball.AddForce(throwDownRightHand * throwForce);
                     }
                     break;
                 case "Left":
                     ball.isKinematic = false;
-                    ball.AddForce(new Vector3(4, 1.7f, 0) * 72f);
+                    ball.AddForce(throwLeft * throwForce);
                     break;
                 case "Right":
                     ball.isKinematic = false;
-                    ball.AddForce(new Vector3(-4, 1.7f, 0) * 72f);
+                    ball.AddForce(throwRight * throwForce);
                     break;
             }
         }

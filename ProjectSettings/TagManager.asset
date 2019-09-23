@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Left
   - Right
+  - Ball
   layers:
   - Default
   - TransparentFX
