@@ -7,7 +7,6 @@ namespace UnityEditor
 {
     public class Pipeline
     {
-
         [MenuItem("Pipeline/Build: Android")]
         public static void BuildAndroid()
         {
@@ -40,10 +39,16 @@ namespace UnityEditor
         {
             get {
 
-                StreamReader reader = new StreamReader(master_version.txt);
+                TextAsset txt = (TextAsset)Resources.Load("Versions/master_version", typeof(TextAsset));
+                string version = txt.text.TrimEnd('\r', '\n');
+
+
+                //StreamReader reader = new StreamReader("master_version.txt");
 
                 //return (DateTime.Now.ToString("yyyyMMddHHmm") + ".apk");
-                return "minigame2_" + reader.ReadToEnd() + ".apk";
+                Debug.Log("minigame2_" + version + ".apk");
+                return ("minigame2_" + version + ".apk");
+                //return "minigame2.apk";
             }
         }
     }
