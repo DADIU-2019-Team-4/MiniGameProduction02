@@ -10,6 +10,21 @@ namespace UnityEditor
         [MenuItem("Pipeline/Build: Android")]
         public static void BuildAndroid()
         {
+
+            PlayerSettings.companyName = "SomewhatMediocreThough";
+            PlayerSettings.productName = "MiniGameProduction02";
+
+                var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
+            {
+                locationPathName = Path.Combine(pathname, filename),
+                scenes = EditorBuildSettings.scenes.Where(n => n.enabled).Select(n => n.path).ToArray(),
+                target = BuildTarget.Android
+            }); Debug.Log(report);
+        }
+
+        [MenuItem("Pipeline/Build: Android Develop")]
+        public static void BuildAndroidDevelop()
+        {
             var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
             {
                 locationPathName = Path.Combine(pathname, filename),
@@ -17,6 +32,7 @@ namespace UnityEditor
                 target = BuildTarget.Android
             }); Debug.Log(report);
         }
+
 
         /**  This is a static property which will return a string, representing a*  build folder on the desktop.
          * This does not create the folder when it*  doesn't exists, it simply returns a suggested path. 
