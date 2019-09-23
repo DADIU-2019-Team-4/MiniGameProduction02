@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InputController : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class InputController : MonoBehaviour
 
     public Hand leftHand;
     public Hand rightHand;
-    public GameObject ball1;
+
     public enum SwipeDirection { Up, Down, Left, Right }
 
     public SwipeDirection swipeDirection { get; private set; }
@@ -220,9 +221,6 @@ public class InputController : MonoBehaviour
 
     public void LevelReset()
     {
-        Debug.Log("Level reset");
-        var ball = GameObject.FindGameObjectWithTag("Ball");
-        Destroy(ball);
-        Instantiate(ball1);
+        SceneManager.LoadScene(0);
     }
 }
