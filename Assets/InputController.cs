@@ -13,6 +13,9 @@ public class InputController : MonoBehaviour
 
     private bool trackMouse;
 
+    public Hand leftHand;
+    public Hand rightHand;
+    public GameObject ball1;
     public enum SwipeDirection { Up, Down, Left, Right }
 
     public SwipeDirection swipeDirection { get; private set; }
@@ -28,6 +31,9 @@ public class InputController : MonoBehaviour
     public void Tick()
     {
         HandleInput();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            LevelReset();
     }
 
     /// <summary>
@@ -174,15 +180,15 @@ public class InputController : MonoBehaviour
         {
             case SwipeDirection.Down:
                 Debug.Log("Swiped to down");
-                // todo play right hand swipe down animation
+                rightHand.Throw("Right", "Down");
                 break;
             case SwipeDirection.Up:
                 Debug.Log("Swiped to up");
-                // todo play right hand swipe up animation
+                rightHand.Throw("Right", "Up");
                 break;
             case SwipeDirection.Right:
                 Debug.Log("Swiped to right");
-                // todo play right hand swipe to right animation
+                rightHand.Throw("Right", "Left");
                 break;
             default:
                 break;
@@ -197,18 +203,26 @@ public class InputController : MonoBehaviour
         {
             case SwipeDirection.Down:
                 Debug.Log("Swiped to down");
-                // todo play left hand swipe down animation
+                leftHand.Throw("Left", "Down");
                 break;
             case SwipeDirection.Up:
                 Debug.Log("Swiped to up");
-                // todo play left hand swipe up animation
+                leftHand.Throw("Left", "Up");
                 break;
             case SwipeDirection.Left:
                 Debug.Log("Swiped to left");
-                // todo play left hand swipe to left side animation
+                leftHand.Throw("Left", "Right");
                 break;
             default:
                 break;
         }
+    }
+
+    public void LevelReset()
+    {
+        Debug.Log("Level reset");
+        var ball = GameObject.FindGameObjectWithTag("Ball");
+        Destroy(ball);
+        Instantiate(ball1);
     }
 }

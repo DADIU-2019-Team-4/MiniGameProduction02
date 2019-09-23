@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -232,9 +232,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3cabeb033f1404595451f2f677d1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSwipeDistanceInPercentage: 0.1
   leftHand: {fileID: 628430810}
   rightHand: {fileID: 1273403123}
-  ball1: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab, type: 3}
+  ball1: {fileID: 7496779614012286383}
 --- !u!4 &172815547
 Transform:
   m_ObjectHideFlags: 0
@@ -1231,3 +1232,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 342b96d3f9c6ec9498e041e66d15f9ab, type: 3}
+--- !u!1 &7496779614012286383 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 7496779614012286382}
+  m_PrefabAsset: {fileID: 0}

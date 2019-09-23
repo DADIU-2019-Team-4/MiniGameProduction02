@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        InputController = GetComponent<InputController>();
+        InputController = FindObjectOfType<InputController>();
         OptionController = GetComponent<OptionController>();
         AvatarController = GetComponent<AvatarController>();
         ScoreController = GetComponent<ScoreController>();
@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        //InputController.Tick();
+        InputController.Tick();
         //OptionController.Tick();
         //AvatarController.Tick();
         //ScoreController.Tick();
