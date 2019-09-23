@@ -17,6 +17,9 @@ public class Hand : MonoBehaviour
     public Vector3 throwLeft;
     public Vector3 throwRight;
     public float throwForce;
+
+    private ScoreManager scoreManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,7 @@ public class Hand : MonoBehaviour
         InputController = GetComponent<InputController>();
         isInCatchZone = true;
         perfectCatch = GetComponentInChildren<PerfectCatch>();
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -44,13 +48,15 @@ public class Hand : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         ball = null;
-        isInCatchZone = true;
+        isInCatchZone = false;
         indication.SetActive(false);
     }
     public void Throw(string hand, string throwType)
     {
         if (isInCatchZone)
         {
+            scoreManager.IncrementScore();
+
             ball.isKinematic = true;
             if (perfectCatch.perfectCatch)
             {
