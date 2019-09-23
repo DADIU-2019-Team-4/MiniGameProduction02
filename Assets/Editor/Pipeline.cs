@@ -7,13 +7,10 @@ namespace UnityEditor
 {
     public class Pipeline
     {
-        var versionNumber;
 
         [MenuItem("Pipeline/Build: Android")]
-        public static void BuildAndroid(String versionNumber)
+        public static void BuildAndroid()
         {
-            this.versionNumber = versionNumber;
-            args = System.Environment.GetCommandLineArgs();
             var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
             {
                 locationPathName = Path.Combine(pathname, filename),
@@ -42,8 +39,11 @@ namespace UnityEditor
         public static string filename
         {
             get {
+
+                StreamReader reader = new StreamReader(master_version.txt);
+
                 //return (DateTime.Now.ToString("yyyyMMddHHmm") + ".apk");
-                return "minigame2_" + versionNumber + ".apk";
+                return "minigame2_" + reader.ReadToEnd() + ".apk";
             }
         }
     }
