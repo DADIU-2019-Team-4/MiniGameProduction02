@@ -8,7 +8,8 @@ public class InputController : MonoBehaviour
     [SerializeField]
     private float minSwipeDistanceInPercentage = 0.10f;
     private float swipeDistance;
-    private bool hasSwiped;
+    private bool hasSwipedLeft;
+    private bool hasSwipedRight;
 
     private bool trackMouse;
 
@@ -61,7 +62,8 @@ public class InputController : MonoBehaviour
             }
             else if (touch.phase == TouchPhase.Ended)
             {
-                hasSwiped = false;
+                hasSwipedLeft = false;
+                hasSwipedRight = false;
             }
         }
     }
@@ -81,10 +83,11 @@ public class InputController : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             trackMouse = false;
-            hasSwiped = false;
+            hasSwipedLeft = false;
+            hasSwipedRight = false;
         }
 
-        if (trackMouse && !hasSwiped)
+        if (trackMouse)
         {
             lastPosition = Input.mousePosition;
             CheckSwipe();
@@ -144,13 +147,17 @@ public class InputController : MonoBehaviour
         // swiped left side of the screen
         if (firstPosition.x < Screen.width / 2f)
         {
-            hasSwiped = true;
+            if (hasSwipedLeft) return;
+
+            hasSwipedLeft = true;
             SwipeLeftScreen();
         }
         // swiped right side of the screen
         else
         {
-            hasSwiped = true;
+            if (hasSwipedRight) return;
+
+            hasSwipedRight = true;
             SwipeRightScreen();
         }
     }
