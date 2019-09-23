@@ -43,7 +43,7 @@ namespace UnityEditor
         {
             get
             {
-                return (Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "builds"));
+                return (Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "builds/Builds"));
             }
         }
 
