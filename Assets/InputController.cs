@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
-    private Vector3 firstPosition;
-    private Vector3 lastPosition;
+    private readonly Vector3[] firstPosition = new Vector3[2];
+    private readonly Vector3[] lastPosition = new Vector3[2];
     [SerializeField]
     private float minSwipeDistanceInPercentage = 0.10f;
     private float swipeDistance;
@@ -47,23 +47,27 @@ public class InputController : MonoBehaviour
     /// </summary>
     private void MobileInput()
     {
-        if (Input.touchCount > 0)
+        Touch[] touches = Input.touches;
+        for (int i = 0; i < Input.touchCount; i++)
         {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
+            if (touches[i].phase == TouchPhase.Began)
             {
-                firstPosition = touch.position;
-                lastPosition = touch.position;
+                firstPosition[i] = touches[i].position;
+                lastPosition[i] = touches[i].position;
             }
-            else if (touch.phase == TouchPhase.Moved)
+            else if (touches[i].phase == TouchPhase.Moved)
             {
-                lastPosition = touch.position;
-                CheckSwipe();
+                lastPosition[i] = touches[i].position;
+                CheckSwipe(i);
             }
-            else if (touch.phase == TouchPhase.Ended)
+            else if (touches[i].phase == TouchPhase.Ended)
             {
-                hasSwipedLeft = false;
-                hasSwipedRight = false;
+                // swipe was on left side of the screen
+                if (firstPosition[i].x < Screen.width / 2f)
+                    hasSwipedLeft = false;
+                // swipe was on right side of the screen
+                else
+                    hasSwipedRight = false;
             }
         }
     }
@@ -76,8 +80,8 @@ public class InputController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             trackMouse = true;
-            firstPosition = Input.mousePosition;
-            lastPosition = Input.mousePosition;         
+            firstPosition[0] = Input.mousePosition;
+            lastPosition[0] = Input.mousePosition;         
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -89,17 +93,17 @@ public class InputController : MonoBehaviour
 
         if (trackMouse)
         {
-            lastPosition = Input.mousePosition;
-            CheckSwipe();
+            lastPosition[0] = Input.mousePosition;
+            CheckSwipe(0);
         }
     }
 
     /// <summary>
     /// Checks how to player has swiped.
     /// </summary>
-    private void CheckSwipe()
+    private void CheckSwipe(int i)
     {
-        Vector3 direction = lastPosition - firstPosition;
+        Vector3 direction = lastPosition[i] - firstPosition[i];
 
         // check if the player has swiped enough
         if (!(Math.Abs(direction.x) > swipeDistance) &&
@@ -109,32 +113,32 @@ public class InputController : MonoBehaviour
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             // swiped to right
-            if (lastPosition.x > firstPosition.x)
+            if (lastPosition[i].x > firstPosition[i].x)
             {
                 swipeDirection = SwipeDirection.Right;
-                SwipeLocation();
+                SwipeLocation(i);
             }
             // swiped to left
             else
             {
                 swipeDirection = SwipeDirection.Left;
-                SwipeLocation();
+                SwipeLocation(i);
             }
         }
         // vertical swipe
         else
         {
             // swipe up
-            if (lastPosition.y > firstPosition.y)
+            if (lastPosition[i].y > firstPosition[i].y)
             {
                 swipeDirection = SwipeDirection.Up;
-                SwipeLocation();
+                SwipeLocation(i);
             }
             // swipe down
             else
             {
                 swipeDirection = SwipeDirection.Down;
-                SwipeLocation();
+                SwipeLocation(i);
             }
         }
     }
@@ -142,10 +146,10 @@ public class InputController : MonoBehaviour
     /// <summary>
     /// Determines swipe location.
     /// </summary>
-    private void SwipeLocation()
+    private void SwipeLocation(int i)
     {
         // swiped left side of the screen
-        if (firstPosition.x < Screen.width / 2f)
+        if (firstPosition[i].x < Screen.width / 2f)
         {
             if (hasSwipedLeft) return;
 
