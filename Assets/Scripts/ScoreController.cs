@@ -1,21 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreController : MonoBehaviour
 {
+    public Text scoreText;
+    private int score;
 
+    private PerfectCatch[] perfectCatch;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-
+        perfectCatch = FindObjectsOfType<PerfectCatch>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void IncrementScore()
     {
-        
+        foreach (var perfect in perfectCatch)
+        {
+            if (perfect.perfectCatch)
+                score += 2;
+        }
+
+        score++;
+        scoreText.text = "Score: " + score;
     }
 }

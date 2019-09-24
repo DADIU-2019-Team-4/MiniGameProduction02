@@ -16,12 +16,18 @@ public class ViolaController : MonoBehaviour
 
     private ViolaMove NextMove;
 
+    public Hand leftHand;
+    public Hand rightHand;
+
     public enum ViolaMove
     {
         None,
-        HighThrow,
-        MidThrow,
-        FloorBounce,
+        HighThrowLeft,
+        MidThrowLeft,
+        FloorBounceLeft,
+        HighThrowRight,
+        MidThrowRight,
+        FloorBounceRight
     }
 
     // This is called from the InputController. You receive the input here.
@@ -47,15 +53,26 @@ public class ViolaController : MonoBehaviour
             case ViolaMove.None:
                 break;
 
-            case ViolaMove.MidThrow:
+            case ViolaMove.MidThrowLeft:
                 MidThrow();
                 break;
 
-            case ViolaMove.HighThrow:
+            case ViolaMove.HighThrowLeft:
                 HighThrow();
                 break;
 
-            case ViolaMove.FloorBounce:
+            case ViolaMove.FloorBounceLeft:
+                FloorBounce();
+                break;
+            case ViolaMove.MidThrowRight:
+                MidThrow();
+                break;
+
+            case ViolaMove.HighThrowRight:
+                HighThrow();
+                break;
+
+            case ViolaMove.FloorBounceRight:
                 FloorBounce();
                 break;
         }
@@ -63,19 +80,16 @@ public class ViolaController : MonoBehaviour
 
     private void MidThrow()
     {
-
         AudioController.PlaySFX();
     }
 
     private void HighThrow()
     {
-
         AudioController.PlaySFX();
     }
 
     private void FloorBounce()
     {
-
         AudioController.PlaySFX();
     }
 }
