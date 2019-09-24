@@ -15,4 +15,21 @@ public class MenuController : MonoBehaviour
     {
         
     }
+
+    public void EnterPauseMenu()
+    {
+        Time.timeScale = 0;
+
+
+    }
+
+    public void ExitPauseMenu()
+    {
+
+    }
+
+    public void GoToLevel(int level)
+    {
+
+    }
 }
