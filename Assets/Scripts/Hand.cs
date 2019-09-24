@@ -16,12 +16,14 @@ public class Hand : MonoBehaviour
 
     private ScoreController scoreController;
     private ProgressionController progressionController;
+    private SceneController sceneController;
 
     private void Awake()
     {
         perfectCatch = GetComponentInChildren<PerfectCatch>();
         scoreController = FindObjectOfType<ScoreController>();
         progressionController = FindObjectOfType<ProgressionController>();
+        sceneController = FindObjectOfType<SceneController>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -48,6 +50,7 @@ public class Hand : MonoBehaviour
     {
         if (isInCatchZone)
         {
+            sceneController.IsPlaying = true;
             ball.isKinematic = true;
             if (perfectCatch.perfectCatch)
             {
