@@ -213,17 +213,17 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: eb168f1bc853a14e93cddc21cc4175c8
     GuidInternal: 
-    m_lastTime: -8586322923814775808
+    m_lastTime: -8586322815654775808
     List:
-    - name: New_SoundBank
-      guid: ff22a98afeca8c468ed6ebdf8d71b08d
-      id: 4072029455
+    - name: Default_SoundBank
+      guid: 8b460617b4f80c42b7ee2bde6f93088d
+      id: 2218482606
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: New_SoundBank
+      - ElementName: Default_SoundBank
         ObjectType: 7
-      Path: Default Work Unit\New_SoundBank
+      Path: Default Work Unit\Default_SoundBank
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -511,7 +511,7 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /DADIU-MGP2
-  - /DADIU-MGP2/Events
-  - /DADIU-MGP2/Events/Default Work Unit
+  - /DADIU-MGP2/SoundBanks
+  - /DADIU-MGP2/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
