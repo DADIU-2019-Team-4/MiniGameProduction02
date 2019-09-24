@@ -35,7 +35,10 @@ public class LevelController : MonoBehaviour
         //update time spent on current level, independant of timescale.
         if (timerEnabled)
         {
-            timeOnCurrentLevelTime += Time.deltaTime * (1 / Time.timeScale);
+            if(Time.timeScale != 0)
+            {
+                timeOnCurrentLevelTime += Time.deltaTime * (1 / Time.timeScale);
+            }
         }
         
         //show time left of level & current level

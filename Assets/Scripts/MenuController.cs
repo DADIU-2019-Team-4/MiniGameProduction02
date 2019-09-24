@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class MenuController : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    private Canvas pauseMenu;
+    public bool isPaused=false;
+
+
+    private void Awake()
+    {
+        pauseMenu = GameObject.FindGameObjectWithTag("pauseMenu").GetComponent<Canvas>();
+        Debug.Log(pauseMenu.gameObject.name);
+    }
+
     void Start()
     {
         
@@ -16,16 +26,32 @@ public class MenuController : MonoBehaviour
         
     }
 
-    public void EnterPauseMenu()
+    public void TogglePauseMenu()
     {
-        Time.timeScale = 0;
+        if (isPaused)
+        {
+            isPaused = false;
 
+            Time.timeScale = 1;
+            pauseMenu.enabled= false;
+            Debug.Log("game resumed");
+        }
+        else
+        {
+            isPaused = true;
+
+            Time.timeScale = 0;
+            pauseMenu.enabled = true ;
+
+            Debug.Log("game paused");
+        }
 
     }
 
     public void ExitPauseMenu()
     {
 
+        
     }
 
     public void GoToLevel(int level)
