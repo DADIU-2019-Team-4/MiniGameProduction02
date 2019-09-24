@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour
         GraphicController = GetComponent<GraphicController>();
         AudioController = GetComponent<AudioController>();
         hands = FindObjectsOfType<Hand>();
+        Time.timeScale = 0.8f;
 
         SpawnBalls(3);
     }
@@ -47,15 +48,14 @@ public class GameController : MonoBehaviour
 
     public void Fail()
     {
-        Debug.Log("Entered fail state");
         ScoreController.ReduceProgress();
         ScoreController.numberofCatches = 0;
         GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
         foreach (var ball in balls)
         {
-            Destroy(ball,0.5f);
+            Destroy(ball, 0.5f);
         }
-        foreach(var hand in hands)
+        foreach (var hand in hands)
         {
             hand.numberOfBalls = 0;
         }
@@ -68,13 +68,14 @@ public class GameController : MonoBehaviour
         {
             if (i % 2 == 0)
             {
-                Instantiate(ball, new Vector3(rightHand.transform.position.x + distanceBetweenBalls * (Mathf.Round(i/2)-1), rightHand.transform.position.y, rightHand.transform.position.z),rightHand.transform.rotation);
+                Instantiate(ball, new Vector3(rightHand.transform.position.x + distanceBetweenBalls * (Mathf.Round(i / 2) - 1), rightHand.transform.position.y, rightHand.transform.position.z), rightHand.transform.rotation);
             }
             else
             {
-                Instantiate(ball, new Vector3(leftHand.transform.position.x - distanceBetweenBalls * (Mathf.Round(i/2)-1), leftHand.transform.position.y, leftHand.transform.position.z), rightHand.transform.rotation);
+                Instantiate(ball, new Vector3(leftHand.transform.position.x - distanceBetweenBalls * (Mathf.Round(i / 2) - 1), leftHand.transform.position.y, leftHand.transform.position.z), rightHand.transform.rotation);
             }
         }
     }
 }
+
 
