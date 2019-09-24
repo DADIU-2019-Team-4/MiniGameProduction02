@@ -21,7 +21,9 @@
 			<ShortName>Default_SoundBank2</ShortName>
 			<Path>Default_SoundBank2.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3157003241" Name="TEST" ObjectPath="\Events\Default Work Unit\TEST" DurationType="Unknown"/>
+				<Event Id="1567560806" Name="CircleColliderLeft" ObjectPath="\Events\Default Work Unit\FeedbackSounds\CircleColliderLeft" DurationType="Unknown"/>
+				<Event Id="1218187941" Name="CircleColliderRight" ObjectPath="\Events\Default Work Unit\FeedbackSounds\CircleColliderRight" DurationType="Unknown"/>
+				<Event Id="1542206418" Name="SwipeSound" ObjectPath="\Events\Default Work Unit\FeedbackSounds\SwipeSound" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000"/>
 			</IncludedEvents>
 		</SoundBank>
 	</SoundBanks>

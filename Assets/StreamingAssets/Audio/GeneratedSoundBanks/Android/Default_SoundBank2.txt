@@ -1,13 +1,18 @@
 Event	ID	Name			Wwise Object Path	Notes
-	3157003241	TEST			\Default Work Unit\TEST	
+	1218187941	CircleColliderRight			\Default Work Unit\FeedbackSounds\CircleColliderRight	
+	1542206418	SwipeSound			\Default Work Unit\FeedbackSounds\SwipeSound	
+	1567560806	CircleColliderLeft			\Default Work Unit\FeedbackSounds\CircleColliderLeft	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
-	129	MIDI note velocity			\MIDI note velocity	
+	2420075157	Swipe			\Default Work Unit\Swipe	
+	3470665837	BallColliderLeft			\Default Work Unit\BallColliderLeft	
 
-Modulator Envelope	ID	Name			Wwise Object Path	Notes
-	652640863	Modulator Envelope (Custom)				
-	901056879	Modulator Envelope (Custom)				
+Modulator LFO	ID	Name			Wwise Object Path	Notes
+	231527962	Modulator LFO (Custom)				
+	715588599	Modulator LFO (Custom)				
 
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
-	339952054	FM 01	Wwise Synth One		\Actor-Mixer Hierarchy\Factory Synth One\Instruments\FM 01\FM 01	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
+	196588648	SoundSeed Air Woosh	SoundSeed Air Woosh		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\SwipeSound\SoundSeed Air Woosh	
+	477103689	Wwise Synth One	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\CircleColliderRight\Wwise Synth One	Triangle for right hand
+	695406858	Wwise Synth One	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\CircleColliderLeft\Wwise Synth One	Sine for left hand
 
