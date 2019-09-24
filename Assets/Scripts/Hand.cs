@@ -2,17 +2,17 @@
 
 public class Hand : MonoBehaviour
 {
-    PerfectCatch perfectCatch;
-    Rigidbody ball;
-    bool isInCatchZone;
+    private PerfectCatch perfectCatch;
+    private Rigidbody ball;
+    private bool isInCatchZone;
+
     public GameObject indication;
-    public Vector3 throwUpLeftHand;
     public Vector3 throwUpRightHand;
-    public Vector3 throwDownLeftHand;
     public Vector3 throwDownRightHand;
     public Vector3 throwLeft;
-    public Vector3 throwRight;
     public float throwForce;
+
+    private ViolaController.HandType HandType;
 
     private ScoreController scoreController;
 
@@ -29,7 +29,7 @@ public class Hand : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        ball =  other.gameObject.GetComponent<Rigidbody>();
+        ball = other.gameObject.GetComponent<Rigidbody>();
         isInCatchZone = true;
         indication.SetActive(true);
     }
@@ -41,52 +41,58 @@ public class Hand : MonoBehaviour
         indication.SetActive(false);
     }
 
-    public void Throw(string hand, string throwType)
+    public void SetHandType(ViolaController.HandType type)
     {
-        if (isInCatchZone)
-        {
-            scoreController.IncrementScore();
+        if (HandType == ViolaController.HandType.None)
+            HandType = type;
+        else
+            throw new System.Exception("Hand type is already set once.");
+    }
 
-            ball.isKinematic = true;
-            if (perfectCatch.perfectCatch)
-            {
-                Debug.Log("Perfect Catch");
-            }
-            switch (throwType)
-            {
-                case "Up":
-                    if (hand == "Left")
-                    {
-                        ball.isKinematic = false;
-                        ball.AddForce(throwUpLeftHand * throwForce);
-                    }
-                    else
-                    {
-                        ball.isKinematic = false;
-                        ball.AddForce(throwUpRightHand * throwForce);
-                    }
-                    break;
-                case "Down":
-                    if (hand == "Left")
-                    {
-                        ball.isKinematic = false;
-                        ball.AddForce(throwDownLeftHand * throwForce);
-                    }
-                    else
-                    {
-                        ball.isKinematic = false;
-                        ball.AddForce(throwDownRightHand * throwForce);
-                    }
-                    break;
-                case "Left":
-                    ball.isKinematic = false;
-                    ball.AddForce(throwLeft * throwForce);
-                    break;
-                case "Right":
-                    ball.isKinematic = false;
-                    ball.AddForce(throwRight * throwForce);
-                    break;
-            }
+    public void Throw(ViolaController.ThrowType throwType)
+    {
+        if (!isInCatchZone || throwType == ViolaController.ThrowType.None)
+            return;
+
+        scoreController.IncrementScore();
+
+        ball.isKinematic = true;
+
+        if (perfectCatch.perfectCatch)
+            Debug.Log("Perfect Catch");
+
+        Vector3 throwAngle = GetForceAngle(throwType);
+
+        SetThrowDirection(ref throwAngle);
+
+        ball.isKinematic = false;
+
+        ball.AddForce(throwAngle * throwForce);
+        return;
+    }
+
+
+    private void SetThrowDirection(ref Vector3 throwAngle)
+    {
+        if (HandType == ViolaController.HandType.Left)
+            throwAngle.x *= -1;
+    }
+
+    private Vector3 GetForceAngle(ViolaController.ThrowType throwType)
+    {
+        switch (throwType)
+        {
+            case ViolaController.ThrowType.HighThrow:
+                return throwUpRightHand;
+
+            case ViolaController.ThrowType.FloorBounce:
+                return throwDownRightHand;
+
+            case ViolaController.ThrowType.MidThrow:
+                return throwLeft;
+
+            default:
+                return Vector3.zero;
         }
     }
 }
