@@ -15,11 +15,13 @@ public class Hand : MonoBehaviour
     public float throwForce;
 
     private ScoreController scoreController;
+    private ProgressionController progressionController;
 
     private void Awake()
     {
         perfectCatch = GetComponentInChildren<PerfectCatch>();
         scoreController = FindObjectOfType<ScoreController>();
+        progressionController = FindObjectOfType<ProgressionController>();
     }
 
     private void Start()
@@ -29,28 +31,37 @@ public class Hand : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        ball =  other.gameObject.GetComponent<Rigidbody>();
-        isInCatchZone = true;
-        indication.SetActive(true);
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            ball = other.gameObject.GetComponent<Rigidbody>();
+            isInCatchZone = true;
+            indication.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        ball = null;
-        isInCatchZone = false;
-        indication.SetActive(false);
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            ball = null;
+            isInCatchZone = false;
+            indication.SetActive(false);
+        }
     }
 
     public void Throw(string hand, string throwType)
     {
         if (isInCatchZone)
         {
-            scoreController.IncrementScore();
+            scoreController.IncrementScore(ScoreController.CatchType.normalCatch);
+            progressionController.UpdateProgression(ProgressionController.CatchType.normalCatch);
 
             ball.isKinematic = true;
             if (perfectCatch.perfectCatch)
             {
                 Debug.Log("Perfect Catch");
+                scoreController.IncrementScore(ScoreController.CatchType.perfectCatch);
+                progressionController.UpdateProgression(ProgressionController.CatchType.perfectCatch);
             }
             switch (throwType)
             {

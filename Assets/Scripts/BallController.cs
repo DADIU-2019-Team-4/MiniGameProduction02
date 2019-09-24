@@ -11,10 +11,22 @@ public class BallController : MonoBehaviour
     private GameObject BallPrefab;
 
     // Use these to keep track of balls.
-    private List<GameObject> Balls;
+    private List<GameObject> Balls = new List<GameObject>();
 
     void Awake()
     {
         ScoreController = FindObjectOfType<ScoreController>();
+    }
+
+    public void SpawnBall()
+    {
+        GameObject ball = Instantiate(BallPrefab);
+        Balls.Add(ball);
+    }
+
+    public void RemoveBall(GameObject ball)
+    {
+        Balls.Remove(ball);
+        Destroy(ball);
     }
 }

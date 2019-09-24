@@ -6,22 +6,20 @@ public class ScoreController : MonoBehaviour
     public Text scoreText;
     private int score;
 
-    private PerfectCatch[] perfectCatch;
+    [SerializeField]
+    private int normalCatchPoints = 1;
+    [SerializeField]
+    private int perfectCatchPoints = 3;
 
-    private void Awake()
+    public enum CatchType { normalCatch, perfectCatch }
+
+    public void IncrementScore(CatchType catchType)
     {
-        perfectCatch = FindObjectsOfType<PerfectCatch>();
-    }
+        if (catchType == CatchType.perfectCatch)
+            score += perfectCatchPoints;
+        else if (catchType == CatchType.normalCatch)
+            score += normalCatchPoints;
 
-    public void IncrementScore()
-    {
-        foreach (var perfect in perfectCatch)
-        {
-            if (perfect.perfectCatch)
-                score += 2;
-        }
-
-        score++;
         scoreText.text = "Score: " + score;
     }
 }
