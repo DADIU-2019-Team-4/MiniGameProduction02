@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
 
     public Transform leftHand;
     public Transform rightHand;
+    public ParticleSystem rightHandParticle;
+    public ParticleSystem leftHandParticle;
 
     public GameObject ball;
     public int numberOfBalls;
@@ -28,7 +30,7 @@ public class GameController : MonoBehaviour
         GraphicController = GetComponent<GraphicController>();
         AudioController = GetComponent<AudioController>();
         hands = FindObjectsOfType<Hand>();
-        Time.timeScale = 0.8f;
+        Time.timeScale = 0.8f; 
 
         SpawnBalls(3);
     }
@@ -48,18 +50,20 @@ public class GameController : MonoBehaviour
 
     public void Fail()
     {
+        leftHandParticle.Play();
+        rightHandParticle.Play();
         ScoreController.ReduceProgress();
         ScoreController.numberofCatches = 0;
         GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
         foreach (var ball in balls)
         {
-            Destroy(ball, 0.5f);
+            Destroy(ball);
         }
         foreach (var hand in hands)
         {
             hand.numberOfBalls = 0;
         }
-        SpawnBalls(numberOfBalls);
+        StartCoroutine(Delay());
     }
 
     void SpawnBalls(int number)
@@ -75,6 +79,11 @@ public class GameController : MonoBehaviour
                 Instantiate(ball, new Vector3(leftHand.transform.position.x - distanceBetweenBalls * (Mathf.Round(i / 2) - 1), leftHand.transform.position.y, leftHand.transform.position.z), rightHand.transform.rotation);
             }
         }
+    }
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SpawnBalls(numberOfBalls);
     }
 }
 
