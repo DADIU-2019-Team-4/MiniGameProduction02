@@ -51,4 +51,5 @@ MonoBehaviour:
   arrowStartInSteps: 7
   normalCatchStep: 1
   perfectCatchStep: 2
-  failStep: -1
+  failStep: -2
+  currentPartType: 0

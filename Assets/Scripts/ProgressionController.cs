@@ -9,6 +9,10 @@ public class ProgressionController : MonoBehaviour
     [SerializeField]
     private Image arrow;
 
+    // green, yellow, red
+    private const int totalColors = 3;
+    private int stepsPerColor;
+
     [SerializeField]
     private int totalParts = 6;
 
@@ -31,11 +35,15 @@ public class ProgressionController : MonoBehaviour
     [SerializeField]
     private int perfectCatchStep = 2;
     [SerializeField]
-    private int failStep = -1;
+    private int failStep = -2;
 
     private SceneController sceneController;
 
     public enum CatchType { normalCatch, perfectCatch, FailedCatch }
+
+    public enum PartType { Green, Yellow, Red }
+
+    public PartType currentPartType;
 
     private void Awake()
     {
@@ -45,14 +53,38 @@ public class ProgressionController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // setting up values
         totalSteps = totalParts * stepsPerPart;
         degreesPerStep = arrowEndValueInDegrees / totalSteps;
+        stepsPerColor = totalSteps / totalColors;
         currentSteps = arrowStartInSteps;
 
-        int partsToFill = Mathf.FloorToInt((float)arrowStartInSteps / stepsPerPart);
-        filling.fillAmount = (float)partsToFill/totalParts;
+        // setting up parts and arrow
+        UpdateParts();
+        UpdateArrow(currentSteps);    
+        DeterminePartType();
+    }
 
-        arrow.transform.Rotate(0, 0, arrowStartInSteps * degreesPerStep);
+    private void DeterminePartType()
+    {
+        int partAmount = Mathf.FloorToInt((float) currentSteps / stepsPerColor);
+        if (partAmount == 0)
+            currentPartType = PartType.Red;
+        else if (partAmount == 1)
+            currentPartType = PartType.Yellow;
+        else if (partAmount == 2)
+            currentPartType = PartType.Green;
+    }
+
+    private void UpdateArrow(int value)
+    {
+        arrow.transform.eulerAngles = new Vector3(0, 0, value * degreesPerStep);
+    }
+
+    private void UpdateParts()
+    {
+        int partsToFill = Mathf.FloorToInt((float)currentSteps / stepsPerPart);
+        filling.fillAmount = (float)partsToFill / totalParts;
     }
 
     private void Update()
@@ -61,21 +93,30 @@ public class ProgressionController : MonoBehaviour
             sceneController.LevelFailed();
     }
 
-    public void UpdateProgressionArrow(CatchType catchType)
+    public void UpdateProgression(CatchType catchType)
     {
         switch (catchType)
         {
             case CatchType.normalCatch:
-
+                if (currentSteps < totalSteps)
+                    currentSteps += normalCatchStep;
                 break;
             case CatchType.perfectCatch:
-
+                if (currentSteps < totalSteps)
+                    currentSteps += perfectCatchStep;
+                else
+                    currentSteps = totalSteps;
                 break;
             case CatchType.FailedCatch:
-
+                if (currentSteps > 0)
+                    currentSteps += failStep;
                 break;
             default:
                 break;
         }
+
+        UpdateParts();
+        UpdateArrow(currentSteps);
+        DeterminePartType();
     }
 }
