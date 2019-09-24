@@ -24,11 +24,6 @@ public class Hand : MonoBehaviour
         progressionController = FindObjectOfType<ProgressionController>();
     }
 
-    private void Start()
-    {
-        isInCatchZone = true;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Ball"))
