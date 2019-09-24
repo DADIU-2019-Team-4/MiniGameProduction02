@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
+	<RootPaths>
+		<ProjectRoot>E:\WWise projekter\DADIU-MGP2\</ProjectRoot>
+		<SourceFilesRoot>E:\WWise projekter\DADIU-MGP2\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>E:\MiniGameProduction02\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>E:\WWise projekter\DADIU-MGP2\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3614528216" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Default_SoundBank2</ObjectPath>
+			<ShortName>Default_SoundBank2</ShortName>
+			<Path>Default_SoundBank2.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3157003241" Name="TEST" ObjectPath="\Events\Default Work Unit\TEST" DurationType="Unknown"/>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

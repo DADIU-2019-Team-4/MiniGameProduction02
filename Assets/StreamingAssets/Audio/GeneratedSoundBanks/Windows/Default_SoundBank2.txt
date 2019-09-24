@@ -1,0 +1,13 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3157003241	TEST			\Default Work Unit\TEST	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	129	MIDI note velocity			\MIDI note velocity	
+
+Modulator Envelope	ID	Name			Wwise Object Path	Notes
+	652640863	Modulator Envelope (Custom)				
+	901056879	Modulator Envelope (Custom)				
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	339952054	FM 01	Wwise Synth One		\Actor-Mixer Hierarchy\Factory Synth One\Instruments\FM 01\FM 01	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
+
