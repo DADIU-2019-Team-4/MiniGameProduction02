@@ -16,7 +16,11 @@ public class Hand : MonoBehaviour
     public Vector3 throwDownRightHand;
     public Vector3 throwLeft;
     public Vector3 throwRight;
-    public float throwForce;
+    public float throwUpForce;
+    public float throwDownForce;
+    public float throwSideForce;
+    public Transform rightHandPosition;
+    public Transform leftHandPosition;
 
     private ScoreManager scoreManager;
 
@@ -68,33 +72,39 @@ public class Hand : MonoBehaviour
                     if (hand == "Left")
                     {
                         ball.isKinematic = false;
-                        ball.AddForce(throwUpLeftHand * throwForce);
+                        ball.transform.position = Vector3.Lerp(ball.transform.position, leftHandPosition.position, 0.5f);
+                        ball.AddForce(throwUpLeftHand * throwUpForce);
                     }
                     else
                     {
                         ball.isKinematic = false;
-                        ball.AddForce(throwUpRightHand * throwForce);
+                        ball.transform.position = Vector3.Lerp(ball.transform.position, rightHandPosition.position, 0.5f);
+                        ball.AddForce(throwUpRightHand * throwUpForce);
                     }
                     break;
                 case "Down":
                     if (hand == "Left")
                     {
                         ball.isKinematic = false;
-                        ball.AddForce(throwDownLeftHand * throwForce);
+                        ball.transform.position = Vector3.Lerp(ball.transform.position, leftHandPosition.position, 0.5f);
+                        ball.AddForce(throwDownLeftHand * throwDownForce);
                     }
                     else
                     {
                         ball.isKinematic = false;
-                        ball.AddForce(throwDownRightHand * throwForce);
+                        ball.transform.position = Vector3.Lerp(ball.transform.position, rightHandPosition.position, 0.5f);
+                        ball.AddForce(throwDownRightHand * throwDownForce);
                     }
                     break;
                 case "Left":
                     ball.isKinematic = false;
-                    ball.AddForce(throwLeft * throwForce);
+                    ball.transform.position = Vector3.Lerp(ball.transform.position, rightHandPosition.position, 0.5f);
+                    ball.AddForce(throwLeft * throwSideForce);
                     break;
                 case "Right":
                     ball.isKinematic = false;
-                    ball.AddForce(throwRight * throwForce);
+                    ball.transform.position = Vector3.Lerp(ball.transform.position, leftHandPosition.position, 0.5f);
+                    ball.AddForce(throwRight * throwSideForce);
                     break;
             }
         }
