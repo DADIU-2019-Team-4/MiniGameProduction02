@@ -127,6 +127,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8285446396122680824, guid: a97bf511971b0274aa8b28f5a4095890,
+        type: 3}
+      propertyPath: timeText
+      value: 
+      objectReference: {fileID: 1783952108041063631}
+    - target: {fileID: 8285446396122680824, guid: a97bf511971b0274aa8b28f5a4095890,
+        type: 3}
+      propertyPath: lvlText
+      value: 
+      objectReference: {fileID: 1783952108041063630}
     - target: {fileID: 318764982451777378, guid: a97bf511971b0274aa8b28f5a4095890,
         type: 3}
       propertyPath: m_Name
@@ -807,6 +817,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f89063d1d39500d479d1714d510ce07d, type: 3}
+--- !u!114 &1783952108041063630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2865025571301527913, guid: f89063d1d39500d479d1714d510ce07d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1783952108041063629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1783952108041063631 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2069933675611607084, guid: f89063d1d39500d479d1714d510ce07d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1783952108041063629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3098220519188090418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -900,6 +934,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Viola
       objectReference: {fileID: 0}
+    - target: {fileID: 628430810, guid: c4ff11067393fdb4482661bd68401a42, type: 3}
+      propertyPath: indication
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273403123, guid: c4ff11067393fdb4482661bd68401a42, type: 3}
+      propertyPath: indication
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8603860910751814125, guid: c4ff11067393fdb4482661bd68401a42,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -965,14 +1007,6 @@ PrefabInstance:
       propertyPath: ScoreControllerRef
       value: 
       objectReference: {fileID: 1152823662}
-    - target: {fileID: 628430810, guid: c4ff11067393fdb4482661bd68401a42, type: 3}
-      propertyPath: indication
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1273403123, guid: c4ff11067393fdb4482661bd68401a42, type: 3}
-      propertyPath: indication
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4ff11067393fdb4482661bd68401a42, type: 3}
 --- !u!1 &4717418013201952633 stripped

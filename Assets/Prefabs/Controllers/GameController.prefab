@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4453602944336207243}
   - component: {fileID: 8978015025193866711}
   - component: {fileID: 4777817990566138529}
+  - component: {fileID: 8285446396122680824}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3cabeb033f1404595451f2f677d1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSwipeDistanceInPercentage: 0.1
 --- !u!114 &4777817990566138529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,3 +58,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9ad628ccd23234abd43edd82c67a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8285446396122680824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318764982451777378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9484582326cb0ca4bb3e6328ecd25aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalNumberOfLevels: 8
+  baseTimeToCompleteLevels:
+  - 0
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  totalTimeToCompleteCurrentLevel: 0
+  currentLevel: 1
+  timeOnCurrentLevelTime: 0
+  timerEnabled: 1
+  timeText: {fileID: 0}
+  lvlText: {fileID: 0}
