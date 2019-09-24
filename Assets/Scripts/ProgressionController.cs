@@ -87,29 +87,27 @@ public class ProgressionController : MonoBehaviour
         filling.fillAmount = (float)partsToFill / totalParts;
     }
 
-    private void Update()
-    {
-        if (filling.fillAmount <= 0)
-            sceneController.LevelFailed();
-    }
-
     public void UpdateProgression(CatchType catchType)
     {
         switch (catchType)
         {
             case CatchType.normalCatch:
-                if (currentSteps < totalSteps)
-                    currentSteps += normalCatchStep;
-                break;
-            case CatchType.perfectCatch:
-                if (currentSteps < totalSteps)
-                    currentSteps += perfectCatchStep;
-                else
+                currentSteps += normalCatchStep;
+                if (currentSteps > totalSteps)
                     currentSteps = totalSteps;
                 break;
+            case CatchType.perfectCatch:
+                currentSteps += perfectCatchStep;
+                if (currentSteps > totalSteps)
+                        currentSteps = totalSteps;
+                break;
             case CatchType.FailedCatch:
-                if (currentSteps > 0)
-                    currentSteps += failStep;
+                currentSteps += failStep;
+                if (currentSteps <= 0)
+                {
+                    currentSteps = 0;
+                    sceneController.LevelFailed();
+                }
                 break;
             default:
                 break;

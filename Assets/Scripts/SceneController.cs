@@ -5,7 +5,10 @@ using UnityEngine.UI;
 public class SceneController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject failText;
+    private GameObject levelFailedText;
+
+    [SerializeField]
+    private GameObject levelCompletedText;
 
     [SerializeField]
     private Text timerText;
@@ -21,6 +24,9 @@ public class SceneController : MonoBehaviour
         string seconds = (timerValue % 60).ToString("00");
 
         timerText.text = $"{minutes}:{seconds}";
+
+        if (timerValue <= 0)
+            LevelCompleted();
     }
 
     public void SceneReset()
@@ -30,6 +36,11 @@ public class SceneController : MonoBehaviour
 
     public void LevelFailed()
     {
-        failText.SetActive(true);
+        levelFailedText.SetActive(true);
+    }
+
+    public void LevelCompleted()
+    {
+        levelCompletedText.SetActive(true);
     }
 }
