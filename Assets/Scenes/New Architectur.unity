@@ -959,7 +959,7 @@ PrefabInstance:
     - target: {fileID: 7570754238695505975, guid: f89063d1d39500d479d1714d510ce07d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LevelReset
+      value: SceneReset
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f89063d1d39500d479d1714d510ce07d, type: 3}
