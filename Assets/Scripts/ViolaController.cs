@@ -12,8 +12,17 @@ public class ViolaController : MonoBehaviour
 
     public enum HandType
     {
+        None,
         Left,
         Right
+    }
+
+    public enum ThrowType
+    {
+        None,
+        HighThrow,
+        MidThrow,
+        FloorBounce,
     }
 
     // Start is called before the first frame update
@@ -23,7 +32,25 @@ public class ViolaController : MonoBehaviour
         ScoreController = FindObjectOfType<ScoreController>();
     }
 
-    public void MidThrow(HandType hand)
+    public void Throw(ThrowType throwType, HandType hand)
+    {
+        switch (throwType)
+        {
+            case ThrowType.HighThrow:
+                HighThrow(hand);
+                break;
+
+            case ThrowType.MidThrow:
+                MidThrow(hand);
+                break;
+
+            case ThrowType.FloorBounce:
+                FloorBounce(hand);
+                break;
+        }
+    }
+
+    private void MidThrow(HandType hand)
     {
         AudioController.PlaySFX();
 
@@ -33,7 +60,7 @@ public class ViolaController : MonoBehaviour
             rightHand.Throw("Right", "Left");
     }
 
-    public void HighThrow(HandType hand)
+    private void HighThrow(HandType hand)
     {
         AudioController.PlaySFX();
 
@@ -43,7 +70,7 @@ public class ViolaController : MonoBehaviour
             rightHand.Throw("Right", "Up");
     }
 
-    public void FloorBounce(HandType hand)
+    private void FloorBounce(HandType hand)
     {
         AudioController.PlaySFX();
 

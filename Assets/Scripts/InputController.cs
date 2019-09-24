@@ -15,14 +15,15 @@ public class InputController : MonoBehaviour
     [SerializeField]
     private float minSwipeDistanceInPercentage = 0.10f;
     private float swipeDistance;
-    private bool hasSwipedLeft;
-    private bool hasSwipedRight;
+    private bool hasSwipedLeftScreen;
+    private bool hasSwipedRightScreen;
 
     private bool trackMouse;
 
     public enum SwipeDirection { Up, Down, Left, Right }
 
-    public SwipeDirection swipeDirection { get; private set; }
+    private ViolaController.HandType screenSide;
+    private ViolaController.ThrowType throwType;
 
     private void Awake()
     {
@@ -36,16 +37,23 @@ public class InputController : MonoBehaviour
         swipeDistance = Screen.height * minSwipeDistanceInPercentage;
     }
 
+
     /// <summary>
     /// Update function.
     /// </summary>
     public void Update()
     {
+        throwType = ViolaController.ThrowType.None;
+
         HandleInput();
+
+        if (throwType != ViolaController.ThrowType.None)
+            ViolaController.Throw(throwType, screenSide);
 
         if (Input.GetKeyDown(KeyCode.Space))
             sceneController.SceneReset();
     }
+
 
     /// <summary>
     /// Handles the input.
@@ -58,6 +66,7 @@ public class InputController : MonoBehaviour
         MobileInput();
 #endif
     }
+
 
     /// <summary>
     /// Handles mobile input.
@@ -81,13 +90,14 @@ public class InputController : MonoBehaviour
             {
                 // swipe was on left side of the screen
                 if (firstPosition[i].x < Screen.width / 2f)
-                    hasSwipedLeft = false;
+                    hasSwipedLeftScreen = false;
                 // swipe was on right side of the screen
                 else
-                    hasSwipedRight = false;
+                    hasSwipedRightScreen = false;
             }
         }
     }
+
 
     /// <summary>
     /// Handles pc input.
@@ -104,8 +114,8 @@ public class InputController : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             trackMouse = false;
-            hasSwipedLeft = false;
-            hasSwipedRight = false;
+            hasSwipedLeftScreen = false;
+            hasSwipedRightScreen = false;
         }
 
         if (trackMouse)
@@ -115,115 +125,97 @@ public class InputController : MonoBehaviour
         }
     }
 
+
     /// <summary>
     /// Checks how to player has swiped.
     /// </summary>
     private void CheckSwipe(int i)
     {
-        Vector3 direction = lastPosition[i] - firstPosition[i];
+        Vector3 directionVector = lastPosition[i] - firstPosition[i];
 
-        // check if the player has swiped enough
-        if (!(Math.Abs(direction.x) > swipeDistance) &&
-            !(Math.Abs(direction.y) > swipeDistance)) return;
+        if (!SwipedLongEnough(directionVector)) return;
 
-        // horizontal swipe
-        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
-        {
-            // swiped to right
-            if (lastPosition[i].x > firstPosition[i].x)
-            {
-                swipeDirection = SwipeDirection.Right;
-                SwipeLocation(i);
-            }
-            // swiped to left
-            else
-            {
-                swipeDirection = SwipeDirection.Left;
-                SwipeLocation(i);
-            }
-        }
-        // vertical swipe
+        SwipeDirection direction;
+
+        if (Mathf.Abs(directionVector.x) > Mathf.Abs(directionVector.y))
+            direction = HorizontalSwipe(i);
         else
-        {
-            // swipe up
-            if (lastPosition[i].y > firstPosition[i].y)
-            {
-                swipeDirection = SwipeDirection.Up;
-                SwipeLocation(i);
-            }
-            // swipe down
-            else
-            {
-                swipeDirection = SwipeDirection.Down;
-                SwipeLocation(i);
-            }
-        }
+            direction = VerticalSwipe(i);
+
+        screenSide = SwipeLocation(i);
+        throwType = ComputeThrowType(direction);
     }
+
+
+    private bool SwipedLongEnough(Vector3 direction)
+    {
+        return !(!(Math.Abs(direction.x) > swipeDistance) &&
+            !(Math.Abs(direction.y) > swipeDistance));
+    }
+
+
+    private SwipeDirection HorizontalSwipe(int i)
+    {
+        if (lastPosition[i].x > firstPosition[i].x)
+            return SwipeDirection.Right;
+        else
+            return SwipeDirection.Left;
+    }
+
+
+    private SwipeDirection VerticalSwipe(int i)
+    {
+        if (lastPosition[i].y > firstPosition[i].y)
+            return SwipeDirection.Up;
+        else
+            return SwipeDirection.Down;
+    }
+
 
     /// <summary>
     /// Determines swipe location.
     /// </summary>
-    private void SwipeLocation(int i)
+    private ViolaController.HandType SwipeLocation(int i)
     {
-        // swiped left side of the screen
         if (firstPosition[i].x < Screen.width / 2f)
         {
-            if (hasSwipedLeft) return;
-
-            hasSwipedLeft = true;
-            SwipeLeftScreen();
+            if (hasSwipedLeftScreen)
+                return ViolaController.HandType.None;
+            else
+            {
+                hasSwipedLeftScreen = true;
+                return ViolaController.HandType.Right;
+            }
         }
-        // swiped right side of the screen
         else
         {
-            if (hasSwipedRight) return;
-
-            hasSwipedRight = true;
-            SwipeRightScreen();
+            if (hasSwipedRightScreen)
+                return ViolaController.HandType.None;
+            else
+            {
+                hasSwipedRightScreen = true;
+                return ViolaController.HandType.Left;
+            }
         }
     }
 
-    private void SwipeLeftScreen()
+
+    private ViolaController.ThrowType ComputeThrowType(SwipeDirection direction)
     {
-        Debug.Log("Swiped Left Side");
-        switch (swipeDirection)
+        if (screenSide == ViolaController.HandType.None)
+            return ViolaController.ThrowType.None;
+
+        switch (direction)
         {
-            case SwipeDirection.Down:
-                Debug.Log("Swiped to down");
-                ViolaController.FloorBounce(ViolaController.HandType.Right);
-                break;
             case SwipeDirection.Up:
-                Debug.Log("Swiped to up");
-                ViolaController.HighThrow(ViolaController.HandType.Right);
-                break;
-            case SwipeDirection.Right:
-                Debug.Log("Swiped to right");
-                ViolaController.MidThrow(ViolaController.HandType.Right);
-                break;
+                return ViolaController.ThrowType.HighThrow;
+
+            case SwipeDirection.Down:
+                return ViolaController.ThrowType.FloorBounce;
+
             default:
-                break;
+                return ViolaController.ThrowType.MidThrow;
         }
     }
 
-    private void SwipeRightScreen()
-    {
-        Debug.Log("Swiped Right Side");
-        switch (swipeDirection)
-        {
-            case SwipeDirection.Down:
-                Debug.Log("Swiped to down");
-                ViolaController.FloorBounce(ViolaController.HandType.Left);
-                break;
-            case SwipeDirection.Up:
-                Debug.Log("Swiped to up");
-                ViolaController.HighThrow(ViolaController.HandType.Left);
-                break;
-            case SwipeDirection.Left:
-                Debug.Log("Swiped to left");
-                ViolaController.MidThrow(ViolaController.HandType.Left);
-                break;
-            default:
-                break;
-        }
-    }
 }
