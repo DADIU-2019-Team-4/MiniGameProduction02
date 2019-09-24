@@ -1,95 +1,55 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ViolaController : MonoBehaviour
 {
     // Keeps track of all functionality in regards to Viola.
 
-    [SerializeField]
-    private GameObject BallControllerRef;
-    [SerializeField]
-    private GameObject ScoreControllerRef;
-
     private BallController BallController;
     private ScoreController ScoreController;
-
-    private ViolaMove NextMove;
 
     public Hand leftHand;
     public Hand rightHand;
 
-    public enum ViolaMove
+    public enum HandType
     {
-        None,
-        HighThrowLeft,
-        MidThrowLeft,
-        FloorBounceLeft,
-        HighThrowRight,
-        MidThrowRight,
-        FloorBounceRight
+        Left,
+        Right
     }
-
-    // This is called from the InputController. You receive the input here.
-    public void Input(ViolaMove move)
-    {
-        NextMove = move;
-    }
-
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        BallController = BallControllerRef.GetComponent<BallController>();
-        ScoreController = ScoreControllerRef.GetComponent<ScoreController>();
+        BallController = FindObjectOfType<BallController>();
+        ScoreController = FindObjectOfType<ScoreController>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // Do something. 
-        switch (NextMove)
-        {
-            case ViolaMove.None:
-                break;
-
-            case ViolaMove.MidThrowLeft:
-                MidThrow();
-                break;
-
-            case ViolaMove.HighThrowLeft:
-                HighThrow();
-                break;
-
-            case ViolaMove.FloorBounceLeft:
-                FloorBounce();
-                break;
-            case ViolaMove.MidThrowRight:
-                MidThrow();
-                break;
-
-            case ViolaMove.HighThrowRight:
-                HighThrow();
-                break;
-
-            case ViolaMove.FloorBounceRight:
-                FloorBounce();
-                break;
-        }
-    }
-
-    private void MidThrow()
+    public void MidThrow(HandType hand)
     {
         AudioController.PlaySFX();
+
+        if (hand == HandType.Left)
+            leftHand.Throw("Left", "Right");
+        else
+            rightHand.Throw("Right", "Left");
     }
 
-    private void HighThrow()
+    public void HighThrow(HandType hand)
     {
         AudioController.PlaySFX();
+
+        if (hand == HandType.Left)
+            leftHand.Throw("Left", "Up");
+        else
+            rightHand.Throw("Right", "Up");
     }
 
-    private void FloorBounce()
+    public void FloorBounce(HandType hand)
     {
         AudioController.PlaySFX();
+
+        if (hand == HandType.Left)
+            leftHand.Throw("Left", "Down");
+        else
+            rightHand.Throw("Right", "Down");
     }
 }

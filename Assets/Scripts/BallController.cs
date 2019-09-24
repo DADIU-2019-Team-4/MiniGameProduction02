@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject ScoreControllerRef;
     private ScoreController ScoreController;
 
     // Insert prefab in editor.
@@ -15,15 +13,8 @@ public class BallController : MonoBehaviour
     // Use these to keep track of balls.
     private List<GameObject> Balls;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        ScoreController = ScoreControllerRef.GetComponent<ScoreController>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ScoreController = FindObjectOfType<ScoreController>();
     }
 }

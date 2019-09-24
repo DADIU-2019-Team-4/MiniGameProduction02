@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
@@ -18,27 +16,22 @@ public class Hand : MonoBehaviour
 
     private ScoreController scoreController;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        isInCatchZone = true;
         perfectCatch = GetComponentInChildren<PerfectCatch>();
         scoreController = FindObjectOfType<ScoreController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        isInCatchZone = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
         ball =  other.gameObject.GetComponent<Rigidbody>();
         isInCatchZone = true;
         indication.SetActive(true);
-
     }
 
     private void OnTriggerExit(Collider other)
@@ -47,6 +40,7 @@ public class Hand : MonoBehaviour
         isInCatchZone = false;
         indication.SetActive(false);
     }
+
     public void Throw(string hand, string throwType)
     {
         if (isInCatchZone)

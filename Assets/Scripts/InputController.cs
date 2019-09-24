@@ -190,19 +190,17 @@ public class InputController : MonoBehaviour
         {
             case SwipeDirection.Down:
                 Debug.Log("Swiped to down");
-                ViolaController.Input(ViolaController.ViolaMove.FloorBounceRight);
-                //rightHand.Throw("Right", "Down");
+                ViolaController.FloorBounce(ViolaController.HandType.Right);
                 break;
             case SwipeDirection.Up:
                 Debug.Log("Swiped to up");
-                ViolaController.Input(ViolaController.ViolaMove.HighThrowRight);
+                ViolaController.HighThrow(ViolaController.HandType.Right);
                 break;
             case SwipeDirection.Right:
                 Debug.Log("Swiped to right");
-                ViolaController.Input(ViolaController.ViolaMove.MidThrowRight);
+                ViolaController.MidThrow(ViolaController.HandType.Right);
                 break;
             default:
-                ViolaController.Input(ViolaController.ViolaMove.None);
                 break;
         }
     }
@@ -214,18 +212,17 @@ public class InputController : MonoBehaviour
         {
             case SwipeDirection.Down:
                 Debug.Log("Swiped to down");
-                ViolaController.Input(ViolaController.ViolaMove.FloorBounceLeft);
+                ViolaController.FloorBounce(ViolaController.HandType.Left);
                 break;
             case SwipeDirection.Up:
                 Debug.Log("Swiped to up");
-                ViolaController.Input(ViolaController.ViolaMove.HighThrowLeft);
+                ViolaController.HighThrow(ViolaController.HandType.Left);
                 break;
             case SwipeDirection.Left:
                 Debug.Log("Swiped to left");
-                ViolaController.Input(ViolaController.ViolaMove.MidThrowLeft);
+                ViolaController.MidThrow(ViolaController.HandType.Left);
                 break;
             default:
-                ViolaController.Input(ViolaController.ViolaMove.None);
                 break;
         }
     }
