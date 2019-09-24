@@ -7,7 +7,7 @@ public class Hand : MonoBehaviour
     private Collider coll;
     InputController InputController;
     PerfectCatch perfectCatch;
-    Rigidbody ball;
+    Rigidbody[] ball;
     bool isInCatchZone;
     public GameObject indication;
     public Vector3 throwUpLeftHand;
@@ -23,7 +23,7 @@ public class Hand : MonoBehaviour
     public Transform leftHandPosition;
 
     private ScoreManager scoreManager;
-
+    public int numberOfBalls;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +32,8 @@ public class Hand : MonoBehaviour
         isInCatchZone = true;
         perfectCatch = GetComponentInChildren<PerfectCatch>();
         scoreManager = FindObjectOfType<ScoreManager>();
+        ball = new Rigidbody[4];
+        numberOfBalls = 0;
     }
 
     // Update is called once per frame
@@ -42,26 +44,32 @@ public class Hand : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-        ball =  other.gameObject.GetComponent<Rigidbody>();
-        isInCatchZone = true;
-        indication.SetActive(true);
-
+        numberOfBalls++;
+        ball[numberOfBalls-1] =  other.gameObject.GetComponent<Rigidbody>();
+        if (numberOfBalls >= 1)
+        {
+            isInCatchZone = true;
+            indication.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        ball = null;
-        isInCatchZone = false;
-        indication.SetActive(false);
+        numberOfBalls--;
+        ball[numberOfBalls] = null;
+        if (numberOfBalls == 0)
+        {
+            isInCatchZone = false;
+            indication.SetActive(false);
+        }
     }
     public void Throw(string hand, string throwType)
     {
         if (isInCatchZone)
         {
             scoreManager.IncrementScore();
-
-            ball.isKinematic = true;
+            var currentBall = ball[numberOfBalls-1];
+            currentBall.isKinematic = true;
             if (perfectCatch.perfectCatch)
             {
                 Debug.Log("Perfect Catch");
@@ -71,40 +79,40 @@ public class Hand : MonoBehaviour
                 case "Up":
                     if (hand == "Left")
                     {
-                        ball.isKinematic = false;
-                        ball.transform.position = Vector3.Lerp(ball.transform.position, leftHandPosition.position, 0.5f);
-                        ball.AddForce(throwUpLeftHand * throwUpForce);
+                        currentBall.isKinematic = false;
+                        currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, leftHandPosition.position, 0.5f);
+                        currentBall.AddForce(throwUpLeftHand * throwUpForce);
                     }
                     else
                     {
-                        ball.isKinematic = false;
-                        ball.transform.position = Vector3.Lerp(ball.transform.position, rightHandPosition.position, 0.5f);
-                        ball.AddForce(throwUpRightHand * throwUpForce);
+                        currentBall.isKinematic = false;
+                        currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, rightHandPosition.position, 0.5f);
+                        currentBall.AddForce(throwUpRightHand * throwUpForce);
                     }
                     break;
                 case "Down":
                     if (hand == "Left")
                     {
-                        ball.isKinematic = false;
-                        ball.transform.position = Vector3.Lerp(ball.transform.position, leftHandPosition.position, 0.5f);
-                        ball.AddForce(throwDownLeftHand * throwDownForce);
+                        currentBall.isKinematic = false;
+                        currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, leftHandPosition.position, 0.5f);
+                        currentBall.AddForce(throwDownLeftHand * throwDownForce);
                     }
                     else
                     {
-                        ball.isKinematic = false;
-                        ball.transform.position = Vector3.Lerp(ball.transform.position, rightHandPosition.position, 0.5f);
-                        ball.AddForce(throwDownRightHand * throwDownForce);
+                        currentBall.isKinematic = false;
+                        currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, rightHandPosition.position, 0.5f);
+                        currentBall.AddForce(throwDownRightHand * throwDownForce);
                     }
                     break;
                 case "Left":
-                    ball.isKinematic = false;
-                    ball.transform.position = Vector3.Lerp(ball.transform.position, rightHandPosition.position, 0.5f);
-                    ball.AddForce(throwLeft * throwSideForce);
+                    currentBall.isKinematic = false;
+                    currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, rightHandPosition.position, 0.5f);
+                    currentBall.AddForce(throwLeft * throwSideForce);
                     break;
                 case "Right":
-                    ball.isKinematic = false;
-                    ball.transform.position = Vector3.Lerp(ball.transform.position, leftHandPosition.position, 0.5f);
-                    ball.AddForce(throwRight * throwSideForce);
+                    currentBall.isKinematic = false;
+                    currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, leftHandPosition.position, 0.5f);
+                    currentBall.AddForce(throwRight * throwSideForce);
                     break;
             }
         }
