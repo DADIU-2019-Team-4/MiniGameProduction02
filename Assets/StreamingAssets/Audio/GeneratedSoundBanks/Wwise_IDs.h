@@ -13,7 +13,13 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID TEST = 3157003241U;
+        static const AkUniqueID CIRCLECOLLIDERLEFT_EVENT = 4158355351U;
+        static const AkUniqueID CIRCLECOLLIDERRIGHT_EVENT = 4277209144U;
+        static const AkUniqueID MENUIN_EVENT = 1069674504U;
+        static const AkUniqueID MENUOUT_EVENT = 1960384521U;
+        static const AkUniqueID PRESSBUTTON_EVENT = 2293628003U;
+        static const AkUniqueID ROOMTONE_EVENT = 1399763525U;
+        static const AkUniqueID SWIPESOUND_EVENT = 3921462371U;
     } // namespace EVENTS
 
     namespace STATES
@@ -70,7 +76,7 @@ namespace AK
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID ROOM = 2077253480U;
         static const AkUniqueID THROWING = 4234308485U;
-        static const AkUniqueID UI = 1551306167U;
+        static const AkUniqueID UI_FEEDBACK = 2687559867U;
         static const AkUniqueID VOICE = 3170124113U;
     } // namespace BUSSES
 
