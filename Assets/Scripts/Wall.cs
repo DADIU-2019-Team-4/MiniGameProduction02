@@ -15,7 +15,7 @@ public class Wall : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Ball"))
         {
-            progressionController.UpdateProgression(ProgressionController.CatchType.FailedCatch);
+            progressionController.UpdateProgressionArrow(ProgressionController.CatchType.FailedCatch);
             ballController.RemoveBall(col.gameObject);
             ballController.SpawnBall();
         }

@@ -49,14 +49,14 @@ public class Hand : MonoBehaviour
         if (isInCatchZone)
         {
             scoreController.IncrementScore(ScoreController.CatchType.normalCatch);
-            progressionController.UpdateProgression(ProgressionController.CatchType.normalCatch);
+            progressionController.UpdateProgressionArrow(ProgressionController.CatchType.normalCatch);
 
             ball.isKinematic = true;
             if (perfectCatch.perfectCatch)
             {
                 Debug.Log("Perfect Catch");
                 scoreController.IncrementScore(ScoreController.CatchType.perfectCatch);
-                progressionController.UpdateProgression(ProgressionController.CatchType.perfectCatch);
+                progressionController.UpdateProgressionArrow(ProgressionController.CatchType.perfectCatch);
             }
             switch (throwType)
             {

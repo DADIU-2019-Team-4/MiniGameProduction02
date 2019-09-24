@@ -43,3 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0097b6c91cd1c0428723345a2550c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  filling: {fileID: 0}
+  arrow: {fileID: 0}
+  totalParts: 6
+  stepsPerPart: 3
+  arrowEndValueInDegrees: -180
+  arrowStartInSteps: 7
+  normalCatchStep: 1
+  perfectCatchStep: 2
+  failStep: -1

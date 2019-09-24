@@ -7,30 +7,35 @@ public class ProgressionController : MonoBehaviour
     private Image filling;
 
     [SerializeField]
-    private int totalAmount = 6;
+    private Image arrow;
 
     [SerializeField]
-    private int startAmount = 3;
-    [SerializeField]
-    private float depleteSpeed = 0.01f;
+    private int totalParts = 6;
 
     [SerializeField]
-    private int normalCatchAmount = 1;
+    private int stepsPerPart = 3;
+
+    private int totalSteps;
+    private int currentSteps;
+
+    private float degreesPerStep;
+
     [SerializeField]
-    private int perfectCatchAmount = 1;
+    private float arrowEndValueInDegrees = -180;
+
     [SerializeField]
-    private int failAmount = -1;
+    private int arrowStartInSteps = 7;
+
+    [SerializeField]
+    private int normalCatchStep = 1;
+    [SerializeField]
+    private int perfectCatchStep = 2;
+    [SerializeField]
+    private int failStep = -1;
 
     private SceneController sceneController;
 
     public enum CatchType { normalCatch, perfectCatch, FailedCatch }
-
-    private int streak;
-    private int perfectStreak;
-    [SerializeField]
-    private int requiredStreak = 6;
-    [SerializeField]
-    private int requiredPerfectStreak = 3;
 
     private void Awake()
     {
@@ -40,41 +45,34 @@ public class ProgressionController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        filling.fillAmount = (float)startAmount/totalAmount;
+        totalSteps = totalParts * stepsPerPart;
+        degreesPerStep = arrowEndValueInDegrees / totalSteps;
+        currentSteps = arrowStartInSteps;
+
+        int partsToFill = Mathf.FloorToInt((float)arrowStartInSteps / stepsPerPart);
+        filling.fillAmount = (float)partsToFill/totalParts;
+
+        arrow.transform.Rotate(0, 0, arrowStartInSteps * degreesPerStep);
     }
 
     private void Update()
     {
-        //filling.fillAmount -= Time.deltaTime * depleteSpeed;
-
         if (filling.fillAmount <= 0)
             sceneController.LevelFailed();
     }
 
-    public void UpdateProgression(CatchType catchType)
+    public void UpdateProgressionArrow(CatchType catchType)
     {
         switch (catchType)
         {
             case CatchType.normalCatch:
-                streak++;
-                if (streak >= requiredStreak)
-                {
-                    filling.fillAmount += (float) normalCatchAmount / totalAmount;
-                    streak = 0;
-                }
+
                 break;
             case CatchType.perfectCatch:
-                perfectStreak++;
-                if (perfectStreak >= requiredPerfectStreak)
-                {
-                    filling.fillAmount += (float) perfectCatchAmount / totalAmount;
-                    perfectStreak = 0;
-                }
+
                 break;
             case CatchType.FailedCatch:
-                streak = 0;
-                perfectStreak = 0;
-                filling.fillAmount += (float)failAmount/totalAmount;
+
                 break;
             default:
                 break;
