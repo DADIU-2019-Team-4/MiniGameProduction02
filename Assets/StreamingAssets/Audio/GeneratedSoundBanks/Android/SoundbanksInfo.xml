@@ -21,10 +21,24 @@
 			<ShortName>Default_SoundBank2</ShortName>
 			<Path>Default_SoundBank2.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1567560806" Name="CircleColliderLeft" ObjectPath="\Events\Default Work Unit\FeedbackSounds\CircleColliderLeft" DurationType="Unknown"/>
-				<Event Id="1218187941" Name="CircleColliderRight" ObjectPath="\Events\Default Work Unit\FeedbackSounds\CircleColliderRight" DurationType="Unknown"/>
-				<Event Id="1542206418" Name="SwipeSound" ObjectPath="\Events\Default Work Unit\FeedbackSounds\SwipeSound" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000"/>
+				<Event Id="4158355351" Name="CircleColliderLeft_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\CircleColliderLeft_event" DurationType="Unknown"/>
+				<Event Id="4277209144" Name="CircleColliderRight_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\CircleColliderRight_event" DurationType="Unknown"/>
+				<Event Id="1069674504" Name="MenuIN_event" ObjectPath="\Events\Default Work Unit\UI\MenuIN_event" DurationType="OneShot" DurationMin="0.125488" DurationMax="0.125488"/>
+				<Event Id="1960384521" Name="MenuOUT_event" ObjectPath="\Events\Default Work Unit\UI\MenuOUT_event" DurationType="OneShot" DurationMin="0.125488" DurationMax="0.125488"/>
+				<Event Id="2293628003" Name="PressButton_event" ObjectPath="\Events\Default Work Unit\UI\PressButton_event" DurationType="OneShot" DurationMin="0.125488" DurationMax="0.125488"/>
+				<Event Id="1399763525" Name="RoomTone_event" ObjectPath="\Events\Default Work Unit\RoomTone_event" DurationType="Infinite"/>
+				<Event Id="3921462371" Name="SwipeSound_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\SwipeSound_event" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000"/>
 			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="866720910" Language="SFX">
+					<ShortName>MGP2_Room2.wav</ShortName>
+					<Path>SFX\MGP2_Room2_8663AA8C.wem</Path>
+				</File>
+				<File Id="910387677" Language="SFX">
+					<ShortName>XF_SynPerc_003.wav</ShortName>
+					<Path>SFX\XF_SynPerc_003_8CBF9462.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

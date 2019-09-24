@@ -13,9 +13,13 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID CIRCLECOLLIDERLEFT = 1567560806U;
-        static const AkUniqueID CIRCLECOLLIDERRIGHT = 1218187941U;
-        static const AkUniqueID SWIPESOUND = 1542206418U;
+        static const AkUniqueID CIRCLECOLLIDERLEFT_EVENT = 4158355351U;
+        static const AkUniqueID CIRCLECOLLIDERRIGHT_EVENT = 4277209144U;
+        static const AkUniqueID MENUIN_EVENT = 1069674504U;
+        static const AkUniqueID MENUOUT_EVENT = 1960384521U;
+        static const AkUniqueID PRESSBUTTON_EVENT = 2293628003U;
+        static const AkUniqueID ROOMTONE_EVENT = 1399763525U;
+        static const AkUniqueID SWIPESOUND_EVENT = 3921462371U;
     } // namespace EVENTS
 
     namespace STATES

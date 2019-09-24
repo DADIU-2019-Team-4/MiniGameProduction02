@@ -1,7 +1,11 @@
 Event	ID	Name			Wwise Object Path	Notes
-	1218187941	CircleColliderRight			\Default Work Unit\FeedbackSounds\CircleColliderRight	
-	1542206418	SwipeSound			\Default Work Unit\FeedbackSounds\SwipeSound	
-	1567560806	CircleColliderLeft			\Default Work Unit\FeedbackSounds\CircleColliderLeft	
+	1069674504	MenuIN_event			\Default Work Unit\UI\MenuIN_event	
+	1399763525	RoomTone_event			\Default Work Unit\RoomTone_event	
+	1960384521	MenuOUT_event			\Default Work Unit\UI\MenuOUT_event	
+	2293628003	PressButton_event			\Default Work Unit\UI\PressButton_event	
+	3921462371	SwipeSound_event			\Default Work Unit\FeedbackSounds\SwipeSound_event	
+	4158355351	CircleColliderLeft_event			\Default Work Unit\FeedbackSounds\CircleColliderLeft_event	
+	4277209144	CircleColliderRight_event			\Default Work Unit\FeedbackSounds\CircleColliderRight_event	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	2420075157	Swipe			\Default Work Unit\Swipe	
@@ -11,8 +15,16 @@ Modulator LFO	ID	Name			Wwise Object Path	Notes
 	231527962	Modulator LFO (Custom)				
 	715588599	Modulator LFO (Custom)				
 
+Effect plug-ins	ID	Name	Type				Notes
+	2568359573	Secret_message	Wwise Harmonizer			
+	3342250202	Repeat_after_me2	Wwise Harmonizer			
+
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	196588648	SoundSeed Air Woosh	SoundSeed Air Woosh		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\SwipeSound\SoundSeed Air Woosh	
 	477103689	Wwise Synth One	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\CircleColliderRight\Wwise Synth One	Triangle for right hand
 	695406858	Wwise Synth One	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\CircleColliderLeft\Wwise Synth One	Sine for left hand
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	866720910	RoomTone	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MGP2_Room2_8663AA8C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\RoomTone		146619
+	910387677	MenuIN	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\XF_SynPerc_003_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuIN		4230
 
