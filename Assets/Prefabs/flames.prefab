@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6512840872060707645}
   - component: {fileID: 6512840872060707646}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: flames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3789,7 +3789,7 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 1
+    enabled: 0
     ratio: 1
     light: {fileID: 6757552051229826980, guid: 91c4ed0f101cc174080d53362dcf124c, type: 3}
     randomDistribution: 1
