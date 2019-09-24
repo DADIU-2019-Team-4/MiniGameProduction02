@@ -7,20 +7,30 @@ public class ProgressionController : MonoBehaviour
     private Image filling;
 
     [SerializeField]
-    private float startAmount = 0.5f;
+    private int totalAmount = 6;
+
+    [SerializeField]
+    private int startAmount = 3;
     [SerializeField]
     private float depleteSpeed = 0.01f;
 
     [SerializeField]
-    private float normalCatchAmount = 0.1f;
+    private int normalCatchAmount = 1;
     [SerializeField]
-    private float perfectCatchAmount = 0.2f;
+    private int perfectCatchAmount = 1;
     [SerializeField]
-    private float failAmount = -0.1f;
+    private int failAmount = -1;
 
     private SceneController sceneController;
 
     public enum CatchType { normalCatch, perfectCatch, FailedCatch }
+
+    private int streak;
+    private int perfectStreak;
+    [SerializeField]
+    private int requiredStreak = 6;
+    [SerializeField]
+    private int requiredPerfectStreak = 3;
 
     private void Awake()
     {
@@ -30,12 +40,12 @@ public class ProgressionController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        filling.fillAmount = startAmount;
+        filling.fillAmount = (float)startAmount/totalAmount;
     }
 
     private void Update()
     {
-        filling.fillAmount -= Time.deltaTime * depleteSpeed;
+        //filling.fillAmount -= Time.deltaTime * depleteSpeed;
 
         if (filling.fillAmount <= 0)
             sceneController.LevelFailed();
@@ -46,13 +56,25 @@ public class ProgressionController : MonoBehaviour
         switch (catchType)
         {
             case CatchType.normalCatch:
-                filling.fillAmount += normalCatchAmount;
+                streak++;
+                if (streak >= requiredStreak)
+                {
+                    filling.fillAmount += (float) normalCatchAmount / totalAmount;
+                    streak = 0;
+                }
                 break;
             case CatchType.perfectCatch:
-                filling.fillAmount += perfectCatchAmount;
+                perfectStreak++;
+                if (perfectStreak >= requiredPerfectStreak)
+                {
+                    filling.fillAmount += (float) perfectCatchAmount / totalAmount;
+                    perfectStreak = 0;
+                }
                 break;
             case CatchType.FailedCatch:
-                filling.fillAmount += failAmount;
+                streak = 0;
+                perfectStreak = 0;
+                filling.fillAmount += (float)failAmount/totalAmount;
                 break;
             default:
                 break;

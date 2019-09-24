@@ -1171,6 +1171,16 @@ PrefabInstance:
       propertyPath: m_Text
       value: Spawn Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 1783952108035576440, guid: f89063d1d39500d479d1714d510ce07d,
+        type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783952108035576440, guid: f89063d1d39500d479d1714d510ce07d,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f89063d1d39500d479d1714d510ce07d, type: 3}
 --- !u!1001 &3098220519188090418
