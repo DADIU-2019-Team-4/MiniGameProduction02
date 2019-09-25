@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -850,6 +850,50 @@ Transform:
   m_Father: {fileID: 503467187}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 51.927002}
+--- !u!1 &577846699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 577846701}
+  - component: {fileID: 577846700}
+  m_Layer: 0
+  m_Name: PhysicsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &577846700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577846699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 977175ab28579dd4599bd4e3f6d4621d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: -3
+--- !u!4 &577846701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577846699}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2472079, y: 3.445672, z: 0.62375164}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &628430808
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,9 +943,9 @@ MonoBehaviour:
   throwUpRightHand: {x: 1.65, y: 13, z: 0}
   throwDownRightHand: {x: 6.5, y: -1.5, z: 0}
   throwLeft: {x: 4.3, y: 7, z: 0}
-  throwUpForce: 40
-  throwDownForce: 30
-  throwSideForce: 35
+  throwUpForce: 22
+  throwDownForce: 13
+  throwSideForce: 19
   rightHandPosition: {fileID: 1730324388}
   leftHandPosition: {fileID: 2119035071}
   numberOfBalls: 0
@@ -2187,9 +2231,9 @@ MonoBehaviour:
   throwUpRightHand: {x: 1.65, y: 13, z: 0}
   throwDownRightHand: {x: 6.5, y: -1.5, z: 0}
   throwLeft: {x: 4.3, y: 7, z: 0}
-  throwUpForce: 40
-  throwDownForce: 30
-  throwSideForce: 35
+  throwUpForce: 22
+  throwDownForce: 13
+  throwSideForce: 19
   rightHandPosition: {fileID: 1730324388}
   leftHandPosition: {fileID: 2119035071}
   numberOfBalls: 0
