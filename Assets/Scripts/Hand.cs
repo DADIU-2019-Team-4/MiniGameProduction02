@@ -18,14 +18,17 @@ public class Hand : MonoBehaviour
 
     private ViolaController.HandType HandType;
 
-    private ScoreManager scoreController;
-    public GameObject ScoreObject;
+    private ScoreController scoreController;
+    private SceneController sceneController;
+    private ProgressionController progressionController;
 
     public int numberOfBalls;
     private void Awake()
     {
         perfectCatch = GetComponentInChildren<PerfectCatch>();
-        scoreController = ScoreObject.GetComponent<ScoreManager>();
+        scoreController = FindObjectOfType<ScoreController>();
+        sceneController = FindObjectOfType<SceneController>();
+        progressionController = FindObjectOfType<ProgressionController>();
     }
 
     private void Start()
@@ -71,12 +74,21 @@ public class Hand : MonoBehaviour
         if (!isInCatchZone || throwType == ViolaController.ThrowType.None)
             return;
 
-        scoreController.IncrementScore();
+        sceneController.IsPlaying = true;
         var currentBall = ball[numberOfBalls - 1];
         currentBall.isKinematic = true;
 
         if (perfectCatch.perfectCatch)
+        {
             Debug.Log("Perfect Catch");
+            scoreController.IncrementScore(ScoreController.CatchType.perfectCatch);
+            progressionController.UpdateProgression(ProgressionController.CatchType.perfectCatch);
+        }
+        else
+        {
+            scoreController.IncrementScore(ScoreController.CatchType.normalCatch);
+            progressionController.UpdateProgression(ProgressionController.CatchType.normalCatch);
+        }
 
         Vector3 throwAngle = GetForceAngle(throwType);
 

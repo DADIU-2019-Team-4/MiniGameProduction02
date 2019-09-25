@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     private InputController InputController;
-    private ScoreManager ScoreController;
+    private ScoreController ScoreController;
+    private SceneController sceneController;
+    private ProgressionController progressionController;
     private Hand[] hands;
 
     public Transform leftHand;
@@ -20,7 +22,9 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         InputController = FindObjectOfType<InputController>();
-        ScoreController = FindObjectOfType<ScoreManager>();
+        ScoreController = FindObjectOfType<ScoreController>();
+        sceneController = FindObjectOfType<SceneController>();
+        progressionController = FindObjectOfType<ProgressionController>();
         hands = FindObjectsOfType<Hand>();
         Time.timeScale = 0.5f; 
 
@@ -43,8 +47,6 @@ public class GameController : MonoBehaviour
     {
         leftHandParticle.Play();
         rightHandParticle.Play();
-        ScoreController.ReduceProgress();
-        ScoreController.numberofCatches = 0;
         GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
         foreach (var ball in balls)
         {
@@ -54,6 +56,8 @@ public class GameController : MonoBehaviour
         {
             hand.numberOfBalls = 0;
         }
+        progressionController.UpdateProgression(ProgressionController.CatchType.FailedCatch);
+        sceneController.IsPlaying = false;
         StartCoroutine(Delay());
     }
 
