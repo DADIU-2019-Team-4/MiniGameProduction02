@@ -16,9 +16,11 @@ public class BallController : MonoBehaviour
 
 
     // TODO: Make these private and programmatically retrieve these.
-    // Should NOT available in the editor; it's bloat for Level Designers.
+    // These should NOT available in the editor; it's bloat for Level Designers.
     public Transform leftHand;
     public Transform rightHand;
+    public GameObject leftIndicator;
+    public GameObject rightIndicator;
 
     public Vector3 throwUpRightHand;
     public Vector3 throwDownRightHand;
@@ -55,6 +57,7 @@ public class BallController : MonoBehaviour
     }
 
 
+
     private void SpawnBall(Vector3 where)
     {
         GameObject ball = Instantiate(BallPrefab, where, rightHand.transform.rotation);
@@ -72,6 +75,8 @@ public class BallController : MonoBehaviour
         var ball = collider.gameObject;
         if (!ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Add(ball);
+
+        SetIndicators();
     }
 
     public void BallLeavesHand(Collider collider)
@@ -79,7 +84,23 @@ public class BallController : MonoBehaviour
         var ball = collider.gameObject;
         if (ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Remove(ball);
+
+        SetIndicators();
     }
+
+    private void SetIndicators()
+    {
+        bool left = false, right = false;
+        foreach (GameObject ball in ballsInCatchZone)
+            if (ball.transform.position.x < 0)
+                right = true;
+            else
+                left = true;
+
+        leftIndicator.SetActive(left);
+        rightIndicator.SetActive(right);
+    }
+
 
     public void Throw(ViolaController.ThrowType throwType, ViolaController.HandType hand)
     {
