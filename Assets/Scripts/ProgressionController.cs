@@ -41,9 +41,9 @@ public class ProgressionController : MonoBehaviour
 
     public enum CatchType { normalCatch, perfectCatch, FailedCatch }
 
-    public enum PartType { Green, Yellow, Red }
+    public enum CrowdHappiness { Happy, Neutral, Angry }
 
-    public PartType currentPartType;
+    public CrowdHappiness CurrentCrowdHappiness;
 
     private void Awake()
     {
@@ -62,18 +62,18 @@ public class ProgressionController : MonoBehaviour
         // setting up parts and arrow
         UpdateParts();
         UpdateArrow(currentSteps);    
-        DeterminePartType();
+        DetermineCrowdHappiness();
     }
 
-    private void DeterminePartType()
+    private void DetermineCrowdHappiness()
     {
         int partAmount = Mathf.FloorToInt((float) currentSteps / stepsPerColor);
         if (partAmount == 0)
-            currentPartType = PartType.Red;
+            CurrentCrowdHappiness = CrowdHappiness.Angry;
         else if (partAmount == 1)
-            currentPartType = PartType.Yellow;
+            CurrentCrowdHappiness = CrowdHappiness.Neutral;
         else if (partAmount == 2)
-            currentPartType = PartType.Green;
+            CurrentCrowdHappiness = CrowdHappiness.Happy;
     }
 
     private void UpdateArrow(int value)
@@ -115,6 +115,6 @@ public class ProgressionController : MonoBehaviour
 
         UpdateParts();
         UpdateArrow(currentSteps);
-        DeterminePartType();
+        DetermineCrowdHappiness();
     }
 }
