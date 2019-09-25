@@ -14,7 +14,8 @@ public class InputController : MonoBehaviour
     private readonly Vector3[] lastPosition = new Vector3[2];
     [SerializeField]
     private float minSwipeDistanceInPercentage = 0.10f;
-    private float swipeDistance;
+    private float verticalSwipeDistance;
+    private float horizontalSwipeDistance;
     private bool hasSwipedLeftScreen;
     private bool hasSwipedRightScreen;
 
@@ -34,7 +35,8 @@ public class InputController : MonoBehaviour
 
     private void Start()
     {
-        swipeDistance = Screen.height * minSwipeDistanceInPercentage;
+        verticalSwipeDistance = Screen.height * minSwipeDistanceInPercentage;
+        horizontalSwipeDistance = Screen.width * minSwipeDistanceInPercentage;
     }
 
 
@@ -149,8 +151,8 @@ public class InputController : MonoBehaviour
 
     private bool SwipedLongEnough(Vector3 direction)
     {
-        return !(!(Math.Abs(direction.x) > swipeDistance) &&
-            !(Math.Abs(direction.y) > swipeDistance));
+        return !(!(Math.Abs(direction.x) > horizontalSwipeDistance) &&
+            !(Math.Abs(direction.y) > verticalSwipeDistance));
     }
 
 
