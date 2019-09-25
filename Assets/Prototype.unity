@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -552,9 +552,9 @@ MonoBehaviour:
   throwDownRightHand: {x: 0, y: 0, z: 0}
   throwLeft: {x: 0, y: 0, z: 0}
   throwRight: {x: -4.3, y: 7, z: 0}
-  throwUpForce: 40
-  throwDownForce: 30
-  throwSideForce: 35
+  throwUpForce: 20
+  throwDownForce: 15
+  throwSideForce: 17
   rightHandPosition: {fileID: 1730324388}
   leftHandPosition: {fileID: 2119035071}
   numberOfBalls: 0
@@ -1439,9 +1439,9 @@ MonoBehaviour:
   throwDownRightHand: {x: 6.5, y: -1.5, z: 0}
   throwLeft: {x: 4.3, y: 7, z: 0}
   throwRight: {x: 0, y: 0, z: 0}
-  throwUpForce: 40
-  throwDownForce: 30
-  throwSideForce: 35
+  throwUpForce: 20
+  throwDownForce: 15
+  throwSideForce: 17
   rightHandPosition: {fileID: 1730324388}
   leftHandPosition: {fileID: 2119035071}
   numberOfBalls: 0

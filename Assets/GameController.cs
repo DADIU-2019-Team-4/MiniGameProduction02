@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
         GraphicController = GetComponent<GraphicController>();
         AudioController = GetComponent<AudioController>();
         hands = FindObjectsOfType<Hand>();
-        Time.timeScale = 0.8f; 
+        Time.timeScale = 0.5f; 
 
         SpawnBalls(3);
     }
