@@ -15,11 +15,12 @@ public class SaveController : MonoBehaviour
     void Awake()
     {
         lvlC = FindObjectOfType<LevelController>();
+
+        LoadGame();
     }
 
     void Start()
     {
-        LoadGame();
     }
 
     // Update is called once per frame
@@ -68,8 +69,8 @@ public class SaveController : MonoBehaviour
 
             // 3
             
-            lvlC.currentLevelScores = save.levelScores;
-            lvlC.maxReachedLevel = save.maxReachedLevel;
+            //lvlC.currentLevelScores = save.levelScores;
+            //lvlC.maxReachedLevel = save.maxReachedLevel;
             
             
 

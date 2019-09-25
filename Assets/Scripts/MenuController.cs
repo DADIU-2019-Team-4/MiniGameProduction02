@@ -9,12 +9,13 @@ public class MenuController : MonoBehaviour
 
     private Canvas pauseMenu;
     public bool isPaused=false;
-    public LevelController lvlC;
-
+    //public LevelController lvlC;
+    public SaveController saveC;
 
     private void Awake()
     {
-        lvlC = FindObjectOfType<LevelController>();
+        //lvlC = FindObjectOfType<LevelController>();
+        saveC = FindObjectOfType<SaveController>();
         pauseMenu = GameObject.FindGameObjectWithTag("pauseMenu").GetComponent<Canvas>();
         Debug.Log(pauseMenu.gameObject.name);
     }
@@ -27,7 +28,7 @@ public class MenuController : MonoBehaviour
         {
             button.interactable = false;
         }
-
+        UpdatePauseMenu();
     }
 
     // Update is called once per frame
@@ -69,7 +70,7 @@ public class MenuController : MonoBehaviour
 
     public void GoToLevel(int level)
     {
-        lvlC.StartLevel(level);
+        SceneManager.LoadScene("Level"+level);
     }
 
     public void UpdatePauseMenu()
@@ -77,9 +78,10 @@ public class MenuController : MonoBehaviour
 
         Button[] levelbuttons = pauseMenu.transform.GetChild(0).GetComponentsInChildren<Button>();
 
-        for (int i=0; i < lvlC.maxReachedLevel; i++)
+        for (int i=0; i < saveC.save.maxReachedLevel; i++)
         {
             levelbuttons[i].interactable = true;
+            Debug.Log(saveC.save.maxReachedLevel);
         }
     }
 
