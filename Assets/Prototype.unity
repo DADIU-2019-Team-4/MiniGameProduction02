@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 31776036}
   - component: {fileID: 31776035}
+  - component: {fileID: 31776037}
   - component: {fileID: 31776034}
   m_Layer: 0
   m_Name: Main Camera
@@ -138,14 +139,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &31776034
-AudioListener:
+--- !u!114 &31776034
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31776033}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312487ec373806a4d8ab498fbb194cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
 --- !u!20 &31776035
 Camera:
   m_ObjectHideFlags: 0
@@ -203,6 +210,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &31776037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31776033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1801df3d6e90245a19c0eb0f45610a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &172815545
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,8 +262,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSwipeDistanceInPercentage: 0.1
-  leftHand: {fileID: 628430810}
-  rightHand: {fileID: 1273403123}
 --- !u!4 &172815547
 Transform:
   m_ObjectHideFlags: 0
@@ -275,7 +302,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 360445317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04b5dcbdf54099b48b908db31a112cee, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ab9d86aa19726147bdd516272316709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftHand: {fileID: 2119035071}
@@ -284,7 +311,7 @@ MonoBehaviour:
   leftHandParticle: {fileID: 1443390084}
   ball: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab, type: 3}
   numberOfBalls: 3
-  distanceBetweenBalls: 0.15
+  distanceBetweenBalls: 0.1
 --- !u!4 &360445319
 Transform:
   m_ObjectHideFlags: 0
@@ -311,6 +338,7 @@ GameObject:
   - component: {fileID: 503467186}
   - component: {fileID: 503467185}
   - component: {fileID: 503467184}
+  - component: {fileID: 503467188}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -394,6 +422,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &503467188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503467183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640ffd6990f67f642b1ac59e877530b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 628430810}
+  rightHand: {fileID: 1273403123}
 --- !u!198 &511133413 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 2627685897041171438, guid: df12693f43cafb04abad7817d261cea8,
@@ -545,18 +587,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e13af7197a6b6e4e94ed0f1653e8d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indication: {fileID: 1169449798}
-  throwUpLeftHand: {x: -1.65, y: 13, z: 0}
-  throwUpRightHand: {x: 0, y: 0, z: 0}
-  throwDownLeftHand: {x: -6.5, y: -1.5, z: 0}
-  throwDownRightHand: {x: 0, y: 0, z: 0}
-  throwLeft: {x: 0, y: 0, z: 0}
-  throwRight: {x: -4.3, y: 7, z: 0}
-  throwUpForce: 20
-  throwDownForce: 15
-  throwSideForce: 17
+  indication: {fileID: 1027416452}
+  throwUpRightHand: {x: 1.65, y: 13, z: 0}
+  throwDownRightHand: {x: 6.5, y: -1.5, z: 0}
+  throwLeft: {x: 4.3, y: 7, z: 0}
+  throwForce: 20
   rightHandPosition: {fileID: 1730324388}
   leftHandPosition: {fileID: 2119035071}
+  ScoreObject: {fileID: 1585959818}
   numberOfBalls: 0
 --- !u!135 &628430811
 SphereCollider:
@@ -1156,6 +1194,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: death Clouds
       objectReference: {fileID: 0}
+    - target: {fileID: 2627685897041171438, guid: df12693f43cafb04abad7817d261cea8,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6080963744849463145, guid: df12693f43cafb04abad7817d261cea8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1225,11 +1268,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.15000007
-      objectReference: {fileID: 0}
-    - target: {fileID: 2627685897041171438, guid: df12693f43cafb04abad7817d261cea8,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df12693f43cafb04abad7817d261cea8, type: 3}
@@ -1433,17 +1471,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indication: {fileID: 1027416452}
-  throwUpLeftHand: {x: 0, y: 0, z: 0}
   throwUpRightHand: {x: 1.65, y: 13, z: 0}
-  throwDownLeftHand: {x: 0, y: 0, z: 0}
   throwDownRightHand: {x: 6.5, y: -1.5, z: 0}
   throwLeft: {x: 4.3, y: 7, z: 0}
-  throwRight: {x: 0, y: 0, z: 0}
-  throwUpForce: 20
-  throwDownForce: 15
-  throwSideForce: 17
+  throwForce: 20
   rightHandPosition: {fileID: 1730324388}
   leftHandPosition: {fileID: 2119035071}
+  ScoreObject: {fileID: 1585959818}
   numberOfBalls: 0
 --- !u!135 &1273403124
 SphereCollider:
@@ -1878,6 +1912,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perfectCatch: 0
+--- !u!1 &2038267812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2038267814}
+  - component: {fileID: 2038267813}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2038267813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038267812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a586bee80a71ad84f97472a4c0610995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: 3c209473a39e70a48a5043d9724cabcd,
+    type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  diffractionFlags: 11
+  engineLogging: 0
+--- !u!4 &2038267814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038267812}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2047766067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1889,6 +1981,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: death Clouds (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2627685897041171438, guid: df12693f43cafb04abad7817d261cea8,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6080963744849463145, guid: df12693f43cafb04abad7817d261cea8,
         type: 3}
@@ -1959,11 +2056,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.15000007
-      objectReference: {fileID: 0}
-    - target: {fileID: 2627685897041171438, guid: df12693f43cafb04abad7817d261cea8,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df12693f43cafb04abad7817d261cea8, type: 3}

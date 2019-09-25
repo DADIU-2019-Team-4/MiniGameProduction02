@@ -5,11 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     private InputController InputController;
-    private OptionController OptionController;
-    private AvatarController AvatarController;
     private ScoreManager ScoreController;
-    private GraphicController GraphicController;
-    private AudioController AudioController;
     private Hand[] hands;
 
     public Transform leftHand;
@@ -24,11 +20,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         InputController = FindObjectOfType<InputController>();
-        OptionController = GetComponent<OptionController>();
-        AvatarController = GetComponent<AvatarController>();
         ScoreController = FindObjectOfType<ScoreManager>();
-        GraphicController = GetComponent<GraphicController>();
-        AudioController = GetComponent<AudioController>();
         hands = FindObjectsOfType<Hand>();
         Time.timeScale = 0.5f; 
 
@@ -38,7 +30,6 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        InputController.Tick();
         //OptionController.Tick();
         //AvatarController.Tick();
         //ScoreController.Tick();
