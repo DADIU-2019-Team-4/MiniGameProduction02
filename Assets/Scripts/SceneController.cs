@@ -26,15 +26,18 @@ public class SceneController : MonoBehaviour
 
     private void UpdateTimer()
     {
-        timerValue -= Time.deltaTime * (1 / Time.timeScale);
-        //timerValue -= Time.deltaTime;
-        UpdateTimerText();
-
-        if (timerValue <= 0)
+        if (Time.timeScale != 0)
         {
-            timerValue = 0;
+            timerValue -= Time.deltaTime * (1 / Time.timeScale);
+            //timerValue -= Time.deltaTime;
             UpdateTimerText();
-            LevelCompleted();
+
+            if (timerValue <= 0)
+            {
+                timerValue = 0;
+                UpdateTimerText();
+                LevelCompleted();
+            }
         }
     }
 
@@ -62,5 +65,10 @@ public class SceneController : MonoBehaviour
     {
         levelCompletedText.SetActive(true);
         Time.timeScale = 0;
+    }
+
+    public void GoToLevelSelect()
+    {
+        SceneManager.LoadScene("Level Select");
     }
 }
