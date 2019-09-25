@@ -23,9 +23,16 @@ namespace AK
         static const AkUniqueID LEVELCOMPLETED_EVENT = 3036127557U;
         static const AkUniqueID MENUIN_EVENT = 1069674504U;
         static const AkUniqueID MENUOUT_EVENT = 1960384521U;
+        static const AkUniqueID PERFECTCATCH_EVENT = 3869548328U;
         static const AkUniqueID PRESSBUTTON_EVENT = 2293628003U;
         static const AkUniqueID ROOMTONE_EVENT = 1399763525U;
         static const AkUniqueID SWIPESOUND_EVENT = 3921462371U;
+        static const AkUniqueID UNFILLSOUND_EVENT0 = 1118806527U;
+        static const AkUniqueID UNFILLSOUND_EVENT1 = 1118806526U;
+        static const AkUniqueID UNFILLSOUND_EVENT2 = 1118806525U;
+        static const AkUniqueID UNFILLSOUND_EVENT3 = 1118806524U;
+        static const AkUniqueID UNFILLSOUND_EVENT4 = 1118806523U;
+        static const AkUniqueID UNFILLSOUND_EVENT5 = 1118806522U;
     } // namespace EVENTS
 
     namespace STATES
