@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
@@ -17,46 +15,53 @@ public class Hand : MonoBehaviour
     public float throwForce;
 
     private ScoreController scoreController;
+    private ProgressionController progressionController;
+    private SceneController sceneController;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        isInCatchZone = true;
         perfectCatch = GetComponentInChildren<PerfectCatch>();
         scoreController = FindObjectOfType<ScoreController>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        progressionController = FindObjectOfType<ProgressionController>();
+        sceneController = FindObjectOfType<SceneController>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
-        ball =  other.gameObject.GetComponent<Rigidbody>();
-        isInCatchZone = true;
-        indication.SetActive(true);
-
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            ball = other.gameObject.GetComponent<Rigidbody>();
+            isInCatchZone = true;
+            indication.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        ball = null;
-        isInCatchZone = false;
-        indication.SetActive(false);
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            ball = null;
+            isInCatchZone = false;
+            indication.SetActive(false);
+        }
     }
+
     public void Throw(string hand, string throwType)
     {
         if (isInCatchZone)
         {
-            scoreController.IncrementScore();
-
+            sceneController.IsPlaying = true;
             ball.isKinematic = true;
             if (perfectCatch.perfectCatch)
             {
                 Debug.Log("Perfect Catch");
+                scoreController.IncrementScore(ScoreController.CatchType.perfectCatch);
+                progressionController.UpdateProgression(ProgressionController.CatchType.perfectCatch);
+            }
+            else
+            {
+                scoreController.IncrementScore(ScoreController.CatchType.normalCatch);
+                progressionController.UpdateProgression(ProgressionController.CatchType.normalCatch);
             }
             switch (throwType)
             {
