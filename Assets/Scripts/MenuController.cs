@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
@@ -81,4 +82,16 @@ public class MenuController : MonoBehaviour
             levelbuttons[i].interactable = true;
         }
     }
+
+    public void ChangeScene(string scene)
+    {
+
+    }
+
+    public void ChangeSceneToLevelSelect()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+
 }

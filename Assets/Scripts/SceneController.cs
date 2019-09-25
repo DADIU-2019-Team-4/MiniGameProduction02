@@ -26,7 +26,8 @@ public class SceneController : MonoBehaviour
 
     private void UpdateTimer()
     {
-        timerValue -= Time.deltaTime;
+        timerValue -= Time.deltaTime * (1 / Time.timeScale);
+        //timerValue -= Time.deltaTime;
         UpdateTimerText();
 
         if (timerValue <= 0)

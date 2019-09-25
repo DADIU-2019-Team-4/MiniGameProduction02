@@ -198,6 +198,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 8285446396122680824, guid: a97bf511971b0274aa8b28f5a4095890,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8285446396122680824, guid: a97bf511971b0274aa8b28f5a4095890,
+        type: 3}
+      propertyPath: lvlText
+      value: 
+      objectReference: {fileID: 515001095}
     - target: {fileID: 4453602944336207243, guid: a97bf511971b0274aa8b28f5a4095890,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -270,6 +280,30 @@ PrefabInstance:
       objectReference: {fileID: 1273403123}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a97bf511971b0274aa8b28f5a4095890, type: 3}
+--- !u!114 &356537085 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4777817990566138529, guid: a97bf511971b0274aa8b28f5a4095890,
+    type: 3}
+  m_PrefabInstance: {fileID: 356537084}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c9ad628ccd23234abd43edd82c67a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &515001095 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6600911378516224357, guid: f89063d1d39500d479d1714d510ce07d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1783952108041063629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &559601333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,6 +1285,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6412101252469829591, guid: f89063d1d39500d479d1714d510ce07d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 356537085}
+    - target: {fileID: 6412101252469829591, guid: f89063d1d39500d479d1714d510ce07d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeSceneToLevelSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6412101252469829591, guid: f89063d1d39500d479d1714d510ce07d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f89063d1d39500d479d1714d510ce07d, type: 3}
 --- !u!114 &1783952108041063630 stripped
@@ -1372,6 +1421,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Viola
       objectReference: {fileID: 0}
+    - target: {fileID: 628430810, guid: c4ff11067393fdb4482661bd68401a42, type: 3}
+      propertyPath: indication
+      value: 
+      objectReference: {fileID: 559601333}
+    - target: {fileID: 1273403123, guid: c4ff11067393fdb4482661bd68401a42, type: 3}
+      propertyPath: indication
+      value: 
+      objectReference: {fileID: 1036016274}
     - target: {fileID: 8603860910751814125, guid: c4ff11067393fdb4482661bd68401a42,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1447,22 +1504,14 @@ PrefabInstance:
       propertyPath: rightHand
       value: 
       objectReference: {fileID: 1273403123}
-    - target: {fileID: 1167276932, guid: c4ff11067393fdb4482661bd68401a42, type: 3}
-      propertyPath: m_Name
-      value: Left Arm
-      objectReference: {fileID: 0}
-    - target: {fileID: 628430810, guid: c4ff11067393fdb4482661bd68401a42, type: 3}
-      propertyPath: indication
-      value: 
-      objectReference: {fileID: 559601333}
     - target: {fileID: 521110496, guid: c4ff11067393fdb4482661bd68401a42, type: 3}
       propertyPath: m_Name
       value: Right Arm
       objectReference: {fileID: 0}
-    - target: {fileID: 1273403123, guid: c4ff11067393fdb4482661bd68401a42, type: 3}
-      propertyPath: indication
-      value: 
-      objectReference: {fileID: 1036016274}
+    - target: {fileID: 1167276932, guid: c4ff11067393fdb4482661bd68401a42, type: 3}
+      propertyPath: m_Name
+      value: Left Arm
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4ff11067393fdb4482661bd68401a42, type: 3}
 --- !u!1 &4717418013201952633 stripped

@@ -12,8 +12,7 @@ public class LevelController : MonoBehaviour
     public int maxReachedLevel;
     public float timeOnCurrentLevelTime = 0;
     public bool timerEnabled = true;
-
-    public Text timeText;
+    
     public Text lvlText;
     private SaveController saveC;
 
@@ -41,8 +40,7 @@ public class LevelController : MonoBehaviour
             }
         }
         
-        //show time left of level & current level
-        timeText.text = (totalTimeToCompleteCurrentLevel - timeOnCurrentLevelTime).ToString("F1") ;
+        //show current level
         lvlText.text = "lvl " + currentLevel; 
 
         //When time is up go to next level
