@@ -587,11 +587,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e13af7197a6b6e4e94ed0f1653e8d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indication: {fileID: 1027416452}
+  indication: {fileID: 1169449798}
   throwUpRightHand: {x: 1.65, y: 13, z: 0}
   throwDownRightHand: {x: 6.5, y: -1.5, z: 0}
   throwLeft: {x: 4.3, y: 7, z: 0}
-  throwForce: 20
+  throwUpForce: 40
+  throwDownForce: 30
+  throwSideForce: 35
   rightHandPosition: {fileID: 1730324388}
   leftHandPosition: {fileID: 2119035071}
   ScoreObject: {fileID: 1585959818}
@@ -1474,7 +1476,9 @@ MonoBehaviour:
   throwUpRightHand: {x: 1.65, y: 13, z: 0}
   throwDownRightHand: {x: 6.5, y: -1.5, z: 0}
   throwLeft: {x: 4.3, y: 7, z: 0}
-  throwForce: 20
+  throwUpForce: 40
+  throwDownForce: 30
+  throwSideForce: 35
   rightHandPosition: {fileID: 1730324388}
   leftHandPosition: {fileID: 2119035071}
   ScoreObject: {fileID: 1585959818}

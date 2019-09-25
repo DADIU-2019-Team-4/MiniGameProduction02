@@ -10,7 +10,9 @@ public class Hand : MonoBehaviour
     public Vector3 throwUpRightHand;
     public Vector3 throwDownRightHand;
     public Vector3 throwLeft;
-    public float throwForce;
+    public float throwUpForce;
+    public float throwDownForce;
+    public float throwSideForce;
     public Transform rightHandPosition;
     public Transform leftHandPosition;
 
@@ -35,6 +37,7 @@ public class Hand : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Hand" + numberOfBalls);
         numberOfBalls++;
         ball[numberOfBalls - 1] = other.gameObject.GetComponent<Rigidbody>();
         if (numberOfBalls >= 1)
@@ -80,7 +83,7 @@ public class Hand : MonoBehaviour
         SetThrowDirection(ref throwAngle, currentBall);
 
         currentBall.isKinematic = false;
-        currentBall.AddForce(throwAngle * throwForce);
+        currentBall.AddForce(throwAngle);
         return;
     }
 
@@ -94,7 +97,7 @@ public class Hand : MonoBehaviour
         }
         else
         {
-            currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, leftHandPosition.position, 0.5f);
+            currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, rightHandPosition.position, 0.5f);
         }
 
     }
@@ -105,13 +108,13 @@ public class Hand : MonoBehaviour
         {
             case ViolaController.ThrowType.HighThrow:
 
-                return throwUpRightHand;
+                return throwUpRightHand * throwUpForce;
 
             case ViolaController.ThrowType.FloorBounce:
-                return throwDownRightHand;
+                return throwDownRightHand * throwDownForce;
 
             case ViolaController.ThrowType.MidThrow:
-                return throwLeft;
+                return throwLeft * throwSideForce;
 
             default:
                 return Vector3.zero;
