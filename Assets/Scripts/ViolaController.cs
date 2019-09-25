@@ -5,10 +5,10 @@ public class ViolaController : MonoBehaviour
     // Keeps track of all functionality in regards to Viola.
 
     private BallController BallController;
-    private ScoreController ScoreController;
+    //private ScoreController ScoreController;
 
-    public Hand leftHand;
-    public Hand rightHand;
+    //private Hand leftHand;
+    //private Hand rightHand;
 
     public enum HandType
     {
@@ -29,26 +29,49 @@ public class ViolaController : MonoBehaviour
     void Awake()
     {
         BallController = FindObjectOfType<BallController>();
-        ScoreController = FindObjectOfType<ScoreController>();
+        //ScoreController = FindObjectOfType<ScoreController>();
     }
 
     void Start()
     {
-        leftHand.SetHandType(HandType.Left);
-        rightHand.SetHandType(HandType.Right);
+        //AssignHands("LeftHandCollider");
     }
 
     public void Throw(ThrowType throwType, HandType handType)
     {
-        Hand hand = null;
+        BallController.Throw(throwType, handType);
 
-        if (handType == HandType.Left)
-            hand = leftHand;
-        else if (handType == HandType.Right)
-            hand = rightHand;
+        //Debug.Log(throwType.ToString() + " | " + handType.ToString());
+        //return;
 
-        hand.Throw(throwType);
+        //Hand hand = null;
+
+        //if (handType == HandType.Left)
+        //    hand = leftHand;
+        //else if (handType == HandType.Right)
+        //    hand = rightHand;
+
+        //hand.Throw(throwType);
     }
+
+    //private void AssignHands(string leftHandName)
+    //{
+    //    //var hands = GetComponentsInChildren<Hand>();
+
+    //    //if (hands[0].name != leftHandName)
+    //    //{
+    //    //    rightHand = hands[0];
+    //    //    leftHand = hands[1];
+    //    //}
+    //    //else
+    //    //{
+    //    //    rightHand = hands[1];
+    //    //    leftHand = hands[0];
+    //    //}
+
+    //    //leftHand.SetHandType(HandType.Left);
+    //    //rightHand.SetHandType(HandType.Right);
+    //}
 
 
 }

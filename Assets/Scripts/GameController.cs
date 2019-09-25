@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private InputController InputController;
-    private ScoreController ScoreController;
+    //private InputController InputController;
+    //private ScoreController ScoreController;
     private SceneController sceneController;
     private ProgressionController progressionController;
     private Hand[] hands;
@@ -21,8 +21,8 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        InputController = FindObjectOfType<InputController>();
-        ScoreController = FindObjectOfType<ScoreController>();
+        //InputController = FindObjectOfType<InputController>();
+        //ScoreController = FindObjectOfType<ScoreController>();
         sceneController = FindObjectOfType<SceneController>();
         progressionController = FindObjectOfType<ProgressionController>();
         hands = FindObjectsOfType<Hand>();
@@ -43,6 +43,8 @@ public class GameController : MonoBehaviour
         //AudioController.Tick();
     }
 
+
+    // This belongs in ScoreController, as it is responsible for tracking the game state.
     public void Fail()
     {
         leftHandParticle.Play();
@@ -54,7 +56,7 @@ public class GameController : MonoBehaviour
         }
         foreach (var hand in hands)
         {
-            hand.numberOfBalls = 0;
+            //hand.numberOfBalls = 0;
         }
         progressionController.UpdateProgression(ProgressionController.CatchType.FailedCatch);
         sceneController.IsPlaying = false;

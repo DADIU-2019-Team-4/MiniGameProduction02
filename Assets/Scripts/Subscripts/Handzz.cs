@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-public class Hand : MonoBehaviour
+public class Handzz : MonoBehaviour
 {
     private PerfectCatch perfectCatch;
-    Rigidbody[] ball;
+    private Rigidbody[] ball;
     private bool isInCatchZone;
 
     public GameObject indication;
