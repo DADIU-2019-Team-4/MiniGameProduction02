@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Hand : MonoBehaviour
 {
     private PerfectCatch perfectCatch;
-    Rigidbody[] ball;
+    //Rigidbody[] ball;
+    public List <Rigidbody> ball;
     private bool isInCatchZone;
+
     public Vector3 throwUpRightHand;
     public Vector3 throwDownRightHand;
     public Vector3 throwLeft;
@@ -19,6 +24,7 @@ public class Hand : MonoBehaviour
     private ScoreController scoreController;
     private SceneController sceneController;
     private ProgressionController progressionController;
+    private Rigidbody currentBall;
 
     public int numberOfBalls;
     private void Awake()
@@ -32,7 +38,8 @@ public class Hand : MonoBehaviour
     private void Start()
     {
         isInCatchZone = true;
-        ball = new Rigidbody[4];
+        //ball = new Rigidbody[4];
+        ball = new List<Rigidbody>();
         numberOfBalls = 0;
     }
 
@@ -40,7 +47,8 @@ public class Hand : MonoBehaviour
     {
         Debug.Log("Hand" + numberOfBalls);
         numberOfBalls++;
-        ball[numberOfBalls - 1] = other.gameObject.GetComponent<Rigidbody>();
+        //ball[numberOfBalls - 1] = other.gameObject.GetComponent<Rigidbody>();
+        ball.Add(other.gameObject.GetComponent<Rigidbody>());
         if (numberOfBalls >= 1)
         {
             isInCatchZone = true;
@@ -49,8 +57,7 @@ public class Hand : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        numberOfBalls--;
-        ball[numberOfBalls] = null;
+
         if (numberOfBalls == 0)
         {
             isInCatchZone = false;
@@ -71,7 +78,7 @@ public class Hand : MonoBehaviour
             return;
 
         sceneController.IsPlaying = true;
-        var currentBall = ball[numberOfBalls - 1];
+        currentBall = ball[0];
         currentBall.isKinematic = true;
 
         if (perfectCatch.perfectCatch)
@@ -89,9 +96,10 @@ public class Hand : MonoBehaviour
         Vector3 throwAngle = GetForceAngle(throwType);
 
         SetThrowDirection(ref throwAngle, currentBall);
-
         currentBall.isKinematic = false;
         currentBall.AddForce(throwAngle);
+        numberOfBalls--;
+        ball.Remove(currentBall);
         return;
     }
 
@@ -101,11 +109,11 @@ public class Hand : MonoBehaviour
         if (HandType == ViolaController.HandType.Left)
         {
             throwAngle.x *= -1;
-            currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, leftHandPosition.position, 0.5f);
+            currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, leftHandPosition.position, Time.fixedDeltaTime);
         }
         else
         {
-            currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, rightHandPosition.position, 0.5f);
+            currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, rightHandPosition.position, Time.fixedDeltaTime);
         }
 
     }

@@ -55,6 +55,7 @@ public class GameController : MonoBehaviour
         foreach (var hand in hands)
         {
             hand.numberOfBalls = 0;
+            hand.ball.Clear();
         }
         progressionController.UpdateProgression(ProgressionController.CatchType.FailedCatch);
         sceneController.IsPlaying = false;
