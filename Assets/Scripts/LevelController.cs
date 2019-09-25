@@ -48,21 +48,28 @@ public class LevelController : MonoBehaviour
         //When time is up go to next level
         if (totalTimeToCompleteCurrentLevel - timeOnCurrentLevelTime < 0)
         {
-            currentLevel++;
-            if (currentLevel > maxReachedLevel)
-            {
-                maxReachedLevel = currentLevel;
-            }
-            timeOnCurrentLevelTime = 0;
-            totalTimeToCompleteCurrentLevel = baseTimeToCompleteLevels[currentLevel];
+            StartLevel(currentLevel+1);
 
-            saveC.SaveGame();
         }
     }
 
     public void LevelReset()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void StartLevel(int level)
+    {
+        currentLevel = level;
+
+        if (currentLevel > maxReachedLevel)
+        {
+            maxReachedLevel = currentLevel;
+        }
+        timeOnCurrentLevelTime = 0;
+        totalTimeToCompleteCurrentLevel = baseTimeToCompleteLevels[currentLevel];
+
+        saveC.SaveGame();
     }
 
 }

@@ -1,23 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
 
     private Canvas pauseMenu;
     public bool isPaused=false;
+    public LevelController lvlC;
 
 
     private void Awake()
     {
+        lvlC = FindObjectOfType<LevelController>();
         pauseMenu = GameObject.FindGameObjectWithTag("pauseMenu").GetComponent<Canvas>();
         Debug.Log(pauseMenu.gameObject.name);
     }
 
     void Start()
     {
-        
+        Button[] levelbuttons = pauseMenu.transform.GetChild(0).GetComponentsInChildren<Button>();
+
+        foreach (Button button in levelbuttons)
+        {
+            button.interactable = false;
+        }
+
     }
 
     // Update is called once per frame
@@ -28,6 +37,8 @@ public class MenuController : MonoBehaviour
 
     public void TogglePauseMenu()
     {
+
+
         if (isPaused)
         {
             isPaused = false;
@@ -38,6 +49,7 @@ public class MenuController : MonoBehaviour
         }
         else
         {
+            UpdatePauseMenu();
             isPaused = true;
 
             Time.timeScale = 0;
@@ -56,6 +68,17 @@ public class MenuController : MonoBehaviour
 
     public void GoToLevel(int level)
     {
+        lvlC.StartLevel(level);
+    }
 
+    public void UpdatePauseMenu()
+    {
+
+        Button[] levelbuttons = pauseMenu.transform.GetChild(0).GetComponentsInChildren<Button>();
+
+        for (int i=0; i < lvlC.maxReachedLevel; i++)
+        {
+            levelbuttons[i].interactable = true;
+        }
     }
 }
