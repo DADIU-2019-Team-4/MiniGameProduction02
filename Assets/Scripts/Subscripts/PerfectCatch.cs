@@ -1,19 +1,18 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PerfectCatch : MonoBehaviour
 {
-    public bool perfectCatch;
-    private void Start()
-    {
-        perfectCatch = false;
-    }
+    //public bool perfectCatch;
+    public List<GameObject> In = new List<GameObject>();
+
     private void OnTriggerEnter(Collider other)
     {
-        perfectCatch = true;
+        In.Add(other.gameObject);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        perfectCatch = false;
+        In.Remove(other.gameObject);
     }
 }

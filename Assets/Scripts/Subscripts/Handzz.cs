@@ -78,7 +78,7 @@ public class Handzz : MonoBehaviour
         var currentBall = ball[numberOfBalls - 1];
         currentBall.isKinematic = true;
 
-        if (perfectCatch.perfectCatch)
+        if (false)
         {
             Debug.Log("Perfect Catch");
             scoreController.IncrementScore(ScoreController.CatchType.perfectCatch);

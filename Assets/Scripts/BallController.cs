@@ -21,6 +21,8 @@ public class BallController : MonoBehaviour
     public Transform rightHand;
     public GameObject leftIndicator;
     public GameObject rightIndicator;
+    public GameObject leftPerfectCatch;
+    public GameObject rightPerfectCatch;
 
     public Vector3 throwUpRightHand;
     public Vector3 throwDownRightHand;
@@ -52,13 +54,11 @@ public class BallController : MonoBehaviour
                 spawnPosition = new Vector3(rightHand.transform.position.x + distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), rightHand.transform.position.y, rightHand.transform.position.z);
             else
                 spawnPosition = new Vector3(leftHand.transform.position.x - distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), leftHand.transform.position.y, leftHand.transform.position.z);
-            SpawnBall(spawnPosition);
+            AddBall(spawnPosition);
         }
     }
 
-
-
-    private void SpawnBall(Vector3 where)
+    private void AddBall(Vector3 where)
     {
         GameObject ball = Instantiate(BallPrefab, where, rightHand.transform.rotation);
         Balls.Add(ball);
@@ -88,6 +88,33 @@ public class BallController : MonoBehaviour
         SetIndicators();
     }
 
+    public void Throw(ViolaController.ThrowType throwType, ViolaController.HandType hand)
+    {
+        var ball = GetBallToThrow(hand);
+        if (ball == null) return;
+
+        Rigidbody ballRigidBody = ball.GetComponent<Rigidbody>();
+        ballRigidBody.isKinematic = true;
+
+        if (GotPerfectCatch(ball))
+        {
+            // Got Perfect Catch
+            // scoreController.IncrementScore(ScoreController.CatchType.Perfect);
+        }
+        else
+        {
+            // Normal Catch
+            // scoreController.IncrementScore(ScoreController.CatchType.Normal);
+        }
+
+        Vector3 throwVector = GetThrowForce(throwType);
+
+        SetThrowDirection(hand, ref throwVector, ballRigidBody);
+
+        ballRigidBody.isKinematic = false;
+        ballRigidBody.AddForce(throwVector);
+    }
+
     private void SetIndicators()
     {
         bool left = false, right = false;
@@ -101,21 +128,16 @@ public class BallController : MonoBehaviour
         rightIndicator.SetActive(right);
     }
 
-
-    public void Throw(ViolaController.ThrowType throwType, ViolaController.HandType hand)
+    private bool GotPerfectCatch(GameObject ball)
     {
-        var ball = GetBallToThrow(hand);
-        if (ball == null) return;
+        if (ball.transform.position.x < 0 &&
+            rightPerfectCatch.GetComponent<PerfectCatch>().In.Contains(ball))
+            return true;
+        if (ball.transform.position.x > 0 &&
+            leftPerfectCatch.GetComponent<PerfectCatch>().In.Contains(ball))
+            return true;
 
-        Rigidbody ballRigidBody = ball.GetComponent<Rigidbody>();
-        ballRigidBody.isKinematic = true;
-
-        Vector3 throwVector = GetThrowForce(throwType);
-
-        SetThrowDirection(hand, ref throwVector, ballRigidBody);
-
-        ballRigidBody.isKinematic = false;
-        ballRigidBody.AddForce(throwVector);
+        return false;
     }
 
     // This script relies on that the two hands are at positive/negative X positions!
