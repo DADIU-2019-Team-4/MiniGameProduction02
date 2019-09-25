@@ -2,35 +2,46 @@
 
 public class Hand : MonoBehaviour
 {
-    PerfectCatch perfectCatch;
-    Rigidbody ball;
-    bool isInCatchZone;
+    private PerfectCatch perfectCatch;
+    Rigidbody[] ball;
+    private bool isInCatchZone;
+
     public GameObject indication;
-    public Vector3 throwUpLeftHand;
     public Vector3 throwUpRightHand;
-    public Vector3 throwDownLeftHand;
     public Vector3 throwDownRightHand;
     public Vector3 throwLeft;
-    public Vector3 throwRight;
-    public float throwForce;
+    public float throwUpForce;
+    public float throwDownForce;
+    public float throwSideForce;
+    public Transform rightHandPosition;
+    public Transform leftHandPosition;
 
-    private ScoreController scoreController;
-    private ProgressionController progressionController;
-    private SceneController sceneController;
+    private ViolaController.HandType HandType;
 
+    private ScoreManager scoreController;
+    public GameObject ScoreObject;
+
+    public int numberOfBalls;
     private void Awake()
     {
         perfectCatch = GetComponentInChildren<PerfectCatch>();
-        scoreController = FindObjectOfType<ScoreController>();
-        progressionController = FindObjectOfType<ProgressionController>();
-        sceneController = FindObjectOfType<SceneController>();
+        scoreController = ScoreObject.GetComponent<ScoreManager>();
+    }
+
+    private void Start()
+    {
+        isInCatchZone = true;
+        ball = new Rigidbody[4];
+        numberOfBalls = 0;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Ball"))
+        Debug.Log("Hand" + numberOfBalls);
+        numberOfBalls++;
+        ball[numberOfBalls - 1] = other.gameObject.GetComponent<Rigidbody>();
+        if (numberOfBalls >= 1)
         {
-            ball = other.gameObject.GetComponent<Rigidbody>();
             isInCatchZone = true;
             indication.SetActive(true);
         }
@@ -38,66 +49,75 @@ public class Hand : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Ball"))
+        numberOfBalls--;
+        ball[numberOfBalls] = null;
+        if (numberOfBalls == 0)
         {
-            ball = null;
             isInCatchZone = false;
             indication.SetActive(false);
         }
     }
 
-    public void Throw(string hand, string throwType)
+    public void SetHandType(ViolaController.HandType type)
     {
-        if (isInCatchZone)
+        if (HandType == ViolaController.HandType.None)
+            HandType = type;
+        else
+            throw new System.Exception("Hand type is already set once.");
+    }
+
+    public void Throw(ViolaController.ThrowType throwType)
+    {
+        if (!isInCatchZone || throwType == ViolaController.ThrowType.None)
+            return;
+
+        scoreController.IncrementScore();
+        var currentBall = ball[numberOfBalls - 1];
+        currentBall.isKinematic = true;
+
+        if (perfectCatch.perfectCatch)
+            Debug.Log("Perfect Catch");
+
+        Vector3 throwAngle = GetForceAngle(throwType);
+
+        SetThrowDirection(ref throwAngle, currentBall);
+
+        currentBall.isKinematic = false;
+        currentBall.AddForce(throwAngle);
+        return;
+    }
+
+
+    private void SetThrowDirection(ref Vector3 throwAngle, Rigidbody currentBall)
+    {
+        if (HandType == ViolaController.HandType.Left)
         {
-            sceneController.IsPlaying = true;
-            ball.isKinematic = true;
-            if (perfectCatch.perfectCatch)
-            {
-                Debug.Log("Perfect Catch");
-                scoreController.IncrementScore(ScoreController.CatchType.perfectCatch);
-                progressionController.UpdateProgression(ProgressionController.CatchType.perfectCatch);
-            }
-            else
-            {
-                scoreController.IncrementScore(ScoreController.CatchType.normalCatch);
-                progressionController.UpdateProgression(ProgressionController.CatchType.normalCatch);
-            }
-            switch (throwType)
-            {
-                case "Up":
-                    if (hand == "Left")
-                    {
-                        ball.isKinematic = false;
-                        ball.AddForce(throwUpLeftHand * throwForce);
-                    }
-                    else
-                    {
-                        ball.isKinematic = false;
-                        ball.AddForce(throwUpRightHand * throwForce);
-                    }
-                    break;
-                case "Down":
-                    if (hand == "Left")
-                    {
-                        ball.isKinematic = false;
-                        ball.AddForce(throwDownLeftHand * throwForce);
-                    }
-                    else
-                    {
-                        ball.isKinematic = false;
-                        ball.AddForce(throwDownRightHand * throwForce);
-                    }
-                    break;
-                case "Left":
-                    ball.isKinematic = false;
-                    ball.AddForce(throwLeft * throwForce);
-                    break;
-                case "Right":
-                    ball.isKinematic = false;
-                    ball.AddForce(throwRight * throwForce);
-                    break;
-            }
+            throwAngle.x *= -1;
+            currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, leftHandPosition.position, 0.5f);
+        }
+        else
+        {
+            currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, rightHandPosition.position, 0.5f);
+        }
+
+    }
+
+    private Vector3 GetForceAngle(ViolaController.ThrowType throwType)
+    {
+        switch (throwType)
+        {
+            case ViolaController.ThrowType.HighThrow:
+
+                return throwUpRightHand * throwUpForce;
+
+            case ViolaController.ThrowType.FloorBounce:
+                return throwDownRightHand * throwDownForce;
+
+            case ViolaController.ThrowType.MidThrow:
+                return throwLeft * throwSideForce;
+
+            default:
+                return Vector3.zero;
         }
     }
 }

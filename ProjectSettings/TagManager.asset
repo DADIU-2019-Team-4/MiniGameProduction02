@@ -7,7 +7,7 @@ TagManager:
   - Left
   - Right
   - Ball
-  - pauseMenu
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -18,7 +18,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
+  - Balls
   - 
   - 
   - 

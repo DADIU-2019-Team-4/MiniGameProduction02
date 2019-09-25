@@ -1,0 +1,47 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	2441027675	Language			\Default Work Unit\Language	
+
+State	ID	Name	State Group			Notes
+	0	None	Language			
+	1819748192	EN	Language			
+	1836525760	DA	Language			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	504532776	Brick			\Factory Reflect Acoustic Textures\Textures\Brick	
+	513139656	Mountain			\Factory Reflect Acoustic Textures\Textures\Mountain	
+	841620460	Concrete			\Factory Reflect Acoustic Textures\Textures\Concrete	
+	1755085759	Wood_Deep			\Factory Reflect Acoustic Textures\Textures\Wood_Deep	
+	1873957695	Anechoic			\Factory Reflect Acoustic Textures\Textures\Anechoic	
+	1970351858	Fabric			\Factory Reflect Acoustic Textures\Textures\Fabric	
+	2058049674	Wood			\Factory Reflect Acoustic Textures\Textures\Wood	
+	2412606308	Carpet			\Factory Reflect Acoustic Textures\Textures\Carpet	
+	2637588553	Tile			\Factory Reflect Acoustic Textures\Textures\Tile	
+	2928161104	Curtains			\Factory Reflect Acoustic Textures\Textures\Curtains	
+	3195498748	Cork_Tiles			\Factory Reflect Acoustic Textures\Textures\Cork_Tiles	
+	3670307564	Drywall			\Factory Reflect Acoustic Textures\Textures\Drywall	
+	4168643977	Acoustic_Banner			\Factory Reflect Acoustic Textures\Textures\Acoustic_Banner	
+	4262522749	Wood_Bright			\Factory Reflect Acoustic Textures\Textures\Wood_Bright	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	985987111	Motion Factory Bus			\Default Work Unit\Motion Factory Bus	
+	2077253480	Room			\Default Work Unit\Master Audio Bus\Environments\Room	
+	2687559867	UI+Feedback			\Default Work Unit\Master Audio Bus\UI+Feedback	
+	3170124113	Voice			\Default Work Unit\Master Audio Bus\Voice	
+	3761286811	Environments			\Default Work Unit\Master Audio Bus\Environments	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
+	4234308485	Throwing			\Default Work Unit\Master Audio Bus\Environments\Throwing	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	117523933	SmallVerb			\Default Work Unit\Master Audio Bus\SmallVerb	
+	2757439665	LargeVerb			\Default Work Unit\Master Audio Bus\LargeVerb	
+
+Effect plug-ins	ID	Name	Type				Notes
+	1144018367	Plate_Large	Wwise RoomVerb			
+	2949243095	Hall_Small_Bright	Wwise RoomVerb			
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+	4230635974	Default_Motion_Device	Wwise Motion			
+
