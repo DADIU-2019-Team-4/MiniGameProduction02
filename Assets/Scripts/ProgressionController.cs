@@ -44,6 +44,7 @@ public class ProgressionController : MonoBehaviour
     public enum PartType { Green, Yellow, Red }
 
     public PartType currentPartType;
+    private int previousFillNumber;
 
     private void Awake()
     {
@@ -58,6 +59,7 @@ public class ProgressionController : MonoBehaviour
         degreesPerStep = arrowEndValueInDegrees / totalSteps;
         stepsPerColor = totalSteps / totalColors;
         currentSteps = arrowStartInSteps;
+        previousFillNumber = Mathf.FloorToInt((float)currentSteps / stepsPerPart);
 
         // setting up parts and arrow
         UpdateParts();
@@ -79,12 +81,22 @@ public class ProgressionController : MonoBehaviour
     private void UpdateArrow(int value)
     {
         arrow.transform.eulerAngles = new Vector3(0, 0, value * degreesPerStep);
+  
     }
 
     private void UpdateParts()
     {
         int partsToFill = Mathf.FloorToInt((float)currentSteps / stepsPerPart);
+        if (partsToFill > previousFillNumber)
+        {
+            AkSoundEngine.PostEvent("FillSound_event" + partsToFill, gameObject);
+        }
+        if(partsToFill < previousFillNumber && currentSteps!=0)
+        {
+            AkSoundEngine.PostEvent("UnfillSound_event" + partsToFill, gameObject);
+        }
         filling.fillAmount = (float)partsToFill / totalParts;
+        previousFillNumber = partsToFill;
     }
 
     public void UpdateProgression(CatchType catchType)
@@ -97,6 +109,7 @@ public class ProgressionController : MonoBehaviour
                     currentSteps = totalSteps;
                 break;
             case CatchType.perfectCatch:
+                AkSoundEngine.PostEvent("PerfectCatch_event", gameObject);
                 currentSteps += perfectCatchStep;
                 if (currentSteps > totalSteps)
                         currentSteps = totalSteps;
@@ -112,7 +125,6 @@ public class ProgressionController : MonoBehaviour
             default:
                 break;
         }
-
         UpdateParts();
         UpdateArrow(currentSteps);
         DeterminePartType();

@@ -92,7 +92,10 @@ public class InputController : MonoBehaviour
             {
                 // swipe was on left side of the screen
                 if (firstPosition[i].x < Screen.width / 2f)
+                {
                     hasSwipedLeftScreen = false;
+                    AkSoundEngine.PostEvent("SwipeSound_event", gameObject);
+                }
                 // swipe was on right side of the screen
                 else
                     hasSwipedRightScreen = false;

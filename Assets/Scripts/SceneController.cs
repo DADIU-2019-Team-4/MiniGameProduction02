@@ -18,6 +18,8 @@ public class SceneController : MonoBehaviour
 
     public bool IsPlaying { get; set; }
 
+    private int prevSecond = 6;
+
     private void Update()
     {
         if (IsPlaying)
@@ -45,8 +47,18 @@ public class SceneController : MonoBehaviour
     {
         string minutes = Mathf.Floor(timerValue / 60).ToString("0");
         string seconds = (timerValue % 60).ToString("00");
-
         timerText.text = $"{minutes}:{seconds}";
+        PlayTickSound(int.Parse(minutes),int.Parse(seconds));
+
+    }
+
+    private void PlayTickSound(int minutes, int seconds)
+    {
+        if (minutes == 0 && seconds <= 5 && prevSecond>seconds)
+        {
+            AkSoundEngine.PostEvent("TimerSound_event" + seconds,gameObject);
+            prevSecond = seconds;
+        }
     }
 
     public void SceneReset()
@@ -57,12 +69,14 @@ public class SceneController : MonoBehaviour
 
     public void LevelFailed()
     {
+        AkSoundEngine.PostEvent("FailSound_event", gameObject);
         levelFailedText.SetActive(true);
         Time.timeScale = 0;
     }
 
     public void LevelCompleted()
     {
+        AkSoundEngine.PostEvent("LevelCompleted_event", gameObject);
         levelCompletedText.SetActive(true);
         Time.timeScale = 0;
     }
