@@ -5,8 +5,6 @@ public class Hand : MonoBehaviour
     private PerfectCatch perfectCatch;
     Rigidbody[] ball;
     private bool isInCatchZone;
-
-    public GameObject indication;
     public Vector3 throwUpRightHand;
     public Vector3 throwDownRightHand;
     public Vector3 throwLeft;
@@ -46,7 +44,6 @@ public class Hand : MonoBehaviour
         if (numberOfBalls >= 1)
         {
             isInCatchZone = true;
-            indication.SetActive(true);
         }
     }
 
@@ -57,7 +54,6 @@ public class Hand : MonoBehaviour
         if (numberOfBalls == 0)
         {
             isInCatchZone = false;
-            indication.SetActive(false);
         }
     }
 
