@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
     public int numberOfBalls;
     public float distanceBetweenBalls;
 
+    public float timeScale = 0.5f;
+
     private void Awake()
     {
         InputController = FindObjectOfType<InputController>();
@@ -26,7 +28,7 @@ public class GameController : MonoBehaviour
         sceneController = FindObjectOfType<SceneController>();
         progressionController = FindObjectOfType<ProgressionController>();
         hands = FindObjectsOfType<Hand>();
-        Time.timeScale = 0.5f; 
+        Time.timeScale = timeScale; 
 
         SpawnBalls(3);
     }
