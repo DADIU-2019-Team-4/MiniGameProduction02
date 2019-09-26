@@ -18,6 +18,9 @@ public class ScoreController : MonoBehaviour
     private int perfectCatchPoints = 3;
 
     [SerializeField]
+    private int angryMultiplier = 1;
+
+    [SerializeField]
     private int neutralMultiplier = 2;
 
     [SerializeField]
@@ -65,6 +68,10 @@ public class ScoreController : MonoBehaviour
                 break;
             case ProgressionController.CrowdHappiness.Neutral:
                 receivedPoints *= neutralMultiplier;
+                multiplierText.text = neutralMultiplier + "x";
+                break;
+            case ProgressionController.CrowdHappiness.Angry:
+                receivedPoints *= angryMultiplier;
                 multiplierText.text = neutralMultiplier + "x";
                 break;
         }
