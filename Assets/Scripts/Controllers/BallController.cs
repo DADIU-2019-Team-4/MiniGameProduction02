@@ -9,7 +9,7 @@ public class BallController : MonoBehaviour
     private SceneController SceneController;
 
 
-    public GameObject BallPrefab;
+    public GameObject[] BallPrefab;
     public int numberOfBalls;
     public float distanceBetweenSpawnedBalls;
 
@@ -30,6 +30,7 @@ public class BallController : MonoBehaviour
     public float throwUpForce;
     public float throwDownForce;
     public float throwSideForce;
+    public float gravityYaxis;
 
     public float TimeScale;
 
@@ -39,6 +40,7 @@ public class BallController : MonoBehaviour
         ScoreController = FindObjectOfType<ScoreController>();
         ProgressionController = FindObjectOfType<ProgressionController>();
         SceneController = FindObjectOfType<SceneController>();
+        Physics.gravity = new Vector3(0, gravityYaxis, 0);
     }
 
     private void Start()
@@ -64,7 +66,7 @@ public class BallController : MonoBehaviour
 
     private void AddBall(Vector3 where)
     {
-        GameObject ball = Instantiate(BallPrefab, where, rightHand.transform.rotation);
+        GameObject ball = Instantiate(BallPrefab[Random.Range(0,BallPrefab.Length-1)], where, rightHand.transform.rotation);
         Balls.Add(ball);
     }
 
@@ -158,10 +160,10 @@ public class BallController : MonoBehaviour
         if (handType == ViolaController.HandType.Left)
         {
             throwAngle.x *= -1;
-            currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, leftHand.position, 0.5f);
+            currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, leftHand.position, 0.5f);
         }
         else
-            currentBall.transform.position = Vector3.Lerp(currentBall.transform.position, rightHand.position, 0.5f);
+            currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, rightHand.position, 0.5f);
     }
 
     private Vector3 GetThrowForce(ViolaController.ThrowType throwType)
