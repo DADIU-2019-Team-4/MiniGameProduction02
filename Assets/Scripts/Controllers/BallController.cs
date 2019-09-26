@@ -173,7 +173,7 @@ public class BallController : MonoBehaviour
         BallLeavesHand(ball.GetComponent<Collider>());
         throwCount++;
 
-        if (throwCount >= 3)
+        if (throwCount >= numberOfBalls)
             SceneController.IsPlaying = true;
     }
 
