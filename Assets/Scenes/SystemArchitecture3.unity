@@ -876,16 +876,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BallController
       objectReference: {fileID: 0}
-    - target: {fileID: 7760826363767526402, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: m_Name
-      value: RightIndicator
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365503395520, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: m_Name
-      value: LeftIndicator
-      objectReference: {fileID: 0}
     - target: {fileID: 7760826365518523681, guid: b4e71392584e97a40b5fecb8aa9ece25,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -943,6 +933,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
         type: 3}
+      propertyPath: BallPrefab.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
       propertyPath: leftHand
       value: 
       objectReference: {fileID: 1871473972}
@@ -981,18 +976,28 @@ PrefabInstance:
         type: 3}
       propertyPath: BallPrefab.Array.data[1]
       value: 
-      objectReference: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab,
+      objectReference: {fileID: 7496779614026164388, guid: 3bb2b6a5c2f2a604b97ebb754d7b6e45,
         type: 3}
     - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
         type: 3}
       propertyPath: BallPrefab.Array.data[2]
       value: 
-      objectReference: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab,
+      objectReference: {fileID: 7496779614026164388, guid: 1bb30ea8780787e4ab9833ec6de296dc,
         type: 3}
     - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
         type: 3}
       propertyPath: gravityYaxis
       value: -9.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760826363767526402, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
+      propertyPath: m_Name
+      value: RightIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760826365503395520, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
+      propertyPath: m_Name
+      value: LeftIndicator
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4e71392584e97a40b5fecb8aa9ece25, type: 3}

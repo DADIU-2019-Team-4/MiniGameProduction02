@@ -45,6 +45,10 @@ public class BallController : MonoBehaviour
         ProgressionController = FindObjectOfType<ProgressionController>();
         SceneController = FindObjectOfType<SceneController>();
         Physics.gravity = new Vector3(0, gravityYaxis, 0);
+        AkSoundEngine.SetRTPCValue("leftCollider", 0.9f);
+        AkSoundEngine.PostEvent("LeftCollider_event", gameObject);
+        AkSoundEngine.SetRTPCValue("rightCollider", 0.9f);
+        AkSoundEngine.PostEvent("RightCollider_event", gameObject);
     }
 
     private void Start()
@@ -144,6 +148,11 @@ public class BallController : MonoBehaviour
     {
         var ball = GetBallToThrow(hand);
         if (ball == null) return;
+
+        if(hand == ViolaController.HandType.Left)
+            AkSoundEngine.SetRTPCValue("leftCollider", 0.0f);
+        if (hand == ViolaController.HandType.Right)
+            AkSoundEngine.SetRTPCValue("rightCollider", 0.0f);
 
         Rigidbody ballRigidBody = ball.GetComponent<Rigidbody>();
         ballRigidBody.isKinematic = true;
