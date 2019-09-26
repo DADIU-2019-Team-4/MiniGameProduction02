@@ -156,7 +156,7 @@ public class BallController : MonoBehaviour
         BallLeavesHand(ball.GetComponent<Collider>());
         throwCount++;
 
-        if (throwCount >= BallPrefab.Length)
+        if (throwCount >= numberOfBalls)
             SceneController.IsPlaying = true;
     }
 
