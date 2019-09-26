@@ -10,11 +10,13 @@ public class BallController : MonoBehaviour
 
 
     public GameObject[] BallPrefab;
-    public int numberOfBalls;
+    private int numberOfBalls;
     public float distanceBetweenSpawnedBalls;
 
     private readonly List<GameObject> Balls = new List<GameObject>();
     private readonly List<GameObject> ballsInCatchZone = new List<GameObject>();
+
+    private int throwCount;
 
 
     // TODO: Make these private and programmatically retrieve these.
@@ -34,6 +36,10 @@ public class BallController : MonoBehaviour
 
     public float TimeScale;
 
+    public float BalloonFloatStrength = 0.5f;
+    public Vector3 balloonThrowDown;
+    public Vector3 ballonThrowMid;
+
     void Awake()
     {
         Time.timeScale = TimeScale;
@@ -43,8 +49,17 @@ public class BallController : MonoBehaviour
         Physics.gravity = new Vector3(0, gravityYaxis, 0);
     }
 
+
+    void Update()
+    {
+        foreach (GameObject item in Balls)
+            if (item.tag == "Balloon")
+                item.GetComponent<Rigidbody>().AddForce(new Vector3(0, BalloonFloatStrength, 0));
+    }
+
     private void Start()
     {
+        numberOfBalls = BallPrefab.Length;
         SpawnBalls(numberOfBalls);
     }
 
@@ -60,13 +75,13 @@ public class BallController : MonoBehaviour
                 spawnPosition = new Vector3(rightHand.transform.position.x + distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), rightHand.transform.position.y, rightHand.transform.position.z);
             else
                 spawnPosition = new Vector3(leftHand.transform.position.x - distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), leftHand.transform.position.y, leftHand.transform.position.z);
-            AddBall(spawnPosition);
+            AddBall(spawnPosition, i);
         }
     }
 
-    private void AddBall(Vector3 where)
+    private void AddBall(Vector3 where, int prefabInt)
     {
-        GameObject ball = Instantiate(BallPrefab[Random.Range(0,BallPrefab.Length-1)], where, rightHand.transform.rotation);
+        GameObject ball = Instantiate(BallPrefab[prefabInt], where, rightHand.transform.rotation);
         Balls.Add(ball);
     }
 
@@ -98,6 +113,7 @@ public class BallController : MonoBehaviour
     public void BallDropped()
     {
         ScoreController.DroppedBall();
+        throwCount = 0;
         ballsInCatchZone.Clear();
 
         while (Balls.Count != 0)
@@ -123,15 +139,25 @@ public class BallController : MonoBehaviour
         ballRigidBody.isKinematic = true;
 
         var catchType = GotPerfectCatch(ball) ? ScoreController.CatchType.Perfect : ScoreController.CatchType.Normal;
+
+        if (ball.tag == "Sabre" && catchType != ScoreController.CatchType.Perfect)
+        {
+            //failed Sabre throw, cut off hand
+            BallDropped();
+        }
+
         ScoreController.IncrementScore(catchType);
         ProgressionController.UpdateProgression(catchType);
 
-        Vector3 throwVector = GetThrowForce(throwType);
+        Vector3 throwVector = GetThrowForce(throwType, ball);
         SetThrowDirection(hand, ref throwVector, ballRigidBody);
         ballRigidBody.isKinematic = false;
         ballRigidBody.AddForce(throwVector);
         BallLeavesHand(ball.GetComponent<Collider>());
-        SceneController.IsPlaying = true;
+        throwCount++;
+
+        if (throwCount >= 3)
+            SceneController.IsPlaying = true;
     }
 
     private bool GotPerfectCatch(GameObject ball)
@@ -166,7 +192,7 @@ public class BallController : MonoBehaviour
             currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, rightHand.position, 0.5f);
     }
 
-    private Vector3 GetThrowForce(ViolaController.ThrowType throwType)
+    private Vector3 GetThrowForce(ViolaController.ThrowType throwType, GameObject juggledItem)
     {
         switch (throwType)
         {
@@ -175,15 +201,26 @@ public class BallController : MonoBehaviour
                 return throwUpRightHand * throwUpForce;
 
             case ViolaController.ThrowType.FloorBounce:
-                return throwDownRightHand * throwDownForce;
+                if (juggledItem.tag == "Balloon")
+                    return new Vector3(0, balloonThrowDown.y * throwDownForce, 0) * BalloonFloatStrength; // No X-value
+                else
+                    return throwDownRightHand * throwDownForce;
 
             case ViolaController.ThrowType.MidThrow:
-                return throwLeft * throwSideForce;
+                if (juggledItem.tag == "Balloon")
+                    return ballonThrowMid * throwDownForce * BalloonFloatStrength;
+                else
+                    return throwLeft * throwSideForce;
 
             case ViolaController.ThrowType.None:
             default:
                 return Vector3.zero;
         }
+    }
+
+    public void StickToFloor(GameObject ball)
+    {
+        ball.GetComponent<Rigidbody>().isKinematic = true;
     }
 
     #endregion
