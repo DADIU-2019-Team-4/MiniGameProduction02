@@ -46,7 +46,7 @@ public class ClockController : MonoBehaviour
 
     public void UpdateArrow()
     {
-        float timeRatio = CurrentTimerValue / maxTimerValue;
+        float timeRatio = currentTimerValue / 60;
         float value = arrowEndValueInDegrees - arrowEndValueInDegrees * timeRatio;
         arrow.transform.eulerAngles = new Vector3(0, 0, value);
         RotateScenery(value);
@@ -75,6 +75,7 @@ public class ClockController : MonoBehaviour
     public void UpdateClock()
     {
         float fillingValue = CurrentTimerValue / maxTimerValue;
+        float fillingValue = currentTimerValue / 60;
         filling.fillAmount = fillingValue;
 
         // update the digital clock
