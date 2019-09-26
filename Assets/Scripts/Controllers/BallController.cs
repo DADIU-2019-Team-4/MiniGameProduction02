@@ -131,6 +131,7 @@ public class BallController : MonoBehaviour
         SetThrowDirection(hand, ref throwVector, ballRigidBody);
         ballRigidBody.isKinematic = false;
         ballRigidBody.AddForce(throwVector);
+        BallLeavesHand(ball.GetComponent<Collider>());
     }
 
     private void SetIndicators()
