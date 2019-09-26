@@ -14,6 +14,8 @@ public class ClockController : MonoBehaviour
     private float maxTimerValue = 60f;
     public float TimerValue = 30f;
 
+    public GameObject Background;
+
     [HideInInspector]
     public float CurrentTimerValue { get; set; }
 
@@ -42,6 +44,13 @@ public class ClockController : MonoBehaviour
         float timeRatio = CurrentTimerValue / maxTimerValue;
         float value = arrowEndValueInDegrees - arrowEndValueInDegrees * timeRatio;
         arrow.transform.eulerAngles = new Vector3(0, 0, value);
+        RotateScenery(value);
+    }
+
+    private void RotateScenery(float value)
+    {
+        if (Background != null)
+            Background.GetComponent<Transform>().eulerAngles = new Vector3(0, value, 0);
     }
 
     private void UpdateTimer()
