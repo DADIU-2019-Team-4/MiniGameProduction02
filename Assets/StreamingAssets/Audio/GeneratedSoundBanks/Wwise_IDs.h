@@ -20,11 +20,13 @@ namespace AK
         static const AkUniqueID FILLSOUND_EVENT4 = 1944912670U;
         static const AkUniqueID FILLSOUND_EVENT5 = 1944912671U;
         static const AkUniqueID FILLSOUND_EVENT6 = 1944912668U;
+        static const AkUniqueID LEFTCOLLIDER_EVENT = 357743971U;
         static const AkUniqueID LEVELCOMPLETED_EVENT = 3036127557U;
         static const AkUniqueID MENUIN_EVENT = 1069674504U;
         static const AkUniqueID MENUOUT_EVENT = 1960384521U;
         static const AkUniqueID PERFECTCATCH_EVENT = 3869548328U;
         static const AkUniqueID PRESSBUTTON_EVENT = 2293628003U;
+        static const AkUniqueID RIGHTCOLLIDER_EVENT = 1692484400U;
         static const AkUniqueID ROOMTONE_EVENT = 1399763525U;
         static const AkUniqueID SWIPESOUND_EVENT = 3921462371U;
         static const AkUniqueID UNFILLSOUND_EVENT0 = 1118806527U;
