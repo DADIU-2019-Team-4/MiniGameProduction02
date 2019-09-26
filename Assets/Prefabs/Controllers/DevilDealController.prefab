@@ -43,3 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043a9b5f98e0fe24aac4b3fd94b2607a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  devilDealCanvas: {fileID: 0}
