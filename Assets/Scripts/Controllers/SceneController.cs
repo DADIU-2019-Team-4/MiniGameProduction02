@@ -49,9 +49,9 @@ public class SceneController : MonoBehaviour
         timerText.text = $"{minutes}:{seconds}";
     }
 
-    public void SceneReset()
+    public void ResetScene()
     {
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

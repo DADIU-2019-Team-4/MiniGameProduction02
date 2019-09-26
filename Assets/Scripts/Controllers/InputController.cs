@@ -8,7 +8,7 @@ public class InputController : MonoBehaviour
 
     private ViolaController ViolaController;
     private MenuController MenuController;
-    private SceneController sceneController;
+    private SceneController SceneController;
 
     private readonly Vector3[] firstPosition = new Vector3[2];
     private readonly Vector3[] lastPosition = new Vector3[2];
@@ -30,7 +30,7 @@ public class InputController : MonoBehaviour
     {
         ViolaController = FindObjectOfType<ViolaController>();
         //MenuController = GetComponent<MenuController>(); // Uncomment if you need it.
-        sceneController = FindObjectOfType<SceneController>();
+        SceneController = FindObjectOfType<SceneController>();
     }
 
     private void Start()
@@ -53,7 +53,7 @@ public class InputController : MonoBehaviour
             ViolaController.Throw(throwType, screenSide);
 
         if (Input.GetKeyDown(KeyCode.Space))
-            sceneController.SceneReset();
+            SceneController.ResetScene();
     }
 
 

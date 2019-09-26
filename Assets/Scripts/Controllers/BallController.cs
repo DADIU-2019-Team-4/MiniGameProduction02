@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    //private ScoreController ScoreController;
+    private ScoreController ScoreController;
+    private ProgressionController ProgressionController;
 
 
     public GameObject BallPrefab;
@@ -16,7 +17,7 @@ public class BallController : MonoBehaviour
 
 
     // TODO: Make these private and programmatically retrieve these.
-    // These should NOT available in the editor; it's bloat for Level Designers.
+    // These should NOT available in the editor; This is bloat for Level Designers.
     public Transform leftHand;
     public Transform rightHand;
     public GameObject leftIndicator;
@@ -36,13 +37,16 @@ public class BallController : MonoBehaviour
     void Awake()
     {
         Time.timeScale = TimeScale;
-        //ScoreController = FindObjectOfType<ScoreController>();
+        ScoreController = FindObjectOfType<ScoreController>();
+        ProgressionController = FindObjectOfType<ProgressionController>();
     }
 
     private void Start()
     {
         SpawnBalls(numberOfBalls);
     }
+
+    #region Ball Creation/Deletion
 
     private void SpawnBalls(int number)
     {
@@ -70,6 +74,10 @@ public class BallController : MonoBehaviour
         Destroy(ball);
     }
 
+    #endregion
+
+    #region Ball Collision Detection
+
     public void BallEntersHand(Collider collider)
     {
         var ball = collider.gameObject;
@@ -88,6 +96,25 @@ public class BallController : MonoBehaviour
         SetIndicators();
     }
 
+    public void BallDropped()
+    {
+        ScoreController.DroppedBall();
+        ballsInCatchZone.Clear();
+
+        while (Balls.Count != 0)
+            RemoveBall(Balls[0]);
+
+        StartCoroutine(Delay(0.5f));
+
+        SpawnBalls(numberOfBalls);
+    }
+
+    #endregion
+
+
+    #region Ball Throwing
+    // These functions rely on that the two hands are at positive/negative X positions!
+
     public void Throw(ViolaController.ThrowType throwType, ViolaController.HandType hand)
     {
         var ball = GetBallToThrow(hand);
@@ -96,21 +123,12 @@ public class BallController : MonoBehaviour
         Rigidbody ballRigidBody = ball.GetComponent<Rigidbody>();
         ballRigidBody.isKinematic = true;
 
-        if (GotPerfectCatch(ball))
-        {
-            // Got Perfect Catch
-            // scoreController.IncrementScore(ScoreController.CatchType.Perfect);
-        }
-        else
-        {
-            // Normal Catch
-            // scoreController.IncrementScore(ScoreController.CatchType.Normal);
-        }
+        var catchType = GotPerfectCatch(ball) ? ScoreController.CatchType.Perfect : ScoreController.CatchType.Normal;
+        ScoreController.IncrementScore(catchType);
+        ProgressionController.UpdateProgression(catchType);
 
         Vector3 throwVector = GetThrowForce(throwType);
-
         SetThrowDirection(hand, ref throwVector, ballRigidBody);
-
         ballRigidBody.isKinematic = false;
         ballRigidBody.AddForce(throwVector);
     }
@@ -140,7 +158,6 @@ public class BallController : MonoBehaviour
         return false;
     }
 
-    // This script relies on that the two hands are at positive/negative X positions!
     private GameObject GetBallToThrow(ViolaController.HandType hand)
     {
         foreach (GameObject ball in ballsInCatchZone)
@@ -175,12 +192,16 @@ public class BallController : MonoBehaviour
             case ViolaController.ThrowType.MidThrow:
                 return throwLeft * throwSideForce;
 
+            case ViolaController.ThrowType.None:
             default:
                 return Vector3.zero;
         }
     }
 
+    #endregion
 
-
-
+    IEnumerator Delay(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+    }
 }
