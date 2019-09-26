@@ -35,10 +35,10 @@ public class BallController : MonoBehaviour
     public float gravityYaxis;
 
     public float TimeScale;
-
     public float BalloonFloatStrength = 0.5f;
     public Vector3 balloonThrowDown;
     public Vector3 ballonThrowMid;
+    public int ballSelectorInt = 0; 
 
     void Awake()
     {
@@ -61,6 +61,10 @@ public class BallController : MonoBehaviour
     {
         numberOfBalls = BallPrefab.Length;
         SpawnBalls(numberOfBalls);
+        AkSoundEngine.PostEvent("ColliderLeft_event", gameObject);
+        AkSoundEngine.SetRTPCValue("leftCollider", 0.0f);
+        AkSoundEngine.PostEvent("ColliderRight_event", gameObject);
+        AkSoundEngine.SetRTPCValue("rightCollider", 0.0f);
     }
 
     #region Ball Creation/Deletion
@@ -68,6 +72,7 @@ public class BallController : MonoBehaviour
     private void SpawnBalls(int number)
     {
         Vector3 spawnPosition;
+
 
         for (int i = 0; i < number; i++)
         {
@@ -77,6 +82,7 @@ public class BallController : MonoBehaviour
                 spawnPosition = new Vector3(leftHand.transform.position.x - distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), leftHand.transform.position.y, leftHand.transform.position.z);
             AddBall(spawnPosition, i);
         }
+        ballSelectorInt = 0;
     }
 
     private void AddBall(Vector3 where, int prefabInt)
@@ -100,6 +106,8 @@ public class BallController : MonoBehaviour
         var ball = collider.gameObject;
         if (!ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Add(ball);
+        PlayDistanceSound(ball);
+
     }
 
     public void BallLeavesHand(Collider collider)
@@ -107,7 +115,6 @@ public class BallController : MonoBehaviour
         var ball = collider.gameObject;
         if (ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Remove(ball);
-
     }
 
     public void BallDropped()
@@ -118,7 +125,6 @@ public class BallController : MonoBehaviour
 
         while (Balls.Count != 0)
             RemoveBall(Balls[0]);
-
         StartCoroutine(Delay(0.5f));
 
         SpawnBalls(numberOfBalls);
@@ -132,8 +138,19 @@ public class BallController : MonoBehaviour
 
     public void Throw(ViolaController.ThrowType throwType, ViolaController.HandType hand)
     {
+        AkSoundEngine.SetRTPCValue("rightCollider", 0.0f);
         var ball = GetBallToThrow(hand);
         if (ball == null) return;
+
+        if (hand == ViolaController.HandType.Left)
+        {
+            AkSoundEngine.PostEvent("ColliderLeft_event", gameObject);
+
+        }
+        if (hand == ViolaController.HandType.Right)
+        {
+            AkSoundEngine.PostEvent("ColliderRight_event", gameObject);
+        }
 
         Rigidbody ballRigidBody = ball.GetComponent<Rigidbody>();
         ballRigidBody.isKinematic = true;
@@ -186,10 +203,10 @@ public class BallController : MonoBehaviour
         if (handType == ViolaController.HandType.Left)
         {
             throwAngle.x *= -1;
-            currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, leftHand.position, 0.5f);
+            currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, leftHand.position, 0.7f);
         }
         else
-            currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, rightHand.position, 0.5f);
+            currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, rightHand.position, 0.7f);
     }
 
     private Vector3 GetThrowForce(ViolaController.ThrowType throwType, GameObject juggledItem)
@@ -223,6 +240,34 @@ public class BallController : MonoBehaviour
         ball.GetComponent<Rigidbody>().isKinematic = true;
     }
 
+    #endregion
+
+    #region Distance between perfect catch and a ball
+    public void PlayDistanceSound(GameObject obj)
+    {
+        Rigidbody rigid = obj.GetComponent<Rigidbody>();
+        var velocity = obj.transform.InverseTransformDirection(rigid.velocity);
+        float yAxis = velocity.y;
+
+        if (yAxis < 0 && obj.transform.position.y > rightHand.position.y)
+        {
+            if (obj.transform.position.x < 0 )
+            {
+                float distance = Vector3.Distance(rightHand.position, obj.transform.position);
+
+                AkSoundEngine.PostEvent("ColliderRight_event", gameObject);
+                AkSoundEngine.SetRTPCValue("rightCollider", 1 - distance);
+                Debug.Log("RightHand distance:" + distance);
+            }
+            else
+            {
+                float distance = Vector3.Distance(leftHand.position, obj.transform.position);
+                AkSoundEngine.PostEvent("ColliderLeft_event", gameObject);
+                AkSoundEngine.SetRTPCValue("leftCollider", 1 - distance);
+                Debug.Log("LeftHand distance:" + distance);
+            }
+        }
+    }
     #endregion
 
     IEnumerator Delay(float seconds)

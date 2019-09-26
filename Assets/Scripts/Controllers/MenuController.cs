@@ -9,6 +9,9 @@ public class MenuController : MonoBehaviour
     private Canvas pauseMenu;
     public SaveController saveC;
 
+    //test variables
+    public int levelSelector = 0; 
+
     private void Awake()
     {
         saveC = FindObjectOfType<SaveController>();
