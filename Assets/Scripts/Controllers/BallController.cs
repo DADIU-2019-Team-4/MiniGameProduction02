@@ -50,6 +50,9 @@ public class BallController : MonoBehaviour
     private void Start()
     {
         SpawnBalls(numberOfBalls);
+        AkSoundEngine.SetRTPCValue("rightCollider", 0.0f);
+        AkSoundEngine.PostEvent("LeftCollider_event", gameObject);
+
     }
 
     #region Ball Creation/Deletion
@@ -112,6 +115,7 @@ public class BallController : MonoBehaviour
         if (!ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Add(ball);
         PlayDistanceSound(ball);
+
     }
 
     public void BallLeavesHand(Collider collider)
@@ -142,6 +146,7 @@ public class BallController : MonoBehaviour
 
     public void Throw(ViolaController.ThrowType throwType, ViolaController.HandType hand)
     {
+        AkSoundEngine.SetRTPCValue("rightCollider", 0.0f);
         var ball = GetBallToThrow(hand);
         if (ball == null) return;
 
@@ -227,13 +232,13 @@ public class BallController : MonoBehaviour
             if (obj.transform.position.x < 0)
             {
                 float distance = Vector3.Distance(rightHand.position, obj.transform.position);
-                AkSoundEngine.SetRTPCValue("rightCollider", distance);
+                AkSoundEngine.SetRTPCValue("rightCollider", 1.0f - distance);
                 Debug.Log("RightHand distance:" + distance);
             }
             else
             {
                 float distance = Vector3.Distance(leftHand.position, obj.transform.position);
-                AkSoundEngine.SetRTPCValue("leftCollider", distance);
+                AkSoundEngine.SetRTPCValue("leftCollider", 1.0f - distance);
                 Debug.Log("LeftHand distance:" + distance);
             }
         }
