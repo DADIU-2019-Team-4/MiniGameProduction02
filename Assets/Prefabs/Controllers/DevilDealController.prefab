@@ -44,3 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   devilDealCanvas: {fileID: 0}
+  descriptionText: {fileID: 0}
+  negativeDealImage: {fileID: 0}
+  devilSkullSpawnPoint: {fileID: 0}
+  devilSkull: {fileID: 2885985191341402184, guid: 90230456fbedda844b50783fb35753bb,
+    type: 3}
+  devilDeals:
+  - {fileID: 11400000, guid: fb81b6fa1e5ce7544adba71053266ebc, type: 2}
+  maxAcceptedDevilDeals: 10
+  countUntilNegativeEffect: 2
+  dealDescription: Do you accept this deal? >:D

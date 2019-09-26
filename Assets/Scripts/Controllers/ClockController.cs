@@ -11,12 +11,13 @@ public class ClockController : MonoBehaviour
     [SerializeField]
     private Image arrow;
 
-    [SerializeField]
-    private float timerValue = 60f;
+    public float TimerValue { get; set; } = 60f;
 
-    private float currentTimerValue;
+    [HideInInspector]
+    public float CurrentTimerValue { get; set; }
 
-    private float arrowEndValueInDegrees = 360;
+    private float arrowDegreePerSecond = 6;
+    private float arrowEndValueInDegrees;
 
     private void Awake()
     {
@@ -25,7 +26,8 @@ public class ClockController : MonoBehaviour
 
     private void Start()
     {
-        currentTimerValue = timerValue;
+        arrowEndValueInDegrees = arrowDegreePerSecond * TimerValue;
+        CurrentTimerValue = TimerValue;
         UpdateArrow();
         filling.fillAmount = 1;
     }
@@ -38,7 +40,7 @@ public class ClockController : MonoBehaviour
 
     private void UpdateArrow()
     {
-        float timeRatio = currentTimerValue / timerValue;
+        float timeRatio = CurrentTimerValue / TimerValue;
         float value = arrowEndValueInDegrees - arrowEndValueInDegrees * timeRatio;
         arrow.transform.eulerAngles = new Vector3(0, 0, value);
     }
@@ -47,9 +49,9 @@ public class ClockController : MonoBehaviour
     {
         if (Time.timeScale != 0)
         {
-            currentTimerValue -= Time.deltaTime * (1 / Time.timeScale);
+            CurrentTimerValue -= Time.deltaTime * (1 / Time.timeScale);
 
-            if (currentTimerValue <= 0)
+            if (CurrentTimerValue <= 0)
                 sceneController.LevelCompleted();
 
             UpdateClock();
@@ -59,7 +61,7 @@ public class ClockController : MonoBehaviour
 
     private void UpdateClock()
     {
-        float fillingValue = currentTimerValue / timerValue;
+        float fillingValue = CurrentTimerValue / TimerValue;
         filling.fillAmount = fillingValue;
     }
 }

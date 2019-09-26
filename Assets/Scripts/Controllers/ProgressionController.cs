@@ -19,8 +19,8 @@ public class ProgressionController : MonoBehaviour
     [SerializeField]
     private int stepsPerPart = 3;
 
-    private int totalSteps;
-    private int currentSteps;
+    public int TotalSteps { get; set; }
+    public int CurrentSteps { get; set; }
 
     private float degreesPerStep;
 
@@ -56,14 +56,14 @@ public class ProgressionController : MonoBehaviour
     void Start()
     {
         // setting up values
-        totalSteps = totalParts * stepsPerPart;
-        degreesPerStep = arrowEndValueInDegrees / totalSteps;
-        stepsPerColor = totalSteps / totalColors;
-        currentSteps = arrowStartInSteps;
+        TotalSteps = totalParts * stepsPerPart;
+        degreesPerStep = arrowEndValueInDegrees / TotalSteps;
+        stepsPerColor = TotalSteps / totalColors;
+        CurrentSteps = arrowStartInSteps;
 
         // setting up parts and arrow
         UpdateParts();
-        UpdateArrow(currentSteps);    
+        UpdateArrow();    
         DeterminePartType();
     }
 
@@ -73,39 +73,38 @@ public class ProgressionController : MonoBehaviour
         {
 
             case ScoreController.CatchType.Normal:
-                currentSteps += normalCatchStep;
-                if (currentSteps > totalSteps)
-                    currentSteps = totalSteps;
+                CurrentSteps += normalCatchStep;
+                if (CurrentSteps > TotalSteps)
+                    CurrentSteps = TotalSteps;
                 break;
 
             case ScoreController.CatchType.Perfect:
-                currentSteps += perfectCatchStep;
-                if (currentSteps > totalSteps)
-                    currentSteps = totalSteps;
+                CurrentSteps += perfectCatchStep;
+                if (CurrentSteps > TotalSteps)
+                    CurrentSteps = TotalSteps;
                 break;
 
             case ScoreController.CatchType.Failed:
-                currentSteps += failStep;
-                if (currentSteps <= 0)
+                CurrentSteps += failStep;
+                if (CurrentSteps <= 0)
                 {
-                    currentSteps = 0;
+                    CurrentSteps = 0;
                     SceneController.LevelFailed();
                 }
                 break;
         }
 
         UpdateParts();
-        UpdateArrow(currentSteps);
-        DeterminePartType();
+        UpdateArrow();
     }
 
     private void DeterminePartType()
     {
         // You can make (ab)use enumerations like this too:
-        CurrentCrowdHappiness = (CrowdHappiness) Mathf.FloorToInt((float) currentSteps / stepsPerColor);
+        CurrentCrowdHappiness = (CrowdHappiness) Mathf.FloorToInt((float) CurrentSteps / stepsPerColor);
         // Just make sure the integer calculated matches the sequence of items in the enumeration.
 
-        //int partAmount = Mathf.FloorToInt((float) currentSteps / stepsPerColor);
+        //int partAmount = Mathf.FloorToInt((float) CurrentSteps / stepsPerColor);
         //if (partAmount == 0)
         //    currentPartType = PartType.Red;
         //else if (partAmount == 1)
@@ -114,16 +113,17 @@ public class ProgressionController : MonoBehaviour
         //    currentPartType = PartType.Green;
     }
 
-    private void UpdateArrow(int value)
+    public void UpdateArrow()
     {
-        arrow.transform.eulerAngles = new Vector3(0, 0, value * degreesPerStep);
+        arrow.transform.eulerAngles = new Vector3(0, 0, CurrentSteps * degreesPerStep);
     }
 
-    private void UpdateParts()
+    public void UpdateParts()
     {
-        int partsToFill = Mathf.FloorToInt((float)currentSteps / stepsPerPart);
+        int partsToFill = Mathf.FloorToInt((float)CurrentSteps / stepsPerPart);
         filling.fillAmount = (float)partsToFill / totalParts;
 
+        DeterminePartType();
         CheckDevilDealActivation(partsToFill);
     }
 
