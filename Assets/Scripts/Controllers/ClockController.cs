@@ -14,6 +14,8 @@ public class ClockController : MonoBehaviour
     [SerializeField]
     private float timerValue = 60f;
 
+    public GameObject Background;
+
     private float currentTimerValue;
 
     private float arrowEndValueInDegrees = 360;
@@ -41,6 +43,13 @@ public class ClockController : MonoBehaviour
         float timeRatio = currentTimerValue / timerValue;
         float value = arrowEndValueInDegrees - arrowEndValueInDegrees * timeRatio;
         arrow.transform.eulerAngles = new Vector3(0, 0, value);
+        RotateScenery(value);
+    }
+
+    private void RotateScenery(float value)
+    {
+        if (Background != null)
+            Background.GetComponent<Transform>().eulerAngles = new Vector3(0, value, 0);
     }
 
     private void UpdateTimer()

@@ -204,6 +204,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &291117810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9071093160974151817, guid: eaf8935c7c30aa94b89a9a7b5be5769c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2342401213739994541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &487990437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1997471683047281873, guid: c4ff11067393fdb4482661bd68401a42,
@@ -334,6 +340,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneController
       objectReference: {fileID: 0}
+    - target: {fileID: 1267635558868094372, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: levelFailedText
+      value: 
+      objectReference: {fileID: 7781361177337173344}
+    - target: {fileID: 1267635558868094372, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: levelCompletedText
+      value: 
+      objectReference: {fileID: 7781361177337173345}
     - target: {fileID: 1267635558868094371, guid: 8217b052d62188241932da549938efdf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -389,16 +405,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1267635558868094372, guid: 8217b052d62188241932da549938efdf,
-        type: 3}
-      propertyPath: levelFailedText
-      value: 
-      objectReference: {fileID: 7781361177337173344}
-    - target: {fileID: 1267635558868094372, guid: 8217b052d62188241932da549938efdf,
-        type: 3}
-      propertyPath: levelCompletedText
-      value: 
-      objectReference: {fileID: 7781361177337173345}
     - target: {fileID: 1267635559848045145, guid: 8217b052d62188241932da549938efdf,
         type: 3}
       propertyPath: filling
@@ -409,6 +415,11 @@ PrefabInstance:
       propertyPath: arrow
       value: 
       objectReference: {fileID: 7781361177337173343}
+    - target: {fileID: 1267635559848045145, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: Background
+      value: 
+      objectReference: {fileID: 291117810}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8217b052d62188241932da549938efdf, type: 3}
 --- !u!1001 &1834208033747338984
@@ -659,6 +670,7 @@ MonoBehaviour:
   filling: {fileID: 7781361177337173348}
   arrow: {fileID: 7781361177337173343}
   timerValue: 60
+  Background: {fileID: 0}
 --- !u!1001 &2652069135451615258
 PrefabInstance:
   m_ObjectHideFlags: 0
