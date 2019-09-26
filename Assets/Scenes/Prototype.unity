@@ -879,7 +879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 977175ab28579dd4599bd4e3f6d4621d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: -4
+  gravity: -6.5
 --- !u!4 &577846701
 Transform:
   m_ObjectHideFlags: 0
@@ -942,12 +942,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: []
-  throwUpRightHand: {x: 1.65, y: 13, z: 0}
-  throwDownRightHand: {x: 6.5, y: -1.5, z: 0}
-  throwLeft: {x: 4.3, y: 7, z: 0}
+  throwUpRightHand: {x: 2.57, y: 14.03, z: 0}
+  throwDownRightHand: {x: 5, y: -1.5, z: 0}
+  throwLeft: {x: 2.6, y: 7.77, z: 0}
   throwUpForce: 25
-  throwDownForce: 16.5
-  throwSideForce: 22
+  throwDownForce: 30
+  throwSideForce: 33
   rightHandPosition: {fileID: 1730324388}
   leftHandPosition: {fileID: 2119035071}
   numberOfBalls: 0
@@ -2122,12 +2122,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: []
-  throwUpRightHand: {x: 1.65, y: 13, z: 0}
-  throwDownRightHand: {x: 6.5, y: -1.5, z: 0}
-  throwLeft: {x: 4.3, y: 7, z: 0}
+  throwUpRightHand: {x: 2.57, y: 14.03, z: 0}
+  throwDownRightHand: {x: 5, y: -1.5, z: 0}
+  throwLeft: {x: 2.6, y: 7.77, z: 0}
   throwUpForce: 25
-  throwDownForce: 16.5
-  throwSideForce: 22
+  throwDownForce: 30
+  throwSideForce: 33
   rightHandPosition: {fileID: 1730324388}
   leftHandPosition: {fileID: 2119035071}
   numberOfBalls: 0
