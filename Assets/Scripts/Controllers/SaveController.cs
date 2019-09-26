@@ -8,13 +8,13 @@ public class SaveController : MonoBehaviour
 {
 
     public Save save;
-    private LevelController lvlC;
+    //private LevelController lvlC;
 
     // Start is called before the first frame update
 
     void Awake()
     {
-        lvlC = FindObjectOfType<LevelController>();
+        //lvlC = FindObjectOfType<LevelController>();
 
         LoadGame();
     }
@@ -33,10 +33,10 @@ public class SaveController : MonoBehaviour
     {
         for(int i =1; i<GlobalVariables.totalNumberOfLevels; i++)
         {
-            save.SaveScore(i,lvlC.currentLevelScores[i]);
+            //save.SaveScore(i,lvlC.currentLevelScores[i]);
         }
 
-        save.maxReachedLevel = lvlC.maxReachedLevel;
+        //save.maxReachedLevel = lvlC.maxReachedLevel;
 
     }
 
