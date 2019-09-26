@@ -16,6 +16,8 @@ public class BallController : MonoBehaviour
     private readonly List<GameObject> Balls = new List<GameObject>();
     private readonly List<GameObject> ballsInCatchZone = new List<GameObject>();
 
+    private int throwCount;
+
 
     // TODO: Make these private and programmatically retrieve these.
     // These should NOT available in the editor; This is bloat for Level Designers.
@@ -98,6 +100,7 @@ public class BallController : MonoBehaviour
     public void BallDropped()
     {
         ScoreController.DroppedBall();
+        throwCount = 0;
         ballsInCatchZone.Clear();
 
         while (Balls.Count != 0)
@@ -131,7 +134,10 @@ public class BallController : MonoBehaviour
         ballRigidBody.isKinematic = false;
         ballRigidBody.AddForce(throwVector);
         BallLeavesHand(ball.GetComponent<Collider>());
-        SceneController.IsPlaying = true;
+        throwCount++;
+
+        if (throwCount >= 3)
+            SceneController.IsPlaying = true;
     }
 
     private bool GotPerfectCatch(GameObject ball)

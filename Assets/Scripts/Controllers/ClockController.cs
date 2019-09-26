@@ -32,7 +32,7 @@ public class ClockController : MonoBehaviour
     {
         currentTimerValue = timerValue;
         UpdateArrow();
-        filling.fillAmount = 1;
+        UpdateClock();
     }
 
     private void Update()
@@ -43,7 +43,7 @@ public class ClockController : MonoBehaviour
 
     private void UpdateArrow()
     {
-        float timeRatio = currentTimerValue / timerValue;
+        float timeRatio = currentTimerValue / 60;
         float value = arrowEndValueInDegrees - arrowEndValueInDegrees * timeRatio;
         arrow.transform.eulerAngles = new Vector3(0, 0, value);
         RotateScenery(value);
@@ -72,7 +72,7 @@ public class ClockController : MonoBehaviour
     private void UpdateClock()
     {
         // update the analog clock
-        float fillingValue = currentTimerValue / timerValue;
+        float fillingValue = currentTimerValue / 60;
         filling.fillAmount = fillingValue;
 
         // update the digital clock
