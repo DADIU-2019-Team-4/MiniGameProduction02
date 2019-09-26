@@ -10,7 +10,7 @@ public class BallController : MonoBehaviour
 
 
     public GameObject[] BallPrefab;
-    public int numberOfBalls;
+    private int numberOfBalls;
     public float distanceBetweenSpawnedBalls;
 
     private readonly List<GameObject> Balls = new List<GameObject>();
@@ -57,6 +57,7 @@ public class BallController : MonoBehaviour
 
     private void Start()
     {
+        numberOfBalls = BallPrefab.Length;
         SpawnBalls(numberOfBalls);
     }
 
@@ -72,13 +73,13 @@ public class BallController : MonoBehaviour
                 spawnPosition = new Vector3(rightHand.transform.position.x + distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), rightHand.transform.position.y, rightHand.transform.position.z);
             else
                 spawnPosition = new Vector3(leftHand.transform.position.x - distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), leftHand.transform.position.y, leftHand.transform.position.z);
-            AddBall(spawnPosition);
+            AddBall(spawnPosition, i);
         }
     }
 
-    private void AddBall(Vector3 where)
+    private void AddBall(Vector3 where, int prefabInt)
     {
-        GameObject ball = Instantiate(BallPrefab[Random.Range(0, BallPrefab.Length - 1)], where, rightHand.transform.rotation);
+        GameObject ball = Instantiate(BallPrefab[prefabInt], where, rightHand.transform.rotation);
         Balls.Add(ball);
     }
 
@@ -135,6 +136,13 @@ public class BallController : MonoBehaviour
         ballRigidBody.isKinematic = true;
 
         var catchType = GotPerfectCatch(ball) ? ScoreController.CatchType.Perfect : ScoreController.CatchType.Normal;
+
+        if (ball.tag == "Sabre" && catchType != ScoreController.CatchType.Perfect)
+        {
+            //failed Sabre throw, cut off hand
+            BallDropped();
+        }
+
         ScoreController.IncrementScore(catchType);
         ProgressionController.UpdateProgression(catchType);
 
@@ -194,7 +202,7 @@ public class BallController : MonoBehaviour
 
             case ViolaController.ThrowType.MidThrow:
                 if (juggledItem.tag == "Balloon")
-                    return balloonThrowDown * throwDownForce * BalloonFloatStrength;
+                    return ballonThrowMid * throwDownForce * BalloonFloatStrength;
                 else
                     return throwLeft * throwSideForce;
 
@@ -202,6 +210,11 @@ public class BallController : MonoBehaviour
             default:
                 return Vector3.zero;
         }
+    }
+
+    public void StickToFloor(GameObject ball)
+    {
+        ball.GetComponent<Rigidbody>().isKinematic = true;
     }
 
     #endregion
