@@ -7,11 +7,11 @@ public class DevilDealController : MonoBehaviour
     [SerializeField]
     private GameObject devilDealCanvas;
 
-    private GameController gameController;
+    private BallController ballController;
 
     private void Awake()
     {
-        gameController = FindObjectOfType<GameController>();
+        ballController = FindObjectOfType<BallController>();
     }
 
     private void ActivateDevilDealPanel()
@@ -32,13 +32,13 @@ public class DevilDealController : MonoBehaviour
         // todo save chosen negative effect
         // todo set current chosen devil deals and set skulls
         devilDealCanvas.SetActive(false);
-        Time.timeScale = gameController.timeScale;
+        Time.timeScale = ballController.TimeScale;
     }
 
     private void DeclinedDevilDeal()
     {
         devilDealCanvas.SetActive(false);
-        Time.timeScale = gameController.timeScale;
+        Time.timeScale = ballController.TimeScale;
     }
 
 }
