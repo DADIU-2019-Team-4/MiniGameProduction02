@@ -531,6 +531,7 @@ MonoBehaviour:
   ball: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab, type: 3}
   numberOfBalls: 3
   distanceBetweenBalls: 0.1
+  timeScale: 0.5
 --- !u!4 &360445319
 Transform:
   m_ObjectHideFlags: 0
@@ -3354,6 +3355,75 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2133497881}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6907584147073963076
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3186511382523634058, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: m_Name
+      value: DevilDealController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625034394326983814, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625034394326983814, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625034394326983814, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625034394326983814, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625034394326983814, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625034394326983814, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625034394326983814, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625034394326983814, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625034394326983814, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625034394326983814, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625034394326983814, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6a953dd836e5fb5479418c83a3de4587, type: 3}
 --- !u!1001 &7017731354385825756
 PrefabInstance:
   m_ObjectHideFlags: 0
