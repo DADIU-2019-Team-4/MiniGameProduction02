@@ -86,7 +86,6 @@ namespace AK
     {
         static const AkUniqueID ENVIRONMENTS = 3761286811U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
-        static const AkUniqueID MOTION_FACTORY_BUS = 985987111U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID PROGRESSBAR = 1922958967U;
         static const AkUniqueID ROOM = 2077253480U;
