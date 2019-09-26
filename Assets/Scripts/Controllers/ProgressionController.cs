@@ -37,7 +37,10 @@ public class ProgressionController : MonoBehaviour
     [SerializeField]
     private int failStep = -2;
 
+    private bool devilDealActivated;
+
     private SceneController SceneController;
+    private DevilDealController DevilDealController;
 
     public enum CrowdHappiness { Angry, Neutral, Happy }
 
@@ -46,6 +49,7 @@ public class ProgressionController : MonoBehaviour
     private void Awake()
     {
         SceneController = FindObjectOfType<SceneController>();
+        DevilDealController = FindObjectOfType<DevilDealController>();
     }
 
     // Start is called before the first frame update
@@ -119,7 +123,19 @@ public class ProgressionController : MonoBehaviour
     {
         int partsToFill = Mathf.FloorToInt((float)currentSteps / stepsPerPart);
         filling.fillAmount = (float)partsToFill / totalParts;
+
+        CheckDevilDealActivation(partsToFill);
     }
 
+    private void CheckDevilDealActivation(int partAmount)
+    {
+        if (partAmount < 1 && !devilDealActivated)
+        {
+            devilDealActivated = true;
+            DevilDealController.ActivateDevilDealPanel();
+        }
 
+        if (partAmount >= 1 && devilDealActivated)
+            devilDealActivated = false;
+    }
 }
