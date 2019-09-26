@@ -227,11 +227,13 @@ public class BallController : MonoBehaviour
             if (obj.transform.position.x < 0)
             {
                 float distance = Vector3.Distance(rightHand.position, obj.transform.position);
+                AkSoundEngine.SetRTPCValue("rightCollider", distance);
                 Debug.Log("RightHand distance:" + distance);
             }
             else
             {
                 float distance = Vector3.Distance(leftHand.position, obj.transform.position);
+                AkSoundEngine.SetRTPCValue("leftCollider", distance);
                 Debug.Log("LeftHand distance:" + distance);
             }
         }
