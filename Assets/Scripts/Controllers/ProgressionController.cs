@@ -39,11 +39,9 @@ public class ProgressionController : MonoBehaviour
 
     private SceneController SceneController;
 
-    //public enum CatchType { normalCatch, perfectCatch, FailedCatch }
+    public enum CrowdHappiness { Angry, Neutral, Happy }
 
-    public enum PartType { Red, Yellow, Green }
-
-    public PartType currentPartType;
+    public CrowdHappiness CurrentCrowdHappiness;
 
     private void Awake()
     {
@@ -100,7 +98,7 @@ public class ProgressionController : MonoBehaviour
     private void DeterminePartType()
     {
         // You can make (ab)use enumerations like this too:
-        currentPartType = (PartType) Mathf.FloorToInt((float) currentSteps / stepsPerColor);
+        CurrentCrowdHappiness = (CrowdHappiness) Mathf.FloorToInt((float) currentSteps / stepsPerColor);
         // Just make sure the integer calculated matches the sequence of items in the enumeration.
 
         //int partAmount = Mathf.FloorToInt((float) currentSteps / stepsPerColor);
