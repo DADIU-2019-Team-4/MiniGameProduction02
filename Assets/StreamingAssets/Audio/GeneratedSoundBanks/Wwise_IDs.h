@@ -52,14 +52,14 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
-        static const AkUniqueID BALLCOLLIDERLEFT = 3470665837U;
-        static const AkUniqueID BALLCOLLIDERRIGHT = 4002590168U;
         static const AkUniqueID DENSITY_FA_SSGRAIN = 2715217995U;
         static const AkUniqueID GAMETIME = 1395127868U;
         static const AkUniqueID IMMERSION_FA_SSGRAIN = 2481728872U;
         static const AkUniqueID INSTRUMENT_FA_SSGRAIN = 2317409760U;
+        static const AkUniqueID LEFTCOLLIDER = 1375352018U;
         static const AkUniqueID PLAYBACK_RATE = 1524500807U;
         static const AkUniqueID PROXIMITY_FA_SSGRAIN = 1791284502U;
+        static const AkUniqueID RIGHTCOLLIDER = 535276317U;
         static const AkUniqueID RPM = 796049864U;
         static const AkUniqueID RPM_FA_SSGRAIN = 1656280998U;
         static const AkUniqueID SIMULATION_FA_SSGRAIN = 2428833394U;
