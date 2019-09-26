@@ -156,18 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09fbcc1ff7a0dc341bc236e491212c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1027416452 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7760826363767526402, guid: b4e71392584e97a40b5fecb8aa9ece25,
-    type: 3}
-  m_PrefabInstance: {fileID: 7760826364355458438}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1169449798 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7760826365503395520, guid: b4e71392584e97a40b5fecb8aa9ece25,
-    type: 3}
-  m_PrefabInstance: {fileID: 7760826364355458438}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1648833304
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +214,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &1712817060 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3138000861123803996, guid: 6fa9fad844fdddf4d86e505706695627,
+    type: 3}
+  m_PrefabInstance: {fileID: 3138000861137663922}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1738049626 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6206763260205618731, guid: c4ff11067393fdb4482661bd68401a42,
@@ -1008,12 +1002,12 @@ PrefabInstance:
         type: 3}
       propertyPath: leftIndicator
       value: 
-      objectReference: {fileID: 1169449798}
+      objectReference: {fileID: 0}
     - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
         type: 3}
       propertyPath: rightIndicator
       value: 
-      objectReference: {fileID: 1027416452}
+      objectReference: {fileID: 0}
     - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
         type: 3}
       propertyPath: leftPerfectCatch
@@ -1093,6 +1087,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7781361175761730069, guid: 9ef84af383f0d9f4aa6fbe6346a24096,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1712817060}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ef84af383f0d9f4aa6fbe6346a24096, type: 3}
 --- !u!114 &7781361177337173343 stripped

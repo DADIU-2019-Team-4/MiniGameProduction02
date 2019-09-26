@@ -89,7 +89,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 15
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1020,12 +1020,12 @@ PrefabInstance:
     - target: {fileID: 1012058831614528507, guid: 1083f8393194a3d439e5d09a7ba8500d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -573
+      value: -602
       objectReference: {fileID: 0}
     - target: {fileID: 1012058831614528507, guid: 1083f8393194a3d439e5d09a7ba8500d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2825
+      value: -272
       objectReference: {fileID: 0}
     - target: {fileID: 1012058831614528507, guid: 1083f8393194a3d439e5d09a7ba8500d,
         type: 3}
@@ -1086,6 +1086,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741234607217707150, guid: 1083f8393194a3d439e5d09a7ba8500d,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1083f8393194a3d439e5d09a7ba8500d, type: 3}
