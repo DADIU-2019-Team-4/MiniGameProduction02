@@ -21,8 +21,6 @@ public class BallController : MonoBehaviour
     // These should NOT available in the editor; This is bloat for Level Designers.
     public Transform leftHand;
     public Transform rightHand;
-    public GameObject leftIndicator;
-    public GameObject rightIndicator;
     public GameObject leftPerfectCatch;
     public GameObject rightPerfectCatch;
 
@@ -85,8 +83,6 @@ public class BallController : MonoBehaviour
         var ball = collider.gameObject;
         if (!ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Add(ball);
-
-        SetIndicators();
     }
 
     public void BallLeavesHand(Collider collider)
@@ -95,7 +91,6 @@ public class BallController : MonoBehaviour
         if (ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Remove(ball);
 
-        SetIndicators();
     }
 
     public void BallDropped()
@@ -135,19 +130,6 @@ public class BallController : MonoBehaviour
         ballRigidBody.AddForce(throwVector);
         BallLeavesHand(ball.GetComponent<Collider>());
         SceneController.IsPlaying = true;
-    }
-
-    private void SetIndicators()
-    {
-        bool left = false, right = false;
-        foreach (GameObject ball in ballsInCatchZone)
-            if (ball.transform.position.x < 0)
-                right = true;
-            else
-                left = true;
-
-        leftIndicator.SetActive(left);
-        rightIndicator.SetActive(right);
     }
 
     private bool GotPerfectCatch(GameObject ball)
