@@ -137,14 +137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4d6c98ce503bf4fb30d03fd65a4732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BallPrefab: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab,
-    type: 3}
+  BallPrefab:
+  - {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab, type: 3}
   numberOfBalls: 3
   distanceBetweenSpawnedBalls: 0.1
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
-  leftIndicator: {fileID: 0}
-  rightIndicator: {fileID: 0}
   leftPerfectCatch: {fileID: 0}
   rightPerfectCatch: {fileID: 0}
   throwUpRightHand: {x: 1.65, y: 13, z: 0}
@@ -153,4 +151,5 @@ MonoBehaviour:
   throwUpForce: 40
   throwDownForce: 30
   throwSideForce: 35
+  gravityYaxis: -9.8
   TimeScale: 0.5
