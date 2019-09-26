@@ -34,6 +34,10 @@ public class BallController : MonoBehaviour
 
     public float TimeScale;
 
+    //test variable
+    public int ballSelectorInt = 0; 
+
+
     void Awake()
     {
         Time.timeScale = TimeScale;
@@ -54,6 +58,7 @@ public class BallController : MonoBehaviour
     {
         Vector3 spawnPosition;
 
+
         for (int i = 0; i < number; i++)
         {
             if (i % 2 == 0)
@@ -62,12 +67,33 @@ public class BallController : MonoBehaviour
                 spawnPosition = new Vector3(leftHand.transform.position.x - distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), leftHand.transform.position.y, leftHand.transform.position.z);
             AddBall(spawnPosition);
         }
+ 
+        ballSelectorInt = 0;
     }
 
     private void AddBall(Vector3 where)
     {
-        GameObject ball = Instantiate(BallPrefab[Random.Range(0,BallPrefab.Length-1)], where, rightHand.transform.rotation);
-        Balls.Add(ball);
+        
+        // GameObject ball = Instantiate(BallPrefab[Random.Range(0,BallPrefab.Length-1)], where, rightHand.transform.rotation);
+        if (ballSelectorInt == 0)
+        {
+           GameObject ball = Instantiate(BallPrefab[0], where, rightHand.transform.rotation);
+            Balls.Add(ball);
+        }
+        else if (ballSelectorInt == 1)
+        {
+            GameObject ball = Instantiate(BallPrefab[0], where, rightHand.transform.rotation);
+            Balls.Add(ball);
+        }
+
+        else if (ballSelectorInt == 2)
+        {
+            GameObject ball = Instantiate(BallPrefab[1], where, rightHand.transform.rotation);
+            Balls.Add(ball);
+        }
+
+        ballSelectorInt++; 
+        
     }
 
     private void RemoveBall(GameObject ball)
