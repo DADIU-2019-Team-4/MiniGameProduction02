@@ -11,13 +11,13 @@ public class ClockController : MonoBehaviour
     [SerializeField]
     private Image arrow;
 
-    public float TimerValue { get; set; } = 60f;
+    private float maxTimerValue = 60f;
+    public float TimerValue = 30f;
 
     [HideInInspector]
     public float CurrentTimerValue { get; set; }
 
-    private float arrowDegreePerSecond = 6;
-    private float arrowEndValueInDegrees;
+    private float arrowEndValueInDegrees = 360f;
 
     private void Awake()
     {
@@ -26,10 +26,9 @@ public class ClockController : MonoBehaviour
 
     private void Start()
     {
-        arrowEndValueInDegrees = arrowDegreePerSecond * TimerValue;
         CurrentTimerValue = TimerValue;
         UpdateArrow();
-        filling.fillAmount = 1;
+        UpdateClock();
     }
 
     private void Update()
@@ -38,9 +37,9 @@ public class ClockController : MonoBehaviour
             UpdateTimer();
     }
 
-    private void UpdateArrow()
+    public void UpdateArrow()
     {
-        float timeRatio = CurrentTimerValue / TimerValue;
+        float timeRatio = CurrentTimerValue / maxTimerValue;
         float value = arrowEndValueInDegrees - arrowEndValueInDegrees * timeRatio;
         arrow.transform.eulerAngles = new Vector3(0, 0, value);
     }
@@ -59,9 +58,9 @@ public class ClockController : MonoBehaviour
         }
     }
 
-    private void UpdateClock()
+    public void UpdateClock()
     {
-        float fillingValue = CurrentTimerValue / TimerValue;
+        float fillingValue = CurrentTimerValue / maxTimerValue;
         filling.fillAmount = fillingValue;
     }
 }

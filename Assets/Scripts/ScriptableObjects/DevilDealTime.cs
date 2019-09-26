@@ -8,7 +8,9 @@ public class DevilDealTime : DevilDeal
     public override void ApplyDevilDeal()
     {
         ClockController clockController = FindObjectOfType<ClockController>();
-        clockController.TimerValue += timeToAdd;
         clockController.CurrentTimerValue += timeToAdd;
+
+        clockController.UpdateArrow();
+        clockController.UpdateClock();
     }
 }
