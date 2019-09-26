@@ -310,38 +310,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09fbcc1ff7a0dc341bc236e491212c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1831248524 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6025829943148240533, guid: eaf8935c7c30aa94b89a9a7b5be5769c,
-    type: 3}
-  m_PrefabInstance: {fileID: 2342401213739994541}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1831248526
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1831248524}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -9010193167645078742, guid: 50fa023c4e227a246a9b33d9fe132c82, type: 3}
---- !u!114 &1831248528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1831248524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fce46d08d9db89c479924ad7a84985ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1267635559848045143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1084,11 +1052,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
         type: 3}
-      propertyPath: BallPrefab.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
       propertyPath: leftHand
       value: 
       objectReference: {fileID: 3981544108217852230}
@@ -1107,91 +1070,6 @@ PrefabInstance:
       propertyPath: rightPerfectCatch
       value: 
       objectReference: {fileID: 20022678}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: numberOfBalls
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: BallPrefab.Array.data[0]
-      value: 
-      objectReference: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab,
-        type: 3}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: balloonThrow.x
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: balloonThrow.y
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: BalloonFloatStrength
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: balloonThrowDown.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: ballonThrowMid.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: balloonThrowDown.y
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: ballonThrowMid.y
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: ballonThrowMid.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: BallPrefab.Array.data[1]
-      value: 
-      objectReference: {fileID: 7496779614026164388, guid: ac52547d46821b7438ba65fa3694ad75,
-        type: 3}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: BallPrefab.Array.data[2]
-      value: 
-      objectReference: {fileID: 7496779614026164388, guid: ac52547d46821b7438ba65fa3694ad75,
-        type: 3}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: BallPrefab.Array.data[3]
-      value: 
-      objectReference: {fileID: 7496779614026164388, guid: ac52547d46821b7438ba65fa3694ad75,
-        type: 3}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: BallPrefab.Array.data[4]
-      value: 
-      objectReference: {fileID: 7496779614026164388, guid: 70f0b04ac24264341878226105f6d3d2,
-        type: 3}
-    - target: {fileID: 7760826363502827807, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: m_TagString
-      value: Platform
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826363502827804, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4e71392584e97a40b5fecb8aa9ece25, type: 3}
 --- !u!1001 &7781361177337173342
