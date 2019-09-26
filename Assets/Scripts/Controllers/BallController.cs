@@ -66,7 +66,7 @@ public class BallController : MonoBehaviour
 
     private void AddBall(Vector3 where)
     {
-        GameObject ball = Instantiate(BallPrefab[Random.Range(0,BallPrefab.Length-1)], where, rightHand.transform.rotation);
+        GameObject ball = Instantiate(BallPrefab[Random.Range(0, BallPrefab.Length - 1)], where, rightHand.transform.rotation);
         Balls.Add(ball);
     }
 
@@ -85,6 +85,7 @@ public class BallController : MonoBehaviour
         var ball = collider.gameObject;
         if (!ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Add(ball);
+        PlayDistanceSound(ball);
     }
 
     public void BallLeavesHand(Collider collider)
@@ -92,7 +93,6 @@ public class BallController : MonoBehaviour
         var ball = collider.gameObject;
         if (ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Remove(ball);
-
     }
 
     public void BallDropped()
@@ -132,6 +132,7 @@ public class BallController : MonoBehaviour
         ballRigidBody.AddForce(throwVector);
         BallLeavesHand(ball.GetComponent<Collider>());
         SceneController.IsPlaying = true;
+
     }
 
     private bool GotPerfectCatch(GameObject ball)
@@ -186,6 +187,23 @@ public class BallController : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Distance between perfect catch and a ball
+    public void PlayDistanceSound(GameObject obj)
+    {
+
+        if (obj.transform.position.x < 0)
+        {
+            float distance = Vector3.Distance(rightHand.position, obj.transform.position);
+            Debug.Log("RightHand distance:" + distance);
+        }
+        else
+        {
+            float distance = Vector3.Distance(leftHand.position, obj.transform.position);
+            Debug.Log("LeftHand distance:" + distance);
+        }
+    }
     #endregion
 
     IEnumerator Delay(float seconds)
