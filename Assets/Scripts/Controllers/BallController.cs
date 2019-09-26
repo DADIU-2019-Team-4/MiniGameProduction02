@@ -132,7 +132,6 @@ public class BallController : MonoBehaviour
 
         while (Balls.Count != 0)
             RemoveBall(Balls[0]);
-
         StartCoroutine(Delay(0.5f));
 
         SpawnBalls(numberOfBalls);
@@ -202,10 +201,10 @@ public class BallController : MonoBehaviour
         if (handType == ViolaController.HandType.Left)
         {
             throwAngle.x *= -1;
-            currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, leftHand.position, 0.5f);
+            currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, leftHand.position, 0.7f);
         }
         else
-            currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, rightHand.position, 0.5f);
+            currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, rightHand.position, 0.7f);
     }
 
     private Vector3 GetThrowForce(ViolaController.ThrowType throwType)
