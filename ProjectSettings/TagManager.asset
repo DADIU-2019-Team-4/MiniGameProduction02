@@ -8,6 +8,7 @@ TagManager:
   - Right
   - Ball
   - Floor
+  - Balloon
   layers:
   - Default
   - TransparentFX

@@ -34,6 +34,10 @@ public class BallController : MonoBehaviour
 
     public float TimeScale;
 
+    public float BalloonFloatStrength = 0.5f;
+    public Vector3 balloonThrowDown;
+    public Vector3 ballonThrowMid;
+
     void Awake()
     {
         Time.timeScale = TimeScale;
@@ -41,6 +45,14 @@ public class BallController : MonoBehaviour
         ProgressionController = FindObjectOfType<ProgressionController>();
         SceneController = FindObjectOfType<SceneController>();
         Physics.gravity = new Vector3(0, gravityYaxis, 0);
+    }
+
+
+    void Update()
+    {
+        foreach (GameObject item in Balls)
+            if (item.tag == "Balloon")
+                item.GetComponent<Rigidbody>().AddForce(new Vector3(0, BalloonFloatStrength, 0));
     }
 
     private void Start()
@@ -66,7 +78,7 @@ public class BallController : MonoBehaviour
 
     private void AddBall(Vector3 where)
     {
-        GameObject ball = Instantiate(BallPrefab[Random.Range(0,BallPrefab.Length-1)], where, rightHand.transform.rotation);
+        GameObject ball = Instantiate(BallPrefab[Random.Range(0, BallPrefab.Length - 1)], where, rightHand.transform.rotation);
         Balls.Add(ball);
     }
 
@@ -126,7 +138,7 @@ public class BallController : MonoBehaviour
         ScoreController.IncrementScore(catchType);
         ProgressionController.UpdateProgression(catchType);
 
-        Vector3 throwVector = GetThrowForce(throwType);
+        Vector3 throwVector = GetThrowForce(throwType, ball);
         SetThrowDirection(hand, ref throwVector, ballRigidBody);
         ballRigidBody.isKinematic = false;
         ballRigidBody.AddForce(throwVector);
@@ -166,7 +178,7 @@ public class BallController : MonoBehaviour
             currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, rightHand.position, 0.5f);
     }
 
-    private Vector3 GetThrowForce(ViolaController.ThrowType throwType)
+    private Vector3 GetThrowForce(ViolaController.ThrowType throwType, GameObject juggledItem)
     {
         switch (throwType)
         {
@@ -175,10 +187,16 @@ public class BallController : MonoBehaviour
                 return throwUpRightHand * throwUpForce;
 
             case ViolaController.ThrowType.FloorBounce:
-                return throwDownRightHand * throwDownForce;
+                if (juggledItem.tag == "Balloon")
+                    return new Vector3(0, balloonThrowDown.y * throwDownForce, 0) * BalloonFloatStrength; // No X-value
+                else
+                    return throwDownRightHand * throwDownForce;
 
             case ViolaController.ThrowType.MidThrow:
-                return throwLeft * throwSideForce;
+                if (juggledItem.tag == "Balloon")
+                    return balloonThrowDown * throwDownForce * BalloonFloatStrength;
+                else
+                    return throwLeft * throwSideForce;
 
             case ViolaController.ThrowType.None:
             default:
