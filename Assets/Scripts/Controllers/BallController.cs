@@ -50,8 +50,10 @@ public class BallController : MonoBehaviour
     private void Start()
     {
         SpawnBalls(numberOfBalls);
-        AkSoundEngine.SetRTPCValue("rightCollider", 0.0f);
+        AkSoundEngine.SetRTPCValue("leftCollider", 0.0f);
         AkSoundEngine.PostEvent("LeftCollider_event", gameObject);
+        AkSoundEngine.SetRTPCValue("rightCollider", 0.0f);
+        AkSoundEngine.PostEvent("RightCollider_event", gameObject);
 
     }
 
@@ -227,9 +229,9 @@ public class BallController : MonoBehaviour
         var velocity = obj.transform.InverseTransformDirection(rigid.velocity);
         float yAxis = velocity.y;
 
-        if (yAxis < 0)
+        if (yAxis < 0 && obj.transform.position.y > rightHand.position.y)
         {
-            if (obj.transform.position.x < 0)
+            if (obj.transform.position.x < 0 )
             {
                 float distance = Vector3.Distance(rightHand.position, obj.transform.position);
                 AkSoundEngine.SetRTPCValue("rightCollider", 1.0f - distance);
