@@ -22,7 +22,7 @@ namespace UnityEditor
             }); Debug.Log(report);
         }
 
-        [MenuItem("Pipeline/Build: Android Develop")]
+        /*[MenuItem("Pipeline/Build: Android Develop")]
         public static void BuildAndroidDevelop()
         {
             var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
@@ -31,7 +31,7 @@ namespace UnityEditor
                 scenes = EditorBuildSettings.scenes.Where(n => n.enabled).Select(n => n.path).ToArray(),
                 target = BuildTarget.Android
             }); Debug.Log(report);
-        }
+        }/*
 
 
         /**  This is a static property which will return a string, representing a*  build folder on the desktop.
