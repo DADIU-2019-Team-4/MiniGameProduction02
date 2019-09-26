@@ -21,6 +21,8 @@
 			<ShortName>Default_SoundBank2</ShortName>
 			<Path>Default_SoundBank2.bnk</Path>
 			<IncludedEvents>
+				<Event Id="3046129007" Name="ColliderLeft_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ColliderLeft_event" DurationType="Unknown"/>
+				<Event Id="3838495408" Name="ColliderRight_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ColliderRight_event" DurationType="Unknown"/>
 				<Event Id="1999513135" Name="FailSound_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\Win_n_Fail\FailSound_event" DurationType="Unknown"/>
 				<Event Id="1944912667" Name="FillSound_event1" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event1" DurationType="Unknown"/>
 				<Event Id="1944912664" Name="FillSound_event2" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event2" DurationType="Unknown"/>

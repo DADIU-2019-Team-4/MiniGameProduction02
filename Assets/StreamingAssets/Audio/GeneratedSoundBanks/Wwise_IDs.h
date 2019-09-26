@@ -13,6 +13,8 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID COLLIDERLEFT_EVENT = 3046129007U;
+        static const AkUniqueID COLLIDERRIGHT_EVENT = 3838495408U;
         static const AkUniqueID FAILSOUND_EVENT = 1999513135U;
         static const AkUniqueID FILLSOUND_EVENT1 = 1944912667U;
         static const AkUniqueID FILLSOUND_EVENT2 = 1944912664U;
