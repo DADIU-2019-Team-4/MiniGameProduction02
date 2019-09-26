@@ -150,13 +150,12 @@ public class BallController : MonoBehaviour
 
         if (hand == ViolaController.HandType.Left)
         {
-            AkSoundEngine.SetRTPCValue("leftCollider", 1f);
             AkSoundEngine.PostEvent("ColliderLeft_event", gameObject);
+
         }
         if (hand == ViolaController.HandType.Right)
         {
             AkSoundEngine.PostEvent("ColliderRight_event", gameObject);
-            AkSoundEngine.SetRTPCValue("rightCollider", 1f);
         }
 
         Rigidbody ballRigidBody = ball.GetComponent<Rigidbody>();
@@ -241,15 +240,15 @@ public class BallController : MonoBehaviour
             if (obj.transform.position.x < 0)
             {
                 float distance = Vector3.Distance(rightHand.position, obj.transform.position);
-                AkSoundEngine.SetRTPCValue("rightCollider", 1-distance);
                 AkSoundEngine.PostEvent("ColliderRight_event", gameObject);
+                AkSoundEngine.SetRTPCValue("rightCollider", 1 - distance);
                 Debug.Log("RightHand distance:" + distance);
             }
             else
             {
                 float distance = Vector3.Distance(leftHand.position, obj.transform.position);
-                AkSoundEngine.SetRTPCValue("leftCollider", 1-distance);
                 AkSoundEngine.PostEvent("ColliderLeft_event", gameObject);
+                AkSoundEngine.SetRTPCValue("leftCollider", 1 - distance);
                 Debug.Log("LeftHand distance:" + distance);
             }
         }
