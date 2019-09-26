@@ -49,6 +49,7 @@ Modulator Envelope	ID	Name			Wwise Object Path	Notes
 	449427917	Modulator Envelope (Custom)				
 	484672839	Modulator Envelope (Custom)				
 	555210315	Modulator Envelope (Custom)				
+	684055498	Modulator Envelope (Custom)				
 	742332726	Modulator Envelope (Custom)				
 	757409765	Modulator Envelope (Custom)				
 	837869552	Modulator Envelope (Custom)				
@@ -68,6 +69,7 @@ Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	340677071	UnfillSound5	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSounds\UnfillSound5\UnfillSound5	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
 	477103689	Wwise Synth One	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\CircleColliderRight\Wwise Synth One	Triangle for right hand
 	549286709	FillSound3	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\ProgressBar\FillSounds\FillSound3\FillSound3	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
+	553983327	BEEP 01	Wwise Synth One		\Actor-Mixer Hierarchy\Factory Synth One\UI Sounds\BEEP 01\BEEP 01	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
 	632400131	FillSound4	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\ProgressBar\FillSounds\FillSound4\FillSound4	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
 	635473053	FillSound2	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\ProgressBar\FillSounds\FillSound2\FillSound2	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
 	650085291	UnfillSound1	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSounds\UnfillSound1\UnfillSound1	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
