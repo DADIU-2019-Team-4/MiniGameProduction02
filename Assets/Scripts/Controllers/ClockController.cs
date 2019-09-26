@@ -6,6 +6,9 @@ public class ClockController : MonoBehaviour
     private SceneController sceneController;
 
     [SerializeField]
+    private Text timerText;
+
+    [SerializeField]
     private Image filling;
 
     [SerializeField]
@@ -71,5 +74,11 @@ public class ClockController : MonoBehaviour
     {
         float fillingValue = CurrentTimerValue / maxTimerValue;
         filling.fillAmount = fillingValue;
+
+        // update the digital clock
+        string minutes = Mathf.Floor(currentTimerValue / 60).ToString("00");
+        string seconds = (currentTimerValue % 60).ToString("00");
+
+        timerText.text = $"{minutes}:{seconds}";
     }
 }
