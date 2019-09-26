@@ -139,7 +139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BallPrefab:
   - {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab, type: 3}
-  - {fileID: 7496779614026164388, guid: ac52547d46821b7438ba65fa3694ad75, type: 3}
+  - {fileID: 7496779614026164388, guid: 3bb2b6a5c2f2a604b97ebb754d7b6e45, type: 3}
+  - {fileID: 7496779614026164388, guid: 1bb30ea8780787e4ab9833ec6de296dc, type: 3}
   distanceBetweenSpawnedBalls: 0.1
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
@@ -151,8 +152,9 @@ MonoBehaviour:
   throwUpForce: 40
   throwDownForce: 30
   throwSideForce: 35
-  gravityYaxis: -9.8
+  gravityYaxis: -9.81
   TimeScale: 0.5
   BalloonFloatStrength: 0.6
   balloonThrowDown: {x: 0, y: -5, z: 0}
   ballonThrowMid: {x: 10, y: -5, z: 0}
+  ballSelectorInt: 0
