@@ -218,16 +218,22 @@ public class BallController : MonoBehaviour
     #region Distance between perfect catch and a ball
     public void PlayDistanceSound(GameObject obj)
     {
+        Rigidbody rigid = obj.GetComponent<Rigidbody>();
+        var velocity = obj.transform.InverseTransformDirection(rigid.velocity);
+        float yAxis = velocity.y;
 
-        if (obj.transform.position.x < 0)
+        if (yAxis < 0)
         {
-            float distance = Vector3.Distance(rightHand.position, obj.transform.position);
-            Debug.Log("RightHand distance:" + distance);
-        }
-        else
-        {
-            float distance = Vector3.Distance(leftHand.position, obj.transform.position);
-            Debug.Log("LeftHand distance:" + distance);
+            if (obj.transform.position.x < 0)
+            {
+                float distance = Vector3.Distance(rightHand.position, obj.transform.position);
+                Debug.Log("RightHand distance:" + distance);
+            }
+            else
+            {
+                float distance = Vector3.Distance(leftHand.position, obj.transform.position);
+                Debug.Log("LeftHand distance:" + distance);
+            }
         }
     }
     #endregion
