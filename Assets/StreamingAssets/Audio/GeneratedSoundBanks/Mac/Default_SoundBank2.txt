@@ -1,5 +1,4 @@
 Event	ID	Name			Wwise Object Path	Notes
-	357743971	LeftCollider_event			\Default Work Unit\FeedbackSounds\LeftCollider_event	
 	1069674504	MenuIN_event			\Default Work Unit\UI\MenuIN_event	
 	1118806522	UnfillSound_event5			\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event5	
 	1118806523	UnfillSound_event4			\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event4	
@@ -8,7 +7,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	1118806526	UnfillSound_event1			\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event1	
 	1118806527	UnfillSound_event0			\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event0	
 	1399763525	RoomTone_event			\Default Work Unit\RoomTone_event	
-	1692484400	RightCollider_event			\Default Work Unit\FeedbackSounds\RightCollider_event	
 	1944912664	FillSound_event2			\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event2	
 	1944912665	FillSound_event3			\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event3	
 	1944912667	FillSound_event1			\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event1	
@@ -19,6 +17,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	1999513135	FailSound_event			\Default Work Unit\FeedbackSounds\ProgressBar\Win_n_Fail\FailSound_event	
 	2293628003	PressButton_event			\Default Work Unit\UI\PressButton_event	
 	3036127557	LevelCompleted_event			\Default Work Unit\FeedbackSounds\ProgressBar\Win_n_Fail\LevelCompleted_event	
+	3046129007	ColliderLeft_event			\Default Work Unit\FeedbackSounds\ColliderLeft_event	
+	3838495408	ColliderRight_event			\Default Work Unit\FeedbackSounds\ColliderRight_event	
 	3869548328	PerfectCatch_event			\Default Work Unit\FeedbackSounds\PerfectCatch_event	
 	3921462371	SwipeSound_event			\Default Work Unit\FeedbackSounds\SwipeSound_event	
 
