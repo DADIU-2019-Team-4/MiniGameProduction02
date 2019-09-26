@@ -37,17 +37,17 @@ public class ProgressionController : MonoBehaviour
     [SerializeField]
     private int failStep = -2;
 
-    private SceneController sceneController;
+    private SceneController SceneController;
 
-    public enum CatchType { normalCatch, perfectCatch, FailedCatch }
+    //public enum CatchType { normalCatch, perfectCatch, FailedCatch }
 
-    public enum PartType { Green, Yellow, Red }
+    public enum PartType { Red, Yellow, Green }
 
     public PartType currentPartType;
 
     private void Awake()
     {
-        sceneController = FindObjectOfType<SceneController>();
+        SceneController = FindObjectOfType<SceneController>();
     }
 
     // Start is called before the first frame update
@@ -65,15 +65,51 @@ public class ProgressionController : MonoBehaviour
         DeterminePartType();
     }
 
+    public void UpdateProgression(ScoreController.CatchType catchType)
+    {
+        switch (catchType)
+        {
+
+            case ScoreController.CatchType.Normal:
+                currentSteps += normalCatchStep;
+                if (currentSteps > totalSteps)
+                    currentSteps = totalSteps;
+                break;
+
+            case ScoreController.CatchType.Perfect:
+                currentSteps += perfectCatchStep;
+                if (currentSteps > totalSteps)
+                    currentSteps = totalSteps;
+                break;
+
+            case ScoreController.CatchType.Failed:
+                currentSteps += failStep;
+                if (currentSteps <= 0)
+                {
+                    currentSteps = 0;
+                    SceneController.LevelFailed();
+                }
+                break;
+        }
+
+        UpdateParts();
+        UpdateArrow(currentSteps);
+        DeterminePartType();
+    }
+
     private void DeterminePartType()
     {
-        int partAmount = Mathf.FloorToInt((float) currentSteps / stepsPerColor);
-        if (partAmount == 0)
-            currentPartType = PartType.Red;
-        else if (partAmount == 1)
-            currentPartType = PartType.Yellow;
-        else if (partAmount == 2)
-            currentPartType = PartType.Green;
+        // You can make (ab)use enumerations like this too:
+        currentPartType = (PartType) Mathf.FloorToInt((float) currentSteps / stepsPerColor);
+        // Just make sure the integer calculated matches the sequence of items in the enumeration.
+
+        //int partAmount = Mathf.FloorToInt((float) currentSteps / stepsPerColor);
+        //if (partAmount == 0)
+        //    currentPartType = PartType.Red;
+        //else if (partAmount == 1)
+        //    currentPartType = PartType.Yellow;
+        //else if (partAmount == 2)
+        //    currentPartType = PartType.Green;
     }
 
     private void UpdateArrow(int value)
@@ -87,34 +123,5 @@ public class ProgressionController : MonoBehaviour
         filling.fillAmount = (float)partsToFill / totalParts;
     }
 
-    public void UpdateProgression(CatchType catchType)
-    {
-        switch (catchType)
-        {
-            case CatchType.normalCatch:
-                currentSteps += normalCatchStep;
-                if (currentSteps > totalSteps)
-                    currentSteps = totalSteps;
-                break;
-            case CatchType.perfectCatch:
-                currentSteps += perfectCatchStep;
-                if (currentSteps > totalSteps)
-                        currentSteps = totalSteps;
-                break;
-            case CatchType.FailedCatch:
-                currentSteps += failStep;
-                if (currentSteps <= 0)
-                {
-                    currentSteps = 0;
-                    sceneController.LevelFailed();
-                }
-                break;
-            default:
-                break;
-        }
 
-        UpdateParts();
-        UpdateArrow(currentSteps);
-        DeterminePartType();
-    }
 }
