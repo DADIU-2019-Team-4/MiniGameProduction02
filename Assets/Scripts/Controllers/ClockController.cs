@@ -14,7 +14,9 @@ public class ClockController : MonoBehaviour
     [SerializeField]
     private Image arrow;
 
+    // delete this and modify everything related if digital clock is chosen (it's not needed for analog clock)
     private float maxTimerValue = 60f;
+
     public float TimerValue = 30f;
 
     public GameObject Background;
@@ -76,8 +78,8 @@ public class ClockController : MonoBehaviour
         filling.fillAmount = fillingValue;
 
         // update the digital clock
-        string minutes = Mathf.Floor(currentTimerValue / 60).ToString("00");
-        string seconds = (currentTimerValue % 60).ToString("00");
+        string minutes = Mathf.Floor(CurrentTimerValue / 60).ToString("00");
+        string seconds = (CurrentTimerValue % 60).ToString("00");
 
         timerText.text = $"{minutes}:{seconds}";
     }
