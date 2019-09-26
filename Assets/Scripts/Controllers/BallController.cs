@@ -6,6 +6,7 @@ public class BallController : MonoBehaviour
 {
     private ScoreController ScoreController;
     private ProgressionController ProgressionController;
+    private SceneController SceneController;
 
 
     public GameObject BallPrefab;
@@ -39,6 +40,7 @@ public class BallController : MonoBehaviour
         Time.timeScale = TimeScale;
         ScoreController = FindObjectOfType<ScoreController>();
         ProgressionController = FindObjectOfType<ProgressionController>();
+        SceneController = FindObjectOfType<SceneController>();
     }
 
     private void Start()
@@ -131,6 +133,7 @@ public class BallController : MonoBehaviour
         SetThrowDirection(hand, ref throwVector, ballRigidBody);
         ballRigidBody.isKinematic = false;
         ballRigidBody.AddForce(throwVector);
+        SceneController.IsPlaying = true;
     }
 
     private void SetIndicators()

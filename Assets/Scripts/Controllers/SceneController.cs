@@ -11,7 +11,7 @@ public class SceneController : MonoBehaviour
 
     public bool IsPlaying { get; set; }
 
-    public void SceneReset()
+    public void ResetScene()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

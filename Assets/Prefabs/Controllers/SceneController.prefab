@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1267635558868094371}
   - component: {fileID: 1267635558868094372}
+  - component: {fileID: 1267635559848045145}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -24,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267635558868094373}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -45,5 +46,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelFailedText: {fileID: 0}
   levelCompletedText: {fileID: 0}
-  timerText: {fileID: 0}
+--- !u!114 &1267635559848045145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267635558868094373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a28220ae8ddcf4f831b4eec103085e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filling: {fileID: 0}
+  arrow: {fileID: 0}
   timerValue: 60
