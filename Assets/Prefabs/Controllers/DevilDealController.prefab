@@ -46,14 +46,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   devilDealCanvas: {fileID: 0}
   descriptionText: {fileID: 0}
-  negativeDealImage: {fileID: 0}
   devilSkullSpawnPoint: {fileID: 0}
   devilSkull: {fileID: 2885985191341402184, guid: 90230456fbedda844b50783fb35753bb,
     type: 3}
   devilDeals:
   - {fileID: 11400000, guid: 6ef9ac461f594564f86cf34253df860b, type: 2}
   - {fileID: 11400000, guid: fb81b6fa1e5ce7544adba71053266ebc, type: 2}
-  maxAcceptedDevilDeals: 10
+  - {fileID: 11400000, guid: 11a9ba9580e10c24d8bba3a86fed39aa, type: 2}
   countUntilNegativeEffect: 2
   dealDescription: Do you accept this deal? >:D
 --- !u!114 &1464220514811936704
@@ -69,4 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sinisterFlashingImage: {fileID: 0}
-  Interval: 0
+  Interval: 1
+  lengthOfFlash: 0.2
+  maxAlphaValue: 0.5
+  startFlashing: 0

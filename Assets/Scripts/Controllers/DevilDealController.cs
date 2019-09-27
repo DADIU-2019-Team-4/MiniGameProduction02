@@ -12,8 +12,6 @@ public class DevilDealController : MonoBehaviour
 
     [SerializeField]
     private Text descriptionText;
-    [SerializeField]
-    private Image negativeDealImage;
 
     [SerializeField]
     private GameObject devilSkullSpawnPoint;
@@ -25,12 +23,10 @@ public class DevilDealController : MonoBehaviour
     private DevilDeal chosenNegativeDevilDeal;
 
     private int acceptedDevilDealsCount;
-    private List<DevilDeal> acceptedDevilDeals = new List<DevilDeal>();
-    [SerializeField]
-    private int maxAcceptedDevilDeals = 10;
     private int acceptedNegativeDealsCount;
 
     private bool applyNegativeEffect;
+    private bool lastDevilDeal;
 
     [SerializeField]
     private int countUntilNegativeEffect = 2;
@@ -51,6 +47,17 @@ public class DevilDealController : MonoBehaviour
     {
         imageWidth = devilSkull.GetComponent<RectTransform>().rect.width;
         SpawnDevilSkulls();
+
+        ActivateDevilDeals();
+    }
+
+    private void ActivateDevilDeals()
+    {
+        for (int i = 0; i < acceptedNegativeDealsCount; i++)
+        {
+            chosenNegativeDevilDeal = devilDeals[i];
+            chosenNegativeDevilDeal.ApplyDevilDeal();
+        }
     }
 
     private void SpawnDevilSkulls()
@@ -77,17 +84,16 @@ public class DevilDealController : MonoBehaviour
         if (ProgressionController.ActivateDevilDeal)
         {
             ProgressionController.ActivateDevilDeal = false;
-            ActivateDevilDealPanel();
+
+            if (!lastDevilDeal)
+                ActivateDevilDealPanel();
         }
     }
 
     public void ActivateDevilDealPanel()
     {
-        // todo play animation
-
-        // todo insert some check to only activate this when animation is done playing
+        // todo play animation and continue when animation is done playing
         devilDealCanvas.SetActive(true);
-        negativeDealImage.gameObject.SetActive(false);
         descriptionText.text = dealDescription;
 
         if (acceptedDevilDealsCount > 0 && acceptedDevilDealsCount % countUntilNegativeEffect == 0)
@@ -100,12 +106,6 @@ public class DevilDealController : MonoBehaviour
 
     public void AcceptDevilDeal()
     {
-        if (acceptedDevilDealsCount >= maxAcceptedDevilDeals)
-        {
-            //todo insert method to ending by too much devil deals
-            return;
-        }
-
         if (applyNegativeEffect)
         {
             ApplyNegativeEffect();
@@ -140,19 +140,18 @@ public class DevilDealController : MonoBehaviour
         chosenNegativeDevilDeal = devilDeals[acceptedNegativeDealsCount];
 
         descriptionText.text = chosenNegativeDevilDeal.dealDescription;
-        negativeDealImage.sprite = chosenNegativeDevilDeal.descriptionImage;
-        negativeDealImage.gameObject.SetActive(true);
     }
 
     private void ApplyNegativeEffect()
     {
-        // todo should save it for long term
-        acceptedDevilDeals.Add(chosenNegativeDevilDeal);
-
         // todo save this value for long term
         acceptedNegativeDealsCount++;
 
         chosenNegativeDevilDeal.ApplyDevilDeal();
+
+
+        if (acceptedNegativeDealsCount >= devilDeals.Count)
+            lastDevilDeal = true;
     }
 
     public void DeclineDevilDeal()

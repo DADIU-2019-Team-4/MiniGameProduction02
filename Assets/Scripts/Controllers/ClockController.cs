@@ -14,6 +14,8 @@ public class ClockController : MonoBehaviour
     [SerializeField]
     private Image arrow;
 
+    public float BackgroundRotationSpeed = 1;
+
     // delete this and modify everything related if digital clock is chosen (it's not needed for analog clock)
     private float maxTimerValue = 60f;
 
@@ -55,7 +57,7 @@ public class ClockController : MonoBehaviour
     private void RotateScenery(float value)
     {
         if (Background != null)
-            Background.GetComponent<Transform>().eulerAngles = new Vector3(0, value, 0);
+            Background.GetComponent<Transform>().eulerAngles = new Vector3(0, value * BackgroundRotationSpeed, 0);
     }
 
     private void UpdateTimer()
