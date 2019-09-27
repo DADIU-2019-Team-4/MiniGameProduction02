@@ -3,40 +3,22 @@ using UnityEngine.UI;
 
 public class ScoreController : MonoBehaviour
 {
-    private ProgressionController ProgressionController;
     private SceneController SceneController;
 
     public Text scoreText;
     private int score;
     private int receivedPoints;
 
-    public Text multiplierText;
-
     [SerializeField]
     private int normalCatchPoints = 1;
     [SerializeField]
     private int perfectCatchPoints = 3;
 
-    [SerializeField]
-    private int angryMultiplier = 1;
-
-    [SerializeField]
-    private int neutralMultiplier = 2;
-
-    [SerializeField]
-    private int happyMultiplier = 4;
-
     public enum CatchType { Normal, Perfect, Failed }
 
     private void Awake()
     {
-        ProgressionController = FindObjectOfType<ProgressionController>();
         SceneController = FindObjectOfType<SceneController>();
-    }
-
-    private void Start()
-    {
-        ApplyMultiplier();
     }
 
     public void IncrementScore(CatchType catchType)
@@ -60,21 +42,7 @@ public class ScoreController : MonoBehaviour
 
     private void ApplyMultiplier()
     {
-        switch (ProgressionController.CurrentCrowdHappiness)
-        {
-            case ProgressionController.CrowdHappiness.Happy:
-                receivedPoints *= happyMultiplier;
-                multiplierText.text = happyMultiplier + "x";
-                break;
-            case ProgressionController.CrowdHappiness.Neutral:
-                receivedPoints *= neutralMultiplier;
-                multiplierText.text = neutralMultiplier + "x";
-                break;
-            case ProgressionController.CrowdHappiness.Angry:
-                receivedPoints *= angryMultiplier;
-                multiplierText.text = neutralMultiplier + "x";
-                break;
-        }
+        // todo implement multiplier
     }
 
     public void DroppedBall()
@@ -82,7 +50,6 @@ public class ScoreController : MonoBehaviour
         //leftHandParticle.Play();
         //rightHandParticle.Play();
 
-        ProgressionController.UpdateProgression(CatchType.Failed);
         SceneController.IsPlaying = false;
         
         // The BallController will delete and respawn the balls after this function call.

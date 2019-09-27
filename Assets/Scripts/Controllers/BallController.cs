@@ -5,8 +5,8 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
     private ScoreController ScoreController;
-    private ProgressionController ProgressionController;
     private SceneController SceneController;
+    private LifeManager LifeManager;
 
 
     public GameObject[] BallPrefab;
@@ -44,8 +44,8 @@ public class BallController : MonoBehaviour
     {
         Time.timeScale = TimeScale;
         ScoreController = FindObjectOfType<ScoreController>();
-        ProgressionController = FindObjectOfType<ProgressionController>();
         SceneController = FindObjectOfType<SceneController>();
+        LifeManager = FindObjectOfType<LifeManager>();
         Physics.gravity = new Vector3(0, gravityYaxis, 0);
     }
 
@@ -120,6 +120,8 @@ public class BallController : MonoBehaviour
     public void BallDropped()
     {
         ScoreController.DroppedBall();
+        LifeManager.CurrentLives--;
+        LifeManager.UpdateLives();
         throwCount = 0;
         ballsInCatchZone.Clear();
 
@@ -164,7 +166,6 @@ public class BallController : MonoBehaviour
         }
 
         ScoreController.IncrementScore(catchType);
-        ProgressionController.UpdateProgression(catchType);
 
         Vector3 throwVector = GetThrowForce(throwType, ball);
         SetThrowDirection(hand, ref throwVector, ballRigidBody);
