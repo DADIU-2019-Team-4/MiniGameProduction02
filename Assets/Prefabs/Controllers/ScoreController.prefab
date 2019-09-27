@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2431377473350284634}
   - component: {fileID: 2431377473350284637}
-  - component: {fileID: 2431377474637233699}
+  - component: {fileID: 49805587566403415}
   m_Layer: 0
   m_Name: ScoreController
   m_TagString: Untagged
@@ -45,13 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
-  multiplierText: {fileID: 0}
   normalCatchPoints: 1
   perfectCatchPoints: 3
-  angryMultiplier: 1
-  neutralMultiplier: 2
-  happyMultiplier: 4
---- !u!114 &2431377474637233699
+--- !u!114 &49805587566403415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,11 +56,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2431377473350284635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a28220ae8ddcf4f831b4eec103085e, type: 3}
+  m_Script: {fileID: 11500000, guid: aa6972fbdda1a8b4fa2247c88132a517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
-  filling: {fileID: 0}
-  arrow: {fileID: 0}
-  timerValue: 60
   Background: {fileID: 0}
+  RotationSpeed: 7
