@@ -48,6 +48,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Devil Skull
       objectReference: {fileID: 0}
+    - target: {fileID: 2885985191341402184, guid: 90230456fbedda844b50783fb35753bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 498349647946089366, guid: 90230456fbedda844b50783fb35753bb,
         type: 3}
       propertyPath: m_LocalPosition.x

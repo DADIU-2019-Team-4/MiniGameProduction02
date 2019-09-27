@@ -7,7 +7,7 @@ public class DevilDealBackground : DevilDeal
 
     public override void ApplyDevilDeal()
     {
-        ClockController clockController = FindObjectOfType<ClockController>();
-        clockController.BackgroundRotationSpeed = rotationSpeed;
+        RotateBackground rotateBackground = FindObjectOfType<RotateBackground>();
+        rotateBackground.RotationSpeed = rotationSpeed;
     }
 }

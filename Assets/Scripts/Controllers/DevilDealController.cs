@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class DevilDealController : MonoBehaviour
 {
     private BallController BallController;
-    private ProgressionController ProgressionController;
+    private LifeManager LifeManager;
 
     [SerializeField]
     private GameObject devilDealCanvas;
@@ -40,7 +40,7 @@ public class DevilDealController : MonoBehaviour
     private void Awake()
     {
         BallController = FindObjectOfType<BallController>();
-        ProgressionController = FindObjectOfType<ProgressionController>();
+        LifeManager = FindObjectOfType<LifeManager>();
     }
 
     private void Start()
@@ -77,17 +77,6 @@ public class DevilDealController : MonoBehaviour
         Image[] skulls = devilSkullSpawnPoint.GetComponentsInChildren<Image>();
         foreach (Image skull in skulls)
             Destroy(skull.gameObject);
-    }
-
-    private void Update()
-    {
-        if (ProgressionController.ActivateDevilDeal)
-        {
-            ProgressionController.ActivateDevilDeal = false;
-
-            if (!lastDevilDeal)
-                ActivateDevilDealPanel();
-        }
     }
 
     public void ActivateDevilDealPanel()
@@ -130,9 +119,7 @@ public class DevilDealController : MonoBehaviour
 
     private void ApplyPositiveEffect()
     {
-        ProgressionController.CurrentSteps = ProgressionController.TotalSteps / 2;
-        ProgressionController.UpdateArrow();
-        ProgressionController.UpdateParts();
+        LifeManager.ResetLives();
     }
 
     private void ChooseNegativeDevilDeal()
