@@ -26,19 +26,17 @@ public class BallController : MonoBehaviour
     public GameObject leftPerfectCatch;
     public GameObject rightPerfectCatch;
 
-    public Vector3 throwUpRightHand;
-    public Vector3 throwDownRightHand;
-    public Vector3 throwLeft;
-    public float throwUpForce;
-    public float throwDownForce;
-    public float throwSideForce;
+    public Transform HighThrowForce;
+    public Transform MidThrowForce;
+    public Transform FloorBounceForce;
+    public float throwForceMultiplier;
     public float gravityYaxis;
 
     public float TimeScale;
     public float BalloonFloatStrength = 0.5f;
     public Vector3 balloonThrowDown;
     public Vector3 ballonThrowMid;
-    public int ballSelectorInt = 0; 
+    public int ballSelectorInt = 0;
 
     void Awake()
     {
@@ -207,6 +205,7 @@ public class BallController : MonoBehaviour
         }
         else
             currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, rightHand.position, 0.7f);
+
     }
 
     private Vector3 GetThrowForce(ViolaController.ThrowType throwType, GameObject juggledItem)
@@ -215,19 +214,19 @@ public class BallController : MonoBehaviour
         {
             case ViolaController.ThrowType.HighThrow:
 
-                return throwUpRightHand * throwUpForce;
+                return HighThrowForce.localPosition * throwForceMultiplier;
 
             case ViolaController.ThrowType.FloorBounce:
                 if (juggledItem.tag == "Balloon")
-                    return new Vector3(0, balloonThrowDown.y * throwDownForce, 0) * BalloonFloatStrength; // No X-value
+                    return new Vector3(0, balloonThrowDown.y * throwForceMultiplier, 0) * BalloonFloatStrength; // No X-value
                 else
-                    return throwDownRightHand * throwDownForce;
+                    return FloorBounceForce.localPosition * throwForceMultiplier;
 
             case ViolaController.ThrowType.MidThrow:
                 if (juggledItem.tag == "Balloon")
-                    return ballonThrowMid * throwDownForce * BalloonFloatStrength;
+                    return ballonThrowMid * throwForceMultiplier * BalloonFloatStrength;
                 else
-                    return throwLeft * throwSideForce;
+                    return MidThrowForce.localPosition * throwForceMultiplier;
 
             case ViolaController.ThrowType.None:
             default:
@@ -251,7 +250,7 @@ public class BallController : MonoBehaviour
 
         if (yAxis < 0 && obj.transform.position.y > rightHand.position.y)
         {
-            if (obj.transform.position.x < 0 )
+            if (obj.transform.position.x < 0)
             {
                 float distance = Vector3.Distance(rightHand.position, obj.transform.position);
 
