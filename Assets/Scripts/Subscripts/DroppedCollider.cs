@@ -17,7 +17,7 @@ public class DroppedCollider : MonoBehaviour
         if (collision.gameObject.tag == "Ball" || collision.gameObject.tag == "Balloon" || collision.gameObject.tag == "Sabre")
             if (collision.gameObject.tag == "Balloon")
                 AkSoundEngine.PostEvent("BalloonPop_event", gameObject);
-        BallController.BallDropped();
+        BallController.BallDropped(collision.transform.position.x);
         Destroy(collision.gameObject);
     }
 

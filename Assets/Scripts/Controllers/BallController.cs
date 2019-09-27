@@ -38,7 +38,10 @@ public class BallController : MonoBehaviour
     public float BalloonFloatStrength = 0.5f;
     public Vector3 balloonThrowDown;
     public Vector3 ballonThrowMid;
-    public int ballSelectorInt = 0; 
+    public int ballSelectorInt = 0;
+    public float delayTime;
+    public float slowDownTime;
+    public bool spawnInRandomHand;
 
     void Awake()
     {
@@ -80,43 +83,21 @@ public class BallController : MonoBehaviour
                 spawnPosition = new Vector3(rightHand.transform.position.x + distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), rightHand.transform.position.y, rightHand.transform.position.z);
             else
                 spawnPosition = new Vector3(leftHand.transform.position.x - distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), leftHand.transform.position.y, leftHand.transform.position.z);
-            AddBall(spawnPosition, i);
+            AddBall(spawnPosition, i, false);
         }
         //ballSelectorInt = 0;
     }
 
-    private void AddBall(Vector3 where, int prefabInt)
+    private void AddBall(Vector3 where, int prefabInt, bool isDropped)
     {
         GameObject ball = Instantiate(BallPrefab[prefabInt], where, rightHand.transform.rotation);
-        Balls.Add(ball);
-        //GameObject ball = Instantiate(BallPrefab[Random.Range(0, BallPrefab.Length - 1)], where, rightHand.transform.rotation);
-        //Balls.Add(ball);
-
-        if (ballSelectorInt == 0)
+        if (isDropped)
         {
-            GameObject ball = Instantiate(BallPrefab[0], where, rightHand.transform.rotation);
-            Balls.Add(ball);
-        }
-        else if (ballSelectorInt == 1)
-        {
-            GameObject ball = Instantiate(BallPrefab[0], where, rightHand.transform.rotation);
-            Balls.Add(ball);
-        }
-
-        else if (ballSelectorInt == 2)
-        {
-            GameObject ball = Instantiate(BallPrefab[1], where, rightHand.transform.rotation);
-            Balls.Add(ball);
-        }
-        else
-        {
-            GameObject ball = Instantiate(BallPrefab[1], where, rightHand.transform.rotation);
-            Balls.Add(ball);
             ball.GetComponent<Rigidbody>().isKinematic = false;
+            ball.GetComponent<Rigidbody>().drag = slowDownTime;
         }
-
-            print(ballSelectorInt);
-            ballSelectorInt++;
+        Balls.Add(ball);
+        ballSelectorInt++;
     }
 
     private void RemoveBall(GameObject ball)
@@ -145,18 +126,27 @@ public class BallController : MonoBehaviour
             ballsInCatchZone.Remove(ball);
     }
 
-    public void BallDropped()
+    public void BallDropped(float x)
     {
         ScoreController.DroppedBall();
         throwCount = 0;
         ballsInCatchZone.Clear();
-        //ballsInCatchZone.Clear();
-        // while (Balls.Count != 0)
-        //     RemoveBall(Balls[0]);
-        // StartCoroutine(Delay(0.5f));
+        StartCoroutine(Delay(delayTime));
+        if (spawnInRandomHand)
+        {
+            if (Mathf.CeilToInt(Random.Range(0f, 1f)) == 0)
+                AddBall(new Vector3(rightHand.transform.position.x, 12, 0), 1, true);
+            else
+                AddBall(new Vector3(leftHand.transform.position.x, 12, 0), 1, true);
+        }
+        else
+        {
+            if (x > 0)
+                AddBall(new Vector3(leftHand.transform.position.x, 12, 0), 1, true);
+            else
+                AddBall(new Vector3(rightHand.transform.position.x, 12, 0), 1, true);
+        }
 
-        //SpawnBalls(numberOfBalls);
-        AddBall(new Vector3(rightHand.transform.position.x , 15, 0));
     }
 
     #endregion
@@ -189,7 +179,7 @@ public class BallController : MonoBehaviour
         if (ball.tag == "Sabre" && catchType != ScoreController.CatchType.Perfect)
         {
             //failed Sabre throw, cut off hand
-            BallDropped();
+            BallDropped(ball.transform.position.x);
         }
 
         ScoreController.IncrementScore(catchType);
@@ -198,6 +188,8 @@ public class BallController : MonoBehaviour
         Vector3 throwVector = GetThrowForce(throwType, ball);
         SetThrowDirection(hand, ref throwVector, ballRigidBody);
         ballRigidBody.isKinematic = false;
+        if (ballRigidBody.drag > 0)
+            ballRigidBody.drag = 0;
         ballRigidBody.AddForce(throwVector);
         BallLeavesHand(ball.GetComponent<Collider>());
         throwCount++;
@@ -286,14 +278,12 @@ public class BallController : MonoBehaviour
 
                 AkSoundEngine.PostEvent("ColliderRight_event", gameObject);
                 AkSoundEngine.SetRTPCValue("rightCollider", 1 - distance);
-                Debug.Log("RightHand distance:" + distance);
             }
             else
             {
                 float distance = Vector3.Distance(leftHand.position, obj.transform.position);
                 AkSoundEngine.PostEvent("ColliderLeft_event", gameObject);
                 AkSoundEngine.SetRTPCValue("leftCollider", 1 - distance);
-                Debug.Log("LeftHand distance:" + distance);
             }
         }
     }
@@ -301,6 +291,7 @@ public class BallController : MonoBehaviour
 
     IEnumerator Delay(float seconds)
     {
+        Debug.Log("Goes to delay");
         yield return new WaitForSeconds(seconds);
     }
 }
