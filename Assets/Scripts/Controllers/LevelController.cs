@@ -16,6 +16,9 @@ public class LevelController : MonoBehaviour
     public Text lvlText;
     private SaveController saveC;
 
+    //test variables
+    public int levelSelector = 0;
+
     private void Awake()
     {
         //baseTimeToCompleteLevels = new float[totalNumberOfLevels+1];
@@ -46,7 +49,9 @@ public class LevelController : MonoBehaviour
         //When time is up go to next level
         if (totalTimeToCompleteCurrentLevel - timeOnCurrentLevelTime < 0)
         {
-            StartLevel(currentLevel+1);
+            //StartLevel(currentLevel+1);
+            SceneManager.LoadScene(levelSelector);
+            levelSelector++; 
 
         }
     }
