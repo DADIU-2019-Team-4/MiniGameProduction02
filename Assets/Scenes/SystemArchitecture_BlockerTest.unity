@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -758,7 +758,7 @@ MonoBehaviour:
   isTop: 0
   isMid: 0
   isBottom: 0
-  maxAmountBlockers: 1
+  maxAmountBlockers: 2
   currentBlockers: 0
   destroyDelay: 2
 --- !u!1001 &1834208033747338984

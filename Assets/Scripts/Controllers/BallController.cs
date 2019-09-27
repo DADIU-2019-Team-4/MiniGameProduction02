@@ -35,7 +35,7 @@ public class BallController : MonoBehaviour
     public float TimeScale;
 
     //test variable
-    public int ballSelectorInt = 0; 
+    public int ballSelectorInt = 0;
 
 
     void Awake()
@@ -71,17 +71,17 @@ public class BallController : MonoBehaviour
                 spawnPosition = new Vector3(leftHand.transform.position.x - distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), leftHand.transform.position.y, leftHand.transform.position.z);
             AddBall(spawnPosition);
         }
-        ballSelectorInt = 0;
+        //ballSelectorInt = 0;
     }
 
     private void AddBall(Vector3 where)
     {
         //GameObject ball = Instantiate(BallPrefab[Random.Range(0, BallPrefab.Length - 1)], where, rightHand.transform.rotation);
         //Balls.Add(ball);
-        
+
         if (ballSelectorInt == 0)
         {
-           GameObject ball = Instantiate(BallPrefab[0], where, rightHand.transform.rotation);
+            GameObject ball = Instantiate(BallPrefab[0], where, rightHand.transform.rotation);
             Balls.Add(ball);
         }
         else if (ballSelectorInt == 1)
@@ -95,8 +95,15 @@ public class BallController : MonoBehaviour
             GameObject ball = Instantiate(BallPrefab[1], where, rightHand.transform.rotation);
             Balls.Add(ball);
         }
+        else
+        {
+            GameObject ball = Instantiate(BallPrefab[1], where, rightHand.transform.rotation);
+            Balls.Add(ball);
+            ball.GetComponent<Rigidbody>().isKinematic = false;
+        }
 
-        ballSelectorInt++; 
+            print(ballSelectorInt);
+            ballSelectorInt++;
     }
 
     private void RemoveBall(GameObject ball)
@@ -128,13 +135,14 @@ public class BallController : MonoBehaviour
     public void BallDropped()
     {
         ScoreController.DroppedBall();
-        ballsInCatchZone.Clear();
+        //ballsInCatchZone.Clear();
 
-        while (Balls.Count != 0)
-            RemoveBall(Balls[0]);
-        StartCoroutine(Delay(0.5f));
+        // while (Balls.Count != 0)
+        //     RemoveBall(Balls[0]);
+        // StartCoroutine(Delay(0.5f));
 
-        SpawnBalls(numberOfBalls);
+        //SpawnBalls(numberOfBalls);
+        AddBall(new Vector3(rightHand.transform.position.x , 15, 0));
     }
 
     #endregion
@@ -238,7 +246,7 @@ public class BallController : MonoBehaviour
 
         if (yAxis < 0 && obj.transform.position.y > rightHand.position.y)
         {
-            if (obj.transform.position.x < 0 )
+            if (obj.transform.position.x < 0)
             {
                 float distance = Vector3.Distance(rightHand.position, obj.transform.position);
 

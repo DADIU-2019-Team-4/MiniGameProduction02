@@ -17,5 +17,6 @@ public class DroppedCollider : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball")
             BallController.BallDropped();
+            Destroy(collision.gameObject);
     }
 }

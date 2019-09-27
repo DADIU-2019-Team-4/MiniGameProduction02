@@ -729,6 +729,11 @@ PrefabInstance:
       propertyPath: arrow
       value: 
       objectReference: {fileID: 7781361177337173343}
+    - target: {fileID: 1267635559848045145, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: timerValue
+      value: 600
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8217b052d62188241932da549938efdf, type: 3}
 --- !u!1 &1267635559848045144 stripped
@@ -1003,9 +1008,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a28220ae8ddcf4f831b4eec103085e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
   filling: {fileID: 7781361177337173348}
   arrow: {fileID: 7781361177337173343}
   timerValue: 60
+  Background: {fileID: 0}
 --- !u!1001 &2652069135451615258
 PrefabInstance:
   m_ObjectHideFlags: 0
