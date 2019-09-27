@@ -48,7 +48,7 @@ MonoBehaviour:
   totalParts: 6
   stepsPerPart: 3
   arrowEndValueInDegrees: -180
-  arrowStartInSteps: 7
+  arrowStartInSteps: 9
   normalCatchStep: 1
   perfectCatchStep: 2
   failStep: -5

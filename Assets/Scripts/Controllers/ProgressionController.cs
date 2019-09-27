@@ -19,8 +19,8 @@ public class ProgressionController : MonoBehaviour
     [SerializeField]
     private int stepsPerPart = 3;
 
-    public int TotalSteps { get; set; }
-    public int CurrentSteps { get; set; }
+    private int totalSteps;
+    private int currentSteps;
 
     private float degreesPerStep;
 
@@ -37,13 +37,14 @@ public class ProgressionController : MonoBehaviour
     [SerializeField]
     private int failStep = -2;
 
-    public bool ActivateDevilDeal { get; set; }
-
     private SceneController SceneController;
 
     public enum CrowdHappiness { Angry, Neutral, Happy }
 
     public CrowdHappiness CurrentCrowdHappiness;
+
+    private int prevPartsToFill;
+    private bool startOfLevel;
 
     private void Awake()
     {
@@ -54,15 +55,18 @@ public class ProgressionController : MonoBehaviour
     void Start()
     {
         // setting up values
-        TotalSteps = totalParts * stepsPerPart;
-        degreesPerStep = arrowEndValueInDegrees / TotalSteps;
-        stepsPerColor = TotalSteps / totalColors;
-        CurrentSteps = arrowStartInSteps;
+        totalSteps = totalParts * stepsPerPart;
+        degreesPerStep = arrowEndValueInDegrees / totalSteps;
+        stepsPerColor = totalSteps / totalColors;
+        currentSteps = arrowStartInSteps;
+        prevPartsToFill = 0;
+        startOfLevel = true;
 
         // setting up parts and arrow
         UpdateParts();
-        UpdateArrow();    
+        UpdateArrow(currentSteps);    
         DeterminePartType();
+        startOfLevel = false;
     }
 
     public void UpdateProgression(ScoreController.CatchType catchType)
@@ -71,38 +75,41 @@ public class ProgressionController : MonoBehaviour
         {
 
             case ScoreController.CatchType.Normal:
-                CurrentSteps += normalCatchStep;
-                if (CurrentSteps > TotalSteps)
-                    CurrentSteps = TotalSteps;
+                currentSteps += normalCatchStep;
+                if (currentSteps > totalSteps)
+                    currentSteps = totalSteps;
                 break;
 
             case ScoreController.CatchType.Perfect:
-                CurrentSteps += perfectCatchStep;
-                if (CurrentSteps > TotalSteps)
-                    CurrentSteps = TotalSteps;
+                AkSoundEngine.PostEvent("PerfectCatch_event", gameObject);
+                currentSteps += perfectCatchStep;
+                if (currentSteps > totalSteps)
+                    currentSteps = totalSteps;
                 break;
 
             case ScoreController.CatchType.Failed:
-                CurrentSteps += failStep;
-                if (CurrentSteps <= 0)
+                currentSteps += failStep;
+
+                if (currentSteps <= 0)
                 {
-                    CurrentSteps = 0;
+                    currentSteps = 0;
                     SceneController.LevelFailed();
                 }
                 break;
         }
 
         UpdateParts();
-        UpdateArrow();
+        UpdateArrow(currentSteps);
+        DeterminePartType();
     }
 
     private void DeterminePartType()
     {
         // You can make (ab)use enumerations like this too:
-        CurrentCrowdHappiness = (CrowdHappiness) Mathf.FloorToInt((float) CurrentSteps / stepsPerColor);
+        CurrentCrowdHappiness = (CrowdHappiness) Mathf.FloorToInt((float) currentSteps / stepsPerColor);
         // Just make sure the integer calculated matches the sequence of items in the enumeration.
 
-        //int partAmount = Mathf.FloorToInt((float) CurrentSteps / stepsPerColor);
+        //int partAmount = Mathf.FloorToInt((float) currentSteps / stepsPerColor);
         //if (partAmount == 0)
         //    currentPartType = PartType.Red;
         //else if (partAmount == 1)
@@ -111,23 +118,30 @@ public class ProgressionController : MonoBehaviour
         //    currentPartType = PartType.Green;
     }
 
-    public void UpdateArrow()
+    private void UpdateArrow(int value)
     {
-        arrow.transform.eulerAngles = new Vector3(0, 0, CurrentSteps * degreesPerStep);
+        arrow.transform.eulerAngles = new Vector3(0, 0, value * degreesPerStep);
+        if(!startOfLevel)
+            AkSoundEngine.PostEvent("ClockArrowSound_event", gameObject);
     }
 
-    public void UpdateParts()
+    private void UpdateParts()
     {
-        int partsToFill = Mathf.FloorToInt((float)CurrentSteps / stepsPerPart);
+        int partsToFill = Mathf.FloorToInt((float)currentSteps / stepsPerPart);
+        if (prevPartsToFill == 0)
+        {
+            prevPartsToFill = partsToFill;
+        }
+        if (prevPartsToFill < partsToFill)
+        {
+            AkSoundEngine.PostEvent("FillSound_event" + partsToFill, gameObject);
+            prevPartsToFill = partsToFill;
+        }
+        else if(prevPartsToFill > partsToFill)
+        {
+            AkSoundEngine.PostEvent("UnfillSound_event" + partsToFill, gameObject);
+            prevPartsToFill = partsToFill;
+        }
         filling.fillAmount = (float)partsToFill / totalParts;
-
-        DeterminePartType();
-        CheckDevilDealActivation(partsToFill);
-    }
-
-    private void CheckDevilDealActivation(int partAmount)
-    {
-        if (partAmount < 1 && !ActivateDevilDeal)
-            ActivateDevilDeal = true;
     }
 }

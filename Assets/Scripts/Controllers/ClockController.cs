@@ -14,19 +14,15 @@ public class ClockController : MonoBehaviour
     [SerializeField]
     private Image arrow;
 
-    public float BackgroundRotationSpeed = 1;
-
-    // delete this and modify everything related if digital clock is chosen (it's not needed for analog clock)
-    private float maxTimerValue = 60f;
-
-    public float TimerValue = 30f;
-
+    [SerializeField]
+    private float timerValue = 60f;
     public GameObject Background;
 
-    [HideInInspector]
-    public float CurrentTimerValue { get; set; }
+    private float currentTimerValue;
 
-    private float arrowEndValueInDegrees = 360f;
+    private float arrowEndValueInDegrees = 360;
+
+    private int prevSecond = 6;
 
     private void Awake()
     {
@@ -35,7 +31,7 @@ public class ClockController : MonoBehaviour
 
     private void Start()
     {
-        CurrentTimerValue = TimerValue;
+        currentTimerValue = timerValue;
         UpdateArrow();
         UpdateClock();
     }
@@ -46,9 +42,9 @@ public class ClockController : MonoBehaviour
             UpdateTimer();
     }
 
-    public void UpdateArrow()
+    private void UpdateArrow()
     {
-        float timeRatio = CurrentTimerValue / 60;
+        float timeRatio = currentTimerValue / 60;
         float value = arrowEndValueInDegrees - arrowEndValueInDegrees * timeRatio;
         arrow.transform.eulerAngles = new Vector3(0, 0, value);
         RotateScenery(value);
@@ -57,16 +53,26 @@ public class ClockController : MonoBehaviour
     private void RotateScenery(float value)
     {
         if (Background != null)
-            Background.GetComponent<Transform>().eulerAngles = new Vector3(0, value * BackgroundRotationSpeed, 0);
+            Background.GetComponent<Transform>().eulerAngles = new Vector3(0, value, 0);
     }
 
     private void UpdateTimer()
     {
         if (Time.timeScale != 0)
         {
-            CurrentTimerValue -= Time.deltaTime * (1 / Time.timeScale);
+            currentTimerValue -= Time.deltaTime * (1 / Time.timeScale);
 
-            if (CurrentTimerValue <= 0)
+            if(currentTimerValue<=5.0f)
+            {
+                int second = Mathf.RoundToInt(currentTimerValue);
+                if (second<prevSecond)
+                {
+                    AkSoundEngine.PostEvent("TimerSound_event" + second, gameObject);
+                    prevSecond = second;
+                }
+            }
+
+            if (currentTimerValue <= 0)
                 sceneController.LevelCompleted();
 
             UpdateClock();
@@ -74,14 +80,15 @@ public class ClockController : MonoBehaviour
         }
     }
 
-    public void UpdateClock()
+    private void UpdateClock()
     {
-        float fillingValue = CurrentTimerValue / 60;
+        // update the analog clock
+        float fillingValue = currentTimerValue / 60;
         filling.fillAmount = fillingValue;
 
         // update the digital clock
-        string minutes = Mathf.Floor(CurrentTimerValue / 60).ToString("00");
-        string seconds = (CurrentTimerValue % 60).ToString("00");
+        string minutes = Mathf.Floor(currentTimerValue / 60).ToString("00");
+        string seconds = (currentTimerValue % 60).ToString("00");
 
         timerText.text = $"{minutes}:{seconds}";
     }

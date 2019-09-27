@@ -12,10 +12,14 @@ public class DroppedCollider : MonoBehaviour
         BallController = FindObjectOfType<BallController>();
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Enter The collision");
         if (collision.gameObject.tag == "Ball" || collision.gameObject.tag == "Balloon" || collision.gameObject.tag == "Sabre")
-            BallController.BallDropped();
+            if (collision.gameObject.tag == "Balloon")
+                AkSoundEngine.PostEvent("BalloonPop_event", gameObject);
+        BallController.BallDropped(collision.transform.position.x);
+        Destroy(collision.gameObject);
     }
+
 }
