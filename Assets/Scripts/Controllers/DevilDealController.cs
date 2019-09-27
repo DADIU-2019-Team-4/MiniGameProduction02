@@ -72,6 +72,15 @@ public class DevilDealController : MonoBehaviour
             Destroy(skull.gameObject);
     }
 
+    private void Update()
+    {
+        if (ProgressionController.ActivateDevilDeal)
+        {
+            ProgressionController.ActivateDevilDeal = false;
+            ActivateDevilDealPanel();
+        }
+    }
+
     public void ActivateDevilDealPanel()
     {
         // todo play animation
@@ -131,7 +140,7 @@ public class DevilDealController : MonoBehaviour
         chosenNegativeDevilDeal = devilDeals[acceptedNegativeDealsCount];
 
         descriptionText.text = chosenNegativeDevilDeal.dealDescription;
-        negativeDealImage.sprite = chosenNegativeDevilDeal.image;
+        negativeDealImage.sprite = chosenNegativeDevilDeal.descriptionImage;
         negativeDealImage.gameObject.SetActive(true);
     }
 
