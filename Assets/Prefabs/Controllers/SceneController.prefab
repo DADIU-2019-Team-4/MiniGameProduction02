@@ -58,8 +58,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a28220ae8ddcf4f831b4eec103085e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
   filling: {fileID: 0}
   arrow: {fileID: 0}
   timerValue: 60
-  Background: {fileID: 0}

@@ -15,7 +15,7 @@ public class DroppedCollider : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ball" || collision.gameObject.tag == "Balloon" || collision.gameObject.tag == "Sabre")
+        if (collision.gameObject.tag == "Ball")
             BallController.BallDropped();
     }
 }
