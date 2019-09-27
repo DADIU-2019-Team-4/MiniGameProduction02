@@ -79,7 +79,7 @@ public class MenuController : MonoBehaviour
 
     public void MusicChangeToLow()
     {
-
+        
     }
 
     public void MusicChangeToHigh()
