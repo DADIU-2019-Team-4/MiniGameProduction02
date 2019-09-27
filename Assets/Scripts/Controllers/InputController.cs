@@ -90,11 +90,11 @@ public class InputController : MonoBehaviour
             }
             else if (touches[i].phase == TouchPhase.Ended)
             {
-                AkSoundEngine.PostEvent("SwipeSound_event", gameObject);
                 // swipe was on left side of the screen
                 if (firstPosition[i].x < Screen.width / 2f)
                 {
                     hasSwipedLeftScreen = false;
+                    AkSoundEngine.PostEvent("SwipeSound_event", gameObject);
                 }
                 // swipe was on right side of the screen
                 else
@@ -118,7 +118,6 @@ public class InputController : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            AkSoundEngine.PostEvent("SwipeSound_event", gameObject);
             trackMouse = false;
             hasSwipedLeftScreen = false;
             hasSwipedRightScreen = false;
