@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -476,75 +476,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1805900844
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3479721190847814827, guid: 9972e22052e4244c08e8f2ed9568bb73,
-        type: 3}
-      propertyPath: m_Name
-      value: BlockerPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860690359901117577, guid: 9972e22052e4244c08e8f2ed9568bb73,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860690359901117577, guid: 9972e22052e4244c08e8f2ed9568bb73,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860690359901117577, guid: 9972e22052e4244c08e8f2ed9568bb73,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860690359901117577, guid: 9972e22052e4244c08e8f2ed9568bb73,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860690359901117577, guid: 9972e22052e4244c08e8f2ed9568bb73,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860690359901117577, guid: 9972e22052e4244c08e8f2ed9568bb73,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860690359901117577, guid: 9972e22052e4244c08e8f2ed9568bb73,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860690359901117577, guid: 9972e22052e4244c08e8f2ed9568bb73,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860690359901117577, guid: 9972e22052e4244c08e8f2ed9568bb73,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860690359901117577, guid: 9972e22052e4244c08e8f2ed9568bb73,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860690359901117577, guid: 9972e22052e4244c08e8f2ed9568bb73,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9972e22052e4244c08e8f2ed9568bb73, type: 3}
 --- !u!1001 &1984698267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -819,7 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minTime: 2
-  maxTime: 8
+  maxTime: 5
   spawnPosTop: {fileID: 2088553031}
   spawnPosMid: {fileID: 1984698268}
   spawnPosBottom: {fileID: 1086947967}
@@ -1075,9 +1006,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a28220ae8ddcf4f831b4eec103085e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
   filling: {fileID: 7781361177337173348}
   arrow: {fileID: 7781361177337173343}
   timerValue: 60
+  Background: {fileID: 0}
 --- !u!1001 &2652069135451615258
 PrefabInstance:
   m_ObjectHideFlags: 0
