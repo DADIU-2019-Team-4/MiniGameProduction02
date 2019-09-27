@@ -13,6 +13,13 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID ANVIL_EVENT = 2762707244U;
+        static const AkUniqueID BALLBOUNCE_EVENT = 1117629447U;
+        static const AkUniqueID BALLOONBOUNCE_EVENT = 2510806423U;
+        static const AkUniqueID BALLOONFLY_EVENT = 1666774236U;
+        static const AkUniqueID BALLOONPOP_EVENT = 3940236850U;
+        static const AkUniqueID BOMB_EVENT = 2361353312U;
+        static const AkUniqueID CLOCKARROWSOUND_EVENT = 1833472760U;
         static const AkUniqueID COLLIDERLEFT_EVENT = 3046129007U;
         static const AkUniqueID COLLIDERRIGHT_EVENT = 3838495408U;
         static const AkUniqueID FAILSOUND_EVENT = 1999513135U;
@@ -25,10 +32,18 @@ namespace AK
         static const AkUniqueID LEVELCOMPLETED_EVENT = 3036127557U;
         static const AkUniqueID MENUIN_EVENT = 1069674504U;
         static const AkUniqueID MENUOUT_EVENT = 1960384521U;
+        static const AkUniqueID MUSICTEST = 4195921398U;
         static const AkUniqueID PERFECTCATCH_EVENT = 3869548328U;
         static const AkUniqueID PRESSBUTTON_EVENT = 2293628003U;
         static const AkUniqueID ROOMTONE_EVENT = 1399763525U;
+        static const AkUniqueID SABRESTUCK_EVENT = 374096863U;
         static const AkUniqueID SWIPESOUND_EVENT = 3921462371U;
+        static const AkUniqueID TIMERSOUND_EVENT0 = 2473288676U;
+        static const AkUniqueID TIMERSOUND_EVENT1 = 2473288677U;
+        static const AkUniqueID TIMERSOUND_EVENT2 = 2473288678U;
+        static const AkUniqueID TIMERSOUND_EVENT3 = 2473288679U;
+        static const AkUniqueID TIMERSOUND_EVENT4 = 2473288672U;
+        static const AkUniqueID TIMERSOUND_EVENT5 = 2473288673U;
         static const AkUniqueID UNFILLSOUND_EVENT0 = 1118806527U;
         static const AkUniqueID UNFILLSOUND_EVENT1 = 1118806526U;
         static const AkUniqueID UNFILLSOUND_EVENT2 = 1118806525U;
