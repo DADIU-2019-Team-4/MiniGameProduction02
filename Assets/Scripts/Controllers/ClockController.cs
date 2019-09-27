@@ -16,7 +16,6 @@ public class ClockController : MonoBehaviour
 
     [SerializeField]
     private float timerValue = 60f;
-
     public GameObject Background;
 
     private float currentTimerValue;

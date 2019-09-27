@@ -40,8 +40,11 @@ public class BallController : MonoBehaviour
     public Vector3 ballonThrowMid;
     public int ballSelectorInt = 0;
     public float delayTime;
+    [Header("Falling Ball Settings")]
     public float slowDownTime;
     public bool spawnInRandomHand;
+    public float respawnYAxis;
+
 
     void Awake()
     {
@@ -135,16 +138,16 @@ public class BallController : MonoBehaviour
         if (spawnInRandomHand)
         {
             if (Mathf.CeilToInt(Random.Range(0f, 1f)) == 0)
-                AddBall(new Vector3(rightHand.transform.position.x, 12, 0), 1, true);
+                AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), 1, true);
             else
-                AddBall(new Vector3(leftHand.transform.position.x, 12, 0), 1, true);
+                AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 1, true);
         }
         else
         {
             if (x > 0)
-                AddBall(new Vector3(leftHand.transform.position.x, 12, 0), 1, true);
+                AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 1, true);
             else
-                AddBall(new Vector3(rightHand.transform.position.x, 12, 0), 1, true);
+                AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), 1, true);
         }
 
     }
