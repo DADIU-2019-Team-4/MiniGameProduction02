@@ -10,11 +10,13 @@ public class BallController : MonoBehaviour
 
 
     public GameObject[] BallPrefab;
-    public int numberOfBalls;
+    private int numberOfBalls;
     public float distanceBetweenSpawnedBalls;
 
     private readonly List<GameObject> Balls = new List<GameObject>();
     private readonly List<GameObject> ballsInCatchZone = new List<GameObject>();
+
+    private int throwCount;
 
 
     // TODO: Make these private and programmatically retrieve these.
@@ -33,6 +35,10 @@ public class BallController : MonoBehaviour
     public float gravityYaxis;
 
     public float TimeScale;
+    public float BalloonFloatStrength = 0.5f;
+    public Vector3 balloonThrowDown;
+    public Vector3 ballonThrowMid;
+    public int ballSelectorInt = 0; 
 
     void Awake()
     {
@@ -43,9 +49,22 @@ public class BallController : MonoBehaviour
         Physics.gravity = new Vector3(0, gravityYaxis, 0);
     }
 
+
+    void Update()
+    {
+        foreach (GameObject item in Balls)
+            if (item.tag == "Balloon")
+                item.GetComponent<Rigidbody>().AddForce(new Vector3(0, BalloonFloatStrength, 0));
+    }
+
     private void Start()
     {
+        numberOfBalls = BallPrefab.Length;
         SpawnBalls(numberOfBalls);
+        AkSoundEngine.PostEvent("ColliderLeft_event", gameObject);
+        AkSoundEngine.SetRTPCValue("leftCollider", 0.0f);
+        AkSoundEngine.PostEvent("ColliderRight_event", gameObject);
+        AkSoundEngine.SetRTPCValue("rightCollider", 0.0f);
     }
 
     #region Ball Creation/Deletion
@@ -54,19 +73,21 @@ public class BallController : MonoBehaviour
     {
         Vector3 spawnPosition;
 
+
         for (int i = 0; i < number; i++)
         {
             if (i % 2 == 0)
                 spawnPosition = new Vector3(rightHand.transform.position.x + distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), rightHand.transform.position.y, rightHand.transform.position.z);
             else
                 spawnPosition = new Vector3(leftHand.transform.position.x - distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), leftHand.transform.position.y, leftHand.transform.position.z);
-            AddBall(spawnPosition);
+            AddBall(spawnPosition, i);
         }
+        ballSelectorInt = 0;
     }
 
-    private void AddBall(Vector3 where)
+    private void AddBall(Vector3 where, int prefabInt)
     {
-        GameObject ball = Instantiate(BallPrefab[Random.Range(0,BallPrefab.Length-1)], where, rightHand.transform.rotation);
+        GameObject ball = Instantiate(BallPrefab[prefabInt], where, rightHand.transform.rotation);
         Balls.Add(ball);
     }
 
@@ -85,6 +106,8 @@ public class BallController : MonoBehaviour
         var ball = collider.gameObject;
         if (!ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Add(ball);
+        PlayDistanceSound(ball);
+
     }
 
     public void BallLeavesHand(Collider collider)
@@ -92,17 +115,16 @@ public class BallController : MonoBehaviour
         var ball = collider.gameObject;
         if (ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Remove(ball);
-
     }
 
     public void BallDropped()
     {
         ScoreController.DroppedBall();
+        throwCount = 0;
         ballsInCatchZone.Clear();
 
         while (Balls.Count != 0)
             RemoveBall(Balls[0]);
-
         StartCoroutine(Delay(0.5f));
 
         SpawnBalls(numberOfBalls);
@@ -116,22 +138,43 @@ public class BallController : MonoBehaviour
 
     public void Throw(ViolaController.ThrowType throwType, ViolaController.HandType hand)
     {
+        AkSoundEngine.SetRTPCValue("rightCollider", 0.0f);
         var ball = GetBallToThrow(hand);
         if (ball == null) return;
+
+        if (hand == ViolaController.HandType.Left)
+        {
+            AkSoundEngine.PostEvent("ColliderLeft_event", gameObject);
+
+        }
+        if (hand == ViolaController.HandType.Right)
+        {
+            AkSoundEngine.PostEvent("ColliderRight_event", gameObject);
+        }
 
         Rigidbody ballRigidBody = ball.GetComponent<Rigidbody>();
         ballRigidBody.isKinematic = true;
 
         var catchType = GotPerfectCatch(ball) ? ScoreController.CatchType.Perfect : ScoreController.CatchType.Normal;
+
+        if (ball.tag == "Sabre" && catchType != ScoreController.CatchType.Perfect)
+        {
+            //failed Sabre throw, cut off hand
+            BallDropped();
+        }
+
         ScoreController.IncrementScore(catchType);
         ProgressionController.UpdateProgression(catchType);
 
-        Vector3 throwVector = GetThrowForce(throwType);
+        Vector3 throwVector = GetThrowForce(throwType, ball);
         SetThrowDirection(hand, ref throwVector, ballRigidBody);
         ballRigidBody.isKinematic = false;
         ballRigidBody.AddForce(throwVector);
         BallLeavesHand(ball.GetComponent<Collider>());
-        SceneController.IsPlaying = true;
+        throwCount++;
+
+        if (throwCount >= numberOfBalls)
+            SceneController.IsPlaying = true;
     }
 
     private bool GotPerfectCatch(GameObject ball)
@@ -160,13 +203,13 @@ public class BallController : MonoBehaviour
         if (handType == ViolaController.HandType.Left)
         {
             throwAngle.x *= -1;
-            currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, leftHand.position, 0.5f);
+            currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, leftHand.position, 0.7f);
         }
         else
-            currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, rightHand.position, 0.5f);
+            currentBall.transform.position = Vector3.MoveTowards(currentBall.transform.position, rightHand.position, 0.7f);
     }
 
-    private Vector3 GetThrowForce(ViolaController.ThrowType throwType)
+    private Vector3 GetThrowForce(ViolaController.ThrowType throwType, GameObject juggledItem)
     {
         switch (throwType)
         {
@@ -175,10 +218,16 @@ public class BallController : MonoBehaviour
                 return throwUpRightHand * throwUpForce;
 
             case ViolaController.ThrowType.FloorBounce:
-                return throwDownRightHand * throwDownForce;
+                if (juggledItem.tag == "Balloon")
+                    return new Vector3(0, balloonThrowDown.y * throwDownForce, 0) * BalloonFloatStrength; // No X-value
+                else
+                    return throwDownRightHand * throwDownForce;
 
             case ViolaController.ThrowType.MidThrow:
-                return throwLeft * throwSideForce;
+                if (juggledItem.tag == "Balloon")
+                    return ballonThrowMid * throwDownForce * BalloonFloatStrength;
+                else
+                    return throwLeft * throwSideForce;
 
             case ViolaController.ThrowType.None:
             default:
@@ -186,6 +235,39 @@ public class BallController : MonoBehaviour
         }
     }
 
+    public void StickToFloor(GameObject ball)
+    {
+        ball.GetComponent<Rigidbody>().isKinematic = true;
+    }
+
+    #endregion
+
+    #region Distance between perfect catch and a ball
+    public void PlayDistanceSound(GameObject obj)
+    {
+        Rigidbody rigid = obj.GetComponent<Rigidbody>();
+        var velocity = obj.transform.InverseTransformDirection(rigid.velocity);
+        float yAxis = velocity.y;
+
+        if (yAxis < 0 && obj.transform.position.y > rightHand.position.y)
+        {
+            if (obj.transform.position.x < 0 )
+            {
+                float distance = Vector3.Distance(rightHand.position, obj.transform.position);
+
+                AkSoundEngine.PostEvent("ColliderRight_event", gameObject);
+                AkSoundEngine.SetRTPCValue("rightCollider", 1 - distance);
+                Debug.Log("RightHand distance:" + distance);
+            }
+            else
+            {
+                float distance = Vector3.Distance(leftHand.position, obj.transform.position);
+                AkSoundEngine.PostEvent("ColliderLeft_event", gameObject);
+                AkSoundEngine.SetRTPCValue("leftCollider", 1 - distance);
+                Debug.Log("LeftHand distance:" + distance);
+            }
+        }
+    }
     #endregion
 
     IEnumerator Delay(float seconds)

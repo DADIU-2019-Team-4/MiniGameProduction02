@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7760826363502827804}
   m_Layer: 0
   m_Name: FloorBounceMesh
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7760826363502827807}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -1.4, z: -0.33}
-  m_LocalScale: {x: 2, y: 0.2, z: 1}
+  m_LocalScale: {x: 3, y: 0.2, z: 3}
   m_Children: []
   m_Father: {fileID: 7760826365518523681}
   m_RootOrder: 0
@@ -137,14 +137,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4d6c98ce503bf4fb30d03fd65a4732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BallPrefab: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab,
-    type: 3}
-  numberOfBalls: 3
+  BallPrefab:
+  - {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab, type: 3}
+  - {fileID: 7496779614026164388, guid: 3bb2b6a5c2f2a604b97ebb754d7b6e45, type: 3}
+  - {fileID: 7496779614026164388, guid: 1bb30ea8780787e4ab9833ec6de296dc, type: 3}
   distanceBetweenSpawnedBalls: 0.1
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
-  leftIndicator: {fileID: 0}
-  rightIndicator: {fileID: 0}
   leftPerfectCatch: {fileID: 0}
   rightPerfectCatch: {fileID: 0}
   throwUpRightHand: {x: 1.65, y: 13, z: 0}
@@ -153,4 +152,9 @@ MonoBehaviour:
   throwUpForce: 40
   throwDownForce: 30
   throwSideForce: 35
+  gravityYaxis: -9.81
   TimeScale: 0.5
+  BalloonFloatStrength: 0.6
+  balloonThrowDown: {x: 0, y: -5, z: 0}
+  ballonThrowMid: {x: 10, y: -5, z: 0}
+  ballSelectorInt: 0

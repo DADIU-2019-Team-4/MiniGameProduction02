@@ -84,6 +84,7 @@ public class ScoreController : MonoBehaviour
 
         ProgressionController.UpdateProgression(CatchType.Failed);
         SceneController.IsPlaying = false;
+        
         // The BallController will delete and respawn the balls after this function call.
     }
 }

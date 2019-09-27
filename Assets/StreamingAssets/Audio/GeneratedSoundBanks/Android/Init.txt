@@ -23,9 +23,10 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	4262522749	Wood_Bright			\Factory Reflect Acoustic Textures\Textures\Wood_Bright	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
-	985987111	Motion Factory Bus			\Default Work Unit\Motion Factory Bus	
+	1922958967	ProgressBar			\Default Work Unit\Master Audio Bus\UI+Feedback\ProgressBar	
 	2077253480	Room			\Default Work Unit\Master Audio Bus\Environments\Room	
 	2687559867	UI+Feedback			\Default Work Unit\Master Audio Bus\UI+Feedback	
+	3165269336	Win+Fail			\Default Work Unit\Master Audio Bus\UI+Feedback\Win+Fail	
 	3170124113	Voice			\Default Work Unit\Master Audio Bus\Voice	
 	3761286811	Environments			\Default Work Unit\Master Audio Bus\Environments	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	

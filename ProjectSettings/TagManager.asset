@@ -8,6 +8,9 @@ TagManager:
   - Right
   - Ball
   - Floor
+  - Balloon
+  - Sabre
+  - Platform
   layers:
   - Default
   - TransparentFX

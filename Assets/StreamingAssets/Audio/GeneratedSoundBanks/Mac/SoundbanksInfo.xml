@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="11" SoundbankVersion="134">
+	<RootPaths>
+		<ProjectRoot>E:\WWise projekter\DADIU-MGP2\</ProjectRoot>
+		<SourceFilesRoot>E:\WWise projekter\DADIU-MGP2\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>E:\MiniGameProduction02\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>E:\WWise projekter\DADIU-MGP2\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3614528216" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Default_SoundBank2</ObjectPath>
+			<ShortName>Default_SoundBank2</ShortName>
+			<Path>Default_SoundBank2.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3046129007" Name="ColliderLeft_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ColliderLeft_event" DurationType="Unknown"/>
+				<Event Id="3838495408" Name="ColliderRight_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ColliderRight_event" DurationType="Unknown"/>
+				<Event Id="1999513135" Name="FailSound_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\Win_n_Fail\FailSound_event" DurationType="Unknown"/>
+				<Event Id="1944912667" Name="FillSound_event1" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event1" DurationType="Unknown"/>
+				<Event Id="1944912664" Name="FillSound_event2" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event2" DurationType="Unknown"/>
+				<Event Id="1944912665" Name="FillSound_event3" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event3" DurationType="Unknown"/>
+				<Event Id="1944912670" Name="FillSound_event4" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event4" DurationType="Unknown"/>
+				<Event Id="1944912671" Name="FillSound_event5" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event5" DurationType="Unknown"/>
+				<Event Id="1944912668" Name="FillSound_event6" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event6" DurationType="Unknown"/>
+				<Event Id="3036127557" Name="LevelCompleted_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\Win_n_Fail\LevelCompleted_event" DurationType="Unknown"/>
+				<Event Id="1069674504" Name="MenuIN_event" ObjectPath="\Events\Default Work Unit\UI\MenuIN_event" DurationType="OneShot" DurationMin="0.125488" DurationMax="0.125488"/>
+				<Event Id="1960384521" Name="MenuOUT_event" ObjectPath="\Events\Default Work Unit\UI\MenuOUT_event" DurationType="OneShot" DurationMin="0.125488" DurationMax="0.125488"/>
+				<Event Id="3869548328" Name="PerfectCatch_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PerfectCatch_event" DurationType="Unknown"/>
+				<Event Id="2293628003" Name="PressButton_event" ObjectPath="\Events\Default Work Unit\UI\PressButton_event" DurationType="OneShot" DurationMin="0.125488" DurationMax="0.125488"/>
+				<Event Id="1399763525" Name="RoomTone_event" ObjectPath="\Events\Default Work Unit\RoomTone_event" DurationType="Infinite"/>
+				<Event Id="3921462371" Name="SwipeSound_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\SwipeSound_event" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
+				<Event Id="1118806527" Name="UnfillSound_event0" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event0" DurationType="Unknown"/>
+				<Event Id="1118806526" Name="UnfillSound_event1" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event1" DurationType="Unknown"/>
+				<Event Id="1118806525" Name="UnfillSound_event2" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event2" DurationType="Unknown"/>
+				<Event Id="1118806524" Name="UnfillSound_event3" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event3" DurationType="Unknown"/>
+				<Event Id="1118806523" Name="UnfillSound_event4" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event4" DurationType="Unknown"/>
+				<Event Id="1118806522" Name="UnfillSound_event5" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event5" DurationType="Unknown"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="215503673" Language="SFX">
+					<ShortName>XF_SynPerc_003.wav</ShortName>
+					<Path>SFX\XF_SynPerc_003_8CBF9462.wem</Path>
+				</File>
+				<File Id="866720910" Language="SFX">
+					<ShortName>MGP2_Room2.wav</ShortName>
+					<Path>SFX\MGP2_Room2_8663AA8C.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
