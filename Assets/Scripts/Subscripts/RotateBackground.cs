@@ -7,7 +7,7 @@ public class RotateBackground : MonoBehaviour
     [SerializeField]
     private GameObject Background;
 
-    public float RotationSpeed = 1;
+    public float RotationSpeed = 7;
 
     private float value;
 
