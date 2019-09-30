@@ -28,7 +28,7 @@ public class DevilDealController : MonoBehaviour
     private int acceptedNegativeDealsCount;
 
     private bool applyNegativeEffect;
-    public bool LastDevilDeal { get; set; };
+    public bool LastDevilDeal { get; set; }
 
     [SerializeField]
     private int countUntilNegativeEffect = 2;
@@ -155,10 +155,4 @@ public class DevilDealController : MonoBehaviour
 
         SceneController.IsPlaying = true;
     }
-
-    private IEnumerator Flash()
-    {
-
-    }
-
 }
