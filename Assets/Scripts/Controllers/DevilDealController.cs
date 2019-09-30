@@ -28,7 +28,7 @@ public class DevilDealController : MonoBehaviour
     private int acceptedNegativeDealsCount;
 
     private bool applyNegativeEffect;
-    public bool LastDevilDeal { get; set; };
+    public bool LastDevilDeal { get; set; }
 
     [SerializeField]
     private int countUntilNegativeEffect = 2;
@@ -158,7 +158,7 @@ public class DevilDealController : MonoBehaviour
 
     private IEnumerator Flash()
     {
-
+        yield return null; // someone fill whatever should be here out
     }
 
 }
