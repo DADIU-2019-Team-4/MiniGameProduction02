@@ -399,11 +399,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1808715076024527199, guid: 6a953dd836e5fb5479418c83a3de4587,
         type: 3}
-      propertyPath: devilDeals.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1808715076024527199, guid: 6a953dd836e5fb5479418c83a3de4587,
-        type: 3}
       propertyPath: devilDealCanvas
       value: 
       objectReference: {fileID: 7781361177337173347}
@@ -417,12 +412,6 @@ PrefabInstance:
       propertyPath: devilSkullSpawnPoint
       value: 
       objectReference: {fileID: 7781361177337173348}
-    - target: {fileID: 1808715076024527199, guid: 6a953dd836e5fb5479418c83a3de4587,
-        type: 3}
-      propertyPath: devilDeals.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 59acee8568d16384d80e41292afe350c,
-        type: 2}
     - target: {fileID: 4625034394326983814, guid: 6a953dd836e5fb5479418c83a3de4587,
         type: 3}
       propertyPath: m_LocalPosition.x

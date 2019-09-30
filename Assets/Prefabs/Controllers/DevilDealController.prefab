@@ -53,6 +53,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6ef9ac461f594564f86cf34253df860b, type: 2}
   - {fileID: 11400000, guid: 1e2444ae7d551cb4fb99de8a50cae807, type: 2}
   - {fileID: 11400000, guid: 11a9ba9580e10c24d8bba3a86fed39aa, type: 2}
+  - {fileID: 11400000, guid: 59acee8568d16384d80e41292afe350c, type: 2}
+  - {fileID: 11400000, guid: e06ce1edeca6d1c4bb9d9ac989951d99, type: 2}
   countUntilNegativeEffect: 2
   dealDescription: Do you accept this deal? >:D
 --- !u!114 &1464220514811936704
