@@ -37,4 +37,17 @@ public class ScoreController : MonoBehaviour
         itemHitCombo = 1;
     }
 
+    public void SaveScore(int level)
+    {
+        string key = "HighScoreLevel" + level;
+
+        if (!PlayerPrefs.HasKey(key))
+            PlayerPrefs.SetInt(key, 0);
+
+        int currentHighScore = PlayerPrefs.GetInt(key);
+        // you got a new highscore!
+        if (score > currentHighScore)
+            PlayerPrefs.SetInt(key, score);
+    }
+
 }

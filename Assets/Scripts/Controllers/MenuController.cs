@@ -183,7 +183,7 @@ public class MenuController : MonoBehaviour
 
     public void RestartGameProgress()
     {
-        Debug.Log("Game Progress is restarted");
+        PlayerPrefs.DeleteAll();
         GoToOptionsMenu();
     }
 

@@ -4,12 +4,22 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     [SerializeField]
+    private int levelNumber;
+
+    [SerializeField]
     private GameObject levelFailedText;
 
     [SerializeField]
     private GameObject levelCompletedText;
 
     public bool IsPlaying { get; set; }
+
+    private ScoreController ScoreController;
+
+    private void Awake()
+    {
+        ScoreController = FindObjectOfType<ScoreController>();
+    }
 
     public void ResetScene()
     {
@@ -31,6 +41,7 @@ public class SceneController : MonoBehaviour
         levelCompletedText.SetActive(true);
         Time.timeScale = 0;
         IsPlaying = false; // Stops background rotation
+        ScoreController.SaveScore(levelNumber);
     }
 
     public void GoToLevelSelect()

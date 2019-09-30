@@ -27,7 +27,9 @@ public class DevilDealController : MonoBehaviour
     private DevilDeal chosenNegativeDevilDeal;
 
     private int acceptedDevilDealsCount;
+    private string acceptedDevilDealsCountKey = "acceptedDevilDealsCount";
     private int acceptedNegativeDealsCount;
+    private string acceptedNegativeDealsCountKey = "acceptedNegativeDealsCount";
 
     private bool applyNegativeEffect;
     public bool LastDevilDeal { get; set; }
@@ -35,6 +37,7 @@ public class DevilDealController : MonoBehaviour
     [SerializeField]
     private int countUntilNegativeEffect = 2;
     private int devilSkullCount;
+    private string devilSkullCountKey = "devilSkullCount";
     private float offset = 40;
     private float imageWidth;
 
@@ -58,9 +61,24 @@ public class DevilDealController : MonoBehaviour
     private void Start()
     {
         imageWidth = devilSkull.GetComponent<RectTransform>().rect.width;
-        SpawnDevilSkulls();
 
+        InitializeDevilDeals();
+        SpawnDevilSkulls();
         ActivateDevilDeals();
+    }
+
+    private void InitializeDevilDeals()
+    {
+        if (!PlayerPrefs.HasKey(acceptedDevilDealsCountKey))
+            PlayerPrefs.SetInt(acceptedDevilDealsCountKey, 0);
+        if(!PlayerPrefs.HasKey(acceptedNegativeDealsCountKey))
+            PlayerPrefs.SetInt(acceptedNegativeDealsCountKey, 0);
+        if (!PlayerPrefs.HasKey(devilSkullCountKey))
+            PlayerPrefs.SetInt(devilSkullCountKey, 0);
+
+        acceptedDevilDealsCount = PlayerPrefs.GetInt(acceptedDevilDealsCountKey);
+        acceptedNegativeDealsCount = PlayerPrefs.GetInt(acceptedNegativeDealsCountKey);
+        devilSkullCount = PlayerPrefs.GetInt(devilSkullCountKey);
     }
 
     private void ActivateDevilDeals()
@@ -117,13 +135,15 @@ public class DevilDealController : MonoBehaviour
         }
         else
         {
-            // todo save this value for long term
             devilSkullCount++;
+            // saves devil skull count
+            PlayerPrefs.SetInt(devilSkullCountKey, devilSkullCount);
             SpawnDevilSkulls();
         }
 
-        // todo save this value for long term
         acceptedDevilDealsCount++;
+        // saves total accepted devil deal count
+        PlayerPrefs.SetInt(acceptedDevilDealsCountKey, acceptedDevilDealsCount);
 
         ApplyPositiveEffect();
 
@@ -155,8 +175,9 @@ public class DevilDealController : MonoBehaviour
 
     private IEnumerator ApplyNegativeEffect()
     {
-        // todo save this value for long term
         acceptedNegativeDealsCount++;
+        // saves total accepted negative devil deal count
+        PlayerPrefs.SetInt(acceptedNegativeDealsCountKey, acceptedNegativeDealsCount);
 
         SinisterFlashes.SinisterFlashingImage.gameObject.SetActive(true);
         SinisterFlashes.SinisterFlashingImage.DOFade(maxFlashAlphaValue, lengthOfFlash / 2);
