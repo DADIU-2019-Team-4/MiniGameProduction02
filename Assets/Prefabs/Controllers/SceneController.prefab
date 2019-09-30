@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1267635558868094371}
   - component: {fileID: 1267635558868094372}
   - component: {fileID: 7723828974934822010}
+  - component: {fileID: 5554352687557745370}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -72,6 +73,21 @@ MonoBehaviour:
   isBottom: 0
   ItemsCollected: 0
   NumberOfItemsToGoal: 3
+  CollectableText: {fileID: 0}
+--- !u!114 &5554352687557745370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267635558868094373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6972fbdda1a8b4fa2247c88132a517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Background: {fileID: 0}
+  RotationSpeed: 7
 --- !u!1001 &1267635558778988585
 PrefabInstance:
   m_ObjectHideFlags: 0
