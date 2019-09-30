@@ -6,6 +6,7 @@ public class DevilDealController : MonoBehaviour
 {
     private BallController BallController;
     private LifeManager LifeManager;
+    private SceneController SceneController;
 
     [SerializeField]
     private GameObject devilDealCanvas;
@@ -41,6 +42,7 @@ public class DevilDealController : MonoBehaviour
     {
         BallController = FindObjectOfType<BallController>();
         LifeManager = FindObjectOfType<LifeManager>();
+        SceneController = FindObjectOfType<SceneController>();
     }
 
     private void Start()
@@ -82,6 +84,8 @@ public class DevilDealController : MonoBehaviour
     public void ActivateDevilDealPanel()
     {
         // todo play animation and continue when animation is done playing
+        SceneController.IsPlaying = false;
+
         devilDealCanvas.SetActive(true);
         descriptionText.text = dealDescription;
 
@@ -115,6 +119,8 @@ public class DevilDealController : MonoBehaviour
 
         devilDealCanvas.SetActive(false);
         Time.timeScale = BallController.TimeScale;
+
+        SceneController.IsPlaying = true;
     }
 
     private void ApplyPositiveEffect()
@@ -145,6 +151,8 @@ public class DevilDealController : MonoBehaviour
     {
         devilDealCanvas.SetActive(false);
         Time.timeScale = BallController.TimeScale;
+
+        SceneController.IsPlaying = true;
     }
 
 }
