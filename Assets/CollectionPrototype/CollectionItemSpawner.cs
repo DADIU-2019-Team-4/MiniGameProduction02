@@ -81,7 +81,7 @@ public class CollectionItemSpawner : MonoBehaviour
         yield return new WaitForSeconds(_seconds);
         if (currentActivePlates < maxActivePlates)
         {
-            GameObject item = Instantiate(prefab, _spawnPos.transform.position, Quaternion.identity);
+            GameObject item = Instantiate(prefab, _spawnPos.transform.position, Quaternion.Euler(90, 0, 130));
             item.transform.position = _spawnPos.transform.position;
             item.gameObject.GetComponent<CollectionItem>().placement = _placement;
             mostRecentPosition = _placement;

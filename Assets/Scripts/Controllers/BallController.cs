@@ -112,6 +112,15 @@ public class BallController : MonoBehaviour
         Destroy(ball);
     }
 
+    public void Restart()
+    {
+        ballsInCatchZone.Clear();
+        while (Balls.Count != 0)
+            RemoveBall(Balls[0]);
+        SpawnBalls(numberOfBalls);
+    }
+
+
     #endregion
 
     #region Ball Collision Detection

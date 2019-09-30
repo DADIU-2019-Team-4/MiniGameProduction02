@@ -132,7 +132,7 @@ public class DevilDealController : MonoBehaviour
 
         devilDealCanvas.SetActive(false);
         Time.timeScale = BallController.TimeScale;
-
+        BallController.Restart();
         SceneController.IsPlaying = true;
     }
 

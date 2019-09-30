@@ -25,24 +25,27 @@ public class CollectionItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (placement == "top")
+        if (other.gameObject.tag == "Ball")
         {
-            CollectionItemSpawner.isTop = false;
-        }
-        else if (placement == "mid")
-        {
-            CollectionItemSpawner.isMid = false;
-        }
-        else if (placement == "bottom")
-        {
-            CollectionItemSpawner.isBottom = false;
-        }
-
+            if (placement == "top")
+            {
+                CollectionItemSpawner.isTop = false;
+            }
+            else if (placement == "mid")
+            {
+                CollectionItemSpawner.isMid = false;
+            }
+            else if (placement == "bottom")
+            {
+                CollectionItemSpawner.isBottom = false;
+            }
         Destroy(this.gameObject);
         if (FindObjectOfType<TutorialManager>() != null)
             FindObjectOfType<TutorialManager>().EnableTutorialUI();
         CollectionItemSpawner.IncrementItemsCollected(other.GetComponent<Ball>().wasPerfectlyThrown);
+        Instantiate(brokenMesh, gameObject.transform.position, Quaternion.Euler(90, 0, 130));
 
+        }
     }
 
     private void OnDestroy()
