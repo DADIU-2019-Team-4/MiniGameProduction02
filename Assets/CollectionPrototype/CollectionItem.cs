@@ -41,7 +41,6 @@ public class CollectionItem : MonoBehaviour
         Destroy(this.gameObject);
         if (FindObjectOfType<TutorialManager>() != null)
             FindObjectOfType<TutorialManager>().EnableTutorialUI();
-        cisScript.IncrementItemsCollected();
         CollectionItemSpawner.IncrementItemsCollected(other.GetComponent<Ball>().wasPerfectlyThrown);
 
     }

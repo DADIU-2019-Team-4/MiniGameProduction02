@@ -10,6 +10,7 @@ public class InputController : MonoBehaviour
     private MenuController MenuController;
     private SceneController SceneController;
     private TutorialManager TutorialManager;
+    private LastTutorialManager LastTutorialManager;
 
     private readonly Vector3[] firstPosition = new Vector3[2];
     private readonly Vector3[] lastPosition = new Vector3[2];
@@ -22,6 +23,7 @@ public class InputController : MonoBehaviour
 
     private bool trackMouse;
     private bool _tutorialLevel;
+    private bool _lastTutorialLevel;
 
     public enum SwipeDirection { Up, Down, Left, Right }
 
@@ -42,8 +44,13 @@ public class InputController : MonoBehaviour
         }
         else
             _tutorialLevel = false;
-            
-
+        if (FindObjectOfType<LastTutorialManager>() != null)
+        {
+            LastTutorialManager = FindObjectOfType<LastTutorialManager>();
+            _lastTutorialLevel = true;
+        }
+        else
+            _lastTutorialLevel = false;
     }
 
     private void Start()
@@ -88,8 +95,14 @@ public class InputController : MonoBehaviour
     /// </summary>
     private void MobileInput()
     {
-        if (Input.touchCount>0 &&_tutorialLevel)
-            TutorialManager.RemoveTutorialUI(3);
+        if (Input.touchCount > 0)
+        {
+            if (_tutorialLevel)
+                TutorialManager.RemoveTutorialUI(3);
+            if (_lastTutorialLevel)
+                LastTutorialManager.RemoveTutorialUI();
+        }
+
         Touch[] touches = Input.touches;
         for (int i = 0; i < Input.touchCount; i++)
         {
@@ -128,6 +141,8 @@ public class InputController : MonoBehaviour
         {
             if (_tutorialLevel)
                 TutorialManager.RemoveTutorialUI(3);
+            if (_lastTutorialLevel)
+                LastTutorialManager.RemoveTutorialUI();
             trackMouse = true;
             firstPosition[0] = Input.mousePosition;
             lastPosition[0] = Input.mousePosition;

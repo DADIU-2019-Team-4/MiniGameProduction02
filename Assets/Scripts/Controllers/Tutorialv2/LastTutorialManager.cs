@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TutorialManager : MonoBehaviour
+public class LastTutorialManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] _tutorialStage;
@@ -17,18 +17,24 @@ public class TutorialManager : MonoBehaviour
     {
         _isTutorialStarted = false;
         _previousTutorialStage = 0;
-        StartCoroutine(Delay());
+    }
+
+    void Update()
+    {
+        if (!_isTutorialStarted)
+            EnableTutorialUI();
     }
 
     // Update is called once per frame
-    public void RemoveTutorialUI(int action)  //0- HighThrow,1- SideThrow, 2 - DownThrow, 3 - targets 
+    public void RemoveTutorialUI()  
     {
-        if ((_previousTutorialStage == action || action >= 3 && _previousTutorialStage>= action) && _currentText.active ==true)
+        if (_currentText.active ==true)
         {
-            Time.timeScale = 1f;
+            if(_previousTutorialStage !=6)
+                Time.timeScale = 1f;
             _currentText.SetActive(false);
             _previousTutorialStage++;
-            if (_previousTutorialStage == 4 || _previousTutorialStage == 6)
+            if (_previousTutorialStage == 1 || _previousTutorialStage == 3 || _previousTutorialStage == 5 || _previousTutorialStage == 6)
                 EnableTutorialUI();
         }
     }
@@ -43,10 +49,5 @@ public class TutorialManager : MonoBehaviour
        Time.timeScale = 0f;
        if(!_isTutorialStarted)
        _isTutorialStarted = true;
-    }
-
-    IEnumerator Delay()
-    {
-         yield return new WaitForSeconds(1f);
     }
 }

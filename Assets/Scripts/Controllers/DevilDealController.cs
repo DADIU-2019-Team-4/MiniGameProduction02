@@ -105,6 +105,9 @@ public class DevilDealController : MonoBehaviour
             ChooseNegativeDevilDeal();
         }
         Time.timeScale = 0;
+        if (FindObjectOfType<LastTutorialManager>() != null)
+            if (FindObjectOfType<LastTutorialManager>()._previousTutorialStage==4)
+                FindObjectOfType<LastTutorialManager>().EnableTutorialUI();
     }
 
     public void AcceptDevilDeal()

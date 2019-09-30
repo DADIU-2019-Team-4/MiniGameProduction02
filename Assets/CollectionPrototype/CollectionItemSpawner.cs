@@ -79,11 +79,6 @@ public class CollectionItemSpawner : MonoBehaviour
     private IEnumerator randomSpawn(float _seconds, GameObject _spawnPos, string _placement)
     {
         yield return new WaitForSeconds(_seconds);
-        GameObject item = Instantiate(prefab, _spawnPos.transform.position, Quaternion.identity);
-        item.transform.position = _spawnPos.transform.position;
-        item.gameObject.GetComponent<CollectionItem>().placement = _placement;
-        print("spawned top");
-
         if (currentActivePlates < maxActivePlates)
         {
             GameObject item = Instantiate(prefab, _spawnPos.transform.position, Quaternion.identity);

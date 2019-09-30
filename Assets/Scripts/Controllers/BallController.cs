@@ -122,10 +122,16 @@ public class BallController : MonoBehaviour
         if (!ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Add(ball);
         PlayDistanceSound(ball);
-        if (_tutorialLevel && TutorialManager._previousTutorialStage<3)
-            TutorialManager.EnableTutorialUI();
-        if (TutorialManager._previousTutorialStage == 3 && FindObjectOfType<CollectionItem>() != null)
-            TutorialManager.EnableTutorialUI();
+        if (_tutorialLevel)
+        {
+            if (TutorialManager._previousTutorialStage < 3)
+                TutorialManager.EnableTutorialUI();
+            if (TutorialManager._previousTutorialStage == 3)
+            {
+                if (FindObjectOfType<CollectionItem>() != null)
+                    TutorialManager.EnableTutorialUI();
+            }
+        }
     }
 
     public void BallLeavesHand(Collider collider)
