@@ -40,6 +40,8 @@ public class MenuController : MonoBehaviour
     private GameObject restartMenuDanish;
     private GameObject restartMenuEnglish;
 
+    private GameObject optionsButtonDanish;
+    private GameObject optionsButtonEnglish;
 
     #endregion
 
@@ -249,6 +251,9 @@ public class MenuController : MonoBehaviour
             restartMenuEnglish.SetActive(true);
             restartMenuDanish.SetActive(false);
 
+            optionsButtonEnglish.SetActive(true);
+            optionsButtonDanish.SetActive(false);
+
         }
         else if (language == "Danish")
         {
@@ -272,6 +277,10 @@ public class MenuController : MonoBehaviour
 
             restartMenuEnglish.SetActive(false);
             restartMenuDanish.SetActive(true);
+
+
+            optionsButtonEnglish.SetActive(false);
+            optionsButtonDanish.SetActive(true);
         }
         else
         {
@@ -340,6 +349,9 @@ public class MenuController : MonoBehaviour
 
         restartMenuEnglish = GameObject.Find("ResetGameMenuEnglish").gameObject;
         restartMenuDanish = GameObject.Find("ResetGameMenuDanish").gameObject;
+
+        optionsButtonDanish = GameObject.Find("OptionsButtonDanish").gameObject;
+        optionsButtonEnglish = GameObject.Find("OptionsButtonEnglish").gameObject;
 
     }
 
