@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -309,12 +309,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c18c50935e84392b8b9a4d05dd302a, type: 3}
---- !u!1 &1086947967 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3458883193830863106, guid: e8c18c50935e84392b8b9a4d05dd302a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1086947966}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1134717072 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7781361175761730070, guid: 9ef84af383f0d9f4aa6fbe6346a24096,
@@ -586,12 +580,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a568a42d1497439dacca452409a807b, type: 3}
---- !u!1 &1984698268 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2432239294730694870, guid: 1a568a42d1497439dacca452409a807b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1984698267}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2088553030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -666,12 +654,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 494455aee73ce4739a1106093bb5d8e3, type: 3}
---- !u!1 &2088553031 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6320849942792881087, guid: 494455aee73ce4739a1106093bb5d8e3,
-    type: 3}
-  m_PrefabInstance: {fileID: 2088553030}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &465094060379036049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7723889389052976300, guid: 6bb3aab886bd2994684e4d94011acf0c,
@@ -757,40 +739,9 @@ PrefabInstance:
       objectReference: {fileID: 7781361177337173345}
     - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
         type: 3}
-      propertyPath: spawnPosTop
-      value: 
-      objectReference: {fileID: 2088553031}
-    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
-        type: 3}
-      propertyPath: spawnPosMid
-      value: 
-      objectReference: {fileID: 1984698268}
-    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
-        type: 3}
-      propertyPath: spawnPosBottom
-      value: 
-      objectReference: {fileID: 1086947967}
-    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
-        type: 3}
-      propertyPath: maxActivePlates
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
-        type: 3}
-      propertyPath: timeUntilItemsDissappear
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
-        type: 3}
       propertyPath: CollectableText
       value: 
       objectReference: {fileID: 1361582596}
-    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
-        type: 3}
-      propertyPath: prefab
-      value: 
-      objectReference: {fileID: 2367117736449897888, guid: 87a2183c01fa44bc5afe06777ad2d61a,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8217b052d62188241932da549938efdf, type: 3}
 --- !u!1001 &2342401213739994541
