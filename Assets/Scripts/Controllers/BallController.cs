@@ -55,9 +55,9 @@ public class BallController : MonoBehaviour
 
     void Update()
     {
-        foreach (GameObject item in Balls)
-            if (item.tag == "Balloon")
-                item.GetComponent<Rigidbody>().AddForce(new Vector3(0, BalloonFloatStrength, 0));
+        //foreach (GameObject item in Balls)
+            //if (item.tag == "Balloon")
+               // item.GetComponent<Rigidbody>().AddForce(new Vector3(0, BalloonFloatStrength, 0));
     }
 
     private void Start()
@@ -126,13 +126,14 @@ public class BallController : MonoBehaviour
             ballsInCatchZone.Remove(ball);
     }
 
-    public void BallDropped(float x)
+    public void BallDropped(GameObject obj)
     {
         ScoreController.DroppedBall();
+        RemoveBall(obj);
         LifeManager.CurrentLives--;
         LifeManager.UpdateLives();
         throwCount = 0;
-        ballsInCatchZone.Clear();
+        //ballsInCatchZone.Clear();
         StartCoroutine(Delay(delayTime));
         if (spawnInRandomHand)
         {
@@ -143,7 +144,7 @@ public class BallController : MonoBehaviour
         }
         else
         {
-            if (x > 0)
+            if (obj.transform.position.x > 0)
                 AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 1, true);
             else
                 AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), 1, true);
@@ -181,7 +182,7 @@ public class BallController : MonoBehaviour
         if (ball.tag == "Sabre" && catchType != ScoreController.CatchType.Perfect)
         {
             //failed Sabre throw, cut off hand
-            BallDropped(ball.transform.position.x);
+            BallDropped(ball);
         }
 
         ScoreController.IncrementScore(catchType);

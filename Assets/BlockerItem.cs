@@ -51,7 +51,7 @@ public class BlockerItem : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        GameObject.Find("BallController").GetComponent<BallController>().BallDropped(other.transform.position.x);
+        GameObject.Find("BallController").GetComponent<BallController>().BallDropped(other.gameObject);
     }
 
     IEnumerator Wait()
