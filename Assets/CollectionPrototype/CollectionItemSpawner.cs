@@ -93,4 +93,9 @@ public class CollectionItemSpawner : MonoBehaviour
     {
         CollectableText.text = $"{ItemsCollected}\\{NumberOfItemsToGoal}";
     }
+
+    public void DroppedItem()
+    {
+        ScoreController.ResetMultiplier();
+    }
 }
