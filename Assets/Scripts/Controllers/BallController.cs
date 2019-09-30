@@ -42,6 +42,7 @@ public class BallController : MonoBehaviour
     public float slowDownTime;
     public bool spawnInRandomHand;
     public float respawnYAxis;
+    public float spawnAllIntervals;
 
     void Awake()
     {
@@ -74,18 +75,14 @@ public class BallController : MonoBehaviour
 
     private void SpawnBalls(int number)
     {
-        Vector3 spawnPosition;
-
-
         for (int i = 0; i < number; i++)
-        {
-            if (i % 2 == 0)
-                spawnPosition = new Vector3(rightHand.transform.position.x + distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), rightHand.transform.position.y, rightHand.transform.position.z);
-            else
-                spawnPosition = new Vector3(leftHand.transform.position.x - distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), leftHand.transform.position.y, leftHand.transform.position.z);
-            AddBall(spawnPosition, i, false);
-        }
-        //ballSelectorInt = 0;
+            StartCoroutine(SpawnRoutine(i));
+    }
+
+    IEnumerator SpawnRoutine(int i)
+    {
+        yield return new WaitForSeconds((1 + i) * spawnAllIntervals);
+        AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), i, true);
     }
 
     private void AddBall(Vector3 where, int prefabInt, bool isDropped)
