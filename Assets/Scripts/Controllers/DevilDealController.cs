@@ -45,7 +45,7 @@ public class DevilDealController : MonoBehaviour
     private float lengthOfFlash = 0.2f;
 
     [SerializeField]
-    private float maxFlashAlphaValue = 0.5f;
+    private float maxFlashAlphaValue = 0.8f;
 
     private void Awake()
     {

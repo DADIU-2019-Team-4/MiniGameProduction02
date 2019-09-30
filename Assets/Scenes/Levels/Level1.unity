@@ -412,6 +412,17 @@ PrefabInstance:
       propertyPath: devilSkullSpawnPoint
       value: 
       objectReference: {fileID: 7781361177337173348}
+    - target: {fileID: 1808715076024527199, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: maxFlashAlphaValue
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808715076024527199, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: devilDeals.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 59acee8568d16384d80e41292afe350c,
+        type: 2}
     - target: {fileID: 4625034394326983814, guid: 6a953dd836e5fb5479418c83a3de4587,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1142,21 +1153,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1709196995}
-    - target: {fileID: 8036416574188392589, guid: 9ef84af383f0d9f4aa6fbe6346a24096,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AcceptDevilDeal
-      objectReference: {fileID: 0}
     - target: {fileID: 8036416575506997996, guid: 9ef84af383f0d9f4aa6fbe6346a24096,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1709196995}
-    - target: {fileID: 8036416575506997996, guid: 9ef84af383f0d9f4aa6fbe6346a24096,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DeclineDevilDeal
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ef84af383f0d9f4aa6fbe6346a24096, type: 3}
 --- !u!114 &7781361177337173343 stripped
