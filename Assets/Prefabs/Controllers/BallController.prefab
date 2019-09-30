@@ -150,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7760826363502827807}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.343, z: -0.33}
+  m_LocalPosition: {x: 0, y: -1.4, z: -0.33}
   m_LocalScale: {x: 3, y: 0.2, z: 3}
   m_Children: []
   m_Father: {fileID: 7760826365518523681}
@@ -263,8 +263,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BallPrefab:
   - {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab, type: 3}
-  - {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab, type: 3}
-  - {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab, type: 3}
   distanceBetweenSpawnedBalls: 0.1
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
@@ -273,14 +271,10 @@ MonoBehaviour:
   HighThrowForce: {fileID: 971774114}
   MidThrowForce: {fileID: 463207279}
   FloorBounceForce: {fileID: 1965305279}
-  throwForceMultiplier: 300
+  throwForceMultiplier: 350
   gravityYaxis: -9.81
-  TimeScale: 1
+  TimeScale: 0.5
   BalloonFloatStrength: 0.6
   balloonThrowDown: {x: 0, y: -5, z: 0}
   ballonThrowMid: {x: 10, y: -5, z: 0}
   ballSelectorInt: 0
-  delayTime: 0.5
-  slowDownTime: 1.12
-  spawnInRandomHand: 0
-  respawnYAxis: 4
