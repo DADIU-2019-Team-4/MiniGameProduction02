@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SystemArchitecture3.unity
     guid: 2f4447b929f9a514bb3ccdaa088c10fe
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SystemArchitecture_BlockerTest.unity
     guid: 78adc0f4d1e0f4139b5661b457c6cb40
   m_configObjects: {}
