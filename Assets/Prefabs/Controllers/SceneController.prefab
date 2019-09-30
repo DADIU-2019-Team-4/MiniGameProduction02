@@ -70,3 +70,5 @@ MonoBehaviour:
   isTop: 0
   isMid: 0
   isBottom: 0
+  ItemsCollected: 0
+  NumberOfItemsToGoal: 5

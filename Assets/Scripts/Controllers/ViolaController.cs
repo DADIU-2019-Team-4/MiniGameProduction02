@@ -59,7 +59,8 @@ public class ViolaController : MonoBehaviour
             "INVALID";
 
         // Trigger throwing Animation
-        ViolaAnimator.SetTrigger(TriggerName);
+        if (name != "Viola")
+            ViolaAnimator.SetTrigger(TriggerName);
 
         //Debug.Log(throwType.ToString() + " | " + handType.ToString());
         //return;

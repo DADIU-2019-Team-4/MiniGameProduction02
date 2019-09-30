@@ -35,5 +35,6 @@ public class CollectionItem : MonoBehaviour
         }
 
         Destroy(this.gameObject);
+        cisScript.IncrementItemsCollected();
     }
 }
