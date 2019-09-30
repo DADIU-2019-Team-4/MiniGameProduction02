@@ -16,12 +16,13 @@ public class ClockController : MonoBehaviour
 
     [SerializeField]
     private float timerValue = 60f;
-
     public GameObject Background;
 
     private float currentTimerValue;
 
     private float arrowEndValueInDegrees = 360;
+
+    private int prevSecond = 6;
 
     private void Awake()
     {
@@ -60,6 +61,16 @@ public class ClockController : MonoBehaviour
         if (Time.timeScale != 0)
         {
             currentTimerValue -= Time.deltaTime * (1 / Time.timeScale);
+
+            if(currentTimerValue<=5.0f)
+            {
+                int second = Mathf.RoundToInt(currentTimerValue);
+                if (second<prevSecond)
+                {
+                    AkSoundEngine.PostEvent("TimerSound_event" + second, gameObject);
+                    prevSecond = second;
+                }
+            }
 
             if (currentTimerValue <= 0)
                 sceneController.LevelCompleted();

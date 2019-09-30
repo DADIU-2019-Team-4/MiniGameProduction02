@@ -22,17 +22,14 @@ public class BlockerItem : MonoBehaviour
         if (placement == "top")
         {
             cisScript.isTop = false;
-            cisScript.currentBlockers--;
         }
         else if (placement == "mid")
         {
             cisScript.isMid = false;
-            cisScript.currentBlockers--;
         }
         else if (placement == "bottom")
         {
             cisScript.isBottom = false;
-            cisScript.currentBlockers--;
         }
 
         //alpha = gameObject.GetComponent<MeshRenderer>().material.GetColor("_Color");
@@ -54,7 +51,7 @@ public class BlockerItem : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        GameObject.Find("BallController").GetComponent<BallController>().BallDropped();
+        GameObject.Find("BallController").GetComponent<BallController>().BallDropped(other.gameObject);
     }
 
     IEnumerator Wait()
@@ -65,5 +62,9 @@ public class BlockerItem : MonoBehaviour
         yield return new WaitForSeconds(1f);
         gameObject.GetComponent<Collider>().enabled = true;
         lerpAlpha = false;
+    }
+
+    private void OnDestroy() {
+        cisScript.currentBlockers--;
     }
 }

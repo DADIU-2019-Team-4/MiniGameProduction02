@@ -3,88 +3,38 @@ using UnityEngine.UI;
 
 public class ScoreController : MonoBehaviour
 {
-    private ProgressionController ProgressionController;
-    private SceneController SceneController;
-
     public Text scoreText;
+    [SerializeField]
     private int score;
     private int receivedPoints;
-
-    public Text multiplierText;
-
     [SerializeField]
-    private int normalCatchPoints = 1;
-    [SerializeField]
-    private int perfectCatchPoints = 3;
+    private int itemHitCombo = 1;
 
-    [SerializeField]
-    private int angryMultiplier = 1;
-
-    [SerializeField]
-    private int neutralMultiplier = 2;
-
-    [SerializeField]
-    private int happyMultiplier = 4;
+    public bool MultiplierDevilDealActivated { get; set; }
 
     public enum CatchType { Normal, Perfect, Failed }
 
-    private void Awake()
+    public void IncrementScore(bool wasPerfectlyThrown)
     {
-        ProgressionController = FindObjectOfType<ProgressionController>();
-        SceneController = FindObjectOfType<SceneController>();
-    }
-
-    private void Start()
-    {
-        ApplyMultiplier();
-    }
-
-    public void IncrementScore(CatchType catchType)
-    {
-        receivedPoints = 0;
-        switch (catchType)
+        if (!wasPerfectlyThrown)
         {
-            case CatchType.Perfect:
-                receivedPoints = perfectCatchPoints;
-                break;
-            case CatchType.Normal:
-                receivedPoints = normalCatchPoints;
-                break;
+            // when multiplier devil deal is activated, only build up multiplier when perfect throw.
+            if (!MultiplierDevilDealActivated)
+                itemHitCombo++;
+            score += itemHitCombo;
         }
-
-        ApplyMultiplier();
-
-        score += receivedPoints;
+        else
+        {
+            // Code for perfect throws. Not entirely decided on yet.
+            score += itemHitCombo * 2;
+            itemHitCombo++;
+        }
         scoreText.text = "Score: " + score;
     }
 
-    private void ApplyMultiplier()
+    public void ResetMultiplier()
     {
-        switch (ProgressionController.CurrentCrowdHappiness)
-        {
-            case ProgressionController.CrowdHappiness.Happy:
-                receivedPoints *= happyMultiplier;
-                multiplierText.text = happyMultiplier + "x";
-                break;
-            case ProgressionController.CrowdHappiness.Neutral:
-                receivedPoints *= neutralMultiplier;
-                multiplierText.text = neutralMultiplier + "x";
-                break;
-            case ProgressionController.CrowdHappiness.Angry:
-                receivedPoints *= angryMultiplier;
-                multiplierText.text = neutralMultiplier + "x";
-                break;
-        }
+        itemHitCombo = 1;
     }
 
-    public void DroppedBall()
-    {
-        //leftHandParticle.Play();
-        //rightHandParticle.Play();
-
-        ProgressionController.UpdateProgression(CatchType.Failed);
-        SceneController.IsPlaying = false;
-        
-        // The BallController will delete and respawn the balls after this function call.
-    }
 }
