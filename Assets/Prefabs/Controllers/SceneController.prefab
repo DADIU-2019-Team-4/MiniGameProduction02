@@ -60,15 +60,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minTime: 1
   maxTime: 5
-  spawnPosTop: {fileID: 6320849942792881087, guid: 494455aee73ce4739a1106093bb5d8e3,
-    type: 3}
-  spawnPosMid: {fileID: 2432239294730694870, guid: 1a568a42d1497439dacca452409a807b,
-    type: 3}
-  spawnPosBottom: {fileID: 3458883193830863106, guid: e8c18c50935e84392b8b9a4d05dd302a,
-    type: 3}
+  spawnPosTop: {fileID: 0}
+  spawnPosMid: {fileID: 0}
+  spawnPosBottom: {fileID: 0}
   prefab: {fileID: 3140319491321324204, guid: 073d5aa48712b41a5af4db4b297e6d2a, type: 3}
   isTop: 0
   isMid: 0
   isBottom: 0
   ItemsCollected: 0
   NumberOfItemsToGoal: 5
+  CollectableText: {fileID: 0}

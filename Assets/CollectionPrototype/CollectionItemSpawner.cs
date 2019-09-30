@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CollectionItemSpawner : MonoBehaviour
 {
@@ -18,7 +19,9 @@ public class CollectionItemSpawner : MonoBehaviour
     public bool isBottom = false;
 
     public int ItemsCollected;
-    public int NumberOfItemsToGoal;
+    public int NumberOfItemsToGoal = 20;
+
+    public Text CollectableText;
 
     private SceneController SceneController;
 
@@ -30,7 +33,7 @@ public class CollectionItemSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        CollectableText.text = $"{ItemsCollected}\\{NumberOfItemsToGoal}";
     }
 
     // Update is called once per frame
@@ -69,6 +72,7 @@ public class CollectionItemSpawner : MonoBehaviour
     public void IncrementItemsCollected()
     {
         ItemsCollected++;
+        CollectableText.text = $"{ItemsCollected}\\{NumberOfItemsToGoal}";
         if (ItemsCollected == NumberOfItemsToGoal)
             SceneController.LevelCompleted();
     }
