@@ -21,8 +21,15 @@
 			<ShortName>Default_SoundBank2</ShortName>
 			<Path>Default_SoundBank2.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3046129007" Name="ColliderLeft_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ColliderLeft_event" DurationType="Unknown"/>
-				<Event Id="3838495408" Name="ColliderRight_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ColliderRight_event" DurationType="Unknown"/>
+				<Event Id="2762707244" Name="Anvil_event" ObjectPath="\Events\Default Work Unit\Items\Anvil_event" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1117629447" Name="BallBounce_event" ObjectPath="\Events\Default Work Unit\Items\BallBounce_event" DurationType="OneShot" DurationMin="0.465125" DurationMax="0.465125"/>
+				<Event Id="2510806423" Name="BalloonBounce_event" ObjectPath="\Events\Default Work Unit\Items\BalloonBounce_event" DurationType="OneShot" DurationMin="0.697687" DurationMax="0.697687"/>
+				<Event Id="1666774236" Name="BalloonFly_event" ObjectPath="\Events\Default Work Unit\Items\BalloonFly_event" DurationType="OneShot" DurationMin="4.229552" DurationMax="4.229552"/>
+				<Event Id="3940236850" Name="BalloonPop_event" ObjectPath="\Events\Default Work Unit\Items\BalloonPop_event" DurationType="OneShot" DurationMin="0.461208" DurationMax="0.461208"/>
+				<Event Id="2361353312" Name="Bomb_event" ObjectPath="\Events\Default Work Unit\Items\Bomb_event" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1833472760" Name="ClockArrowSound_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\ClockArrowSound_event" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3046129007" Name="ColliderLeft_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ColliderLeft_event" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3838495408" Name="ColliderRight_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ColliderRight_event" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1999513135" Name="FailSound_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\Win_n_Fail\FailSound_event" DurationType="Unknown"/>
 				<Event Id="1944912667" Name="FillSound_event1" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event1" DurationType="Unknown"/>
 				<Event Id="1944912664" Name="FillSound_event2" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event2" DurationType="Unknown"/>
@@ -33,10 +40,18 @@
 				<Event Id="3036127557" Name="LevelCompleted_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\Win_n_Fail\LevelCompleted_event" DurationType="Unknown"/>
 				<Event Id="1069674504" Name="MenuIN_event" ObjectPath="\Events\Default Work Unit\UI\MenuIN_event" DurationType="OneShot" DurationMin="0.125488" DurationMax="0.125488"/>
 				<Event Id="1960384521" Name="MenuOUT_event" ObjectPath="\Events\Default Work Unit\UI\MenuOUT_event" DurationType="OneShot" DurationMin="0.125488" DurationMax="0.125488"/>
+				<Event Id="4195921398" Name="MusicTEST" ObjectPath="\Events\Default Work Unit\MusicTEST" DurationType="OneShot" DurationMin="128.478271" DurationMax="128.478271"/>
 				<Event Id="3869548328" Name="PerfectCatch_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PerfectCatch_event" DurationType="Unknown"/>
 				<Event Id="2293628003" Name="PressButton_event" ObjectPath="\Events\Default Work Unit\UI\PressButton_event" DurationType="OneShot" DurationMin="0.125488" DurationMax="0.125488"/>
 				<Event Id="1399763525" Name="RoomTone_event" ObjectPath="\Events\Default Work Unit\RoomTone_event" DurationType="Infinite"/>
+				<Event Id="374096863" Name="SabreStuck_event" ObjectPath="\Events\Default Work Unit\Items\SabreStuck_event" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="3921462371" Name="SwipeSound_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\SwipeSound_event" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
+				<Event Id="2473288676" Name="TimerSound_event0" ObjectPath="\Events\Default Work Unit\Timer\TimerSound_event0" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2473288677" Name="TimerSound_event1" ObjectPath="\Events\Default Work Unit\Timer\TimerSound_event1" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2473288678" Name="TimerSound_event2" ObjectPath="\Events\Default Work Unit\Timer\TimerSound_event2" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2473288679" Name="TimerSound_event3" ObjectPath="\Events\Default Work Unit\Timer\TimerSound_event3" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2473288672" Name="TimerSound_event4" ObjectPath="\Events\Default Work Unit\Timer\TimerSound_event4" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2473288673" Name="TimerSound_event5" ObjectPath="\Events\Default Work Unit\Timer\TimerSound_event5" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1118806527" Name="UnfillSound_event0" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event0" DurationType="Unknown"/>
 				<Event Id="1118806526" Name="UnfillSound_event1" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event1" DurationType="Unknown"/>
 				<Event Id="1118806525" Name="UnfillSound_event2" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event2" DurationType="Unknown"/>
@@ -49,9 +64,93 @@
 					<ShortName>XF_SynPerc_003.wav</ShortName>
 					<Path>SFX\XF_SynPerc_003_8CBF9462.wem</Path>
 				</File>
+				<File Id="230764660" Language="SFX">
+					<ShortName>Ball4.wav</ShortName>
+					<Path>SFX\Ball4_8CBF9462.wem</Path>
+				</File>
+				<File Id="261131446" Language="SFX">
+					<ShortName>Balloon3.wav</ShortName>
+					<Path>SFX\Balloon3_8CBF9462.wem</Path>
+				</File>
+				<File Id="278271025" Language="SFX">
+					<ShortName>Ball3.wav</ShortName>
+					<Path>SFX\Ball3_8CBF9462.wem</Path>
+				</File>
+				<File Id="286559839" Language="SFX">
+					<ShortName>Ball2.wav</ShortName>
+					<Path>SFX\Ball2_8CBF9462.wem</Path>
+				</File>
+				<File Id="303410168" Language="SFX">
+					<ShortName>Ball14.wav</ShortName>
+					<Path>SFX\Ball14_8CBF9462.wem</Path>
+				</File>
+				<File Id="496697747" Language="SFX">
+					<ShortName>Ball15.wav</ShortName>
+					<Path>SFX\Ball15_8CBF9462.wem</Path>
+				</File>
+				<File Id="506526052" Language="SFX">
+					<ShortName>Ball10.wav</ShortName>
+					<Path>SFX\Ball10_8CBF9462.wem</Path>
+				</File>
+				<File Id="526906597" Language="SFX">
+					<ShortName>PositiveCircus.wav</ShortName>
+					<Path>SFX\PositiveCircus_8CBF9462.wem</Path>
+				</File>
+				<File Id="540162654" Language="SFX">
+					<ShortName>Balloon2.wav</ShortName>
+					<Path>SFX\Balloon2_8CBF9462.wem</Path>
+				</File>
+				<File Id="544754195" Language="SFX">
+					<ShortName>Ball9.wav</ShortName>
+					<Path>SFX\Ball9_8CBF9462.wem</Path>
+				</File>
+				<File Id="569492267" Language="SFX">
+					<ShortName>Ball7.wav</ShortName>
+					<Path>SFX\Ball7_8CBF9462.wem</Path>
+				</File>
+				<File Id="606071114" Language="SFX">
+					<ShortName>Ball8.wav</ShortName>
+					<Path>SFX\Ball8_8CBF9462.wem</Path>
+				</File>
+				<File Id="638935931" Language="SFX">
+					<ShortName>Ball11.wav</ShortName>
+					<Path>SFX\Ball11_8CBF9462.wem</Path>
+				</File>
+				<File Id="665386558" Language="SFX">
+					<ShortName>Ball5.wav</ShortName>
+					<Path>SFX\Ball5_8CBF9462.wem</Path>
+				</File>
+				<File Id="747336055" Language="SFX">
+					<ShortName>Ball1.wav</ShortName>
+					<Path>SFX\Ball1_8CBF9462.wem</Path>
+				</File>
+				<File Id="758204009" Language="SFX">
+					<ShortName>Ball12.wav</ShortName>
+					<Path>SFX\Ball12_8CBF9462.wem</Path>
+				</File>
+				<File Id="795879079" Language="SFX">
+					<ShortName>Ball13.wav</ShortName>
+					<Path>SFX\Ball13_8CBF9462.wem</Path>
+				</File>
+				<File Id="851732437" Language="SFX">
+					<ShortName>Balloon1.wav</ShortName>
+					<Path>SFX\Balloon1_8CBF9462.wem</Path>
+				</File>
 				<File Id="866720910" Language="SFX">
 					<ShortName>MGP2_Room2.wav</ShortName>
 					<Path>SFX\MGP2_Room2_8663AA8C.wem</Path>
+				</File>
+				<File Id="922219395" Language="SFX">
+					<ShortName>221508__qubodup__letting-air-out-of-balloon-short1.wav</ShortName>
+					<Path>SFX\221508__qubodup__letting-air-out-of-balloon-short1_8CBF9462.wem</Path>
+				</File>
+				<File Id="930420305" Language="SFX">
+					<ShortName>415125__laumark__balloon-pop.wav</ShortName>
+					<Path>SFX\415125__laumark__balloon-pop_8CBF9462.wem</Path>
+				</File>
+				<File Id="1030349145" Language="SFX">
+					<ShortName>Ball6.wav</ShortName>
+					<Path>SFX\Ball6_8CBF9462.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
