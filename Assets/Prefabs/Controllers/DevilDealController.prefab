@@ -60,7 +60,7 @@ MonoBehaviour:
   countUntilNegativeEffect: 2
   dealDescription: Do you accept this deal? >:D
   lengthOfFlash: 0.2
-  maxFlashAlphaValue: 0.5
+  maxFlashAlphaValue: 0.8
 --- !u!114 &1464220514811936704
 MonoBehaviour:
   m_ObjectHideFlags: 0
