@@ -82,10 +82,15 @@ public class CollectionItemSpawner : MonoBehaviour
     public void IncrementItemsCollected(bool wasPerfectlyThrown)
     {
         ItemsCollected++;
-        CollectableText.text = $"{ItemsCollected}\\{NumberOfItemsToGoal}";
+        UpdateText();
         ScoreController.IncrementScore(wasPerfectlyThrown);
 
         if (ItemsCollected == NumberOfItemsToGoal)
             SceneController.LevelCompleted();
+    }
+
+    public void UpdateText()
+    {
+        CollectableText.text = $"{ItemsCollected}\\{NumberOfItemsToGoal}";
     }
 }

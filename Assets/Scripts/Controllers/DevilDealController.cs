@@ -162,6 +162,7 @@ public class DevilDealController : MonoBehaviour
         SinisterFlashes.SinisterFlashingImage.DOFade(maxFlashAlphaValue, lengthOfFlash / 2);
         yield return new WaitForSeconds(lengthOfFlash / 2);
 
+        // todo insert code for changing viola's face to the next stage
         chosenNegativeDevilDeal.ApplyDevilDeal();
 
         SinisterFlashes.SinisterFlashingImage.DOFade(0, lengthOfFlash / 2);
