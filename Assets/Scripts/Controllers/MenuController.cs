@@ -36,7 +36,10 @@ public class MenuController : MonoBehaviour
 
     private GameObject soundOn;
     private GameObject soundOff;
-    
+
+    private GameObject restartMenuDanish;
+    private GameObject restartMenuEnglish;
+
 
     #endregion
 
@@ -48,7 +51,7 @@ public class MenuController : MonoBehaviour
         saveC = FindObjectOfType<SaveController>();
         //levelSelectMenu = GameObject.FindGameObjectWithTag("pauseMenu").GetComponent<Canvas>();
         //Debug.Log(levelSelectMenu.gameObject.name);
-        resetMenu = GameObject.Find("ResetGameMenu").gameObject;
+        resetMenu = GameObject.Find("ResetGameContainer").gameObject;
         resetMenu.SetActive(false);
         optionsMenu = GameObject.Find("Options").gameObject;
         optionsMenu.SetActive(false);
@@ -243,6 +246,9 @@ public class MenuController : MonoBehaviour
 
             restartButton.GetComponentInChildren<Text>().text = "Reset Game";
 
+            restartMenuEnglish.SetActive(true);
+            restartMenuDanish.SetActive(false);
+
         }
         else if (language == "Danish")
         {
@@ -263,6 +269,9 @@ public class MenuController : MonoBehaviour
             danishButton.SetActive(true);
 
             restartButton.GetComponentInChildren<Text>().text = "Slet Fremskridt";
+
+            restartMenuEnglish.SetActive(false);
+            restartMenuDanish.SetActive(true);
         }
         else
         {
@@ -303,6 +312,9 @@ public class MenuController : MonoBehaviour
             soundOn.SetActive(false);
             soundOff.SetActive(true);
         }
+        
+
+
 
     }
 
@@ -325,6 +337,10 @@ public class MenuController : MonoBehaviour
         englishButton = GameObject.Find("LanguageEnglishButton").gameObject;
         danishButton = GameObject.Find("LanguageDanishButton").gameObject;
         restartButton = GameObject.Find("ResetGameButton").gameObject;
+
+        restartMenuEnglish = GameObject.Find("ResetGameMenuEnglish").gameObject;
+        restartMenuDanish = GameObject.Find("ResetGameMenuDanish").gameObject;
+
     }
 
 }

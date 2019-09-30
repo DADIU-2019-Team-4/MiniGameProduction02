@@ -239,6 +239,56 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4808019820287670097}
+    - target: {fileID: 5351906051519554327, guid: 231e71c50ca338147a0b92e48c98ffcb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351906051519554327, guid: 231e71c50ca338147a0b92e48c98ffcb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351906051519554327, guid: 231e71c50ca338147a0b92e48c98ffcb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351906051519554327, guid: 231e71c50ca338147a0b92e48c98ffcb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4808019820287670097}
+    - target: {fileID: 5351906051519554327, guid: 231e71c50ca338147a0b92e48c98ffcb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToOptionsMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351906051519554327, guid: 231e71c50ca338147a0b92e48c98ffcb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1739669121123391326, guid: 231e71c50ca338147a0b92e48c98ffcb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4808019820287670097}
+    - target: {fileID: 1739669121123391326, guid: 231e71c50ca338147a0b92e48c98ffcb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToOptionsMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153463226059915034, guid: 231e71c50ca338147a0b92e48c98ffcb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4808019820287670097}
+    - target: {fileID: 6153463226059915034, guid: 231e71c50ca338147a0b92e48c98ffcb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartGameProgress
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 231e71c50ca338147a0b92e48c98ffcb, type: 3}
 --- !u!224 &474131720739768997 stripped
