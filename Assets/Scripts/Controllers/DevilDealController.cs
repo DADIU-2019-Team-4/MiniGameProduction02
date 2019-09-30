@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,7 +28,7 @@ public class DevilDealController : MonoBehaviour
     private int acceptedNegativeDealsCount;
 
     private bool applyNegativeEffect;
-    private bool lastDevilDeal;
+    public bool LastDevilDeal { get; set; }
 
     [SerializeField]
     private int countUntilNegativeEffect = 2;
@@ -144,7 +145,7 @@ public class DevilDealController : MonoBehaviour
 
 
         if (acceptedNegativeDealsCount >= devilDeals.Count)
-            lastDevilDeal = true;
+            LastDevilDeal = true;
     }
 
     public void DeclineDevilDeal()
@@ -154,5 +155,4 @@ public class DevilDealController : MonoBehaviour
 
         SceneController.IsPlaying = true;
     }
-
 }

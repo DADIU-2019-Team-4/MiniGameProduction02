@@ -55,7 +55,7 @@ public class LifeManager : MonoBehaviour
         // first delete the sprites
         DeleteLives();
 
-        if (CurrentLives == 1)
+        if (CurrentLives == 1 && !DevilDealController.LastDevilDeal)
             DevilDealController.ActivateDevilDealPanel();
         else if (CurrentLives <= 0)
         {
