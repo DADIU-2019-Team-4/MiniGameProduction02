@@ -9,5 +9,6 @@ public class DevilDealCollectables : DevilDeal
     {
         CollectionItemSpawner collectionItemSpawner = FindObjectOfType<CollectionItemSpawner>();
         collectionItemSpawner.NumberOfItemsToGoal += ToAdd;
+        collectionItemSpawner.UpdateText();
     }
 }
