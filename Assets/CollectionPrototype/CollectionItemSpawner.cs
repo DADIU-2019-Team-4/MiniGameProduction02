@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CollectionItemSpawner : MonoBehaviour
 {
@@ -17,28 +18,47 @@ public class CollectionItemSpawner : MonoBehaviour
     public bool isMid = false;
     public bool isBottom = false;
 
+    public int currentActivePlates;
+    public int maxActivePlates;
+    public int ItemsCollected;
+    public int NumberOfItemsToGoal;
+    public float timeUntilItemsDissappear;
+
+    private string mostRecentPosition;
+
+    public Text CollectableText;
+
+    private ScoreController ScoreController;
+    private SceneController SceneController;
+
+    private void Awake()
+    {
+        SceneController = FindObjectOfType<SceneController>();
+        ScoreController = FindObjectOfType<ScoreController>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-
+        CollectableText.text = $"{ItemsCollected}\\{NumberOfItemsToGoal}";
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isTop == false)
+        if (isTop == false && currentActivePlates < maxActivePlates && mostRecentPosition != "top")
         {
             StartCoroutine(randomSpawn(Random.Range(minTime, maxTime), spawnPosTop, "top"));
             isTop = true;
         }
 
-        if (isMid == false)
+        if (isMid == false && currentActivePlates < maxActivePlates && mostRecentPosition != "mid")
         {
             StartCoroutine(randomSpawn(Random.Range(minTime, maxTime), spawnPosMid, "mid"));
             isMid = true;
         }
 
-        if (isBottom == false)
+        if (isBottom == false && currentActivePlates < maxActivePlates && mostRecentPosition != "bottom")
         {
             StartCoroutine(randomSpawn(Random.Range(minTime, maxTime), spawnPosBottom, "bottom"));
             isBottom = true;
@@ -49,10 +69,23 @@ public class CollectionItemSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(_seconds);
 
+        if (currentActivePlates < maxActivePlates)
+        {
+            GameObject item = Instantiate(prefab, _spawnPos.transform.position, Quaternion.identity);
+            item.transform.position = _spawnPos.transform.position;
+            item.gameObject.GetComponent<CollectionItem>().placement = _placement;
+            mostRecentPosition = _placement;
+            currentActivePlates ++;
+        }
+    }
 
-        GameObject item = Instantiate(prefab, _spawnPos.transform.position, Quaternion.identity);
-        item.transform.position = _spawnPos.transform.position;
-        item.gameObject.GetComponent<CollectionItem>().placement = _placement;
-        print("spawned top");
+    public void IncrementItemsCollected(bool wasPerfectlyThrown)
+    {
+        ItemsCollected++;
+        CollectableText.text = $"{ItemsCollected}\\{NumberOfItemsToGoal}";
+        ScoreController.IncrementScore(wasPerfectlyThrown);
+
+        if (ItemsCollected == NumberOfItemsToGoal)
+            SceneController.LevelCompleted();
     }
 }

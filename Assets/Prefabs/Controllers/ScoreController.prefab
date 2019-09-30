@@ -44,9 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
-  multiplierText: {fileID: 0}
   normalCatchPoints: 1
   perfectCatchPoints: 3
-  angryMultiplier: 1
-  neutralMultiplier: 2
-  happyMultiplier: 4
