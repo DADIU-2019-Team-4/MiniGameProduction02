@@ -59,6 +59,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c6cfab629d4d1514388e179efebedd7b, type: 2}
   countUntilNegativeEffect: 2
   dealDescription: Do you accept this deal? >:D
+  lengthOfFlash: 0.2
+  maxFlashAlphaValue: 0.5
 --- !u!114 &1464220514811936704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55a0a1095f6619340a71c23f324a3598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sinisterFlashingImage: {fileID: 0}
+  SinisterFlashingImage: {fileID: 0}
   Interval: 1
   lengthOfFlash: 0.2
   maxAlphaValue: 0.5

@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -469,7 +469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1464220514811936704, guid: 6a953dd836e5fb5479418c83a3de4587,
         type: 3}
-      propertyPath: sinisterFlashingImage
+      propertyPath: SinisterFlashingImage
       value: 
       objectReference: {fileID: 7781361177337173343}
     m_RemovedComponents: []
