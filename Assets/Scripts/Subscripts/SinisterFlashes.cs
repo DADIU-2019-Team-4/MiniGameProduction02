@@ -5,8 +5,7 @@ using DG.Tweening;
 
 public class SinisterFlashes : MonoBehaviour
 {
-    [SerializeField]
-    private Image sinisterFlashingImage;
+    public Image SinisterFlashingImage;
 
     public float Interval;
     [SerializeField]
@@ -21,8 +20,8 @@ public class SinisterFlashes : MonoBehaviour
 
     private void Start()
     {
-        sinisterFlashingImage.DOFade(0, 0);
-        sinisterFlashingImage.gameObject.SetActive(false);
+        SinisterFlashingImage.DOFade(0, 0);
+        SinisterFlashingImage.gameObject.SetActive(false);
     }
 
     public void StartDevilDealFlashing()
@@ -44,11 +43,11 @@ public class SinisterFlashes : MonoBehaviour
 
     private IEnumerator Flash()
     {
-        sinisterFlashingImage.gameObject.SetActive(true);
-        sinisterFlashingImage.DOFade(maxAlphaValue, lengthOfFlash / 2);
+        SinisterFlashingImage.gameObject.SetActive(true);
+        SinisterFlashingImage.DOFade(maxAlphaValue, lengthOfFlash / 2);
         yield return new WaitForSeconds(lengthOfFlash / 2);
-        sinisterFlashingImage.DOFade(0, lengthOfFlash / 2);
+        SinisterFlashingImage.DOFade(0, lengthOfFlash / 2);
         yield return new WaitForSeconds(lengthOfFlash / 2);
-        sinisterFlashingImage.gameObject.SetActive(false);
+        SinisterFlashingImage.gameObject.SetActive(false);
     }
 }

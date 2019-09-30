@@ -7,5 +7,6 @@ public class DevilDealLives : DevilDeal
     {
         LifeManager lifeManager = FindObjectOfType<LifeManager>();
         lifeManager.maxLives--;
+        lifeManager.ResetLives();
     }
 }

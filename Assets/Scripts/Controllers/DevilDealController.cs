@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ public class DevilDealController : MonoBehaviour
     private BallController BallController;
     private LifeManager LifeManager;
     private SceneController SceneController;
+    private SinisterFlashes SinisterFlashes;
 
     [SerializeField]
     private GameObject devilDealCanvas;
@@ -39,11 +41,18 @@ public class DevilDealController : MonoBehaviour
     [SerializeField, TextArea(10, 100)]
     private string dealDescription;
 
+    [SerializeField]
+    private float lengthOfFlash = 0.2f;
+
+    [SerializeField]
+    private float maxFlashAlphaValue = 0.8f;
+
     private void Awake()
     {
         BallController = FindObjectOfType<BallController>();
         LifeManager = FindObjectOfType<LifeManager>();
         SceneController = FindObjectOfType<SceneController>();
+        SinisterFlashes = FindObjectOfType<SinisterFlashes>();
     }
 
     private void Start()
@@ -102,7 +111,7 @@ public class DevilDealController : MonoBehaviour
     {
         if (applyNegativeEffect)
         {
-            ApplyNegativeEffect();
+            StartCoroutine(ApplyNegativeEffect());
             ClearDevilSkulls();
             applyNegativeEffect = false;
         }
@@ -136,23 +145,31 @@ public class DevilDealController : MonoBehaviour
         descriptionText.text = chosenNegativeDevilDeal.dealDescription;
     }
 
-    private void ApplyNegativeEffect()
-    {
-        // todo save this value for long term
-        acceptedNegativeDealsCount++;
-
-        chosenNegativeDevilDeal.ApplyDevilDeal();
-
-
-        if (acceptedNegativeDealsCount >= devilDeals.Count)
-            LastDevilDeal = true;
-    }
-
     public void DeclineDevilDeal()
     {
         devilDealCanvas.SetActive(false);
         Time.timeScale = BallController.TimeScale;
 
         SceneController.IsPlaying = true;
+    }
+
+    private IEnumerator ApplyNegativeEffect()
+    {
+        // todo save this value for long term
+        acceptedNegativeDealsCount++;
+
+        SinisterFlashes.SinisterFlashingImage.gameObject.SetActive(true);
+        SinisterFlashes.SinisterFlashingImage.DOFade(maxFlashAlphaValue, lengthOfFlash / 2);
+        yield return new WaitForSeconds(lengthOfFlash / 2);
+
+        // todo insert code for changing viola's face to the next stage
+        chosenNegativeDevilDeal.ApplyDevilDeal();
+
+        SinisterFlashes.SinisterFlashingImage.DOFade(0, lengthOfFlash / 2);
+        yield return new WaitForSeconds(lengthOfFlash / 2);
+        SinisterFlashes.SinisterFlashingImage.gameObject.SetActive(false);
+
+        if (acceptedNegativeDealsCount >= devilDeals.Count)
+            LastDevilDeal = true;
     }
 }
