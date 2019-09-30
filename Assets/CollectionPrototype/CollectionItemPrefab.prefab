@@ -107,6 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placement: 
+  particles: {fileID: 639375849499174274, guid: 37a51a52d7fde47a5a1bbac368ac7543,
+    type: 3}
 --- !u!1 &7294735933876057542
 GameObject:
   m_ObjectHideFlags: 0
