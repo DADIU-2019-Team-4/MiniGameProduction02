@@ -183,7 +183,7 @@ public class MenuController : MonoBehaviour
 
     public void RestartGameProgress()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         GoToOptionsMenu();
     }
 
@@ -222,11 +222,13 @@ public class MenuController : MonoBehaviour
         musicVolume = PlayerPrefs.GetString("MusVol");
         soundOnOff = PlayerPrefs.GetString("SoundOnOff");
 
+        PlayerPrefs.Save();
+
         //||set language text---------------------------------------------------------
 
         //gameobject variables
 
-        
+
 
         if (language == "English")
         {

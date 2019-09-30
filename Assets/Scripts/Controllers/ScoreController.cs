@@ -48,6 +48,8 @@ public class ScoreController : MonoBehaviour
         // you got a new highscore!
         if (score > currentHighScore)
             PlayerPrefs.SetInt(key, score);
+
+        PlayerPrefs.Save();
     }
 
 }

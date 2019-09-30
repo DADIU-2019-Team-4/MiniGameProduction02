@@ -144,6 +144,7 @@ public class DevilDealController : MonoBehaviour
         acceptedDevilDealsCount++;
         // saves total accepted devil deal count
         PlayerPrefs.SetInt(acceptedDevilDealsCountKey, acceptedDevilDealsCount);
+        PlayerPrefs.Save();
 
         ApplyPositiveEffect();
 
@@ -178,6 +179,7 @@ public class DevilDealController : MonoBehaviour
         acceptedNegativeDealsCount++;
         // saves total accepted negative devil deal count
         PlayerPrefs.SetInt(acceptedNegativeDealsCountKey, acceptedNegativeDealsCount);
+        PlayerPrefs.Save();
 
         SinisterFlashes.SinisterFlashingImage.gameObject.SetActive(true);
         SinisterFlashes.SinisterFlashingImage.DOFade(maxFlashAlphaValue, lengthOfFlash / 2);
