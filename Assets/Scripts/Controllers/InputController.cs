@@ -26,6 +26,8 @@ public class InputController : MonoBehaviour
     private ViolaController.HandType screenSide;
     private ViolaController.ThrowType throwType;
 
+    public bool InvertControls { get; set; }
+
     private void Awake()
     {
         ViolaController = FindObjectOfType<ViolaController>();
@@ -185,24 +187,40 @@ public class InputController : MonoBehaviour
     {
         if (firstPosition[i].x < Screen.width / 2f)
         {
-            if (hasSwipedLeftScreen)
-                return ViolaController.HandType.None;
-            else
+            // normal controls swipe left
+            if (!InvertControls)
             {
+                if (hasSwipedLeftScreen)
+                    return ViolaController.HandType.None;
+
                 hasSwipedLeftScreen = true;
                 return ViolaController.HandType.Right;
             }
+
+            // inverted controls
+            if (hasSwipedRightScreen)
+                return ViolaController.HandType.None;
+
+            hasSwipedRightScreen = true;
+            return ViolaController.HandType.Left;
         }
-        else
+
+        // normal control swipe right
+        if (!InvertControls)
         {
             if (hasSwipedRightScreen)
                 return ViolaController.HandType.None;
-            else
-            {
-                hasSwipedRightScreen = true;
-                return ViolaController.HandType.Left;
-            }
+
+            hasSwipedRightScreen = true;
+            return ViolaController.HandType.Left;
         }
+
+        // inverted controls
+        if (hasSwipedLeftScreen)
+            return ViolaController.HandType.None;
+
+        hasSwipedLeftScreen = true;
+        return ViolaController.HandType.Right;
     }
 
 

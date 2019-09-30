@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01fff1255532c7d45b94147ca6033cca, type: 3}
   m_Name: Devil Deal Flashes
   m_EditorClassIdentifier: 
-  dealDescription: Red flashes will appear, do you still accept this deal? >:D
-  descriptionImage: {fileID: 21300000, guid: 5f3554f3bafb12e4aa25168ea1cea117, type: 3}
+  dealDescription: Sinister flashes will appear, do you still accept this deal? >:D
   interval: 2

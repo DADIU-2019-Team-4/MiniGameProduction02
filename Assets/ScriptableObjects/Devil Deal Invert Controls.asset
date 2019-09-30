@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31048df4f1408e34887926baec2a6d5b, type: 3}
-  m_Name: Devil Deal Collectables
+  m_Script: {fileID: 11500000, guid: 243c1eddbc8879543ab8f57278379f7e, type: 3}
+  m_Name: Devil Deal Invert Controls
   m_EditorClassIdentifier: 
-  dealDescription: You will need to collect more items, do you still accept this deal?
+  dealDescription: Left is Right and Right is Left, do you still accept this deal?
     >:D
-  ToAdd: 3

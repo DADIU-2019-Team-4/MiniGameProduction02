@@ -3,38 +3,38 @@ using UnityEngine.UI;
 
 public class ScoreController : MonoBehaviour
 {
-    private SceneController SceneController;
-
     public Text scoreText;
     [SerializeField]
     private int score;
     private int receivedPoints;
     [SerializeField]
-    private int itemHitCombo = 0;
+    private int itemHitCombo = 1;
+
+    public bool MultiplierDevilDealActivated { get; set; }
 
     public enum CatchType { Normal, Perfect, Failed }
 
-    private void Awake()
-    {
-        SceneController = FindObjectOfType<SceneController>();
-    }
-
     public void IncrementScore(bool wasPerfectlyThrown)
     {
-        itemHitCombo++;
         if (!wasPerfectlyThrown)
+        {
+            // when multiplier devil deal is activated, only build up multiplier when perfect throw.
+            if (!MultiplierDevilDealActivated)
+                itemHitCombo++;
             score += itemHitCombo;
+        }
         else
         {
             // Code for perfect throws. Not entirely decided on yet.
             score += itemHitCombo * 2;
+            itemHitCombo++;
         }
         scoreText.text = "Score: " + score;
     }
 
     public void ResetMultiplier()
     {
-        itemHitCombo = 0;
+        itemHitCombo = 1;
     }
 
 }

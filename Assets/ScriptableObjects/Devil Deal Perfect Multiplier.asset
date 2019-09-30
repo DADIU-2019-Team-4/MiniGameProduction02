@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31048df4f1408e34887926baec2a6d5b, type: 3}
-  m_Name: Devil Deal Collectables
+  m_Script: {fileID: 11500000, guid: 15e57fceacfbe96409520af8e4d0b7cd, type: 3}
+  m_Name: Devil Deal Perfect Multiplier
   m_EditorClassIdentifier: 
-  dealDescription: You will need to collect more items, do you still accept this deal?
-    >:D
-  ToAdd: 3
+  dealDescription: You can only build up your score multiplier with perfect throws,
+    do you still accept this deal? >:D
