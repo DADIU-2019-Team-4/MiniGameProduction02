@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class CollectionItem : MonoBehaviour
 {
-    CollectionItemSpawner cisScript;
+    CollectionItemSpawner CollectionItemSpawner;
     public string placement;
+    public ParticleSystem particles;
+    public GameObject brokenMesh;
 
     // Start is called before the first frame update
     void Start()
     {
-        cisScript = GameObject.Find("SceneController").GetComponent<CollectionItemSpawner>();
+        CollectionItemSpawner = GameObject.Find("SceneController").GetComponent<CollectionItemSpawner>();
+        StartCoroutine(DestroyAfterSeconds());
+        Instantiate(particles, gameObject.transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -23,20 +27,50 @@ public class CollectionItem : MonoBehaviour
     {
         if (placement == "top")
         {
-            cisScript.isTop = false;
+            CollectionItemSpawner.isTop = false;
         }
         else if (placement == "mid")
         {
-            cisScript.isMid = false;
+            CollectionItemSpawner.isMid = false;
         }
         else if (placement == "bottom")
         {
-            cisScript.isBottom = false;
+            CollectionItemSpawner.isBottom = false;
         }
 
         Destroy(this.gameObject);
         if (FindObjectOfType<TutorialManager>() != null)
             FindObjectOfType<TutorialManager>().EnableTutorialUI();
         cisScript.IncrementItemsCollected();
+        CollectionItemSpawner.IncrementItemsCollected(other.GetComponent<Ball>().wasPerfectlyThrown);
+
+    }
+
+    private void OnDestroy()
+    {
+        //Instantiate(brokenMesh, gameObject.transform.position, Quaternion.identity); //Instantiate the broken mesh when hit
+        CollectionItemSpawner.currentActivePlates--;
+    }
+
+    IEnumerator DestroyAfterSeconds()
+    {
+        yield return new WaitForSeconds(CollectionItemSpawner.timeUntilItemsDissappear);
+
+        if (placement == "top")
+        {
+            CollectionItemSpawner.isTop = false;
+        }
+        else if (placement == "mid")
+        {
+            CollectionItemSpawner.isMid = false;
+        }
+        else if (placement == "bottom")
+        {
+            CollectionItemSpawner.isBottom = false;
+        }
+
+        Instantiate(particles, gameObject.transform.position, Quaternion.identity);
+        CollectionItemSpawner.DroppedItem();
+        Destroy(this.gameObject);
     }
 }

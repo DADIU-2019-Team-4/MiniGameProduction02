@@ -44,8 +44,7 @@ public class BallController : MonoBehaviour
     public bool spawnInRandomHand;
     public float respawnYAxis;
     private bool _tutorialLevel;
-
-
+    public float spawnAllIntervals;
 
     void Awake()
     {
@@ -67,8 +66,8 @@ public class BallController : MonoBehaviour
     void Update()
     {
         //foreach (GameObject item in Balls)
-            //if (item.tag == "Balloon")
-               // item.GetComponent<Rigidbody>().AddForce(new Vector3(0, BalloonFloatStrength, 0));
+        //if (item.tag == "Balloon")
+        // item.GetComponent<Rigidbody>().AddForce(new Vector3(0, BalloonFloatStrength, 0));
     }
 
     private void Start()
@@ -85,18 +84,14 @@ public class BallController : MonoBehaviour
 
     private void SpawnBalls(int number)
     {
-        Vector3 spawnPosition;
-
-
         for (int i = 0; i < number; i++)
-        {
-            if (i % 2 == 0)
-                spawnPosition = new Vector3(rightHand.transform.position.x + distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), rightHand.transform.position.y, rightHand.transform.position.z);
-            else
-                spawnPosition = new Vector3(leftHand.transform.position.x - distanceBetweenSpawnedBalls * (Mathf.Round(i / 2) - 1), leftHand.transform.position.y, leftHand.transform.position.z);
-            AddBall(spawnPosition, i, false);
-        }
-        //ballSelectorInt = 0;
+            StartCoroutine(SpawnRoutine(i));
+    }
+
+    IEnumerator SpawnRoutine(int i)
+    {
+        yield return new WaitForSeconds((1 + i) * spawnAllIntervals);
+        AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), i, true);
     }
 
     private void AddBall(Vector3 where, int prefabInt, bool isDropped)
@@ -142,7 +137,6 @@ public class BallController : MonoBehaviour
 
     public void BallDropped(GameObject obj)
     {
-        ScoreController.DroppedBall();
         RemoveBall(obj);
         if (!_tutorialLevel)
         {
@@ -182,27 +176,14 @@ public class BallController : MonoBehaviour
         if (ball == null) return;
 
         if (hand == ViolaController.HandType.Left)
-        {
             AkSoundEngine.PostEvent("ColliderLeft_event", gameObject);
-
-        }
-        if (hand == ViolaController.HandType.Right)
-        {
+        else if (hand == ViolaController.HandType.Right)
             AkSoundEngine.PostEvent("ColliderRight_event", gameObject);
-        }
 
         Rigidbody ballRigidBody = ball.GetComponent<Rigidbody>();
         ballRigidBody.isKinematic = true;
 
-        var catchType = GotPerfectCatch(ball) ? ScoreController.CatchType.Perfect : ScoreController.CatchType.Normal;
-
-        if (ball.tag == "Sabre" && catchType != ScoreController.CatchType.Perfect)
-        {
-            //failed Sabre throw, cut off hand
-            BallDropped(ball);
-        }
-
-        ScoreController.IncrementScore(catchType);
+        ball.GetComponent<Ball>().wasPerfectlyThrown = GotPerfectCatch(ball);
 
         Vector3 throwVector = GetThrowForce(throwType, ball);
         SetThrowDirection(hand, ref throwVector, ballRigidBody);
