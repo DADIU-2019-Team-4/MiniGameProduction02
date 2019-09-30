@@ -99,7 +99,7 @@ public class DevilDealController : MonoBehaviour
         devilDealCanvas.SetActive(true);
         descriptionText.text = dealDescription;
 
-        if (acceptedDevilDealsCount > 0 && acceptedDevilDealsCount % countUntilNegativeEffect == 0)
+        if (acceptedDevilDealsCount % countUntilNegativeEffect == 0)
         {
             applyNegativeEffect = true;
             ChooseNegativeDevilDeal();
