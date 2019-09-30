@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3186511382523634058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4625034394326983814}
+  - component: {fileID: 1808715076024527199}
+  - component: {fileID: 1464220514811936704}
+  m_Layer: 0
+  m_Name: DevilDealController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4625034394326983814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3186511382523634058}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1808715076024527199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3186511382523634058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043a9b5f98e0fe24aac4b3fd94b2607a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  devilDealCanvas: {fileID: 0}
+  descriptionText: {fileID: 0}
+  devilSkullSpawnPoint: {fileID: 0}
+  devilSkull: {fileID: 2885985191341402184, guid: 90230456fbedda844b50783fb35753bb,
+    type: 3}
+  devilDeals:
+  - {fileID: 11400000, guid: 6ef9ac461f594564f86cf34253df860b, type: 2}
+  - {fileID: 11400000, guid: 1e2444ae7d551cb4fb99de8a50cae807, type: 2}
+  - {fileID: 11400000, guid: 11a9ba9580e10c24d8bba3a86fed39aa, type: 2}
+  - {fileID: 11400000, guid: 59acee8568d16384d80e41292afe350c, type: 2}
+  - {fileID: 11400000, guid: e06ce1edeca6d1c4bb9d9ac989951d99, type: 2}
+  - {fileID: 11400000, guid: 72e59340954da874ca04297fa766fe3f, type: 2}
+  - {fileID: 11400000, guid: c6cfab629d4d1514388e179efebedd7b, type: 2}
+  countUntilNegativeEffect: 2
+  dealDescription: Do you accept this deal? >:D
+--- !u!114 &1464220514811936704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3186511382523634058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a0a1095f6619340a71c23f324a3598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sinisterFlashingImage: {fileID: 0}
+  Interval: 1
+  lengthOfFlash: 0.2
+  maxAlphaValue: 0.5
+  startFlashing: 0

@@ -3,7 +3,8 @@ using UnityEngine.UI;
 
 public class LifeManager : MonoBehaviour
 {
-    SceneController SceneController;
+    private SceneController SceneController;
+    private DevilDealController DevilDealController;
 
     [SerializeField]
     private GameObject life;
@@ -11,19 +12,17 @@ public class LifeManager : MonoBehaviour
     [SerializeField]
     private GameObject lifeSpawnPoint;
 
-    [SerializeField]
-    private int maxLives = 3;
-
+    public int maxLives = 3;
     public int CurrentLives { get; set; }
 
     [SerializeField]
     private float offset = 15;
-
     private float imageWidth;
 
     private void Awake()
     {
         SceneController = FindObjectOfType<SceneController>();
+        DevilDealController = FindObjectOfType<DevilDealController>();
     }
 
     void Start()
@@ -56,7 +55,9 @@ public class LifeManager : MonoBehaviour
         // first delete the sprites
         DeleteLives();
 
-        if (CurrentLives <= 0)
+        if (CurrentLives == 1 && !DevilDealController.LastDevilDeal)
+            DevilDealController.ActivateDevilDealPanel();
+        else if (CurrentLives <= 0)
         {
             SceneController.LevelFailed();
             return;
@@ -64,5 +65,11 @@ public class LifeManager : MonoBehaviour
 
         // then draw new sprites
         SpawnLives();
+    }
+
+    public void ResetLives()
+    {
+        CurrentLives = maxLives;
+        UpdateLives();
     }
 }
