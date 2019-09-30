@@ -6,13 +6,16 @@ public class ScoreController : MonoBehaviour
     private SceneController SceneController;
 
     public Text scoreText;
+    [SerializeField]
     private int score;
     private int receivedPoints;
+    [SerializeField]
+    private int itemHitCombo = 0;
 
-    [SerializeField]
-    private int normalCatchPoints = 1;
-    [SerializeField]
-    private int perfectCatchPoints = 3;
+    //[SerializeField]
+    //private int normalCatchPoints = 1;
+    //[SerializeField]
+    //private int perfectCatchPoints = 3;
 
     public enum CatchType { Normal, Perfect, Failed }
 
@@ -21,29 +24,45 @@ public class ScoreController : MonoBehaviour
         SceneController = FindObjectOfType<SceneController>();
     }
 
-    public void IncrementScore(CatchType catchType)
+    public void IncrementScore(bool wasPerfectlyThrown)
     {
-        receivedPoints = 0;
-        switch (catchType)
+        itemHitCombo++;
+        if (!wasPerfectlyThrown)
+            score += itemHitCombo;
+        else
         {
-            case CatchType.Perfect:
-                receivedPoints = perfectCatchPoints;
-                break;
-            case CatchType.Normal:
-                receivedPoints = normalCatchPoints;
-                break;
+            // Code for perfect throws. Not entirely decided on yet.
+            score += itemHitCombo * 2;
         }
-
-        ApplyMultiplier();
-
-        score += receivedPoints;
         scoreText.text = "Score: " + score;
     }
 
-    private void ApplyMultiplier()
+    public void ResetMultiplier()
     {
-        // todo implement multiplier
+        itemHitCombo = 0;
     }
+
+    //public void IncrementScore(CatchType catchType)
+    //{
+    //    receivedPoints = 0;
+    //    switch (catchType)
+    //    {
+    //        case CatchType.Perfect:
+    //            receivedPoints = perfectCatchPoints;
+    //            break;
+    //        case CatchType.Normal:
+    //            receivedPoints = normalCatchPoints;
+    //            break;
+    //    }
+    //    ApplyMultiplier();
+    //    score += receivedPoints;
+    //    scoreText.text = "Score: " + score;
+    //}
+
+    //private void ApplyMultiplier()
+    //{
+    //    // todo implement multiplier
+    //}
 
     public void DroppedBall()
     {
@@ -51,7 +70,7 @@ public class ScoreController : MonoBehaviour
         //rightHandParticle.Play();
 
         SceneController.IsPlaying = false;
-        
+
         // The BallController will delete and respawn the balls after this function call.
     }
 }

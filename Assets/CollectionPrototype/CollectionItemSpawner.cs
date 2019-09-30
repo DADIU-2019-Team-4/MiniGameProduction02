@@ -23,11 +23,13 @@ public class CollectionItemSpawner : MonoBehaviour
 
     public Text CollectableText;
 
+    private ScoreController ScoreController;
     private SceneController SceneController;
 
     private void Awake()
     {
         SceneController = FindObjectOfType<SceneController>();
+        ScoreController = FindObjectOfType<ScoreController>();
     }
 
     // Start is called before the first frame update
@@ -69,10 +71,12 @@ public class CollectionItemSpawner : MonoBehaviour
         print("spawned top");
     }
 
-    public void IncrementItemsCollected()
+    public void IncrementItemsCollected(bool wasPerfectlyThrown)
     {
         ItemsCollected++;
         CollectableText.text = $"{ItemsCollected}\\{NumberOfItemsToGoal}";
+        ScoreController.IncrementScore(wasPerfectlyThrown);
+
         if (ItemsCollected == NumberOfItemsToGoal)
             SceneController.LevelCompleted();
     }

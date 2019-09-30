@@ -278,3 +278,7 @@ MonoBehaviour:
   balloonThrowDown: {x: 0, y: -5, z: 0}
   ballonThrowMid: {x: 10, y: -5, z: 0}
   ballSelectorInt: 0
+  delayTime: 0
+  slowDownTime: 5
+  spawnInRandomHand: 0
+  respawnYAxis: 7
