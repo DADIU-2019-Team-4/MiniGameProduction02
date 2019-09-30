@@ -128,7 +128,6 @@ public class BallController : MonoBehaviour
 
     public void BallDropped(GameObject obj)
     {
-        ScoreController.DroppedBall();
         RemoveBall(obj);
         LifeManager.CurrentLives--;
         LifeManager.UpdateLives();

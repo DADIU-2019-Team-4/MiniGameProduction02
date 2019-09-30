@@ -72,7 +72,7 @@ MonoBehaviour:
   isMid: 0
   isBottom: 0
   ItemsCollected: 0
-  NumberOfItemsToGoal: 3
+  NumberOfItemsToGoal: 10
   CollectableText: {fileID: 0}
 --- !u!114 &5554352687557745370
 MonoBehaviour:

@@ -502,6 +502,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneController
       objectReference: {fileID: 0}
+    - target: {fileID: 1267635558868094372, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: levelFailedText
+      value: 
+      objectReference: {fileID: 7781361177337173344}
+    - target: {fileID: 1267635558868094372, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: levelCompletedText
+      value: 
+      objectReference: {fileID: 7781361177337173345}
     - target: {fileID: 1267635558868094371, guid: 8217b052d62188241932da549938efdf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -557,16 +567,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1267635558868094372, guid: 8217b052d62188241932da549938efdf,
-        type: 3}
-      propertyPath: levelFailedText
-      value: 
-      objectReference: {fileID: 7781361177337173344}
-    - target: {fileID: 1267635558868094372, guid: 8217b052d62188241932da549938efdf,
-        type: 3}
-      propertyPath: levelCompletedText
-      value: 
-      objectReference: {fileID: 7781361177337173345}
     - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
         type: 3}
       propertyPath: CollectableText
@@ -1003,11 +1003,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
         type: 3}
-      propertyPath: BallPrefab.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
       propertyPath: leftHand
       value: 
       objectReference: {fileID: 1265869776}
@@ -1018,16 +1013,6 @@ PrefabInstance:
       objectReference: {fileID: 1999638037}
     - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
         type: 3}
-      propertyPath: leftIndicator
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: rightIndicator
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
       propertyPath: leftPerfectCatch
       value: 
       objectReference: {fileID: 766338093}
@@ -1036,39 +1021,6 @@ PrefabInstance:
       propertyPath: rightPerfectCatch
       value: 
       objectReference: {fileID: 1961473889}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: BallPrefab.Array.data[0]
-      value: 
-      objectReference: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab,
-        type: 3}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: gravityYaxis
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: BallPrefab.Array.data[1]
-      value: 
-      objectReference: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab,
-        type: 3}
-    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: BallPrefab.Array.data[2]
-      value: 
-      objectReference: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab,
-        type: 3}
-    - target: {fileID: 7760826363767526402, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: m_Name
-      value: RightIndicator
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760826365503395520, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: m_Name
-      value: LeftIndicator
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4e71392584e97a40b5fecb8aa9ece25, type: 3}
 --- !u!1001 &7781361177337173342

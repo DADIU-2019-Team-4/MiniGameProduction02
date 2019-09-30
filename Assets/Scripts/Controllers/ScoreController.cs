@@ -44,14 +44,4 @@ public class ScoreController : MonoBehaviour
     {
         // todo implement multiplier
     }
-
-    public void DroppedBall()
-    {
-        //leftHandParticle.Play();
-        //rightHandParticle.Play();
-
-        SceneController.IsPlaying = false;
-        
-        // The BallController will delete and respawn the balls after this function call.
-    }
 }
