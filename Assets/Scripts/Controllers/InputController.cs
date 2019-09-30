@@ -9,6 +9,7 @@ public class InputController : MonoBehaviour
     private ViolaController ViolaController;
     private MenuController MenuController;
     private SceneController SceneController;
+    private TutorialManager TutorialManager;
 
     private readonly Vector3[] firstPosition = new Vector3[2];
     private readonly Vector3[] lastPosition = new Vector3[2];
@@ -20,6 +21,7 @@ public class InputController : MonoBehaviour
     private bool hasSwipedRightScreen;
 
     private bool trackMouse;
+    private bool _tutorialLevel;
 
     public enum SwipeDirection { Up, Down, Left, Right }
 
@@ -31,6 +33,15 @@ public class InputController : MonoBehaviour
         ViolaController = FindObjectOfType<ViolaController>();
         //MenuController = GetComponent<MenuController>(); // Uncomment if you need it.
         SceneController = FindObjectOfType<SceneController>();
+        if (FindObjectOfType<TutorialManager>() != null)
+        {
+            TutorialManager = FindObjectOfType<TutorialManager>();
+            _tutorialLevel = true;
+        }
+        else
+            _tutorialLevel = false;
+            
+
     }
 
     private void Start()
@@ -75,6 +86,8 @@ public class InputController : MonoBehaviour
     /// </summary>
     private void MobileInput()
     {
+        if (Input.touchCount>0 &&_tutorialLevel)
+            TutorialManager.RemoveTutorialUI(3);
         Touch[] touches = Input.touches;
         for (int i = 0; i < Input.touchCount; i++)
         {
@@ -111,6 +124,8 @@ public class InputController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (_tutorialLevel)
+                TutorialManager.RemoveTutorialUI(4);
             trackMouse = true;
             firstPosition[0] = Input.mousePosition;
             lastPosition[0] = Input.mousePosition;
@@ -214,12 +229,18 @@ public class InputController : MonoBehaviour
         switch (direction)
         {
             case SwipeDirection.Up:
+                if ( _tutorialLevel)
+                    TutorialManager.RemoveTutorialUI(0);
                 return ViolaController.ThrowType.HighThrow;
 
             case SwipeDirection.Down:
+                if (_tutorialLevel)
+                    TutorialManager.RemoveTutorialUI(1);
                 return ViolaController.ThrowType.FloorBounce;
 
             default:
+                if (_tutorialLevel)
+                    TutorialManager.RemoveTutorialUI(2);
                 return ViolaController.ThrowType.MidThrow;
         }
     }

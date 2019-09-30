@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -132,6 +132,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &420073110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 420073112}
+  - component: {fileID: 420073111}
+  m_Layer: 0
+  m_Name: TutorialManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &420073111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420073110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5233d941ac98943429b3994d1760c157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialStage:
+  - {fileID: 1320261676}
+  - {fileID: 1036089822}
+  - {fileID: 544849736}
+  - {fileID: 2012962443}
+  - {fileID: 1801279935}
+  - {fileID: 1354718246}
+  - {fileID: 813198513}
+--- !u!4 &420073112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420073110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 720, y: 1480, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &544849736
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &544849737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -238,7 +289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &813198514
 RectTransform:
   m_ObjectHideFlags: 0
@@ -321,7 +372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1036089823
 RectTransform:
   m_ObjectHideFlags: 0
@@ -470,7 +521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1320261677
 RectTransform:
   m_ObjectHideFlags: 0
@@ -547,7 +598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1354718247
 RectTransform:
   m_ObjectHideFlags: 0
@@ -799,7 +850,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1801279936
 RectTransform:
   m_ObjectHideFlags: 0
@@ -900,7 +951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2012962444
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1484,6 +1535,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
         type: 3}
+      propertyPath: BallPrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
       propertyPath: leftHand
       value: 
       objectReference: {fileID: 1871473972}
@@ -1517,6 +1573,18 @@ PrefabInstance:
       propertyPath: respawnYAxis
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
+      propertyPath: BallPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab,
+        type: 3}
+    - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
+      propertyPath: BallPrefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4e71392584e97a40b5fecb8aa9ece25, type: 3}
 --- !u!1001 &7781361177337173342

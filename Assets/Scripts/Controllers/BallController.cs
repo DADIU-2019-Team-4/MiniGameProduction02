@@ -6,6 +6,7 @@ public class BallController : MonoBehaviour
 {
     private ScoreController ScoreController;
     private SceneController SceneController;
+    private TutorialManager TutorialManager;
     private LifeManager LifeManager;
 
 
@@ -42,6 +43,9 @@ public class BallController : MonoBehaviour
     public float slowDownTime;
     public bool spawnInRandomHand;
     public float respawnYAxis;
+    private bool _tutorialLevel;
+
+
 
     void Awake()
     {
@@ -50,6 +54,13 @@ public class BallController : MonoBehaviour
         SceneController = FindObjectOfType<SceneController>();
         LifeManager = FindObjectOfType<LifeManager>();
         Physics.gravity = new Vector3(0, gravityYaxis, 0);
+        if (FindObjectOfType<TutorialManager>() != null)
+        {
+            TutorialManager = FindObjectOfType<TutorialManager>();
+            _tutorialLevel = true;
+        }
+        else
+            _tutorialLevel = false;
     }
 
 
@@ -116,6 +127,8 @@ public class BallController : MonoBehaviour
         if (!ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Add(ball);
         PlayDistanceSound(ball);
+        if (_tutorialLevel)
+            TutorialManager.EnableTutorialUI();
 
     }
 
