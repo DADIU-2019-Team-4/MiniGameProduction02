@@ -35,6 +35,8 @@ public class CollectionItem : MonoBehaviour
         }
 
         Destroy(this.gameObject);
+        if (FindObjectOfType<TutorialManager>() != null)
+            FindObjectOfType<TutorialManager>().EnableTutorialUI();
         cisScript.IncrementItemsCollected();
     }
 }

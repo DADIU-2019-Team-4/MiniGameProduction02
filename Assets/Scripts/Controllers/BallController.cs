@@ -127,9 +127,10 @@ public class BallController : MonoBehaviour
         if (!ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Add(ball);
         PlayDistanceSound(ball);
-        if (_tutorialLevel)
+        if (_tutorialLevel && TutorialManager._previousTutorialStage<3)
             TutorialManager.EnableTutorialUI();
-
+        if (TutorialManager._previousTutorialStage == 3 && FindObjectOfType<CollectionItem>() != null)
+            TutorialManager.EnableTutorialUI();
     }
 
     public void BallLeavesHand(Collider collider)
@@ -143,8 +144,11 @@ public class BallController : MonoBehaviour
     {
         ScoreController.DroppedBall();
         RemoveBall(obj);
-        LifeManager.CurrentLives--;
-        LifeManager.UpdateLives();
+        if (!_tutorialLevel)
+        {
+            LifeManager.CurrentLives--;
+            LifeManager.UpdateLives();
+        }
         throwCount = 0;
         //ballsInCatchZone.Clear();
         StartCoroutine(Delay(delayTime));

@@ -9,7 +9,7 @@ public class TutorialManager : MonoBehaviour
     private GameObject[] _tutorialStage;
  
 
-    private int _previousTutorialStage;
+    public int _previousTutorialStage;
     private GameObject _currentText;
     private bool _isTutorialStarted;
     // Start is called before the first frame update
@@ -29,23 +29,26 @@ public class TutorialManager : MonoBehaviour
     // Update is called once per frame
     public void RemoveTutorialUI(int action)  //0- HighThrow,1- SideThrow, 2 - DownThrow, 3 - targets 
     {
-        if (_previousTutorialStage == action)
+        if ((_previousTutorialStage == action || action >= 3 && _previousTutorialStage>= action) && _currentText.active ==true)
         {
             Time.timeScale = 1f;
             _currentText.SetActive(false);
             _previousTutorialStage++;
+            if (_previousTutorialStage == 4 || _previousTutorialStage == 6)
+                EnableTutorialUI();
         }
-
     }
 
     public void EnableTutorialUI()
     {
-
-            _currentText = _tutorialStage[_previousTutorialStage];
-            _currentText.SetActive(true);
-            Time.timeScale = 0f;
-            if(!_isTutorialStarted)
-                _isTutorialStarted = true;
+        if (_previousTutorialStage >= 7)
+            return;
+       _currentText = _tutorialStage[_previousTutorialStage];
+        Debug.Log("Stage:" + _previousTutorialStage);
+       _currentText.SetActive(true);
+       Time.timeScale = 0f;
+       if(!_isTutorialStarted)
+       _isTutorialStarted = true;
     }
 
     IEnumerator Delay()

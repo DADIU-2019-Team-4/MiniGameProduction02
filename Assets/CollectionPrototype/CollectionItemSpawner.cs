@@ -24,10 +24,21 @@ public class CollectionItemSpawner : MonoBehaviour
     public Text CollectableText;
 
     private SceneController SceneController;
+    private TutorialManager TutorialManager;
+    private bool _firstAreaSpawned;
+    private bool _tutorialLevel;
 
     private void Awake()
     {
         SceneController = FindObjectOfType<SceneController>();
+        if (FindObjectOfType<TutorialManager>() != null)
+        {
+            TutorialManager = FindObjectOfType<TutorialManager>();
+            _firstAreaSpawned = false;
+            _tutorialLevel = true;
+        }
+        else
+            _tutorialLevel = false;
     }
 
     // Start is called before the first frame update
@@ -61,8 +72,6 @@ public class CollectionItemSpawner : MonoBehaviour
     private IEnumerator randomSpawn(float _seconds, GameObject _spawnPos, string _placement)
     {
         yield return new WaitForSeconds(_seconds);
-
-
         GameObject item = Instantiate(prefab, _spawnPos.transform.position, Quaternion.identity);
         item.transform.position = _spawnPos.transform.position;
         item.gameObject.GetComponent<CollectionItem>().placement = _placement;

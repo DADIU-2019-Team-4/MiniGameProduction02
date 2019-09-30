@@ -169,6 +169,7 @@ MonoBehaviour:
   - {fileID: 1801279935}
   - {fileID: 1354718246}
   - {fileID: 813198513}
+  _previousTutorialStage: 0
 --- !u!4 &420073112
 Transform:
   m_ObjectHideFlags: 0
@@ -729,7 +730,12 @@ PrefabInstance:
       propertyPath: lifeSpawnPoint
       value: 
       objectReference: {fileID: 960094154}
-    m_RemovedComponents: []
+    - target: {fileID: 857906305, guid: 6bb3aab886bd2994684e4d94011acf0c, type: 3}
+      propertyPath: maxLives
+      value: 99
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 857906305, guid: 6bb3aab886bd2994684e4d94011acf0c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6bb3aab886bd2994684e4d94011acf0c, type: 3}
 --- !u!1 &1648833304
 GameObject:
@@ -1098,6 +1104,16 @@ PrefabInstance:
       propertyPath: NumberOfItemsToGoal
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: minTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: maxTime
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8217b052d62188241932da549938efdf, type: 3}
 --- !u!1001 &2342401213739994541
@@ -1169,12 +1185,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaf8935c7c30aa94b89a9a7b5be5769c, type: 3}
---- !u!1 &2342401213739994542 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9071093160974151817, guid: eaf8935c7c30aa94b89a9a7b5be5769c,
-    type: 3}
-  m_PrefabInstance: {fileID: 2342401213739994541}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2431377474637233697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1251,7 +1261,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Background
       value: 
-      objectReference: {fileID: 2342401213739994542}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2ff4b08f9efc134d8aa55ebc6b09e60, type: 3}
 --- !u!1001 &2652069135451615258
@@ -1571,7 +1581,7 @@ PrefabInstance:
     - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
         type: 3}
       propertyPath: respawnYAxis
-      value: 10
+      value: 10.5
       objectReference: {fileID: 0}
     - target: {fileID: 7760826365518523680, guid: b4e71392584e97a40b5fecb8aa9ece25,
         type: 3}

@@ -125,7 +125,7 @@ public class InputController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (_tutorialLevel)
-                TutorialManager.RemoveTutorialUI(4);
+                TutorialManager.RemoveTutorialUI(3);
             trackMouse = true;
             firstPosition[0] = Input.mousePosition;
             lastPosition[0] = Input.mousePosition;
