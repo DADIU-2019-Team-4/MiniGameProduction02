@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dealDescription: The background will rotate faster, do you still accept this deal?
     >:D
-  descriptionImage: {fileID: 0}
-  rotationSpeed: 2
+  rotationSpeedMultiplier: 2
