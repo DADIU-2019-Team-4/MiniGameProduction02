@@ -138,16 +138,16 @@ public class BallController : MonoBehaviour
         if (spawnInRandomHand)
         {
             if (Mathf.CeilToInt(Random.Range(0f, 1f)) == 0)
-                AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), 1, true);
+                AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), 0, true);
             else
-                AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 1, true);
+                AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 0, true);
         }
         else
         {
             if (obj.transform.position.x > 0)
-                AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 1, true);
+                AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 0, true);
             else
-                AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), 1, true);
+                AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), 0, true);
         }
 
     }
