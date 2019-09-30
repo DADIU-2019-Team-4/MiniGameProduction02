@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CollectionItemSpawner : MonoBehaviour
 {
@@ -17,10 +18,24 @@ public class CollectionItemSpawner : MonoBehaviour
     public bool isMid = false;
     public bool isBottom = false;
 
+    public int ItemsCollected;
+    public int NumberOfItemsToGoal = 20;
+
+    public Text CollectableText;
+
+    private ScoreController ScoreController;
+    private SceneController SceneController;
+
+    private void Awake()
+    {
+        SceneController = FindObjectOfType<SceneController>();
+        ScoreController = FindObjectOfType<ScoreController>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-
+        CollectableText.text = $"{ItemsCollected}\\{NumberOfItemsToGoal}";
     }
 
     // Update is called once per frame
@@ -54,5 +69,15 @@ public class CollectionItemSpawner : MonoBehaviour
         item.transform.position = _spawnPos.transform.position;
         item.gameObject.GetComponent<CollectionItem>().placement = _placement;
         print("spawned top");
+    }
+
+    public void IncrementItemsCollected(bool wasPerfectlyThrown)
+    {
+        ItemsCollected++;
+        CollectableText.text = $"{ItemsCollected}\\{NumberOfItemsToGoal}";
+        ScoreController.IncrementScore(wasPerfectlyThrown);
+
+        if (ItemsCollected == NumberOfItemsToGoal)
+            SceneController.LevelCompleted();
     }
 }

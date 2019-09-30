@@ -32,8 +32,8 @@ public class MenuController : MonoBehaviour
 
     public void GoToLevel(int level)
     {
-        //SceneManager.LoadScene("Level"+level);
-        SceneManager.LoadScene("Prototype");
+        SceneManager.LoadScene("Level" + level);
+        //SceneManager.LoadScene("Prototype");
     }
 
     public void UpdatePauseMenu()

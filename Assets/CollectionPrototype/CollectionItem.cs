@@ -35,5 +35,7 @@ public class CollectionItem : MonoBehaviour
         }
 
         Destroy(this.gameObject);
+        cisScript.IncrementItemsCollected(other.GetComponent<Ball>().wasPerfectlyThrown);
+
     }
 }
