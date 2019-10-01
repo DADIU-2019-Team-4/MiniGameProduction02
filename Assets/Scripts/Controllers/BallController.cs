@@ -7,6 +7,7 @@ public class BallController : MonoBehaviour
     private ScoreController ScoreController;
     private SceneController SceneController;
     private TutorialManager TutorialManager;
+    private CollectionItemSpawner CollectionItemSpawner;
     private LifeManager LifeManager;
 
 
@@ -58,6 +59,7 @@ public class BallController : MonoBehaviour
         if (FindObjectOfType<TutorialManager>() != null)
         {
             TutorialManager = FindObjectOfType<TutorialManager>();
+            CollectionItemSpawner = FindObjectOfType<CollectionItemSpawner>();
             _tutorialLevel = true;
         }
         else
@@ -142,8 +144,8 @@ public class BallController : MonoBehaviour
                 TutorialManager.EnableTutorialUI();
             if (TutorialManager._previousTutorialStage == 3)
             {
-                if (FindObjectOfType<CollectionItem>() != null)
-                    TutorialManager.EnableTutorialUI();
+                CollectionItemSpawner.SpawnTutorialObject();
+                TutorialManager.EnableTutorialUI();
             }
         }
     }
