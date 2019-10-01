@@ -66,8 +66,6 @@ public class MenuController : MonoBehaviour
         pauseMenu.SetActive(false);
 
         ballController = FindObjectOfType<BallController>();
-
-
     }
 
     void Start()
@@ -75,12 +73,13 @@ public class MenuController : MonoBehaviour
         if (ChangeLanguageEvent == null)
             ChangeLanguageEvent = new UnityEvent();
 
-        Button[] levelbuttons = levelSelectMenu.transform.GetChild(0).GetComponentsInChildren<Button>();
-        foreach (Button button in levelbuttons)
-        {
-            button.interactable = false;
-        }
-        UpdatePauseMenu();
+        //Button[] levelbuttons = levelSelectMenu.transform.GetChild(0).GetComponentsInChildren<Button>();
+        //foreach (Button button in levelbuttons)
+        //{
+        //    button.interactable = false;
+        //}
+
+        //UpdatePauseMenu();
     }
 
     public void GoToLevel(int level)
