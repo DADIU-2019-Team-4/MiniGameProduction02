@@ -123,7 +123,6 @@ namespace AK
         static const AkUniqueID ROOM = 2077253480U;
         static const AkUniqueID THROWING = 4234308485U;
         static const AkUniqueID UI_FEEDBACK = 2687559867U;
-        static const AkUniqueID VOICE = 3170124113U;
         static const AkUniqueID VOICEBUS = 2045367873U;
         static const AkUniqueID WIN_FAIL = 3165269336U;
     } // namespace BUSSES
