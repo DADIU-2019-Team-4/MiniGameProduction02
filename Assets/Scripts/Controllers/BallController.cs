@@ -401,7 +401,7 @@ public class BallController : MonoBehaviour
     {
         if (ball.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.7f)
         {
-            EnablePhysics(ball);
+            EnablePhysicsAndApplyForce(ball, new Vector3(1,0,0), 50f);
             return true;
         }
         else
