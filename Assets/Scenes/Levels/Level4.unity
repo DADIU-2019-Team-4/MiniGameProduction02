@@ -486,6 +486,10 @@ PrefabInstance:
       propertyPath: lifeSpawnPoint
       value: 
       objectReference: {fileID: 960094154}
+    - target: {fileID: 857906305, guid: 6bb3aab886bd2994684e4d94011acf0c, type: 3}
+      propertyPath: maxLives
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bb3aab886bd2994684e4d94011acf0c, type: 3}
 --- !u!1 &1648833304
@@ -684,6 +688,31 @@ PrefabInstance:
       propertyPath: CollectableText
       value: 
       objectReference: {fileID: 1439408118}
+    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: minTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: NumberOfItemsToGoal
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: timeUntilItemsDissappear
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: maxTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: maxActivePlates
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5554352687557745370, guid: 8217b052d62188241932da549938efdf,
         type: 3}
       propertyPath: Background
@@ -914,6 +943,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
         type: 3}
+      propertyPath: BallPrefab.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
       propertyPath: leftHand
       value: 
       objectReference: {fileID: 1871473972}
@@ -932,6 +966,18 @@ PrefabInstance:
       propertyPath: rightPerfectCatch
       value: 
       objectReference: {fileID: 1868659883}
+    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
+      propertyPath: BallPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab,
+        type: 3}
+    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
+      propertyPath: BallPrefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4e71392584e97a40b5fecb8aa9ece25, type: 3}
 --- !u!1001 &2652069135451615258
