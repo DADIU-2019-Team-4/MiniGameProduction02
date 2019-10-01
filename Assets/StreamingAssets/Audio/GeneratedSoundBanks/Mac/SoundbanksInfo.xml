@@ -33,7 +33,6 @@
 				<Event Id="234395941" Name="DDNegative_event" ObjectPath="\Events\Default Work Unit\DevilDeals\DDNegative_event" DurationType="OneShot" DurationMin="3.255828" DurationMax="3.255828"/>
 				<Event Id="35633437" Name="DDPositive_event" ObjectPath="\Events\Default Work Unit\DevilDeals\DDPositive_event" DurationType="OneShot" DurationMin="3.083991" DurationMax="8.409592"/>
 				<Event Id="3514774441" Name="DevilDealMusic_event" ObjectPath="\Events\Default Work Unit\Music\DevilDealMusic_event" DurationType="OneShot" DurationMin="96.500000" DurationMax="96.500000"/>
-				<Event Id="3666342258" Name="EndLevelMusic_event" ObjectPath="\Events\Default Work Unit\Music\EndLevelMusic_event" DurationType="OneShot" DurationMin="96.500000" DurationMax="96.500000"/>
 				<Event Id="1999513135" Name="FailSound_event" ObjectPath="\Events\Default Work Unit\Win_n_Fail\FailSound_event" DurationType="OneShot" DurationMin="4.701157" DurationMax="Infinite"/>
 				<Event Id="1944912667" Name="FillSound_event1" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event1" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1944912664" Name="FillSound_event2" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event2" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -49,7 +48,7 @@
 				<Event Id="1704362654" Name="InGameMusic2_event" ObjectPath="\Events\Default Work Unit\Music\InGameMusic2_event" DurationType="OneShot" DurationMin="169.411774" DurationMax="169.411774"/>
 				<Event Id="3036127557" Name="LevelCompleted_event" ObjectPath="\Events\Default Work Unit\Win_n_Fail\LevelCompleted_event" DurationType="Unknown"/>
 				<Event Id="1069674504" Name="MenuIN_event" ObjectPath="\Events\Default Work Unit\UI\MenuIN_event" DurationType="OneShot" DurationMin="0.604354" DurationMax="0.604354"/>
-				<Event Id="679636833" Name="MenuMusic" ObjectPath="\Events\Default Work Unit\Music\MenuMusic" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="679636833" Name="MenuMusic" ObjectPath="\Events\Default Work Unit\Music\MenuMusic" DurationType="OneShot" DurationMin="96.500000" DurationMax="96.500000"/>
 				<Event Id="1960384521" Name="MenuOUT_event" ObjectPath="\Events\Default Work Unit\UI\MenuOUT_event" DurationType="OneShot" DurationMin="0.498186" DurationMax="0.788798"/>
 				<Event Id="3869548328" Name="PerfectCatch_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PerfectCatch_event" DurationType="OneShot" DurationMin="1.333583" DurationMax="1.860476"/>
 				<Event Id="154525524" Name="PlateCount1_event" ObjectPath="\Events\Default Work Unit\PlateCounter\PlateCount1_event" DurationType="OneShot" DurationMin="3.720952" DurationMax="3.720952"/>

@@ -25,7 +25,6 @@ namespace AK
         static const AkUniqueID DDNEGATIVE_EVENT = 234395941U;
         static const AkUniqueID DDPOSITIVE_EVENT = 35633437U;
         static const AkUniqueID DEVILDEALMUSIC_EVENT = 3514774441U;
-        static const AkUniqueID ENDLEVELMUSIC_EVENT = 3666342258U;
         static const AkUniqueID FAILSOUND_EVENT = 1999513135U;
         static const AkUniqueID FILLSOUND_EVENT1 = 1944912667U;
         static const AkUniqueID FILLSOUND_EVENT2 = 1944912664U;

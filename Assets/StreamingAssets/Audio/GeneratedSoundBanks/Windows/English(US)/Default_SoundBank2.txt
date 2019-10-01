@@ -44,7 +44,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	3462943351	GameTitleSplash_event			\Default Work Unit\SplashScreens\GameTitleSplash_event	
 	3514774441	DevilDealMusic_event			\Default Work Unit\Music\DevilDealMusic_event	
 	3639969466	FinalWin_event			\Default Work Unit\Win_n_Fail\FinalWin_event	
-	3666342258	EndLevelMusic_event			\Default Work Unit\Music\EndLevelMusic_event	
 	3838495408	ColliderRight_event			\Default Work Unit\FeedbackSounds\ColliderRight_event	
 	3869548328	PerfectCatch_event			\Default Work Unit\FeedbackSounds\PerfectCatch_event	
 	3921462371	SwipeSound_event			\Default Work Unit\FeedbackSounds\SwipeSound_event	
