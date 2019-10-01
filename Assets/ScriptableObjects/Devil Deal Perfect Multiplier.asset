@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e57fceacfbe96409520af8e4d0b7cd, type: 3}
   m_Name: Devil Deal Perfect Multiplier
   m_EditorClassIdentifier: 
-  dealDescription: You can only build up your score multiplier with perfect throws,
-    do you still accept this deal? >:D
+  dealDescriptionEnglish: You will gain full health, but only perfect catches will
+    build up your score multiplier, do you accept this deal?
+  dealDescriptionDanish: "Du f\xE5r fuld sundhed, men kun perfekte fangster vil opbygge
+    din score multiplikator, accepterer du denne aftale?"

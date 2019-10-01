@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01fff1255532c7d45b94147ca6033cca, type: 3}
   m_Name: Devil Deal Flashes
   m_EditorClassIdentifier: 
-  dealDescription: Sinister flashes will appear, do you still accept this deal? >:D
+  dealDescriptionEnglish: You will gain full health, but sinister flashes will appear,
+    do you accept this deal?
+  dealDescriptionDanish: "Du f\xE5r fuld sundhed, men uhyggelige blink vises, accepterer
+    du denne aftale?"
   interval: 2

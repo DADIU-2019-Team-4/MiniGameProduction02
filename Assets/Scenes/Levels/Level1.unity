@@ -156,11 +156,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuController
       objectReference: {fileID: 0}
-    - target: {fileID: 4754342624296258934, guid: 504b75e8d173cb0498d7760668fead77,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1966488584355534578, guid: 504b75e8d173cb0498d7760668fead77,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1248,11 +1243,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 742760277}
-    - target: {fileID: 5416923168115202525, guid: 9ef84af383f0d9f4aa6fbe6346a24096,
+    - target: {fileID: 270883591571045928, guid: 9ef84af383f0d9f4aa6fbe6346a24096,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1709196995}
+    - target: {fileID: 1179927888572996730, guid: 9ef84af383f0d9f4aa6fbe6346a24096,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1709196995}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ef84af383f0d9f4aa6fbe6346a24096, type: 3}
 --- !u!114 &7781361177337173343 stripped

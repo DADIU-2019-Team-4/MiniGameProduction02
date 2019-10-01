@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e957db71c3a5571448b8369a3b17548e, type: 3}
   m_Name: Devil Deal Ball Speed
   m_EditorClassIdentifier: 
-  dealDescription: The ball will go faster, do you still accept this deal? >:D
+  dealDescriptionEnglish: You will gain full health, but the ball will go faster,
+    do you accept this deal?
+  dealDescriptionDanish: "Du f\xE5r fuld sundhed, men bolden g\xE5r hurtigere, accepterer
+    du denne aftale?"
   speedMultiplier: 1.5

@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7e42dad5003fd40a40555138e8016b, type: 3}
   m_Name: Devil Deal Lives
   m_EditorClassIdentifier: 
-  dealDescription: You will permanently lose a life, do you still accept this deal?
-    >:D
+  dealDescriptionEnglish: You will gain full health, but you will lose one health
+    permanently, do you accept this deal?
+  dealDescriptionDanish: "Du f\xE5r fuld sundhed, men du mister et helbred permanent,
+    accepterer du denne aftale?"

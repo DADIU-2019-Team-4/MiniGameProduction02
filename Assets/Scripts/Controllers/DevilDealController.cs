@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DevilDealController : MonoBehaviour
@@ -10,9 +11,15 @@ public class DevilDealController : MonoBehaviour
     private LifeManager LifeManager;
     private SceneController SceneController;
     private SinisterFlashes SinisterFlashes;
+    private MenuController MenuController;
 
     [SerializeField]
     private GameObject devilDealCanvas;
+
+    private GameObject ChoicesEnglish;
+    private GameObject ChoicesDanish;
+    private GameObject TitleEnglish;
+    private GameObject TitleDanish;
 
     [SerializeField]
     private Text descriptionText;
@@ -54,16 +61,48 @@ public class DevilDealController : MonoBehaviour
         LifeManager = FindObjectOfType<LifeManager>();
         SceneController = FindObjectOfType<SceneController>();
         SinisterFlashes = FindObjectOfType<SinisterFlashes>();
+        MenuController = FindObjectOfType<MenuController>();
     }
 
     private void Start()
     {
+        TitleEnglish = GameObject.Find("Background_English");
+        TitleDanish = GameObject.Find("Background_Danish");
+        ChoicesEnglish = GameObject.Find("Choice_English");
+        ChoicesDanish = GameObject.Find("Choice_Danish");
+        ChangeLanguage();
+
+        devilDealCanvas.SetActive(false);
+
         MaxDevilDeals = devilDeals.Count;
 
         imageWidth = devilSkull.GetComponent<RectTransform>().rect.width;
         SpawnDevilSkulls();
 
         ActivateDevilDeals();
+
+        if (MenuController.ChangeLanguageEvent == null)
+            MenuController.ChangeLanguageEvent = new UnityEvent();
+
+        MenuController.ChangeLanguageEvent.AddListener(ChangeLanguage);
+    }
+
+    private void ChangeLanguage()
+    {
+        if (MenuController.language == "English")
+        {
+            TitleEnglish.SetActive(true);
+            TitleDanish.SetActive(false);
+            ChoicesEnglish.SetActive(true);
+            ChoicesDanish.SetActive(false);
+        }
+        else if (MenuController.language == "Danish")
+        {
+            TitleEnglish.SetActive(false);
+            TitleDanish.SetActive(true);
+            ChoicesEnglish.SetActive(false);
+            ChoicesDanish.SetActive(true);
+        }
     }
 
     private void ActivateDevilDeals()
@@ -153,7 +192,10 @@ public class DevilDealController : MonoBehaviour
     {
         chosenNegativeDevilDeal = devilDeals[AcceptedNegativeDealsCount];
 
-        descriptionText.text = chosenNegativeDevilDeal.dealDescription;
+        if (MenuController.language == "English")
+            descriptionText.text = chosenNegativeDevilDeal.dealDescriptionEnglish;
+        else if (MenuController.language == "Danish")
+            descriptionText.text = chosenNegativeDevilDeal.dealDescriptionDanish;
     }
 
     public void DeclineDevilDeal()

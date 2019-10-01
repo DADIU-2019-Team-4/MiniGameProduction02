@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ public class MenuController : MonoBehaviour
 {
     private BallController ballController;
     private Canvas levelSelectMenu;
-    public SaveController saveC;
+    private SaveController saveC;
     public GameObject pauseMenu;
     public GameObject optionsMenu;
     public GameObject resetMenu;
@@ -46,6 +47,8 @@ public class MenuController : MonoBehaviour
 
     #endregion
 
+    public UnityEvent ChangeLanguageEvent;
+
     private void Awake()
     {
 
@@ -68,6 +71,9 @@ public class MenuController : MonoBehaviour
 
     void Start()
     {
+        if (ChangeLanguageEvent == null)
+            ChangeLanguageEvent = new UnityEvent();
+
         Button[] levelbuttons = levelSelectMenu.transform.GetChild(0).GetComponentsInChildren<Button>();
         foreach (Button button in levelbuttons)
         {
@@ -105,10 +111,11 @@ public class MenuController : MonoBehaviour
 
     public void SwitchLanguageToDanish()
     {
-
         PlayerPrefs.SetString("Lang", "Danish");
         Debug.Log("Changed Lang to danish");
         MenuUpdate();
+
+        ChangeLanguageEvent?.Invoke();
     }
 
     public void SwitchLanguageToEnglish()
@@ -117,6 +124,8 @@ public class MenuController : MonoBehaviour
 
         Debug.Log("Changed Lang to English");
         MenuUpdate();
+
+        ChangeLanguageEvent?.Invoke();
     }
 
     public void MusicChangeToLow()
@@ -207,7 +216,7 @@ public class MenuController : MonoBehaviour
 
         if (!PlayerPrefs.HasKey("Lang"))
         {
-            PlayerPrefs.SetString("Lang", "Eng");
+            PlayerPrefs.SetString("Lang", "English");
         }
 
         if (!PlayerPrefs.HasKey("MusVol"))

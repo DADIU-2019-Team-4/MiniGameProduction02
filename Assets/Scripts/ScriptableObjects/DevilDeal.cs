@@ -3,7 +3,10 @@
 public abstract class DevilDeal : ScriptableObject
 {
     [TextArea(10, 100)]
-    public string dealDescription;
+    public string dealDescriptionEnglish;
+
+    [TextArea(10, 100)]
+    public string dealDescriptionDanish;
 
     public virtual void ApplyDevilDeal()
     {
