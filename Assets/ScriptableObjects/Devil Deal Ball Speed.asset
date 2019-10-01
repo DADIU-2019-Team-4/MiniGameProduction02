@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e957db71c3a5571448b8369a3b17548e, type: 3}
   m_Name: Devil Deal Ball Speed
   m_EditorClassIdentifier: 
-  dealDescription: The ball will go faster, do you still accept this deal? >:D
+  dealDescriptionEnglish: I can help you out again, it would only speed up the ball
+    a bit. Do you accept?
+  dealDescriptionDanish: "Jeg kan hj\xE6lpe dig ud igen, det ville kun fremskynde
+    bolden lidt. Accepterer du?"
   speedMultiplier: 1.5

@@ -75,8 +75,8 @@ MonoBehaviour:
   currentActivePlates: 0
   maxActivePlates: 2
   ItemsCollected: 0
-  NumberOfItemsToGoal: 10
-  timeUntilItemsDissappear: 5
+  NumberOfItemsToGoal: 20
+  timeUntilItemsDissappear: 4
   CollectableText: {fileID: 0}
 --- !u!114 &5554352687557745370
 MonoBehaviour:
