@@ -71,7 +71,37 @@ public class InputController : MonoBehaviour
         HandleInput();
 
         if (throwType != ViolaController.ThrowType.None)
-            ViolaController.Throw(throwType, screenSide);
+        {
+            if (_tutorialLevel && throwType == ViolaController.ThrowType.HighThrow)
+            {
+                if (TutorialManager._previousTutorialStage == 0)
+                {
+                    TutorialManager.RemoveTutorialUI(0);
+                    ViolaController.Throw(throwType, screenSide);
+                }
+                if (TutorialManager._previousTutorialStage == 5)
+                {
+                    TutorialManager.RemoveTutorialUI(5);
+                    ViolaController.Throw(throwType, screenSide);
+                }
+            }
+
+            if (_tutorialLevel && throwType == ViolaController.ThrowType.FloorBounce && TutorialManager._previousTutorialStage == 1)
+            {
+                ViolaController.Throw(throwType, screenSide);
+                TutorialManager.RemoveTutorialUI(1);
+            }
+
+            if (_tutorialLevel && throwType == ViolaController.ThrowType.MidThrow && TutorialManager._previousTutorialStage == 2)
+            {
+                ViolaController.Throw(throwType, screenSide);
+                TutorialManager.RemoveTutorialUI(2);
+            }
+            if(_tutorialLevel && TutorialManager._previousTutorialStage >=3)
+                ViolaController.Throw(throwType, screenSide);
+            if (!_tutorialLevel)
+                ViolaController.Throw(throwType, screenSide);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
             SceneController.ResetScene();
@@ -98,7 +128,7 @@ public class InputController : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            if (_tutorialLevel)
+            if (_tutorialLevel && TutorialManager._previousTutorialStage!=5)
                 TutorialManager.RemoveTutorialUI(3);
             if (_lastTutorialLevel)
                 LastTutorialManager.RemoveTutorialUI();
@@ -140,7 +170,7 @@ public class InputController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (_tutorialLevel)
+            if (_tutorialLevel && TutorialManager._previousTutorialStage != 5)
                 TutorialManager.RemoveTutorialUI(3);
             if (_lastTutorialLevel)
                 LastTutorialManager.RemoveTutorialUI();
@@ -267,18 +297,12 @@ public class InputController : MonoBehaviour
         switch (direction)
         {
             case SwipeDirection.Up:
-                if ( _tutorialLevel)
-                    TutorialManager.RemoveTutorialUI(0);
                 return ViolaController.ThrowType.HighThrow;
 
             case SwipeDirection.Down:
-                if (_tutorialLevel)
-                    TutorialManager.RemoveTutorialUI(1);
                 return ViolaController.ThrowType.FloorBounce;
 
             default:
-                if (_tutorialLevel)
-                    TutorialManager.RemoveTutorialUI(2);
                 return ViolaController.ThrowType.MidThrow;
         }
     }

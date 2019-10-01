@@ -29,6 +29,7 @@ public class IntroManager : MonoBehaviour
         yield return new WaitForSeconds(_fadeDuration);
         _companyName.DOFade(0f, _fadeDuration);
         yield return new WaitForSeconds(_fadeDuration);
+
         AkSoundEngine.PostEvent("GameTitle_event", gameObject);
         _gameTitle.DOFade(1f, _fadeDuration);
         yield return new WaitForSeconds(_fadeDuration);
