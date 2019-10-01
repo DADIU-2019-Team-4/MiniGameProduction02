@@ -168,6 +168,7 @@ public class BallController : MonoBehaviour
         Rigidbody ballRigidBody = ball.GetComponent<Rigidbody>();
         ballRigidBody.isKinematic = true;
 
+            
         ball.GetComponent<Ball>().wasPerfectlyThrown = GotPerfectCatch(ball);
 
         Vector3 throwVector = GetThrowForce(throwType, ball);
