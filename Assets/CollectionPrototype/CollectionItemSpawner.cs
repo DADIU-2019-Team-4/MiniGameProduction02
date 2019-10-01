@@ -84,6 +84,7 @@ public class CollectionItemSpawner : MonoBehaviour
         if (currentActivePlates < maxActivePlates && !SceneController.GameEnded)
         {
             GameObject item = Instantiate(prefab, _spawnPos.transform.position, Quaternion.Euler(90, 0, 130));
+            AkSoundEngine.PostEvent("TargetSpawn_event", gameObject);
             item.transform.position = _spawnPos.transform.position;
             item.gameObject.GetComponent<CollectionItem>().placement = _placement;
             mostRecentPosition = _placement;
@@ -94,6 +95,12 @@ public class CollectionItemSpawner : MonoBehaviour
     public void IncrementItemsCollected(bool wasPerfectlyThrown)
     {
         ItemsCollected++;
+        if ((ItemsCollected / NumberOfItemsToGoal) * 100<0.26f && (ItemsCollected / NumberOfItemsToGoal) *100 > 0.245f )
+            AkSoundEngine.PostEvent("PlateCount" + 1 + "_event", gameObject);
+        if ((ItemsCollected / NumberOfItemsToGoal) * 100 < 0.51f && (ItemsCollected / NumberOfItemsToGoal) * 100 > 0.495f)
+            AkSoundEngine.PostEvent("PlateCount" + 2 + "_event", gameObject);
+        if ((ItemsCollected / NumberOfItemsToGoal) * 100 < 0.76f && (ItemsCollected / NumberOfItemsToGoal) * 100 > 0.745f)
+            AkSoundEngine.PostEvent("PlateCount" + 3 + "_event", gameObject);
         UpdateText();
         ScoreController.IncrementScore(wasPerfectlyThrown);
 
