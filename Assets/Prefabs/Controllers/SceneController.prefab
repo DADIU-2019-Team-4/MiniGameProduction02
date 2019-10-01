@@ -77,7 +77,8 @@ MonoBehaviour:
   ItemsCollected: 0
   NumberOfItemsToGoal: 20
   timeUntilItemsDissappear: 4
-  CollectableText: {fileID: 0}
+  CollectedText: {fileID: 0}
+  GoalText: {fileID: 0}
 --- !u!114 &5554352687557745370
 MonoBehaviour:
   m_ObjectHideFlags: 0
