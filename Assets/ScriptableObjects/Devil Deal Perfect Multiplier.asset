@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e57fceacfbe96409520af8e4d0b7cd, type: 3}
   m_Name: Devil Deal Perfect Multiplier
   m_EditorClassIdentifier: 
-  dealDescription: Only a perfect performance will make them happy if you say yes.
-    Are you sure you can do it?
+  dealDescriptionEnglish: "Only a perfect performance will make them happy if you
+    say yes.\r Are you sure you can do it?"
+  dealDescriptionDanish: "Kun en perfekt pr\xE6station vil g\xF8re dem glade, hvis
+    du siger ja.\r Er du sikker p\xE5, at du kan g\xF8re det?"

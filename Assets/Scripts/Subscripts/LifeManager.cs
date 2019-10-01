@@ -72,4 +72,9 @@ public class LifeManager : MonoBehaviour
         CurrentLives = maxLives;
         UpdateLives();
     }
+
+    public bool IsDevilDealTime()
+    {
+        return DevilDealController.IsDevilDealTime;
+    }
 }

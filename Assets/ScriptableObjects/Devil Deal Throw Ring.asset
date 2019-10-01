@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a5c35e4d6be0b4486564b67d8b7f66, type: 3}
   m_Name: Devil Deal Throw Ring
   m_EditorClassIdentifier: 
-  dealDescription: I can save you again, but those rings won't be as forgiving.
+  dealDescriptionEnglish: I can save you again, but those rings won't be as forgiving.
+    Do you accept?
+  dealDescriptionDanish: "Jeg kan redde dig igen, men disse ringe bliver ikke s\xE5
+    tilgivende. Accepterer du?"
   sizeMultiplier: 0.75

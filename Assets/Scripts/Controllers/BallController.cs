@@ -19,6 +19,11 @@ public class BallController : MonoBehaviour
     private readonly List<GameObject> ballsInCatchZone = new List<GameObject>();
 
     private int throwCount;
+    public Vector3 lerpRightHandTarget;
+    public Vector3 lerpLeftHandTarget;
+
+
+  
 
 
     // TODO: Make these private and programmatically retrieve these.
@@ -47,6 +52,12 @@ public class BallController : MonoBehaviour
     private bool _tutorialLevel;
     public float spawnAllIntervals;
 
+    //Test of shaderFlames
+    public Vector4 displacementAmounts;
+    public Vector4 endingAmount =new Vector4(0, 0, 0, 0);
+    MeshRenderer meshRender;
+    public GameObject flameMeshShader;
+
     public bool IsAlwaysPerfectCatch { get; set; }
 
     void Awake()
@@ -64,14 +75,21 @@ public class BallController : MonoBehaviour
         }
         else
             _tutorialLevel = false;
-    }
 
+        //test
+        meshRender = flameMeshShader.GetComponent<MeshRenderer>(); 
+    }
 
     void Update()
     {
         //foreach (GameObject item in Balls)
         //if (item.tag == "Balloon")
         // item.GetComponent<Rigidbody>().AddForce(new Vector3(0, BalloonFloatStrength, 0));
+
+        // displacementAmounts = Mathf.Lerp(displacementAmounts, 0, Time.deltaTime);
+        displacementAmounts = Vector4.Lerp(displacementAmounts, endingAmount, Time.deltaTime);
+        meshRender.material.SetVector("scrollingDirection1", displacementAmounts);
+        meshRender.material.SetVector("scrollingDirection2", displacementAmounts);
     }
 
     private void Start()
@@ -119,6 +137,16 @@ public class BallController : MonoBehaviour
         Destroy(ball);
     }
 
+    public void Stop()
+    {
+        // TODO: Ideally this should only stop the respective coroutines
+        StopAllCoroutines();
+
+        ballsInCatchZone.Clear();
+        while (Balls.Count != 0)
+            RemoveBall(Balls[0]);
+    }
+
     public void Restart()
     {
         ballsInCatchZone.Clear();
@@ -126,7 +154,6 @@ public class BallController : MonoBehaviour
             RemoveBall(Balls[0]);
         SpawnBalls(numberOfBalls);
     }
-
 
     #endregion
 
@@ -138,6 +165,9 @@ public class BallController : MonoBehaviour
         if (!ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Add(ball);
         PlayDistanceSound(ball);
+
+        Debug.Log("Ball has entered the hand. I repeat Ball has entered the hand");
+        
         if (_tutorialLevel)
         {
             if (TutorialManager._previousTutorialStage < 3)
@@ -155,6 +185,9 @@ public class BallController : MonoBehaviour
         var ball = collider.gameObject;
         if (ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Remove(ball);
+
+        CheckIfEndOfAnimation(ball);
+        Debug.Log("Ball is out of hand, carefull");
     }
 
     public void BallDropped(GameObject obj)
@@ -167,52 +200,82 @@ public class BallController : MonoBehaviour
         }
         throwCount = 0;
         //ballsInCatchZone.Clear();
-        StartCoroutine(Delay(delayTime));
-        if (spawnInRandomHand)
-        {
-            if (Mathf.CeilToInt(Random.Range(0f, 1f)) == 0)
-                AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), 0, true);
-            else
-                AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 0, true);
-        }
-        else
-        {
-            Debug.Log("New ball");
-            if (obj.transform.position.x > 0)
-                AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 0, true);
-            else
-                AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), 0, true);
-        }
 
+        // If no Devil Deal is offered
+        if (!LifeManager.IsDevilDealTime())
+        {
+            StartCoroutine(Delay(delayTime));
+            if (spawnInRandomHand)
+            {
+                if (Mathf.CeilToInt(Random.Range(0f, 1f)) == 0)
+                    AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), 0, true);
+                else
+                    AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 0, true);
+            }
+            else
+            {
+                Debug.Log("New ball");
+                if (obj.transform.position.x > 0)
+                    AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 0, true);
+                else
+                    AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), 0, true);
+            }
+        }
     }
 
     #endregion
-
 
     #region Ball Throwing
     // These functions rely on that the two hands are at positive/negative X positions!
 
     public void Throw(ViolaController.ThrowType throwType, ViolaController.HandType hand)
     {
-        AkSoundEngine.SetRTPCValue("rightCollider", 0.0f);
+
         var ball = GetBallToThrow(hand);
         if (ball == null) return;
 
+        Rigidbody ballRigidBody = ball.GetComponent<Rigidbody>();
+        
+
+        AkSoundEngine.SetRTPCValue("rightCollider", 0.0f);
+
+        IEnumerator coroutine = LerpToHandAndPlayAnim(throwType, hand, ball);
+
+        StartCoroutine(coroutine);
+
         if (hand == ViolaController.HandType.Left)
+        {
             AkSoundEngine.PostEvent("ColliderLeft_event", gameObject);
+
+        }
         else if (hand == ViolaController.HandType.Right)
+        {
             AkSoundEngine.PostEvent("ColliderRight_event", gameObject);
 
-        Rigidbody ballRigidBody = ball.GetComponent<Rigidbody>();
-        ballRigidBody.isKinematic = true;
+        }
 
-        ball.GetComponent<Ball>().wasPerfectlyThrown = GotPerfectCatch(ball);
+
+
+        ballRigidBody.isKinematic = true;
+        
+        //Test
+        bool perfect = GotPerfectCatch(ball);
+
+        ball.GetComponent<Ball>().wasPerfectlyThrown = perfect;
+        if (perfect)
+        {
+            flameMeshShader.SetActive(true);
+            displacementAmounts += new Vector4(0, 0, -2, 0);
+            Debug.Log("happened");
+        }
 
         Vector3 throwVector = GetThrowForce(throwType, ball);
         SetThrowDirection(hand, ref throwVector, ballRigidBody);
         ballRigidBody.isKinematic = false;
+
         if (ballRigidBody.drag > 0)
             ballRigidBody.drag = 0;
+
         ballRigidBody.AddForce(throwVector);
         BallLeavesHand(ball.GetComponent<Collider>());
         throwCount++;
@@ -320,5 +383,178 @@ public class BallController : MonoBehaviour
     {
         Debug.Log("Goes to delay");
         yield return new WaitForSeconds(seconds);
+    }
+
+    /*
+    public void PlayCorrectAnimation(ViolaController.ThrowType throwType, ViolaController.HandType hand, GameObject ball)
+    {
+        Animator ballAnimator = ball.GetComponent<Animator>();
+
+        if (hand == ViolaController.HandType.Left)
+        {
+
+            if(throwType == ViolaController.ThrowType.HighThrow)
+            {
+                ballAnimator.Play("RightToLeftUP", 0, 0f);
+            }
+            else if (throwType == ViolaController.ThrowType.MidThrow)
+            {
+
+            }
+            else if (throwType == ViolaController.ThrowType.FloorBounce)
+            {
+
+            }
+
+            
+            Debug.Log("gottem");
+
+        }
+        else if (hand == ViolaController.HandType.Right)
+        {
+
+            if (throwType == ViolaController.ThrowType.HighThrow)
+            {
+                ballAnimator.Play("LeftToRightUP", 0, 0f);
+            }
+            else if (throwType == ViolaController.ThrowType.MidThrow)
+            {
+                ballAnimator.Play("LeftToRightMiddle", 0, 0f);
+                Debug.Log("gottem for real");
+            }
+            else if (throwType == ViolaController.ThrowType.FloorBounce)
+            {
+                ballAnimator.Play("LeftToRightDown", 0, 0f);
+
+            }
+            Debug.Log("gottem for real");
+
+        }
+
+    }
+    */
+
+    public bool CheckIfEndOfAnimation(GameObject ball)
+    {
+        if (ball.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.7f)
+        {
+            EnablePhysicsAndApplyForce(ball, new Vector3(1,0,0), 50f);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+        
+    }
+    public void EnablePhysics(GameObject ball)
+    {
+        Rigidbody rb = ball.GetComponent<Rigidbody>();
+        Animator anim = ball.GetComponent<Animator>();
+
+        anim.enabled = false;
+        rb.isKinematic = false;
+        rb.useGravity = true;
+    }
+
+    public void EnablePhysicsAndApplyForce(GameObject ball, Vector3 dir, float power)
+    {
+        Rigidbody rb = ball.GetComponent<Rigidbody>();
+        Animator anim = ball.GetComponent<Animator>();
+
+        anim.enabled = false;
+        rb.isKinematic = false;
+        rb.useGravity = true;
+
+        Vector3 force = dir * power;
+
+        rb.AddForce(force);
+    }
+
+
+    IEnumerator LerpToHandAndPlayAnim(ViolaController.ThrowType throwType, ViolaController.HandType hand, GameObject ball)
+    {
+
+        Animator ballAnimator = ball.GetComponent<Animator>();
+        Debug.Log("Lerping");
+        float duration = 0.02f;
+
+
+        if (hand == ViolaController.HandType.Left)
+        {
+            float journey = 0f;
+            Vector3 currentpos = ball.transform.position;
+
+            ballAnimator.enabled = false;
+            while (journey <= duration)
+            {
+                journey = journey + Time.deltaTime;
+                float percent = Mathf.Clamp01(journey / duration);
+                ball.transform.position = Vector3.Lerp(currentpos, lerpLeftHandTarget, percent);
+
+                yield return null;
+            }
+            
+            
+            yield return new WaitForSeconds(duration);
+            ballAnimator.enabled = true;
+
+            if (throwType == ViolaController.ThrowType.HighThrow)
+            {
+                ballAnimator.Play("rightToLeftUP", 0, 0f);
+            }
+            else if (throwType == ViolaController.ThrowType.MidThrow)
+            {
+                ballAnimator.Play("rightToLeftMIDDLE", 0, 0f);
+            }
+            else if (throwType == ViolaController.ThrowType.FloorBounce)
+            {
+                ballAnimator.Play("rightToLeftDOWN", 0, 0f);
+            }
+
+
+            Debug.Log("gottem");
+
+        }
+        else if (hand == ViolaController.HandType.Right)
+        {
+            
+            float journey = 0f;
+            Vector3 currentpos = ball.transform.position;
+
+            ballAnimator.enabled = false;
+            while (journey <= duration)
+            {
+                journey = journey + Time.deltaTime;
+                float percent = Mathf.Clamp01(journey / duration);
+                ball.transform.position = Vector3.Lerp(currentpos, lerpRightHandTarget, percent);
+
+                yield return null;
+            }
+
+
+            yield return new WaitForSeconds(duration);
+            ballAnimator.enabled = true;
+
+            if (throwType == ViolaController.ThrowType.HighThrow)
+            {
+                ballAnimator.Play("leftToRightUP", 0, 0f);
+            }
+            else if (throwType == ViolaController.ThrowType.MidThrow)
+            {
+                ballAnimator.Play("LeftToRightMiddle", 0, 0f);
+                Debug.Log("gottem for real");
+            }
+            else if (throwType == ViolaController.ThrowType.FloorBounce)
+            {
+                ballAnimator.Play("LeftToRightDown", 0, 0f);
+
+            }
+            Debug.Log("gottem for real");
+
+        }
+
+        yield return null;
     }
 }
