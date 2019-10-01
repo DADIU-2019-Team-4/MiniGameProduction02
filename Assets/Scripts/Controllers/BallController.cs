@@ -469,11 +469,11 @@ public class BallController : MonoBehaviour
             }
             else if (throwType == ViolaController.ThrowType.MidThrow)
             {
-
+                ballAnimator.Play("RightToLeftMiddle", 0, 0f);
             }
             else if (throwType == ViolaController.ThrowType.FloorBounce)
             {
-
+                ballAnimator.Play("RightToLeftDown", 0, 0f);
             }
 
 
