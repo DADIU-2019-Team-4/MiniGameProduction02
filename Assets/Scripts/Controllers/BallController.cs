@@ -491,15 +491,15 @@ public class BallController : MonoBehaviour
 
             if (throwType == ViolaController.ThrowType.HighThrow)
             {
-                ballAnimator.Play("RightToLeftUP", 0, 0f);
+                ballAnimator.Play("rightToLeftUP", 0, 0f);
             }
             else if (throwType == ViolaController.ThrowType.MidThrow)
             {
-                ballAnimator.Play("RightToLeftMiddle", 0, 0f);
+                ballAnimator.Play("rightToLeftMIDDLE", 0, 0f);
             }
             else if (throwType == ViolaController.ThrowType.FloorBounce)
             {
-                ballAnimator.Play("RightToLeftDown", 0, 0f);
+                ballAnimator.Play("rightToLeftDOWN", 0, 0f);
             }
 
 
@@ -528,7 +528,7 @@ public class BallController : MonoBehaviour
 
             if (throwType == ViolaController.ThrowType.HighThrow)
             {
-                ballAnimator.Play("LeftToRightUP", 0, 0f);
+                ballAnimator.Play("leftToRightUP", 0, 0f);
             }
             else if (throwType == ViolaController.ThrowType.MidThrow)
             {
