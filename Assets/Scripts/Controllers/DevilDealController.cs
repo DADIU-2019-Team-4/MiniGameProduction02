@@ -218,11 +218,6 @@ public class DevilDealController : MonoBehaviour
         ContinuePlaying();
     }
 
-    private void ApplyPositiveEffect()
-    {
-        LifeManager.ResetLives();
-    }
-
     private IEnumerator ApplyNegativeEffect()
     {
         // todo save this value for long term
@@ -241,13 +236,6 @@ public class DevilDealController : MonoBehaviour
 
         if (AcceptedNegativeDealsCount >= devilDeals.Count)
             LastDevilDeal = true;
-    }
-
-    private void ChooseNegativeDevilDeal()
-    {
-        chosenNegativeDevilDeal = devilDeals[AcceptedNegativeDealsCount];
-
-        descriptionText.text = chosenNegativeDevilDeal.dealDescription;
     }
 
     public void ContinuePlaying()
