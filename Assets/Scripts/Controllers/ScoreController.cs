@@ -29,7 +29,7 @@ public class ScoreController : MonoBehaviour
             score += itemHitCombo * 2;
             itemHitCombo++;
         }
-        scoreText.text = "Score: " + score;
+        scoreText.text = score.ToString();
     }
 
     public void ResetMultiplier()
