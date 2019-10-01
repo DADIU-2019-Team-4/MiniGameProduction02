@@ -98,6 +98,9 @@ public class BallController : MonoBehaviour
 
     private void AddBall(Vector3 where, int prefabInt, bool isDropped)
     {
+        if (SceneController.GameEnded)
+            return;
+
         GameObject ball = Instantiate(BallPrefab[prefabInt], where, rightHand.transform.rotation);
         if (isDropped)
         {

@@ -7,8 +7,7 @@ public class DevilDealBallSpeed : DevilDeal
 
     public override void ApplyDevilDeal()
     {
-        // using time scale for now
         BallController ballController = FindObjectOfType<BallController>();
-        ballController.TimeScale *= speedMultiplier;
+        // todo apply speed to ball (waiting for animations or physics)
     }
 }
