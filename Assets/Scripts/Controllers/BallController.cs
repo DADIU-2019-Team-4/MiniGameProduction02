@@ -141,11 +141,9 @@ public class BallController : MonoBehaviour
         if (!ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Add(ball);
         PlayDistanceSound(ball);
-<<<<<<< HEAD
 
         Debug.Log("Ball has entered the hand. I repeat Ball has entered the hand");
-
-=======
+        
         if (_tutorialLevel)
         {
             if (TutorialManager._previousTutorialStage < 3)
@@ -156,7 +154,6 @@ public class BallController : MonoBehaviour
                 TutorialManager.EnableTutorialUI();
             }
         }
->>>>>>> Develop
     }
 
     public void BallLeavesHand(Collider collider)
