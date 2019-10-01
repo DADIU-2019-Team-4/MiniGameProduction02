@@ -426,6 +426,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1799751127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1936162651628939035, guid: 0acdb7abc0b6a9248b2c6dc315d85f0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2226521619906195784}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1801279935 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2226521619187181815, guid: 0acdb7abc0b6a9248b2c6dc315d85f0e,
@@ -648,6 +654,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 563729173}
+    - target: {fileID: 1936162651628939035, guid: 0acdb7abc0b6a9248b2c6dc315d85f0e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423645759688747042, guid: 0acdb7abc0b6a9248b2c6dc315d85f0e,
+        type: 3}
+      propertyPath: m_Text
+      value: Swipe up to collect the target
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0acdb7abc0b6a9248b2c6dc315d85f0e, type: 3}
 --- !u!1001 &2342401213739994541
@@ -1079,6 +1095,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7276950447226436729, guid: 90605ee9a1efeb644a52d8bf888bfdb6,
         type: 3}
+      propertyPath: _tutorialStage.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276950447226436729, guid: 90605ee9a1efeb644a52d8bf888bfdb6,
+        type: 3}
       propertyPath: _tutorialStage.Array.data[0]
       value: 
       objectReference: {fileID: 1320261676}
@@ -1106,10 +1127,15 @@ PrefabInstance:
         type: 3}
       propertyPath: _tutorialStage.Array.data[5]
       value: 
-      objectReference: {fileID: 1354718246}
+      objectReference: {fileID: 1799751127}
     - target: {fileID: 7276950447226436729, guid: 90605ee9a1efeb644a52d8bf888bfdb6,
         type: 3}
       propertyPath: _tutorialStage.Array.data[6]
+      value: 
+      objectReference: {fileID: 1354718246}
+    - target: {fileID: 7276950447226436729, guid: 90605ee9a1efeb644a52d8bf888bfdb6,
+        type: 3}
+      propertyPath: _tutorialStage.Array.data[7]
       value: 
       objectReference: {fileID: 813198513}
     m_RemovedComponents: []
@@ -1121,6 +1147,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
+      propertyPath: leftHand
+      value: 
+      objectReference: {fileID: 1871473972}
+    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
+      propertyPath: leftPerfectCatch
+      value: 
+      objectReference: {fileID: 1871473971}
+    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
+      propertyPath: rightHand
+      value: 
+      objectReference: {fileID: 1868659884}
+    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
+      propertyPath: rightPerfectCatch
+      value: 
+      objectReference: {fileID: 1868659883}
     - target: {fileID: 7760826365518523683, guid: b4e71392584e97a40b5fecb8aa9ece25,
         type: 3}
       propertyPath: m_Name
@@ -1233,26 +1279,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab,
         type: 3}
-    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: leftHand
-      value: 
-      objectReference: {fileID: 1871473972}
-    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: leftPerfectCatch
-      value: 
-      objectReference: {fileID: 1871473971}
-    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: rightHand
-      value: 
-      objectReference: {fileID: 1868659884}
-    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: rightPerfectCatch
-      value: 
-      objectReference: {fileID: 1868659883}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4e71392584e97a40b5fecb8aa9ece25, type: 3}
 --- !u!1 &7781361177337173344 stripped

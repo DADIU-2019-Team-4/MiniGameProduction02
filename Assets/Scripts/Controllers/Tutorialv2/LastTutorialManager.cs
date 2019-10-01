@@ -34,6 +34,8 @@ public class LastTutorialManager : MonoBehaviour
                 Time.timeScale = 1f;
             _currentText.SetActive(false);
             _previousTutorialStage++;
+            if (_previousTutorialStage == 7)
+                FindObjectOfType<DevilDealController>().ActivateDevilDealPanel();
             if (_previousTutorialStage == 1 || _previousTutorialStage == 3 || _previousTutorialStage == 5 || _previousTutorialStage == 6)
                 EnableTutorialUI();
         }
@@ -41,10 +43,9 @@ public class LastTutorialManager : MonoBehaviour
 
     public void EnableTutorialUI()
     {
-        if (_previousTutorialStage >= 7)
+        if (_previousTutorialStage > 7)
             return;
        _currentText = _tutorialStage[_previousTutorialStage];
-        Debug.Log("Stage:" + _previousTutorialStage);
        _currentText.SetActive(true);
        Time.timeScale = 0f;
        if(!_isTutorialStarted)

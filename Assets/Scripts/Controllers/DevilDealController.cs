@@ -98,6 +98,12 @@ public class DevilDealController : MonoBehaviour
 
     public void ActivateDevilDealPanel()
     {
+        if (FindObjectOfType<LastTutorialManager>() != null)
+            if (FindObjectOfType<LastTutorialManager>()._previousTutorialStage == 4)
+            {
+                FindObjectOfType<LastTutorialManager>().EnableTutorialUI();
+                return;
+            }
         // Trigger the Animation. After it is finished, it will call ContinueAfterDevilDealPanel()
         DirectorController.PlayDDIntroAnimation();
     }
@@ -118,9 +124,6 @@ public class DevilDealController : MonoBehaviour
         }
 
         Time.timeScale = 0;
-        if (FindObjectOfType<LastTutorialManager>() != null)
-            if (FindObjectOfType<LastTutorialManager>()._previousTutorialStage == 4)
-                FindObjectOfType<LastTutorialManager>().EnableTutorialUI();
     }
 
     public void AcceptDevilDeal()

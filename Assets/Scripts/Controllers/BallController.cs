@@ -177,6 +177,7 @@ public class BallController : MonoBehaviour
         }
         else
         {
+            Debug.Log("New ball");
             if (obj.transform.position.x > 0)
                 AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 0, true);
             else
