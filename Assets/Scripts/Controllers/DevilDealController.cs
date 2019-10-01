@@ -31,6 +31,7 @@ public class DevilDealController : MonoBehaviour
 
     private int acceptedDevilDealsCount;
     public int AcceptedNegativeDealsCount { get; set; }
+    public bool IsDevilDealTime { get; set; }
 
     private bool applyNegativeEffect;
     public bool LastDevilDeal { get; set; }
@@ -61,6 +62,7 @@ public class DevilDealController : MonoBehaviour
     private void Start()
     {
         MaxDevilDeals = devilDeals.Count;
+        IsDevilDealTime = false;
 
         imageWidth = devilSkull.GetComponent<RectTransform>().rect.width;
         SpawnDevilSkulls();
@@ -98,14 +100,20 @@ public class DevilDealController : MonoBehaviour
 
     public void ActivateDevilDealPanel()
     {
+        IsDevilDealTime = true;
+
         if (FindObjectOfType<LastTutorialManager>() != null)
             if (FindObjectOfType<LastTutorialManager>()._previousTutorialStage == 4)
             {
                 FindObjectOfType<LastTutorialManager>().EnableTutorialUI();
                 return;
             }
+
         // Trigger the Animation. After it is finished, it will call ContinueAfterDevilDealPanel()
         DirectorController.PlayDDIntroAnimation();
+
+        // Remove remaining Balls and stop new ones from spawning
+        BallController.Stop();
     }
 
     public void ContinueAfterDevilDealPanel()
@@ -195,5 +203,6 @@ public class DevilDealController : MonoBehaviour
         Time.timeScale = BallController.TimeScale;
         BallController.Restart();
         SceneController.IsPlaying = true;
+        IsDevilDealTime = false;
     }
 }

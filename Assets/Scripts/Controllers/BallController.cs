@@ -66,7 +66,6 @@ public class BallController : MonoBehaviour
             _tutorialLevel = false;
     }
 
-
     void Update()
     {
         //foreach (GameObject item in Balls)
@@ -119,6 +118,16 @@ public class BallController : MonoBehaviour
         Destroy(ball);
     }
 
+    public void Stop()
+    {
+        // TODO: Ideally this should only stop the respective coroutines
+        StopAllCoroutines();
+
+        ballsInCatchZone.Clear();
+        while (Balls.Count != 0)
+            RemoveBall(Balls[0]);
+    }
+
     public void Restart()
     {
         ballsInCatchZone.Clear();
@@ -126,7 +135,6 @@ public class BallController : MonoBehaviour
             RemoveBall(Balls[0]);
         SpawnBalls(numberOfBalls);
     }
-
 
     #endregion
 
@@ -167,27 +175,30 @@ public class BallController : MonoBehaviour
         }
         throwCount = 0;
         //ballsInCatchZone.Clear();
-        StartCoroutine(Delay(delayTime));
-        if (spawnInRandomHand)
-        {
-            if (Mathf.CeilToInt(Random.Range(0f, 1f)) == 0)
-                AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), 0, true);
-            else
-                AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 0, true);
-        }
-        else
-        {
-            Debug.Log("New ball");
-            if (obj.transform.position.x > 0)
-                AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 0, true);
-            else
-                AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), 0, true);
-        }
 
+        // If no Devil Deal is offered
+        if (!LifeManager.IsDevilDealTime())
+        {
+            StartCoroutine(Delay(delayTime));
+            if (spawnInRandomHand)
+            {
+                if (Mathf.CeilToInt(Random.Range(0f, 1f)) == 0)
+                    AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), 0, true);
+                else
+                    AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 0, true);
+            }
+            else
+            {
+                Debug.Log("New ball");
+                if (obj.transform.position.x > 0)
+                    AddBall(new Vector3(leftHand.transform.position.x, respawnYAxis, 0), 0, true);
+                else
+                    AddBall(new Vector3(rightHand.transform.position.x, respawnYAxis, 0), 0, true);
+            }
+        }
     }
 
     #endregion
-
 
     #region Ball Throwing
     // These functions rely on that the two hands are at positive/negative X positions!
