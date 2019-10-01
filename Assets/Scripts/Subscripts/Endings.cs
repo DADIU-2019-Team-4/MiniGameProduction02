@@ -63,6 +63,8 @@ public class Endings : MonoBehaviour
     /// </summary>
     private IEnumerator HappyEnding()
     {
+        Debug.Log("Triggered Happy Ending");
+
         Time.timeScale = 1;
 
         fadeImage.gameObject.SetActive(true);
@@ -80,6 +82,8 @@ public class Endings : MonoBehaviour
     /// </summary>
     private IEnumerator NeutralEnding()
     {
+        Debug.Log("Triggered Neutral Ending");
+
         Time.timeScale = 1;
 
         fadeImage.gameObject.SetActive(true);
@@ -97,6 +101,8 @@ public class Endings : MonoBehaviour
     /// </summary>
     private IEnumerator BadEnding()
     {
+        Debug.Log("Triggered Bad Ending");
+
         Time.timeScale = 1;
 
         fadeImage.gameObject.SetActive(true);
@@ -114,6 +120,8 @@ public class Endings : MonoBehaviour
     /// </summary>
     private IEnumerator TrueBadEnding()
     {
+        Debug.Log("Triggered True Bad Ending");
+
         Time.timeScale = 1;
 
         fadeImage.gameObject.SetActive(true);
