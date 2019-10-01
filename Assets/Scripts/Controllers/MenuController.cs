@@ -197,7 +197,8 @@ public class MenuController : MonoBehaviour
     public void RestartGameProgress()
     {
         Debug.Log("Game Progress is restarted");
-        GoToOptionsMenu();
+        // todo merge devil deal save branch into Develop to get restart code
+        GoToLevelSelectScene();
     }
 
     public void UpdateLanguageTextToDanish()
