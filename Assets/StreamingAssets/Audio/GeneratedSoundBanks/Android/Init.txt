@@ -1,19 +1,21 @@
 State Group	ID	Name			Wwise Object Path	Notes
-	2441027675	Language			\Default Work Unit\Language	
+	739838848	dia_lang			\Default Work Unit\dia_lang	
 
 State	ID	Name	State Group			Notes
-	0	None	Language			
-	1819748192	EN	Language			
-	1836525760	DA	Language			
+	0	None	dia_lang			
+	1819748192	EN	dia_lang			
+	1836525760	DA	dia_lang			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	504532776	Brick			\Factory Reflect Acoustic Textures\Textures\Brick	
 	513139656	Mountain			\Factory Reflect Acoustic Textures\Textures\Mountain	
 	841620460	Concrete			\Factory Reflect Acoustic Textures\Textures\Concrete	
+	988953028	SFXVolume			\Default Work Unit\Volume\SFXVolume	
 	1755085759	Wood_Deep			\Factory Reflect Acoustic Textures\Textures\Wood_Deep	
 	1873957695	Anechoic			\Factory Reflect Acoustic Textures\Textures\Anechoic	
 	1970351858	Fabric			\Factory Reflect Acoustic Textures\Textures\Fabric	
 	2058049674	Wood			\Factory Reflect Acoustic Textures\Textures\Wood	
+	2346531308	MusicVolume			\Default Work Unit\Volume\MusicVolume	
 	2412606308	Carpet			\Factory Reflect Acoustic Textures\Textures\Carpet	
 	2637588553	Tile			\Factory Reflect Acoustic Textures\Textures\Tile	
 	2928161104	Curtains			\Factory Reflect Acoustic Textures\Textures\Curtains	
@@ -23,11 +25,11 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	4262522749	Wood_Bright			\Factory Reflect Acoustic Textures\Textures\Wood_Bright	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
-	1922958967	ProgressBar			\Default Work Unit\Master Audio Bus\UI+Feedback\ProgressBar	
+	1922958967	ProgressBar			\Default Work Unit\Master Audio Bus\Environments\UI+Feedback\ProgressBar	
 	2077253480	Room			\Default Work Unit\Master Audio Bus\Environments\Room	
-	2687559867	UI+Feedback			\Default Work Unit\Master Audio Bus\UI+Feedback	
-	3165269336	Win+Fail			\Default Work Unit\Master Audio Bus\UI+Feedback\Win+Fail	
-	3170124113	Voice			\Default Work Unit\Master Audio Bus\Voice	
+	2687559867	UI+Feedback			\Default Work Unit\Master Audio Bus\Environments\UI+Feedback	
+	3165269336	Win+Fail			\Default Work Unit\Master Audio Bus\Environments\UI+Feedback\Win+Fail	
+	3170124113	Voice			\Default Work Unit\Master Audio Bus\Music\Voice	
 	3761286811	Environments			\Default Work Unit\Master Audio Bus\Environments	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	

@@ -13,15 +13,17 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID ANVIL_EVENT = 2762707244U;
         static const AkUniqueID BALLBOUNCE_EVENT = 1117629447U;
-        static const AkUniqueID BALLOONBOUNCE_EVENT = 2510806423U;
-        static const AkUniqueID BALLOONFLY_EVENT = 1666774236U;
-        static const AkUniqueID BALLOONPOP_EVENT = 3940236850U;
-        static const AkUniqueID BOMB_EVENT = 2361353312U;
-        static const AkUniqueID CLOCKARROWSOUND_EVENT = 1833472760U;
         static const AkUniqueID COLLIDERLEFT_EVENT = 3046129007U;
         static const AkUniqueID COLLIDERRIGHT_EVENT = 3838495408U;
+        static const AkUniqueID COMPANYNAME_EVENT = 3020012974U;
+        static const AkUniqueID COUNT1_EVENT = 3057537678U;
+        static const AkUniqueID COUNT2_EVENT = 2021650241U;
+        static const AkUniqueID COUNT3_EVENT = 1955518600U;
+        static const AkUniqueID COUNTJUGGLE_EVENT = 3084875603U;
+        static const AkUniqueID DDINTRO_EVENT = 4073134012U;
+        static const AkUniqueID DDNEGATIVE_EVENT = 234395941U;
+        static const AkUniqueID DDPOSITIVE_EVENT = 35633437U;
         static const AkUniqueID FAILSOUND_EVENT = 1999513135U;
         static const AkUniqueID FILLSOUND_EVENT1 = 1944912667U;
         static const AkUniqueID FILLSOUND_EVENT2 = 1944912664U;
@@ -29,41 +31,44 @@ namespace AK
         static const AkUniqueID FILLSOUND_EVENT4 = 1944912670U;
         static const AkUniqueID FILLSOUND_EVENT5 = 1944912671U;
         static const AkUniqueID FILLSOUND_EVENT6 = 1944912668U;
+        static const AkUniqueID FINALFAIL = 2847315007U;
+        static const AkUniqueID FINALWIN = 3601510691U;
+        static const AkUniqueID GAMETITLESPLASH_EVENT = 3462943351U;
         static const AkUniqueID LEVELCOMPLETED_EVENT = 3036127557U;
         static const AkUniqueID MENUIN_EVENT = 1069674504U;
         static const AkUniqueID MENUOUT_EVENT = 1960384521U;
         static const AkUniqueID MUSICTEST = 4195921398U;
         static const AkUniqueID PERFECTCATCH_EVENT = 3869548328U;
+        static const AkUniqueID PLATECOUNT1_EVENT = 154525524U;
+        static const AkUniqueID PLATECOUNT2_EVENT = 2273360275U;
+        static const AkUniqueID PLATECOUNT3_EVENT = 2234946426U;
         static const AkUniqueID PRESSBUTTON_EVENT = 2293628003U;
+        static const AkUniqueID REDUCELIFE_EVENT = 300260116U;
         static const AkUniqueID ROOMTONE_EVENT = 1399763525U;
-        static const AkUniqueID SABRESTUCK_EVENT = 374096863U;
         static const AkUniqueID SWIPESOUND_EVENT = 3921462371U;
-        static const AkUniqueID TIMERSOUND_EVENT0 = 2473288676U;
-        static const AkUniqueID TIMERSOUND_EVENT1 = 2473288677U;
-        static const AkUniqueID TIMERSOUND_EVENT2 = 2473288678U;
-        static const AkUniqueID TIMERSOUND_EVENT3 = 2473288679U;
-        static const AkUniqueID TIMERSOUND_EVENT4 = 2473288672U;
-        static const AkUniqueID TIMERSOUND_EVENT5 = 2473288673U;
+        static const AkUniqueID TARGETCOLLECT_EVENT = 2128152441U;
+        static const AkUniqueID TARGETSPAWN_EVENT = 982237770U;
         static const AkUniqueID UNFILLSOUND_EVENT0 = 1118806527U;
         static const AkUniqueID UNFILLSOUND_EVENT1 = 1118806526U;
         static const AkUniqueID UNFILLSOUND_EVENT2 = 1118806525U;
         static const AkUniqueID UNFILLSOUND_EVENT3 = 1118806524U;
         static const AkUniqueID UNFILLSOUND_EVENT4 = 1118806523U;
         static const AkUniqueID UNFILLSOUND_EVENT5 = 1118806522U;
+        static const AkUniqueID VOICEOVERWELCOME_EVENT = 724436544U;
     } // namespace EVENTS
 
     namespace STATES
     {
-        namespace LANGUAGE
+        namespace DIA_LANG
         {
-            static const AkUniqueID GROUP = 2441027675U;
+            static const AkUniqueID GROUP = 739838848U;
 
             namespace STATE
             {
                 static const AkUniqueID DA = 1836525760U;
                 static const AkUniqueID EN = 1819748192U;
             } // namespace STATE
-        } // namespace LANGUAGE
+        } // namespace DIA_LANG
 
     } // namespace STATES
 
@@ -74,11 +79,13 @@ namespace AK
         static const AkUniqueID IMMERSION_FA_SSGRAIN = 2481728872U;
         static const AkUniqueID INSTRUMENT_FA_SSGRAIN = 2317409760U;
         static const AkUniqueID LEFTCOLLIDER = 1375352018U;
+        static const AkUniqueID MUSICVOLUME = 2346531308U;
         static const AkUniqueID PLAYBACK_RATE = 1524500807U;
         static const AkUniqueID PROXIMITY_FA_SSGRAIN = 1791284502U;
         static const AkUniqueID RIGHTCOLLIDER = 535276317U;
         static const AkUniqueID RPM = 796049864U;
         static const AkUniqueID RPM_FA_SSGRAIN = 1656280998U;
+        static const AkUniqueID SFXVOLUME = 988953028U;
         static const AkUniqueID SIMULATION_FA_SSGRAIN = 2428833394U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;
