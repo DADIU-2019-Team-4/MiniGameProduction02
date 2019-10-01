@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e957db71c3a5571448b8369a3b17548e, type: 3}
+  m_Name: Devil Deal Ball Speed
+  m_EditorClassIdentifier: 
+  dealDescription: The ball will go faster, do you still accept this deal? >:D
+  speedMultiplier: 1.75

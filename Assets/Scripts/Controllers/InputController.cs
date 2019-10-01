@@ -31,6 +31,7 @@ public class InputController : MonoBehaviour
     private ViolaController.ThrowType throwType;
 
     public bool InvertControls { get; set; }
+    public bool HandCutOff { get; set; }
 
     private void Awake()
     {
@@ -234,6 +235,10 @@ public class InputController : MonoBehaviour
             hasSwipedRightScreen = true;
             return ViolaController.HandType.Left;
         }
+
+        // ignore the right swipe input when hand is cut off
+        if (HandCutOff)
+            return ViolaController.HandType.None;
 
         // normal control swipe right
         if (!InvertControls)

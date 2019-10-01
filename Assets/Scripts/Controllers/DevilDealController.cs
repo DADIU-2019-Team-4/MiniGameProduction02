@@ -32,8 +32,7 @@ public class DevilDealController : MonoBehaviour
     private bool applyNegativeEffect;
     public bool LastDevilDeal { get; set; }
 
-    [SerializeField]
-    private int countUntilNegativeEffect = 2;
+    private int countUntilNegativeEffect = 1;
     private int devilSkullCount;
     private float offset = 40;
     private float imageWidth;
@@ -104,6 +103,7 @@ public class DevilDealController : MonoBehaviour
             applyNegativeEffect = true;
             ChooseNegativeDevilDeal();
         }
+
         Time.timeScale = 0;
         if (FindObjectOfType<LastTutorialManager>() != null)
             if (FindObjectOfType<LastTutorialManager>()._previousTutorialStage==4)
