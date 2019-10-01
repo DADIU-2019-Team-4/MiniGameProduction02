@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81cb188fe6018641910409132c22913, type: 3}
   m_Name: Devil Deal Cut Off Hand
   m_EditorClassIdentifier: 
-  dealDescription: One hand will be cut off, do you still accept this deal? >:D
+  dealDescription: You snap my hand off every time I offer you a deal! I can return
+    the favor for you, if you want?

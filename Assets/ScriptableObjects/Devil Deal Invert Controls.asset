@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243c1eddbc8879543ab8f57278379f7e, type: 3}
   m_Name: Devil Deal Invert Controls
   m_EditorClassIdentifier: 
-  dealDescription: Left is Right and Right is Left, do you still accept this deal?
-    >:D
+  dealDescription: Need help again, huh? Just know, what is now right, will be left,
+    and left will be right. Do you accept?

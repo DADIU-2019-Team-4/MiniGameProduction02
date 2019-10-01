@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7e42dad5003fd40a40555138e8016b, type: 3}
   m_Name: Devil Deal Lives
   m_EditorClassIdentifier: 
-  dealDescription: You will permanently lose a life, do you still accept this deal?
-    >:D
+  dealDescription: I'll save your life now, but you'll have fewer chances forever.
