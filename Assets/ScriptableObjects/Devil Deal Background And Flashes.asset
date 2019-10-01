@@ -17,4 +17,4 @@ MonoBehaviour:
   dealDescriptionDanish: "Fint, jeg hj\xE6lper dig endnu en gang, cirkuset ville spin
     endnu hurtigere, og du kan se mere min verden!\r Accepterer du?"
   rotationSpeedMultiplier: 3
-  interval: 1
+  interval: 5
