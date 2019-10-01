@@ -74,7 +74,7 @@ public class Endings : MonoBehaviour
         // todo insert voice line happy ending (for Viola)
 
         yield return new WaitForSeconds(dialogueDuration);
-        SceneManager.LoadScene("Level Select");
+        SceneManager.LoadScene("EndScene");
     }
 
     /// <summary>
@@ -93,7 +93,7 @@ public class Endings : MonoBehaviour
         // todo insert voice line neutral ending (for Viola)
 
         yield return new WaitForSeconds(dialogueDuration);
-        SceneManager.LoadScene("Level Select");
+        SceneManager.LoadScene("EndScene");
     }
 
     /// <summary>
@@ -112,7 +112,7 @@ public class Endings : MonoBehaviour
         // todo insert voice line bad ending (for Viola)
 
         yield return new WaitForSeconds(dialogueDuration);
-        SceneManager.LoadScene("Level Select");
+        SceneManager.LoadScene("EndScene");
     }
 
     /// <summary>
@@ -131,7 +131,7 @@ public class Endings : MonoBehaviour
         // todo insert voice line true bad ending (for Viola)
 
         yield return new WaitForSeconds(dialogueDuration);
-        SceneManager.LoadScene("Level Select");
+        SceneManager.LoadScene("EndScene");
     }
 
     private void DestroyRemainingObjects()
