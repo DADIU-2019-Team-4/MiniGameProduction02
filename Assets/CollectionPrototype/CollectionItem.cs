@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollectionItem : MonoBehaviour
 {
-    CollectionItemSpawner cisScript;
+    CollectionItemSpawner CollectionItemSpawner;
     public string placement;
     public ParticleSystem particles;
     public GameObject brokenMesh;
@@ -12,7 +12,7 @@ public class CollectionItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cisScript = GameObject.Find("SceneController").GetComponent<CollectionItemSpawner>();
+        CollectionItemSpawner = GameObject.Find("SceneController").GetComponent<CollectionItemSpawner>();
         StartCoroutine(DestroyAfterSeconds());
         Instantiate(particles, gameObject.transform.position, Quaternion.identity);
     }
@@ -25,49 +25,56 @@ public class CollectionItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (placement == "top")
+        if (other.gameObject.tag == "Ball")
         {
-            cisScript.isTop = false;
-        }
-        else if (placement == "mid")
-        {
-            cisScript.isMid = false;
-        }
-        else if (placement == "bottom")
-        {
-            cisScript.isBottom = false;
-        }
-
+            if (placement == "top")
+            {
+                CollectionItemSpawner.isTop = false;
+            }
+            else if (placement == "mid")
+            {
+                CollectionItemSpawner.isMid = false;
+            }
+            else if (placement == "bottom")
+            {
+                CollectionItemSpawner.isBottom = false;
+            }
+        AkSoundEngine.PostEvent("TargetCollect_event", gameObject);
         Destroy(this.gameObject);
-        cisScript.IncrementItemsCollected(other.GetComponent<Ball>().wasPerfectlyThrown);
+        CollectionItemSpawner.IncrementItemsCollected(other.GetComponent<Ball>().wasPerfectlyThrown);
+        if (FindObjectOfType<TutorialManager>() != null)
+            if (FindObjectOfType<TutorialManager>()._previousTutorialStage == 6)
+                FindObjectOfType<TutorialManager>().EnableTutorialUI();
+        GameObject go = Instantiate(brokenMesh, gameObject.transform.position, Quaternion.Euler(90, 0, 130));
 
+        }
     }
 
     private void OnDestroy()
     {
         //Instantiate(brokenMesh, gameObject.transform.position, Quaternion.identity); //Instantiate the broken mesh when hit
-        cisScript.currentActivePlates--;
+        CollectionItemSpawner.currentActivePlates--;
     }
 
     IEnumerator DestroyAfterSeconds()
     {
-        yield return new WaitForSeconds(cisScript.timeUntilItemsDissappear);
+        yield return new WaitForSeconds(CollectionItemSpawner.timeUntilItemsDissappear);
 
         if (placement == "top")
         {
-            cisScript.isTop = false;
+            CollectionItemSpawner.isTop = false;
         }
         else if (placement == "mid")
         {
-            cisScript.isMid = false;
+            CollectionItemSpawner.isMid = false;
         }
         else if (placement == "bottom")
         {
-            cisScript.isBottom = false;
+            CollectionItemSpawner.isBottom = false;
         }
-
+        AkSoundEngine.PostEvent("TargetDestroy_event", gameObject);
         Instantiate(particles, gameObject.transform.position, Quaternion.identity);
-
+        CollectionItemSpawner.DroppedItem();
         Destroy(this.gameObject);
     }
 }

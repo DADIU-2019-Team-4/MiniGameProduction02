@@ -252,6 +252,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Viola_v2
       objectReference: {fileID: 0}
+    - target: {fileID: 7936340061144258082, guid: a5bba2b520328b243b7f3353ddde8049,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6375077150825014321, guid: a5bba2b520328b243b7f3353ddde8049,
         type: 3}
       propertyPath: m_LocalPosition.x

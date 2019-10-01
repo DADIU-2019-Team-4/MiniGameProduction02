@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    private Endings endings;
+
     [SerializeField]
     private GameObject levelFailedText;
 
@@ -10,6 +12,13 @@ public class SceneController : MonoBehaviour
     private GameObject levelCompletedText;
 
     public bool IsPlaying { get; set; }
+
+    public bool GameEnded { get; set; }
+
+    private void Awake()
+    {
+        endings = FindObjectOfType<Endings>();
+    }
 
     public void ResetScene()
     {
@@ -23,6 +32,9 @@ public class SceneController : MonoBehaviour
         levelFailedText.SetActive(true);
         Time.timeScale = 0;
         IsPlaying = false; // Stops background rotation
+
+        endings.CheckGameFailedEnding();
+        GameEnded = endings.GameEnded;
     }
 
     public void LevelCompleted()
@@ -31,6 +43,9 @@ public class SceneController : MonoBehaviour
         levelCompletedText.SetActive(true);
         Time.timeScale = 0;
         IsPlaying = false; // Stops background rotation
+
+        endings.CheckGameCompletedEnding();
+        GameEnded = endings.GameEnded;
     }
 
     public void GoToLevelSelect()

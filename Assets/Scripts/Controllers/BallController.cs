@@ -6,6 +6,8 @@ public class BallController : MonoBehaviour
 {
     private ScoreController ScoreController;
     private SceneController SceneController;
+    private TutorialManager TutorialManager;
+    private CollectionItemSpawner CollectionItemSpawner;
     private LifeManager LifeManager;
 
 
@@ -42,7 +44,10 @@ public class BallController : MonoBehaviour
     public float slowDownTime;
     public bool spawnInRandomHand;
     public float respawnYAxis;
+    private bool _tutorialLevel;
     public float spawnAllIntervals;
+
+    public bool IsAlwaysPerfectCatch { get; set; }
 
     void Awake()
     {
@@ -51,6 +56,14 @@ public class BallController : MonoBehaviour
         SceneController = FindObjectOfType<SceneController>();
         LifeManager = FindObjectOfType<LifeManager>();
         Physics.gravity = new Vector3(0, gravityYaxis, 0);
+        if (FindObjectOfType<TutorialManager>() != null)
+        {
+            TutorialManager = FindObjectOfType<TutorialManager>();
+            CollectionItemSpawner = FindObjectOfType<CollectionItemSpawner>();
+            _tutorialLevel = true;
+        }
+        else
+            _tutorialLevel = false;
     }
 
 
@@ -87,6 +100,9 @@ public class BallController : MonoBehaviour
 
     private void AddBall(Vector3 where, int prefabInt, bool isDropped)
     {
+        if (SceneController.GameEnded)
+            return;
+
         GameObject ball = Instantiate(BallPrefab[prefabInt], where, rightHand.transform.rotation);
         if (isDropped)
         {
@@ -103,6 +119,15 @@ public class BallController : MonoBehaviour
         Destroy(ball);
     }
 
+    public void Restart()
+    {
+        ballsInCatchZone.Clear();
+        while (Balls.Count != 0)
+            RemoveBall(Balls[0]);
+        SpawnBalls(numberOfBalls);
+    }
+
+
     #endregion
 
     #region Ball Collision Detection
@@ -113,7 +138,16 @@ public class BallController : MonoBehaviour
         if (!ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Add(ball);
         PlayDistanceSound(ball);
-
+        if (_tutorialLevel)
+        {
+            if (TutorialManager._previousTutorialStage < 3)
+                TutorialManager.EnableTutorialUI();
+            if (TutorialManager._previousTutorialStage == 3)
+            {
+                CollectionItemSpawner.SpawnTutorialObject();
+                TutorialManager.EnableTutorialUI();
+            }
+        }
     }
 
     public void BallLeavesHand(Collider collider)
@@ -126,8 +160,11 @@ public class BallController : MonoBehaviour
     public void BallDropped(GameObject obj)
     {
         RemoveBall(obj);
-        LifeManager.CurrentLives--;
-        LifeManager.UpdateLives();
+        if (!_tutorialLevel)
+        {
+            LifeManager.CurrentLives--;
+            LifeManager.UpdateLives();
+        }
         throwCount = 0;
         //ballsInCatchZone.Clear();
         StartCoroutine(Delay(delayTime));
@@ -186,6 +223,9 @@ public class BallController : MonoBehaviour
 
     private bool GotPerfectCatch(GameObject ball)
     {
+        if (IsAlwaysPerfectCatch)
+            return true;
+
         if (ball.transform.position.x < 0 &&
             rightPerfectCatch.GetComponent<PerfectCatch>().In.Contains(ball))
             return true;

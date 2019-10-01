@@ -9,6 +9,8 @@ public class InputController : MonoBehaviour
     private ViolaController ViolaController;
     private MenuController MenuController;
     private SceneController SceneController;
+    private TutorialManager TutorialManager;
+    private LastTutorialManager LastTutorialManager;
 
     private readonly Vector3[] firstPosition = new Vector3[2];
     private readonly Vector3[] lastPosition = new Vector3[2];
@@ -20,6 +22,8 @@ public class InputController : MonoBehaviour
     private bool hasSwipedRightScreen;
 
     private bool trackMouse;
+    private bool _tutorialLevel;
+    private bool _lastTutorialLevel;
 
     public enum SwipeDirection { Up, Down, Left, Right }
 
@@ -27,12 +31,27 @@ public class InputController : MonoBehaviour
     private ViolaController.ThrowType throwType;
 
     public bool InvertControls { get; set; }
+    public bool HandCutOff { get; set; }
 
     private void Awake()
     {
         ViolaController = FindObjectOfType<ViolaController>();
         //MenuController = GetComponent<MenuController>(); // Uncomment if you need it.
         SceneController = FindObjectOfType<SceneController>();
+        if (FindObjectOfType<TutorialManager>() != null)
+        {
+            TutorialManager = FindObjectOfType<TutorialManager>();
+            _tutorialLevel = true;
+        }
+        else
+            _tutorialLevel = false;
+        if (FindObjectOfType<LastTutorialManager>() != null)
+        {
+            LastTutorialManager = FindObjectOfType<LastTutorialManager>();
+            _lastTutorialLevel = true;
+        }
+        else
+            _lastTutorialLevel = false;
     }
 
     private void Start()
@@ -52,7 +71,37 @@ public class InputController : MonoBehaviour
         HandleInput();
 
         if (throwType != ViolaController.ThrowType.None)
-            ViolaController.Throw(throwType, screenSide);
+        {
+            if (_tutorialLevel && throwType == ViolaController.ThrowType.HighThrow)
+            {
+                if (TutorialManager._previousTutorialStage == 0)
+                {
+                    TutorialManager.RemoveTutorialUI(0);
+                    ViolaController.Throw(throwType, screenSide);
+                }
+                if (TutorialManager._previousTutorialStage == 5)
+                {
+                    TutorialManager.RemoveTutorialUI(5);
+                    ViolaController.Throw(throwType, screenSide);
+                }
+            }
+
+            if (_tutorialLevel && throwType == ViolaController.ThrowType.FloorBounce && TutorialManager._previousTutorialStage == 1)
+            {
+                ViolaController.Throw(throwType, screenSide);
+                TutorialManager.RemoveTutorialUI(1);
+            }
+
+            if (_tutorialLevel && throwType == ViolaController.ThrowType.MidThrow && TutorialManager._previousTutorialStage == 2)
+            {
+                ViolaController.Throw(throwType, screenSide);
+                TutorialManager.RemoveTutorialUI(2);
+            }
+            if(_tutorialLevel && TutorialManager._previousTutorialStage >=3)
+                ViolaController.Throw(throwType, screenSide);
+            if (!_tutorialLevel)
+                ViolaController.Throw(throwType, screenSide);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
             SceneController.ResetScene();
@@ -77,6 +126,14 @@ public class InputController : MonoBehaviour
     /// </summary>
     private void MobileInput()
     {
+        if (Input.touchCount > 0)
+        {
+            if (_tutorialLevel && TutorialManager._previousTutorialStage!=5)
+                TutorialManager.RemoveTutorialUI(3);
+            if (_lastTutorialLevel)
+                LastTutorialManager.RemoveTutorialUI();
+        }
+
         Touch[] touches = Input.touches;
         for (int i = 0; i < Input.touchCount; i++)
         {
@@ -113,6 +170,10 @@ public class InputController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (_tutorialLevel && TutorialManager._previousTutorialStage != 5)
+                TutorialManager.RemoveTutorialUI(3);
+            if (_lastTutorialLevel)
+                LastTutorialManager.RemoveTutorialUI();
             trackMouse = true;
             firstPosition[0] = Input.mousePosition;
             lastPosition[0] = Input.mousePosition;
@@ -204,6 +265,10 @@ public class InputController : MonoBehaviour
             hasSwipedRightScreen = true;
             return ViolaController.HandType.Left;
         }
+
+        // ignore the right swipe input when hand is cut off
+        if (HandCutOff)
+            return ViolaController.HandType.None;
 
         // normal control swipe right
         if (!InvertControls)

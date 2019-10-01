@@ -15,10 +15,15 @@ public class DroppedCollider : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Enter The collision");
-        if (collision.gameObject.tag == "Ball" || collision.gameObject.tag == "Balloon" || collision.gameObject.tag == "Sabre")
-            if (collision.gameObject.tag == "Balloon")
-                AkSoundEngine.PostEvent("BalloonPop_event", gameObject);
-        BallController.BallDropped(collision.gameObject);
+        //if (collision.gameObject.tag == "Ball" || collision.gameObject.tag == "Balloon" || collision.gameObject.tag == "Sabre")
+        //    if (collision.gameObject.tag == "Balloon")
+        //        AkSoundEngine.PostEvent("BalloonPop_event", gameObject);
+        if (FindObjectOfType<LastTutorialManager>() != null)
+            if (FindObjectOfType<LastTutorialManager>()._previousTutorialStage == 2)
+                FindObjectOfType<LastTutorialManager>().EnableTutorialUI();
+
+        if (collision.gameObject.tag == "Ball")
+            BallController.BallDropped(collision.gameObject);
     }
 
 }
