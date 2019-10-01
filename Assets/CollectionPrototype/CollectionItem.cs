@@ -39,6 +39,7 @@ public class CollectionItem : MonoBehaviour
             {
                 CollectionItemSpawner.isBottom = false;
             }
+        AkSoundEngine.PostEvent("TargetCollect_event", gameObject);
         Destroy(this.gameObject);
         if (FindObjectOfType<TutorialManager>() != null)
             FindObjectOfType<TutorialManager>().EnableTutorialUI();
@@ -70,7 +71,7 @@ public class CollectionItem : MonoBehaviour
         {
             CollectionItemSpawner.isBottom = false;
         }
-
+        AkSoundEngine.PostEvent("TargetDestroy_event", gameObject);
         Instantiate(particles, gameObject.transform.position, Quaternion.identity);
         CollectionItemSpawner.DroppedItem();
         Destroy(this.gameObject);
