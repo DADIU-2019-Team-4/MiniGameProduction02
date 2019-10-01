@@ -33,16 +33,13 @@ public class CollectionItemSpawner : MonoBehaviour
     private TutorialManager TutorialManager;
     private bool _firstAreaSpawned;
     private bool _tutorialLevel;
-    private bool _fisrtCollectSound;
-    private bool _secondCollectSound;
-    private bool _thirdCollectSound;
+    private bool _fisrtCollectSound = false;
+    private bool _secondCollectSound = false;
+    private bool _thirdCollectSound = false;
 
     private void Awake()
     {
         SceneController = FindObjectOfType<SceneController>();
-        _fisrtCollectSound = false;
-        _secondCollectSound = false;
-        _thirdCollectSound = false;
 
         if (FindObjectOfType<TutorialManager>() != null)
         {
@@ -105,20 +102,22 @@ public class CollectionItemSpawner : MonoBehaviour
     public void IncrementItemsCollected(bool wasPerfectlyThrown)
     {
         ItemsCollected++;
-        if ((ItemsCollected / NumberOfItemsToGoal) * 100 > 0.25f && !_fisrtCollectSound)
+        if ((ItemsCollected*100 / NumberOfItemsToGoal) > 25 && !_fisrtCollectSound)
         {
-            AkSoundEngine.PostEvent("PlateCount" + 1 + "_event", gameObject);
+            AkSoundEngine.PostEvent("PlateCount1_event", gameObject);
             Debug.Log("FirstSound");
             _fisrtCollectSound = true;
         }
-        if ((ItemsCollected / NumberOfItemsToGoal) * 100 > 0.50f && !_secondCollectSound)
+        if ((ItemsCollected*100 / NumberOfItemsToGoal) >50 && !_secondCollectSound)
         {
-            AkSoundEngine.PostEvent("PlateCount" + 2 + "_event", gameObject);
+            AkSoundEngine.PostEvent("PlateCount2_event", gameObject);
+            Debug.Log("SecondSound");
             _secondCollectSound = true;
         }
-        if ((ItemsCollected / NumberOfItemsToGoal) * 100 > 0.75f && !_thirdCollectSound)
+        if ((ItemsCollected*100 / NumberOfItemsToGoal)> 75 && !_thirdCollectSound)
         {
-            AkSoundEngine.PostEvent("PlateCount" + 3 + "_event", gameObject);
+            AkSoundEngine.PostEvent("PlateCount3_event", gameObject);
+            Debug.Log("ThirdSound");
             _thirdCollectSound = true;
         }
         UpdateText();
