@@ -44,6 +44,8 @@ public class BallController : MonoBehaviour
     public float respawnYAxis;
     public float spawnAllIntervals;
 
+    public bool IsAlwaysPerfectCatch { get; set; }
+
     void Awake()
     {
         Time.timeScale = TimeScale;
@@ -185,6 +187,9 @@ public class BallController : MonoBehaviour
 
     private bool GotPerfectCatch(GameObject ball)
     {
+        if (IsAlwaysPerfectCatch)
+            return true;
+
         if (ball.transform.position.x < 0 &&
             rightPerfectCatch.GetComponent<PerfectCatch>().In.Contains(ball))
             return true;
