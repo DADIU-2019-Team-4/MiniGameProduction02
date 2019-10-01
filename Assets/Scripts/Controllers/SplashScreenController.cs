@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 
-public class IntroManager : MonoBehaviour
+public class SplashScreenController : MonoBehaviour
 {
     [SerializeField]
     private Image _companyName;
@@ -36,7 +36,6 @@ public class IntroManager : MonoBehaviour
         _gameTitle.DOFade(0f, _fadeDuration);
         yield return new WaitForSeconds(_fadeDuration);
 
-        SceneManager.LoadScene("SystemArchitecture3");
-
+        SceneManager.LoadScene("Intro Scene");
     }
 }
