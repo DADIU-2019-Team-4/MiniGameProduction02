@@ -60,6 +60,8 @@ public class CollectionItemSpawner : MonoBehaviour
         if (_tutorialLevel)
             if (!_firstAreaSpawned)
                 return;
+        if (SceneController.GameEnded) return;
+
         if (isTop == false && currentActivePlates < maxActivePlates && mostRecentPosition != "top")
         {
             StartCoroutine(randomSpawn(Random.Range(minTime, maxTime), spawnPosTop, "top"));
@@ -82,7 +84,7 @@ public class CollectionItemSpawner : MonoBehaviour
     private IEnumerator randomSpawn(float _seconds, GameObject _spawnPos, string _placement)
     {
         yield return new WaitForSeconds(_seconds);
-        if (currentActivePlates < maxActivePlates)
+        if (currentActivePlates < maxActivePlates && !SceneController.GameEnded)
         {
             GameObject item = Instantiate(prefab, _spawnPos.transform.position, Quaternion.Euler(90, 0, 130));
             AkSoundEngine.PostEvent("TargetSpawn_event", gameObject);
