@@ -57,6 +57,9 @@ public class CollectionItemSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_tutorialLevel)
+            if (!_firstAreaSpawned)
+                return;
         if (isTop == false && currentActivePlates < maxActivePlates && mostRecentPosition != "top")
         {
             StartCoroutine(randomSpawn(Random.Range(minTime, maxTime), spawnPosTop, "top"));
@@ -114,5 +117,14 @@ public class CollectionItemSpawner : MonoBehaviour
     public void DroppedItem()
     {
         ScoreController.ResetMultiplier();
+    }
+
+    public void SpawnTutorialObject()
+    {
+        if (!_firstAreaSpawned)
+        {
+            StartCoroutine(randomSpawn(0f, spawnPosTop, "top"));
+            isTop = true;
+        }
     }
 }
