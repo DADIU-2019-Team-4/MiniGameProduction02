@@ -39,10 +39,11 @@ public class CollectionItem : MonoBehaviour
             {
                 CollectionItemSpawner.isBottom = false;
             }
-
-            Destroy(this.gameObject);
-            CollectionItemSpawner.IncrementItemsCollected(other.GetComponent<Ball>().wasPerfectlyThrown);
-            Instantiate(brokenMesh, gameObject.transform.position, Quaternion.Euler(90, 0, 130));
+        Destroy(this.gameObject);
+        if (FindObjectOfType<TutorialManager>() != null)
+            FindObjectOfType<TutorialManager>().EnableTutorialUI();
+        CollectionItemSpawner.IncrementItemsCollected(other.GetComponent<Ball>().wasPerfectlyThrown);
+        Instantiate(brokenMesh, gameObject.transform.position, Quaternion.Euler(90, 0, 130));
 
         }
     }

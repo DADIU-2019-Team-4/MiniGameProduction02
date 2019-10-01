@@ -7,5 +7,8 @@ public class DevilDealInvertControls : DevilDeal
     {
         InputController inputController = FindObjectOfType<InputController>();
         inputController.InvertControls = true;
+
+        BallController ballController = FindObjectOfType<BallController>();
+        ballController.IsAlwaysPerfectCatch = true;
     }
 }

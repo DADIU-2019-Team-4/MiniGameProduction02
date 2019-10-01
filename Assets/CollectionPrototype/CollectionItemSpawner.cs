@@ -30,10 +30,21 @@ public class CollectionItemSpawner : MonoBehaviour
 
     private ScoreController ScoreController;
     private SceneController SceneController;
+    private TutorialManager TutorialManager;
+    private bool _firstAreaSpawned;
+    private bool _tutorialLevel;
 
     private void Awake()
     {
         SceneController = FindObjectOfType<SceneController>();
+        if (FindObjectOfType<TutorialManager>() != null)
+        {
+            TutorialManager = FindObjectOfType<TutorialManager>();
+            _firstAreaSpawned = false;
+            _tutorialLevel = true;
+        }
+        else
+            _tutorialLevel = false;
         ScoreController = FindObjectOfType<ScoreController>();
     }
 
@@ -68,10 +79,10 @@ public class CollectionItemSpawner : MonoBehaviour
     private IEnumerator randomSpawn(float _seconds, GameObject _spawnPos, string _placement)
     {
         yield return new WaitForSeconds(_seconds);
-
         if (currentActivePlates < maxActivePlates)
         {
             GameObject item = Instantiate(prefab, _spawnPos.transform.position, Quaternion.Euler(90, 0, 130));
+            AkSoundEngine.PostEvent("TargetSpawn_event", gameObject);
             item.transform.position = _spawnPos.transform.position;
             item.gameObject.GetComponent<CollectionItem>().placement = _placement;
             mostRecentPosition = _placement;
