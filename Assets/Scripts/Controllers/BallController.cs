@@ -20,6 +20,8 @@ public class BallController : MonoBehaviour
 
     private int throwCount;
 
+  
+
 
     // TODO: Make these private and programmatically retrieve these.
     // These should NOT available in the editor; This is bloat for Level Designers.
@@ -47,6 +49,12 @@ public class BallController : MonoBehaviour
     private bool _tutorialLevel;
     public float spawnAllIntervals;
 
+    //Test of shaderFlames
+    public Vector4 displacementAmounts;
+    public Vector4 endingAmount =new Vector4(0, 0, 0, 0);
+    MeshRenderer meshRender;
+    public GameObject flameMeshShader;
+
     public bool IsAlwaysPerfectCatch { get; set; }
 
     void Awake()
@@ -64,6 +72,9 @@ public class BallController : MonoBehaviour
         }
         else
             _tutorialLevel = false;
+
+        //test
+        meshRender = flameMeshShader.GetComponent<MeshRenderer>(); 
     }
 
 
@@ -72,6 +83,11 @@ public class BallController : MonoBehaviour
         //foreach (GameObject item in Balls)
         //if (item.tag == "Balloon")
         // item.GetComponent<Rigidbody>().AddForce(new Vector3(0, BalloonFloatStrength, 0));
+
+        // displacementAmounts = Mathf.Lerp(displacementAmounts, 0, Time.deltaTime);
+        displacementAmounts = Vector4.Lerp(displacementAmounts, endingAmount, Time.deltaTime);
+        meshRender.material.SetVector("scrollingDirection1", displacementAmounts);
+        meshRender.material.SetVector("scrollingDirection2", displacementAmounts);
     }
 
     private void Start()
@@ -205,8 +221,17 @@ public class BallController : MonoBehaviour
 
         Rigidbody ballRigidBody = ball.GetComponent<Rigidbody>();
         ballRigidBody.isKinematic = true;
+        
+        //Test
+        bool perfect = GotPerfectCatch(ball);
 
-        ball.GetComponent<Ball>().wasPerfectlyThrown = GotPerfectCatch(ball);
+        ball.GetComponent<Ball>().wasPerfectlyThrown = perfect;
+        if (perfect)
+        {
+            flameMeshShader.SetActive(true);
+            displacementAmounts += new Vector4(0, 0, -2, 0);
+            Debug.Log("happened");
+        }
 
         Vector3 throwVector = GetThrowForce(throwType, ball);
         SetThrowDirection(hand, ref throwVector, ballRigidBody);
