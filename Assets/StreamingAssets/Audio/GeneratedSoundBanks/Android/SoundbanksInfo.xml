@@ -54,7 +54,7 @@
 				<Event Id="300260116" Name="ReduceLife_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ReduceLife_event" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1399763525" Name="RoomTone_event" ObjectPath="\Events\Default Work Unit\RoomTone_event" DurationType="Infinite"/>
 				<Event Id="3921462371" Name="SwipeSound_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\SwipeSound_event" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
-				<Event Id="2128152441" Name="TargetCollect_event" ObjectPath="\Events\Default Work Unit\Items\TargetCollect_event" DurationType="OneShot" DurationMin="0.465125" DurationMax="1.583878"/>
+				<Event Id="2128152441" Name="TargetCollect_event" ObjectPath="\Events\Default Work Unit\Items\TargetCollect_event" DurationType="OneShot" DurationMin="1.333583" DurationMax="1.860476"/>
 				<Event Id="3022112561" Name="TargetDestroy_event" ObjectPath="\Events\Default Work Unit\Items\TargetDestroy_event" DurationType="OneShot" DurationMin="1.977652" DurationMax="1.977652"/>
 				<Event Id="982237770" Name="TargetSpawn_event" ObjectPath="\Events\Default Work Unit\Items\TargetSpawn_event" DurationType="OneShot" DurationMin="3.386463" DurationMax="3.386463"/>
 				<Event Id="1118806527" Name="UnfillSound_event0" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event0" DurationType="Unknown"/>
