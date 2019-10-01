@@ -33,10 +33,17 @@ public class CollectionItemSpawner : MonoBehaviour
     private TutorialManager TutorialManager;
     private bool _firstAreaSpawned;
     private bool _tutorialLevel;
+    private bool _fisrtCollectSound;
+    private bool _secondCollectSound;
+    private bool _thirdCollectSound;
 
     private void Awake()
     {
         SceneController = FindObjectOfType<SceneController>();
+        _fisrtCollectSound = false;
+        _secondCollectSound = false;
+        _thirdCollectSound = false;
+
         if (FindObjectOfType<TutorialManager>() != null)
         {
             TutorialManager = FindObjectOfType<TutorialManager>();
@@ -98,12 +105,22 @@ public class CollectionItemSpawner : MonoBehaviour
     public void IncrementItemsCollected(bool wasPerfectlyThrown)
     {
         ItemsCollected++;
-        if ((ItemsCollected / NumberOfItemsToGoal) * 100<0.26f && (ItemsCollected / NumberOfItemsToGoal) *100 > 0.245f )
+        if ((ItemsCollected / NumberOfItemsToGoal) * 100 > 0.25f && !_fisrtCollectSound)
+        {
             AkSoundEngine.PostEvent("PlateCount" + 1 + "_event", gameObject);
-        if ((ItemsCollected / NumberOfItemsToGoal) * 100 < 0.51f && (ItemsCollected / NumberOfItemsToGoal) * 100 > 0.495f)
+            Debug.Log("FirstSound");
+            _fisrtCollectSound = true;
+        }
+        if ((ItemsCollected / NumberOfItemsToGoal) * 100 > 0.50f && !_secondCollectSound)
+        {
             AkSoundEngine.PostEvent("PlateCount" + 2 + "_event", gameObject);
-        if ((ItemsCollected / NumberOfItemsToGoal) * 100 < 0.76f && (ItemsCollected / NumberOfItemsToGoal) * 100 > 0.745f)
+            _secondCollectSound = true;
+        }
+        if ((ItemsCollected / NumberOfItemsToGoal) * 100 > 0.75f && !_thirdCollectSound)
+        {
             AkSoundEngine.PostEvent("PlateCount" + 3 + "_event", gameObject);
+            _thirdCollectSound = true;
+        }
         UpdateText();
         ScoreController.IncrementScore(wasPerfectlyThrown);
 

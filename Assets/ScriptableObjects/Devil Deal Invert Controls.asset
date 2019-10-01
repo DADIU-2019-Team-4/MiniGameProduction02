@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243c1eddbc8879543ab8f57278379f7e, type: 3}
   m_Name: Devil Deal Invert Controls
   m_EditorClassIdentifier: 
-  dealDescriptionEnglish: You will gain full health, but left is right and right is
-    left, do you accept this deal?
-  dealDescriptionDanish: "Du f\xE5r fuld sundhed, men venstre er h\xF8jre og h\xF8jre
-    er venstre, accepterer du denne aftale?"
+  dealDescription: Need help again, huh? Just know, what is now right, will be left,
+    and left will be right. Do you accept?

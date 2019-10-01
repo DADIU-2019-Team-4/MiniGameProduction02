@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f456eb80abb79f44afa0fb3b60cd2e0, type: 3}
   m_Name: Devil Deal Background
   m_EditorClassIdentifier: 
-  dealDescriptionEnglish: You will gain full health, but the background will spin
-    faster, do you accept this deal?
-  dealDescriptionDanish: "Du f\xE5r fuld sundhed, men baggrunden vil snurre hurtigere,
-    accepterer du denne aftale?"
+  dealDescription: I could help you out, it would only speed up the spinning circus.
+    Do you accept?
   rotationSpeedMultiplier: 2

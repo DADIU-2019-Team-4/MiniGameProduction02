@@ -12,8 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a5c35e4d6be0b4486564b67d8b7f66, type: 3}
   m_Name: Devil Deal Throw Ring
   m_EditorClassIdentifier: 
-  dealDescriptionEnglish: You will gain full health, but it will be more difficult
-    to throw a ball, do you accept this deal?
-  dealDescriptionDanish: "Du f\xE5r fuld sundhed, men det vil v\xE6re vanskeligere
-    at kaste en bold, accepterer du denne aftale?"
+  dealDescription: I can save you again, but those rings won't be as forgiving.
   sizeMultiplier: 0.75

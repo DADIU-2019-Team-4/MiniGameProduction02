@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81cb188fe6018641910409132c22913, type: 3}
   m_Name: Devil Deal Cut Off Hand
   m_EditorClassIdentifier: 
-  dealDescriptionEnglish: You will gain full health, but one of your hand will be
-    cut off, do you accept this deal?
-  dealDescriptionDanish: "Du f\xE5r fuld sundhed, men en af din h\xE5nd bliver afsk\xE5ret.
-    Accepterer du denne aftale?"
+  dealDescription: You snap my hand off every time I offer you a deal! I can return
+    the favor for you, if you want?

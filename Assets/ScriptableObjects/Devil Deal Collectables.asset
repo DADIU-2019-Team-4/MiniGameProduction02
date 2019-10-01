@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31048df4f1408e34887926baec2a6d5b, type: 3}
   m_Name: Devil Deal Collectables
   m_EditorClassIdentifier: 
-  dealDescriptionEnglish: You will gain full health, but you will need to collect
-    more items, do you accept this deal?
-  dealDescriptionDanish: "Du f\xE5r fuld sundhed, men du bliver n\xF8dt til at samle
-    flere ting, accepterer du denne aftale?"
+  dealDescription: Fine, I'll help you, as long as you smash some more plates from
+    now on. Do you accept?
   ToAdd: 3

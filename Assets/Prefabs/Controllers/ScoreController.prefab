@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
-  normalCatchPoints: 1
-  perfectCatchPoints: 3
+  score: 0
+  itemHitCombo: 1
