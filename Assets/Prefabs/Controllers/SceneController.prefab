@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minTime: 1
-  maxTime: 5
+  maxTime: 3
   spawnPosTop: {fileID: 5057437222277374894}
   spawnPosMid: {fileID: 3483119880243383578}
   spawnPosBottom: {fileID: 2420649766845651243}
@@ -75,8 +75,8 @@ MonoBehaviour:
   currentActivePlates: 0
   maxActivePlates: 2
   ItemsCollected: 0
-  NumberOfItemsToGoal: 20
-  timeUntilItemsDissappear: 2
+  NumberOfItemsToGoal: 10
+  timeUntilItemsDissappear: 5
   CollectableText: {fileID: 0}
 --- !u!114 &5554352687557745370
 MonoBehaviour:
