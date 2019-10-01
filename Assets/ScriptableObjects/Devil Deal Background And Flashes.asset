@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d3b59ff0023eb44b5cf14cb85d8cdd, type: 3}
   m_Name: Devil Deal Background And Flashes
   m_EditorClassIdentifier: 
-  dealDescriptionEnglish: You will gain full health, but the background will spin
-    even faster and more flashes will appear, do you accept this deal?
-  dealDescriptionDanish: "Du f\xE5r fuld sundhed, men baggrunden vil snurre endnu
-    hurtigere, og der vises flere blink, accepterer du denne aftale?"
+  dealDescriptionEnglish: "Fine, I'll help you out once more, the circus would spin
+    even faster and you can see more my world!\r Do you accept?"
+  dealDescriptionDanish: "Fint, jeg hj\xE6lper dig endnu en gang, cirkuset ville spin
+    endnu hurtigere, og du kan se mere min verden!\r Accepterer du?"
   rotationSpeedMultiplier: 3
   interval: 1

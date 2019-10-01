@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f456eb80abb79f44afa0fb3b60cd2e0, type: 3}
   m_Name: Devil Deal Background
   m_EditorClassIdentifier: 
-  dealDescription: I could help you out, it would only speed up the spinning circus.
-    Do you accept?
+  dealDescriptionEnglish: I could help you out, it would only speed up the spinning
+    circus. Do you accept?
+  dealDescriptionDanish: "Jeg kunne hj\xE6lpe dig, det ville kun fremskynde spindingcirkuset.
+    Accepterer du?"
   rotationSpeedMultiplier: 2
