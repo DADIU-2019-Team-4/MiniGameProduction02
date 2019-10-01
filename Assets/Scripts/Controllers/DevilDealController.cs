@@ -32,8 +32,7 @@ public class DevilDealController : MonoBehaviour
     private bool applyNegativeEffect;
     public bool LastDevilDeal { get; set; }
 
-    [SerializeField]
-    private int countUntilNegativeEffect = 2;
+    private int countUntilNegativeEffect = 1;
     private int devilSkullCount;
     private float offset = 40;
     private float imageWidth;
@@ -95,16 +94,21 @@ public class DevilDealController : MonoBehaviour
     {
         // todo play animation and continue when animation is done playing
         SceneController.IsPlaying = false;
+        AkSoundEngine.PostEvent("DDIntro_event", gameObject);
 
         devilDealCanvas.SetActive(true);
         descriptionText.text = dealDescription;
 
-        if (acceptedDevilDealsCount > 0 && acceptedDevilDealsCount % countUntilNegativeEffect == 0)
+        if (acceptedDevilDealsCount % countUntilNegativeEffect == 0)
         {
             applyNegativeEffect = true;
             ChooseNegativeDevilDeal();
         }
+
         Time.timeScale = 0;
+        if (FindObjectOfType<LastTutorialManager>() != null)
+            if (FindObjectOfType<LastTutorialManager>()._previousTutorialStage==4)
+                FindObjectOfType<LastTutorialManager>().EnableTutorialUI();
     }
 
     public void AcceptDevilDeal()
@@ -121,7 +125,7 @@ public class DevilDealController : MonoBehaviour
             devilSkullCount++;
             SpawnDevilSkulls();
         }
-
+        AkSoundEngine.PostEvent("DDPositive_event", gameObject);
         // todo save this value for long term
         acceptedDevilDealsCount++;
 
@@ -129,7 +133,7 @@ public class DevilDealController : MonoBehaviour
 
         devilDealCanvas.SetActive(false);
         Time.timeScale = BallController.TimeScale;
-
+        BallController.Restart();
         SceneController.IsPlaying = true;
     }
 
@@ -148,6 +152,7 @@ public class DevilDealController : MonoBehaviour
     public void DeclineDevilDeal()
     {
         devilDealCanvas.SetActive(false);
+        AkSoundEngine.PostEvent("DDNegative_event", gameObject);
         Time.timeScale = BallController.TimeScale;
 
         SceneController.IsPlaying = true;
