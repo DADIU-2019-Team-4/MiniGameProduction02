@@ -113,6 +113,7 @@ public class MenuController : MonoBehaviour
     {
         PlayerPrefs.SetString("Lang", "Danish");
         Debug.Log("Changed Lang to danish");
+
         MenuUpdate();
 
         ChangeLanguageEvent?.Invoke();
@@ -123,6 +124,7 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.SetString("Lang", "English");
 
         Debug.Log("Changed Lang to English");
+
         MenuUpdate();
 
         ChangeLanguageEvent?.Invoke();
@@ -178,6 +180,8 @@ public class MenuController : MonoBehaviour
 
         resetMenu.SetActive(false);
         Time.timeScale = ballController.TimeScale;
+
+        AkSoundEngine.PostEvent("menuResume_event", gameObject);
     }
 
     public void GoToPauseMenu()
@@ -186,6 +190,8 @@ public class MenuController : MonoBehaviour
 
         optionsMenu.SetActive(false);
         Time.timeScale = 0;
+
+        AkSoundEngine.PostEvent("menuPause_event", gameObject);
     }
 
     public void GoToOptionsMenu()
@@ -267,6 +273,8 @@ public class MenuController : MonoBehaviour
             optionsButtonEnglish.SetActive(true);
             optionsButtonDanish.SetActive(false);
 
+            AkSoundEngine.SetState("dia_lang", "EN");
+
         }
         else if (language == "Danish")
         {
@@ -294,6 +302,8 @@ public class MenuController : MonoBehaviour
 
             optionsButtonEnglish.SetActive(false);
             optionsButtonDanish.SetActive(true);
+
+            AkSoundEngine.SetState("dia_lang", "DA");
         }
         else
         {
@@ -306,19 +316,21 @@ public class MenuController : MonoBehaviour
             musicHigh.SetActive(true);
             musicLow.SetActive(false);
             musicOff.SetActive(false);
-
+            AkSoundEngine.SetState("MusicVol", "High");
         }
         else if (musicVolume == "Low")
         {
             musicHigh.SetActive(false);
             musicLow.SetActive(true);
             musicOff.SetActive(false);
+            AkSoundEngine.SetState("MusicVol", "Low");
         }
         else if (musicVolume == "Off")
         {
             musicHigh.SetActive(false);
             musicLow.SetActive(false);
             musicOff.SetActive(true);
+            AkSoundEngine.SetState("MusicVol", "Off");
         }
 
 
@@ -327,12 +339,14 @@ public class MenuController : MonoBehaviour
         {
             soundOn.SetActive(true);
             soundOff.SetActive(false);
+            AkSoundEngine.SetState("SoundVol", "On");
 
         }
         else if (soundOnOff == "Off")
         {
             soundOn.SetActive(false);
             soundOff.SetActive(true);
+            AkSoundEngine.SetState("SoundVol", "Off");
         }
         
 
