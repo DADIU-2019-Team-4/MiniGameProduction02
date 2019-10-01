@@ -41,7 +41,8 @@ public class SceneController : MonoBehaviour
         levelCompletedText.SetActive(true);
         Time.timeScale = 0;
         IsPlaying = false; // Stops background rotation
-        ScoreController.SaveScore(levelNumber);
+        // todo save score
+        //ScoreController.SaveScore(levelNumber);
     }
 
     public void GoToLevelSelect()

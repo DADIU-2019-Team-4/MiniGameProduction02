@@ -183,8 +183,17 @@ public class MenuController : MonoBehaviour
 
     public void RestartGameProgress()
     {
-        //PlayerPrefs.DeleteAll();
-        GoToOptionsMenu();
+        DevilDealController devilDealController = FindObjectOfType<DevilDealController>();
+        if (devilDealController != null)
+        {
+            foreach (string key in devilDealController.Keys)
+            {
+                PlayerPrefs.DeleteKey(key);
+            }
+        }
+
+        SceneManager.LoadScene(0);
+        //GoToOptionsMenu();
     }
 
     public void UpdateLanguageTextToDanish()

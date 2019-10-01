@@ -50,6 +50,8 @@ public class DevilDealController : MonoBehaviour
     [SerializeField]
     private float maxFlashAlphaValue = 0.8f;
 
+    public List<string> Keys = new List<string>();
+
     private void Awake()
     {
         BallController = FindObjectOfType<BallController>();
@@ -79,6 +81,10 @@ public class DevilDealController : MonoBehaviour
         acceptedDevilDealsCount = PlayerPrefs.GetInt(acceptedDevilDealsCountKey);
         acceptedNegativeDealsCount = PlayerPrefs.GetInt(acceptedNegativeDealsCountKey);
         devilSkullCount = PlayerPrefs.GetInt(devilSkullCountKey);
+
+        Keys.Add(acceptedDevilDealsCountKey);
+        Keys.Add(acceptedNegativeDealsCountKey);
+        Keys.Add(devilSkullCountKey);
     }
 
     private void ActivateDevilDeals()
