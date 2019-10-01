@@ -39,11 +39,13 @@ public class CollectionItem : MonoBehaviour
             {
                 CollectionItemSpawner.isBottom = false;
             }
-        Destroy(this.gameObject);
-        if (FindObjectOfType<TutorialManager>() != null)
-            FindObjectOfType<TutorialManager>().EnableTutorialUI();
-        CollectionItemSpawner.IncrementItemsCollected(other.GetComponent<Ball>().wasPerfectlyThrown);
-        Instantiate(brokenMesh, gameObject.transform.position, Quaternion.Euler(90, 0, 130));
+            AkSoundEngine.PostEvent("TargetCollect_event", gameObject);
+            Destroy(this.gameObject);
+            if (FindObjectOfType<TutorialManager>() != null)
+                FindObjectOfType<TutorialManager>().EnableTutorialUI();
+            CollectionItemSpawner.IncrementItemsCollected(other.GetComponent<Ball>().wasPerfectlyThrown);
+            GameObject go = Instantiate(brokenMesh, gameObject.transform.position, Quaternion.Euler(90, 0, 130));
+            go.GetComponent<Rigidbody>().AddExplosionForce(10f, go.transform.position, 5f);
 
         }
     }
@@ -70,7 +72,7 @@ public class CollectionItem : MonoBehaviour
         {
             CollectionItemSpawner.isBottom = false;
         }
-
+        AkSoundEngine.PostEvent("TargetDestroy_event", gameObject);
         Instantiate(particles, gameObject.transform.position, Quaternion.identity);
         CollectionItemSpawner.DroppedItem();
         Destroy(this.gameObject);

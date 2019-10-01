@@ -198,6 +198,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1063668748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7640497618465929784, guid: b661b29d0c35b1f489599c68d69ce023,
+    type: 3}
+  m_PrefabInstance: {fileID: 4400118226757717149}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1170345067 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2676270511791106226, guid: b661b29d0c35b1f489599c68d69ce023,
@@ -242,6 +248,11 @@ PrefabInstance:
       propertyPath: devilSkullSpawnPoint
       value: 
       objectReference: {fileID: 1778143230}
+    - target: {fileID: 1808715076024527199, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: devilSkull
+      value: 
+      objectReference: {fileID: 1063668748}
     - target: {fileID: 4625034394326983814, guid: 6a953dd836e5fb5479418c83a3de4587,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -651,6 +662,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1235749702778120094, guid: 68421bde4d4cf65448d7f4e404a10c16,
         type: 3}
+      propertyPath: _tutorialStage.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235749702778120094, guid: 68421bde4d4cf65448d7f4e404a10c16,
+        type: 3}
       propertyPath: _tutorialStage.Array.data[0]
       value: 
       objectReference: {fileID: 1972914832}
@@ -768,6 +784,11 @@ PrefabInstance:
       propertyPath: CollectableText
       value: 
       objectReference: {fileID: 892377164}
+    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: NumberOfItemsToGoal
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8217b052d62188241932da549938efdf, type: 3}
 --- !u!1001 &2342401213739994541
