@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Devil Deal Ball Speed
   m_EditorClassIdentifier: 
   dealDescription: The ball will go faster, do you still accept this deal? >:D
-  speedMultiplier: 1.75
+  speedMultiplier: 1.5
