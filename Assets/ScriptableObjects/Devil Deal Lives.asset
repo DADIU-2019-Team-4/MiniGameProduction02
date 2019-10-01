@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7e42dad5003fd40a40555138e8016b, type: 3}
   m_Name: Devil Deal Lives
   m_EditorClassIdentifier: 
-  dealDescription: I'll save your life now, but you'll have fewer chances forever.
+  dealDescriptionEnglish: I'll save your life now, but you'll have fewer chances forever.
+    Do you accept?
+  dealDescriptionDanish: "Jeg redder dit liv nu, men du har f\xE6rre chancer for evigt.
+    Accepterer du?"

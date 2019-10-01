@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01fff1255532c7d45b94147ca6033cca, type: 3}
   m_Name: Devil Deal Flashes
   m_EditorClassIdentifier: 
-  dealDescription: I can help you succeed, and you can see my world! Do you accept?
+  dealDescriptionEnglish: I can help you succeed, and you can see my world! Do you
+    accept?
+  dealDescriptionDanish: "Jeg kan hj\xE6lpe dig med succes, og du kan se min verden!
+    Accepterer du?"
   interval: 10
