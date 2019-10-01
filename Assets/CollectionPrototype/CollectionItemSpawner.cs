@@ -30,10 +30,21 @@ public class CollectionItemSpawner : MonoBehaviour
 
     private ScoreController ScoreController;
     private SceneController SceneController;
+    private TutorialManager TutorialManager;
+    private bool _firstAreaSpawned;
+    private bool _tutorialLevel;
 
     private void Awake()
     {
         SceneController = FindObjectOfType<SceneController>();
+        if (FindObjectOfType<TutorialManager>() != null)
+        {
+            TutorialManager = FindObjectOfType<TutorialManager>();
+            _firstAreaSpawned = false;
+            _tutorialLevel = true;
+        }
+        else
+            _tutorialLevel = false;
         ScoreController = FindObjectOfType<ScoreController>();
     }
 
@@ -46,6 +57,11 @@ public class CollectionItemSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_tutorialLevel)
+            if (!_firstAreaSpawned)
+                return;
+        if (SceneController.GameEnded) return;
+
         if (isTop == false && currentActivePlates < maxActivePlates && mostRecentPosition != "top")
         {
             StartCoroutine(randomSpawn(Random.Range(minTime, maxTime), spawnPosTop, "top"));
@@ -68,10 +84,10 @@ public class CollectionItemSpawner : MonoBehaviour
     private IEnumerator randomSpawn(float _seconds, GameObject _spawnPos, string _placement)
     {
         yield return new WaitForSeconds(_seconds);
-
-        if (currentActivePlates < maxActivePlates)
+        if (currentActivePlates < maxActivePlates && !SceneController.GameEnded)
         {
-            GameObject item = Instantiate(prefab, _spawnPos.transform.position, Quaternion.identity);
+            GameObject item = Instantiate(prefab, _spawnPos.transform.position, Quaternion.Euler(90, 0, 130));
+            AkSoundEngine.PostEvent("TargetSpawn_event", gameObject);
             item.transform.position = _spawnPos.transform.position;
             item.gameObject.GetComponent<CollectionItem>().placement = _placement;
             mostRecentPosition = _placement;
@@ -82,6 +98,12 @@ public class CollectionItemSpawner : MonoBehaviour
     public void IncrementItemsCollected(bool wasPerfectlyThrown)
     {
         ItemsCollected++;
+        if ((ItemsCollected / NumberOfItemsToGoal) * 100<0.26f && (ItemsCollected / NumberOfItemsToGoal) *100 > 0.245f )
+            AkSoundEngine.PostEvent("PlateCount" + 1 + "_event", gameObject);
+        if ((ItemsCollected / NumberOfItemsToGoal) * 100 < 0.51f && (ItemsCollected / NumberOfItemsToGoal) * 100 > 0.495f)
+            AkSoundEngine.PostEvent("PlateCount" + 2 + "_event", gameObject);
+        if ((ItemsCollected / NumberOfItemsToGoal) * 100 < 0.76f && (ItemsCollected / NumberOfItemsToGoal) * 100 > 0.745f)
+            AkSoundEngine.PostEvent("PlateCount" + 3 + "_event", gameObject);
         UpdateText();
         ScoreController.IncrementScore(wasPerfectlyThrown);
 
@@ -92,5 +114,19 @@ public class CollectionItemSpawner : MonoBehaviour
     public void UpdateText()
     {
         CollectableText.text = $"{ItemsCollected}\\{NumberOfItemsToGoal}";
+    }
+
+    public void DroppedItem()
+    {
+        ScoreController.ResetMultiplier();
+    }
+
+    public void SpawnTutorialObject()
+    {
+        if (!_firstAreaSpawned)
+        {
+            StartCoroutine(randomSpawn(0f, spawnPosTop, "top"));
+            isTop = true;
+        }
     }
 }

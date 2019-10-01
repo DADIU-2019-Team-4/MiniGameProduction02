@@ -9,6 +9,8 @@ public class InputController : MonoBehaviour
     private ViolaController ViolaController;
     private MenuController MenuController;
     private SceneController SceneController;
+    private TutorialManager TutorialManager;
+    private LastTutorialManager LastTutorialManager;
 
     private readonly Vector3[] firstPosition = new Vector3[2];
     private readonly Vector3[] lastPosition = new Vector3[2];
@@ -20,6 +22,8 @@ public class InputController : MonoBehaviour
     private bool hasSwipedRightScreen;
 
     private bool trackMouse;
+    private bool _tutorialLevel;
+    private bool _lastTutorialLevel;
 
     public enum SwipeDirection { Up, Down, Left, Right }
 
@@ -27,12 +31,27 @@ public class InputController : MonoBehaviour
     private ViolaController.ThrowType throwType;
 
     public bool InvertControls { get; set; }
+    public bool HandCutOff { get; set; }
 
     private void Awake()
     {
         ViolaController = FindObjectOfType<ViolaController>();
         //MenuController = GetComponent<MenuController>(); // Uncomment if you need it.
         SceneController = FindObjectOfType<SceneController>();
+        if (FindObjectOfType<TutorialManager>() != null)
+        {
+            TutorialManager = FindObjectOfType<TutorialManager>();
+            _tutorialLevel = true;
+        }
+        else
+            _tutorialLevel = false;
+        if (FindObjectOfType<LastTutorialManager>() != null)
+        {
+            LastTutorialManager = FindObjectOfType<LastTutorialManager>();
+            _lastTutorialLevel = true;
+        }
+        else
+            _lastTutorialLevel = false;
     }
 
     private void Start()
@@ -77,6 +96,14 @@ public class InputController : MonoBehaviour
     /// </summary>
     private void MobileInput()
     {
+        if (Input.touchCount > 0)
+        {
+            if (_tutorialLevel)
+                TutorialManager.RemoveTutorialUI(3);
+            if (_lastTutorialLevel)
+                LastTutorialManager.RemoveTutorialUI();
+        }
+
         Touch[] touches = Input.touches;
         for (int i = 0; i < Input.touchCount; i++)
         {
@@ -113,6 +140,10 @@ public class InputController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (_tutorialLevel)
+                TutorialManager.RemoveTutorialUI(3);
+            if (_lastTutorialLevel)
+                LastTutorialManager.RemoveTutorialUI();
             trackMouse = true;
             firstPosition[0] = Input.mousePosition;
             lastPosition[0] = Input.mousePosition;
@@ -205,6 +236,10 @@ public class InputController : MonoBehaviour
             return ViolaController.HandType.Left;
         }
 
+        // ignore the right swipe input when hand is cut off
+        if (HandCutOff)
+            return ViolaController.HandType.None;
+
         // normal control swipe right
         if (!InvertControls)
         {
@@ -232,12 +267,18 @@ public class InputController : MonoBehaviour
         switch (direction)
         {
             case SwipeDirection.Up:
+                if ( _tutorialLevel)
+                    TutorialManager.RemoveTutorialUI(0);
                 return ViolaController.ThrowType.HighThrow;
 
             case SwipeDirection.Down:
+                if (_tutorialLevel)
+                    TutorialManager.RemoveTutorialUI(1);
                 return ViolaController.ThrowType.FloorBounce;
 
             default:
+                if (_tutorialLevel)
+                    TutorialManager.RemoveTutorialUI(2);
                 return ViolaController.ThrowType.MidThrow;
         }
     }

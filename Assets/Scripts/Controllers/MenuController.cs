@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
+    private BallController ballController;
     private Canvas levelSelectMenu;
     public SaveController saveC;
     public GameObject pauseMenu;
@@ -60,7 +61,7 @@ public class MenuController : MonoBehaviour
         pauseMenu = GameObject.Find("PauseMenu").gameObject;
         pauseMenu.SetActive(false);
 
-
+        ballController = FindObjectOfType<BallController>();
 
 
     }
@@ -156,6 +157,7 @@ public class MenuController : MonoBehaviour
     {
 
         resetMenu.SetActive(true);
+        Time.timeScale = ballController.TimeScale;
     }
 
     public void BackToGame()
@@ -166,6 +168,7 @@ public class MenuController : MonoBehaviour
 
 
         resetMenu.SetActive(false);
+        Time.timeScale = ballController.TimeScale;
     }
 
     public void GoToPauseMenu()
@@ -173,6 +176,7 @@ public class MenuController : MonoBehaviour
         pauseMenu.SetActive(true);
 
         optionsMenu.SetActive(false);
+        Time.timeScale = 0;
     }
 
     public void GoToOptionsMenu()

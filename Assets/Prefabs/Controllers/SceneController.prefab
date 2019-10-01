@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1267635558868094372}
   - component: {fileID: 7723828974934822010}
   - component: {fileID: 5554352687557745370}
+  - component: {fileID: 2014781252036918564}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -67,15 +68,15 @@ MonoBehaviour:
   spawnPosTop: {fileID: 5057437222277374894}
   spawnPosMid: {fileID: 3483119880243383578}
   spawnPosBottom: {fileID: 2420649766845651243}
-  prefab: {fileID: 3140319491321324204, guid: 073d5aa48712b41a5af4db4b297e6d2a, type: 3}
+  prefab: {fileID: 2367117736449897888, guid: 87a2183c01fa44bc5afe06777ad2d61a, type: 3}
   isTop: 0
   isMid: 0
   isBottom: 0
   currentActivePlates: 0
   maxActivePlates: 2
   ItemsCollected: 0
-  NumberOfItemsToGoal: 10
-  timeUntilItemsDissappear: 3
+  NumberOfItemsToGoal: 20
+  timeUntilItemsDissappear: 2
   CollectableText: {fileID: 0}
 --- !u!114 &5554352687557745370
 MonoBehaviour:
@@ -89,9 +90,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6972fbdda1a8b4fa2247c88132a517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Background: {fileID: 9071093160974151817, guid: eaf8935c7c30aa94b89a9a7b5be5769c,
-    type: 3}
+  Background: {fileID: 0}
   RotationSpeed: 7
+--- !u!114 &2014781252036918564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267635558868094373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7937f9ff7b96abc46b2ece4bdaa9218f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeImage: {fileID: 0}
+  fadeDuration: 7
+  dialogueDuration: 1
 --- !u!1001 &1267635558778988585
 PrefabInstance:
   m_ObjectHideFlags: 0

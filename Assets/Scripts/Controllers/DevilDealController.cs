@@ -26,14 +26,15 @@ public class DevilDealController : MonoBehaviour
     private List<DevilDeal> devilDeals = new List<DevilDeal>();
     private DevilDeal chosenNegativeDevilDeal;
 
+    public int MaxDevilDeals { get; set; }
+
     private int acceptedDevilDealsCount;
-    private int acceptedNegativeDealsCount;
+    public int AcceptedNegativeDealsCount { get; set; }
 
     private bool applyNegativeEffect;
     public bool LastDevilDeal { get; set; }
 
-    [SerializeField]
-    private int countUntilNegativeEffect = 2;
+    private int countUntilNegativeEffect = 1;
     private int devilSkullCount;
     private float offset = 40;
     private float imageWidth;
@@ -57,6 +58,8 @@ public class DevilDealController : MonoBehaviour
 
     private void Start()
     {
+        MaxDevilDeals = devilDeals.Count;
+
         imageWidth = devilSkull.GetComponent<RectTransform>().rect.width;
         SpawnDevilSkulls();
 
@@ -65,7 +68,7 @@ public class DevilDealController : MonoBehaviour
 
     private void ActivateDevilDeals()
     {
-        for (int i = 0; i < acceptedNegativeDealsCount; i++)
+        for (int i = 0; i < AcceptedNegativeDealsCount; i++)
         {
             chosenNegativeDevilDeal = devilDeals[i];
             chosenNegativeDevilDeal.ApplyDevilDeal();
@@ -95,16 +98,21 @@ public class DevilDealController : MonoBehaviour
     {
         // todo play animation and continue when animation is done playing
         SceneController.IsPlaying = false;
+        AkSoundEngine.PostEvent("DDIntro_event", gameObject);
 
         devilDealCanvas.SetActive(true);
         descriptionText.text = dealDescription;
 
-        if (acceptedDevilDealsCount > 0 && acceptedDevilDealsCount % countUntilNegativeEffect == 0)
+        if (acceptedDevilDealsCount % countUntilNegativeEffect == 0)
         {
             applyNegativeEffect = true;
             ChooseNegativeDevilDeal();
         }
+
         Time.timeScale = 0;
+        if (FindObjectOfType<LastTutorialManager>() != null)
+            if (FindObjectOfType<LastTutorialManager>()._previousTutorialStage==4)
+                FindObjectOfType<LastTutorialManager>().EnableTutorialUI();
     }
 
     public void AcceptDevilDeal()
@@ -121,7 +129,7 @@ public class DevilDealController : MonoBehaviour
             devilSkullCount++;
             SpawnDevilSkulls();
         }
-
+        AkSoundEngine.PostEvent("DDPositive_event", gameObject);
         // todo save this value for long term
         acceptedDevilDealsCount++;
 
@@ -129,7 +137,7 @@ public class DevilDealController : MonoBehaviour
 
         devilDealCanvas.SetActive(false);
         Time.timeScale = BallController.TimeScale;
-
+        BallController.Restart();
         SceneController.IsPlaying = true;
     }
 
@@ -140,7 +148,7 @@ public class DevilDealController : MonoBehaviour
 
     private void ChooseNegativeDevilDeal()
     {
-        chosenNegativeDevilDeal = devilDeals[acceptedNegativeDealsCount];
+        chosenNegativeDevilDeal = devilDeals[AcceptedNegativeDealsCount];
 
         descriptionText.text = chosenNegativeDevilDeal.dealDescription;
     }
@@ -148,6 +156,7 @@ public class DevilDealController : MonoBehaviour
     public void DeclineDevilDeal()
     {
         devilDealCanvas.SetActive(false);
+        AkSoundEngine.PostEvent("DDNegative_event", gameObject);
         Time.timeScale = BallController.TimeScale;
 
         SceneController.IsPlaying = true;
@@ -156,7 +165,7 @@ public class DevilDealController : MonoBehaviour
     private IEnumerator ApplyNegativeEffect()
     {
         // todo save this value for long term
-        acceptedNegativeDealsCount++;
+        AcceptedNegativeDealsCount++;
 
         SinisterFlashes.SinisterFlashingImage.gameObject.SetActive(true);
         SinisterFlashes.SinisterFlashingImage.DOFade(maxFlashAlphaValue, lengthOfFlash / 2);
@@ -169,7 +178,7 @@ public class DevilDealController : MonoBehaviour
         yield return new WaitForSeconds(lengthOfFlash / 2);
         SinisterFlashes.SinisterFlashingImage.gameObject.SetActive(false);
 
-        if (acceptedNegativeDealsCount >= devilDeals.Count)
+        if (AcceptedNegativeDealsCount >= devilDeals.Count)
             LastDevilDeal = true;
     }
 }
