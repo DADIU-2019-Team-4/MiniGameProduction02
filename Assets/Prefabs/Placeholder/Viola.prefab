@@ -528,7 +528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: {fileID: 6163756088762520241, guid: 8c0d1970ea854bf43961af7035423ade, type: 3}
   lifeSpawnPoint: {fileID: 0}
-  maxLives: 3
+  maxLives: 4
   offset: 15
 --- !u!1 &3581448326717456981
 GameObject:
