@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class IntroController : MonoBehaviour
 {
-    public string NextSceneName = "/Levels/Level1";
     private DirectorController DirectorController;
 
     // Start is called before the first frame update
@@ -27,6 +26,6 @@ public class IntroController : MonoBehaviour
     public void Finish()
     {
         // After the Intro is complete, start the next Scene
-        SceneManager.LoadScene(NextSceneName);
+        SceneManager.LoadScene("Level1");
     }
 }
