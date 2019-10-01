@@ -55,6 +55,7 @@
 				<Event Id="1399763525" Name="RoomTone_event" ObjectPath="\Events\Default Work Unit\RoomTone_event" DurationType="Infinite"/>
 				<Event Id="3921462371" Name="SwipeSound_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\SwipeSound_event" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
 				<Event Id="2128152441" Name="TargetCollect_event" ObjectPath="\Events\Default Work Unit\Items\TargetCollect_event" DurationType="OneShot" DurationMin="0.465125" DurationMax="1.583878"/>
+				<Event Id="3022112561" Name="TargetDestroy_event" ObjectPath="\Events\Default Work Unit\Items\TargetDestroy_event" DurationType="OneShot" DurationMin="1.977652" DurationMax="1.977652"/>
 				<Event Id="982237770" Name="TargetSpawn_event" ObjectPath="\Events\Default Work Unit\Items\TargetSpawn_event" DurationType="OneShot" DurationMin="3.386463" DurationMax="3.386463"/>
 				<Event Id="1118806527" Name="UnfillSound_event0" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event0" DurationType="Unknown"/>
 				<Event Id="1118806526" Name="UnfillSound_event1" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event1" DurationType="Unknown"/>
@@ -284,6 +285,10 @@
 				<File Id="1030349145" Language="SFX">
 					<ShortName>Ball6.wav</ShortName>
 					<Path>SFX\Ball6_8CBF9462.wem</Path>
+				</File>
+				<File Id="1042566513" Language="SFX">
+					<ShortName>PlateDestroy.wav</ShortName>
+					<Path>SFX\PlateDestroy_8CBF9462.wem</Path>
 				</File>
 				<File Id="1047563840" Language="English(US)">
 					<ShortName>3_en.wav</ShortName>

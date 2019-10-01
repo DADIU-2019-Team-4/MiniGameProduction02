@@ -47,6 +47,7 @@ namespace AK
         static const AkUniqueID ROOMTONE_EVENT = 1399763525U;
         static const AkUniqueID SWIPESOUND_EVENT = 3921462371U;
         static const AkUniqueID TARGETCOLLECT_EVENT = 2128152441U;
+        static const AkUniqueID TARGETDESTROY_EVENT = 3022112561U;
         static const AkUniqueID TARGETSPAWN_EVENT = 982237770U;
         static const AkUniqueID UNFILLSOUND_EVENT0 = 1118806527U;
         static const AkUniqueID UNFILLSOUND_EVENT1 = 1118806526U;

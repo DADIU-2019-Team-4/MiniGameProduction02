@@ -30,6 +30,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2293628003	PressButton_event			\Default Work Unit\UI\PressButton_event	
 	2847315007	FinalFail			\Default Work Unit\Win_n_Fail\FinalFail	
 	3020012974	CompanyName_event			\Default Work Unit\SplashScreens\CompanyName_event	
+	3022112561	TargetDestroy_event			\Default Work Unit\Items\TargetDestroy_event	
 	3036127557	LevelCompleted_event			\Default Work Unit\Win_n_Fail\LevelCompleted_event	
 	3046129007	ColliderLeft_event			\Default Work Unit\FeedbackSounds\ColliderLeft_event	
 	3057537678	Count1_event			\Default Work Unit\JuggleCountdown\Count1_event	
@@ -70,7 +71,7 @@ Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	957623765	SoundSeed Air Woosh	SoundSeed Air Woosh		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\SwipeSound\SoundSeed Air Woosh	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	58457526	Spotlight #1	E:\WWise projekter\DADIU-MGP2\.cache\Mac\SFX\Spotlight #1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Spotlight\Spotlight #1		113227
+	58457526	Spotlight #1	E:\WWise projekter\DADIU-MGP2\.cache\Mac\SFX\Spotlight #1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\PlateSpawn\Spotlight #1		113227
 	97445037	Some other time #1 (Devil Deals negative)	E:\WWise projekter\DADIU-MGP2\.cache\Mac\Voices\English(US)\Some other time #1 (Devil Deals negative)_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\EN\Some other time #1 (Devil Deals negative)		119733
 	102664388	Laugh4	E:\WWise projekter\DADIU-MGP2\.cache\Mac\Voices\English(US)\Laugh4_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomLaughs\Laugh4		172174
 	107041349	Laugh1	E:\WWise projekter\DADIU-MGP2\.cache\Mac\Voices\English(US)\Laugh1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomLaughs\Laugh1		189247
@@ -125,6 +126,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	994559218	Plates7	E:\WWise projekter\DADIU-MGP2\.cache\Mac\SFX\Plates7_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\PlateCollect\Plates7		31550
 	1018737315	Plates4	E:\WWise projekter\DADIU-MGP2\.cache\Mac\SFX\Plates4_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\PlateCollect\Plates4		18938
 	1030349145	Ball6	E:\WWise projekter\DADIU-MGP2\.cache\Mac\SFX\Ball6_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball6		16011
+	1042566513	PlateDestroy	E:\WWise projekter\DADIU-MGP2\.cache\Mac\SFX\PlateDestroy_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\PlateDestroy\PlateDestroy		58847
 	1047563840	3_en	E:\WWise projekter\DADIU-MGP2\.cache\Mac\Voices\English(US)\3_en_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\EN\CountdownEN\3_en		67074
 	1070768303	Plates6	E:\WWise projekter\DADIU-MGP2\.cache\Mac\SFX\Plates6_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\PlateCollect\Plates6		65380
 
