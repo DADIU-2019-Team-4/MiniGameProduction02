@@ -18,13 +18,13 @@ public class DirectorController : MonoBehaviour
             DirectorAnimator.SetTrigger("playIntro");
     }
 
-    public void PlayDevilDealAnimation()
+    public void PlayDDIntroAnimation()
     {
         if (DirectorAnimator)
             DirectorAnimator.SetTrigger("startDevilDeal");
     }
 
-    public void ContinueDevilDealAnimation()
+    public void PlayDDOutroAnimation()
     {
         if (DirectorAnimator)
             DirectorAnimator.SetTrigger("continueDevilDeal");

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class DevilDealController : MonoBehaviour
 {
     private BallController BallController;
+    private DirectorController DirectorController;
     private LifeManager LifeManager;
     private SceneController SceneController;
     private SinisterFlashes SinisterFlashes;
@@ -21,7 +22,7 @@ public class DevilDealController : MonoBehaviour
     private GameObject devilSkullSpawnPoint;
     [SerializeField]
     private GameObject devilSkull;
-
+     
     [SerializeField]
     private List<DevilDeal> devilDeals = new List<DevilDeal>();
     private DevilDeal chosenNegativeDevilDeal;
@@ -50,6 +51,7 @@ public class DevilDealController : MonoBehaviour
 
     private void Awake()
     {
+        DirectorController = FindObjectOfType<DirectorController>();
         BallController = FindObjectOfType<BallController>();
         LifeManager = FindObjectOfType<LifeManager>();
         SceneController = FindObjectOfType<SceneController>();
@@ -96,7 +98,13 @@ public class DevilDealController : MonoBehaviour
 
     public void ActivateDevilDealPanel()
     {
-        // todo play animation and continue when animation is done playing
+        // Trigger the Animation. After it is finished, it will call ContinueAfterDevilDealPanel()
+        DirectorController.PlayDDIntroAnimation();
+    }
+
+    public void ContinueAfterDevilDealPanel()
+    {
+        // Runs when animation is done playing
         SceneController.IsPlaying = false;
         AkSoundEngine.PostEvent("DDIntro_event", gameObject);
 
@@ -111,7 +119,7 @@ public class DevilDealController : MonoBehaviour
 
         Time.timeScale = 0;
         if (FindObjectOfType<LastTutorialManager>() != null)
-            if (FindObjectOfType<LastTutorialManager>()._previousTutorialStage==4)
+            if (FindObjectOfType<LastTutorialManager>()._previousTutorialStage == 4)
                 FindObjectOfType<LastTutorialManager>().EnableTutorialUI();
     }
 
@@ -134,32 +142,20 @@ public class DevilDealController : MonoBehaviour
         acceptedDevilDealsCount++;
 
         ApplyPositiveEffect();
-
         devilDealCanvas.SetActive(false);
-        Time.timeScale = BallController.TimeScale;
-        BallController.Restart();
-        SceneController.IsPlaying = true;
-    }
-
-    private void ApplyPositiveEffect()
-    {
-        LifeManager.ResetLives();
-    }
-
-    private void ChooseNegativeDevilDeal()
-    {
-        chosenNegativeDevilDeal = devilDeals[AcceptedNegativeDealsCount];
-
-        descriptionText.text = chosenNegativeDevilDeal.dealDescription;
+        ContinuePlaying();
     }
 
     public void DeclineDevilDeal()
     {
         devilDealCanvas.SetActive(false);
         AkSoundEngine.PostEvent("DDNegative_event", gameObject);
-        Time.timeScale = BallController.TimeScale;
+        ContinuePlaying();
+    }
 
-        SceneController.IsPlaying = true;
+    private void ApplyPositiveEffect()
+    {
+        LifeManager.ResetLives();
     }
 
     private IEnumerator ApplyNegativeEffect()
@@ -180,5 +176,21 @@ public class DevilDealController : MonoBehaviour
 
         if (AcceptedNegativeDealsCount >= devilDeals.Count)
             LastDevilDeal = true;
+    }
+
+    private void ChooseNegativeDevilDeal()
+    {
+        chosenNegativeDevilDeal = devilDeals[AcceptedNegativeDealsCount];
+
+        descriptionText.text = chosenNegativeDevilDeal.dealDescription;
+    }
+
+    public void ContinuePlaying()
+    {
+        // Trigger the Animation (don't wait for it to finish)
+        DirectorController.PlayDDOutroAnimation();
+        Time.timeScale = BallController.TimeScale;
+        BallController.Restart();
+        SceneController.IsPlaying = true;
     }
 }
