@@ -114,6 +114,8 @@ public class BallController : MonoBehaviour
             ballsInCatchZone.Add(ball);
         PlayDistanceSound(ball);
 
+        Debug.Log("Ball has entered the hand. I repeat Ball has entered the hand");
+
     }
 
     public void BallLeavesHand(Collider collider)
@@ -121,6 +123,8 @@ public class BallController : MonoBehaviour
         var ball = collider.gameObject;
         if (ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Remove(ball);
+
+        Debug.Log("Ball is out of hand, carefull");
     }
 
     public void BallDropped(GameObject obj)
