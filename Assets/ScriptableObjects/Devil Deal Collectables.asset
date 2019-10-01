@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31048df4f1408e34887926baec2a6d5b, type: 3}
   m_Name: Devil Deal Collectables
   m_EditorClassIdentifier: 
-  dealDescription: You will need to collect more items, do you still accept this deal?
-    >:D
+  dealDescription: Fine, I'll help you, as long as you smash some more plates from
+    now on. Do you accept?
   ToAdd: 3

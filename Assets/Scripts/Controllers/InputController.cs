@@ -97,7 +97,7 @@ public class InputController : MonoBehaviour
                 ViolaController.Throw(throwType, screenSide);
                 TutorialManager.RemoveTutorialUI(2);
             }
-            if(_tutorialLevel && TutorialManager._previousTutorialStage >=3)
+            if(_tutorialLevel && TutorialManager._previousTutorialStage >=3  && TutorialManager._previousTutorialStage != 5)
                 ViolaController.Throw(throwType, screenSide);
             if (!_tutorialLevel)
                 ViolaController.Throw(throwType, screenSide);

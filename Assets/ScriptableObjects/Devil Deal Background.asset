@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f456eb80abb79f44afa0fb3b60cd2e0, type: 3}
   m_Name: Devil Deal Background
   m_EditorClassIdentifier: 
-  dealDescription: The background will rotate faster, do you still accept this deal?
-    >:D
+  dealDescription: I could help you out, it would only speed up the spinning circus.
+    Do you accept?
   rotationSpeedMultiplier: 2
