@@ -313,7 +313,7 @@ public class BallController : MonoBehaviour
 
             if(throwType == ViolaController.ThrowType.HighThrow)
             {
-                ballAnimator.Play("leftToRightUP", 0, 0f);
+                ballAnimator.Play("rightToLeftUP", 0, 0f);
             }
             else if (throwType == ViolaController.ThrowType.MidThrow)
             {
