@@ -10,15 +10,16 @@ public class MenuController : MonoBehaviour
     private BallController ballController;
     private Canvas levelSelectMenu;
     private SaveController saveC;
-    public GameObject pauseMenu;
-    public GameObject optionsMenu;
-    public GameObject resetMenu;
+    private GameObject pauseMenu;
+    private GameObject optionsMenu;
+    private GameObject resetMenu;
+    [HideInInspector]
     public string language;
-    public string musicVolume;
-    public string soundOnOff;
+    private string musicVolume;
+    private string soundOnOff;
 
     //test variables
-    public int levelSelector = 0;
+    //public int levelSelector = 0;
 
 
     #region menuvariables
@@ -47,11 +48,11 @@ public class MenuController : MonoBehaviour
 
     #endregion
 
+    [HideInInspector]
     public UnityEvent ChangeLanguageEvent;
 
     private void Awake()
     {
-
         RefferenceMenuVariables();
         MenuUpdate(); //setup menu
         saveC = FindObjectOfType<SaveController>();
