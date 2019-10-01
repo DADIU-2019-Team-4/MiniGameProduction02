@@ -28,14 +28,14 @@ public class TutorialManager : MonoBehaviour
             Time.timeScale = 1f;
             _currentText.SetActive(false);
             _previousTutorialStage++;
-            if (_previousTutorialStage == 4 || _previousTutorialStage == 6)
+            if (_previousTutorialStage == 4 || _previousTutorialStage == 5 || _previousTutorialStage == 7)
                 EnableTutorialUI();
         }
     }
 
     public void EnableTutorialUI()
     {
-        if (_previousTutorialStage >= 7)
+        if (_previousTutorialStage >= 8)
             return;
        _currentText = _tutorialStage[_previousTutorialStage];
         Debug.Log("Stage:" + _previousTutorialStage);

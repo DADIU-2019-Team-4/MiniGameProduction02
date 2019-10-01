@@ -127,6 +127,7 @@ public class CollectionItemSpawner : MonoBehaviour
         {
             StartCoroutine(randomSpawn(0f, spawnPosTop, "top"));
             isTop = true;
+            _firstAreaSpawned = true;
         }
     }
 }

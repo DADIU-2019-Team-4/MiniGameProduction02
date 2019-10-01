@@ -96,6 +96,12 @@ public class DevilDealController : MonoBehaviour
 
     public void ActivateDevilDealPanel()
     {
+        if (FindObjectOfType<LastTutorialManager>() != null)
+            if (FindObjectOfType<LastTutorialManager>()._previousTutorialStage == 4)
+            {
+                FindObjectOfType<LastTutorialManager>().EnableTutorialUI();
+                return;
+            }
         // todo play animation and continue when animation is done playing
         SceneController.IsPlaying = false;
         AkSoundEngine.PostEvent("DDIntro_event", gameObject);
@@ -110,9 +116,6 @@ public class DevilDealController : MonoBehaviour
         }
 
         Time.timeScale = 0;
-        if (FindObjectOfType<LastTutorialManager>() != null)
-            if (FindObjectOfType<LastTutorialManager>()._previousTutorialStage==4)
-                FindObjectOfType<LastTutorialManager>().EnableTutorialUI();
     }
 
     public void AcceptDevilDeal()
