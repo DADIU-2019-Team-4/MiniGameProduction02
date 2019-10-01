@@ -82,6 +82,7 @@ public class CollectionItemSpawner : MonoBehaviour
         if (currentActivePlates < maxActivePlates)
         {
             GameObject item = Instantiate(prefab, _spawnPos.transform.position, Quaternion.Euler(90, 0, 130));
+            AkSoundEngine.PostEvent("TargetSpawn_event", gameObject);
             item.transform.position = _spawnPos.transform.position;
             item.gameObject.GetComponent<CollectionItem>().placement = _placement;
             mostRecentPosition = _placement;
