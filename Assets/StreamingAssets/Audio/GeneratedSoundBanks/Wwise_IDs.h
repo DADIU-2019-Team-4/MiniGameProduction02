@@ -24,6 +24,8 @@ namespace AK
         static const AkUniqueID DDINTRO_EVENT = 4073134012U;
         static const AkUniqueID DDNEGATIVE_EVENT = 234395941U;
         static const AkUniqueID DDPOSITIVE_EVENT = 35633437U;
+        static const AkUniqueID DEVILDEALMUSIC_EVENT = 3514774441U;
+        static const AkUniqueID ENDLEVELMUSIC_EVENT = 3666342258U;
         static const AkUniqueID FAILSOUND_EVENT = 1999513135U;
         static const AkUniqueID FILLSOUND_EVENT1 = 1944912667U;
         static const AkUniqueID FILLSOUND_EVENT2 = 1944912664U;
@@ -31,13 +33,16 @@ namespace AK
         static const AkUniqueID FILLSOUND_EVENT4 = 1944912670U;
         static const AkUniqueID FILLSOUND_EVENT5 = 1944912671U;
         static const AkUniqueID FILLSOUND_EVENT6 = 1944912668U;
-        static const AkUniqueID FINALFAIL = 2847315007U;
-        static const AkUniqueID FINALWIN = 3601510691U;
+        static const AkUniqueID FINALFAIL_EVENT = 1937231702U;
+        static const AkUniqueID FINALWIN_EVENT = 3639969466U;
+        static const AkUniqueID FLASHSCREEN_LEVEL = 2916292526U;
         static const AkUniqueID GAMETITLESPLASH_EVENT = 3462943351U;
+        static const AkUniqueID INGAMEMUSIC1_EVENT = 2125813393U;
+        static const AkUniqueID INGAMEMUSIC2_EVENT = 1704362654U;
         static const AkUniqueID LEVELCOMPLETED_EVENT = 3036127557U;
         static const AkUniqueID MENUIN_EVENT = 1069674504U;
+        static const AkUniqueID MENUMUSIC = 679636833U;
         static const AkUniqueID MENUOUT_EVENT = 1960384521U;
-        static const AkUniqueID MUSICTEST = 4195921398U;
         static const AkUniqueID PERFECTCATCH_EVENT = 3869548328U;
         static const AkUniqueID PLATECOUNT1_EVENT = 154525524U;
         static const AkUniqueID PLATECOUNT2_EVENT = 2273360275U;
@@ -49,6 +54,8 @@ namespace AK
         static const AkUniqueID TARGETCOLLECT_EVENT = 2128152441U;
         static const AkUniqueID TARGETDESTROY_EVENT = 3022112561U;
         static const AkUniqueID TARGETSPAWN_EVENT = 982237770U;
+        static const AkUniqueID TICKETFEEDBACK_EVENT = 3283252857U;
+        static const AkUniqueID TUTORIALMUSIC_EVENT = 3458164205U;
         static const AkUniqueID UNFILLSOUND_EVENT0 = 1118806527U;
         static const AkUniqueID UNFILLSOUND_EVENT1 = 1118806526U;
         static const AkUniqueID UNFILLSOUND_EVENT2 = 1118806525U;
@@ -117,6 +124,7 @@ namespace AK
         static const AkUniqueID THROWING = 4234308485U;
         static const AkUniqueID UI_FEEDBACK = 2687559867U;
         static const AkUniqueID VOICE = 3170124113U;
+        static const AkUniqueID VOICEBUS = 2045367873U;
         static const AkUniqueID WIN_FAIL = 3165269336U;
     } // namespace BUSSES
 

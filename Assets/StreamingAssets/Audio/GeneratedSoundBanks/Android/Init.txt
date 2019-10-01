@@ -26,6 +26,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	1922958967	ProgressBar			\Default Work Unit\Master Audio Bus\Environments\UI+Feedback\ProgressBar	
+	2045367873	VoiceBus			\Default Work Unit\Master Audio Bus\Environments\UI+Feedback\VoiceBus	
 	2077253480	Room			\Default Work Unit\Master Audio Bus\Environments\Room	
 	2687559867	UI+Feedback			\Default Work Unit\Master Audio Bus\Environments\UI+Feedback	
 	3165269336	Win+Fail			\Default Work Unit\Master Audio Bus\Environments\UI+Feedback\Win+Fail	
