@@ -124,6 +124,7 @@ public class BallController : MonoBehaviour
         if (ballsInCatchZone.Contains(ball))
             ballsInCatchZone.Remove(ball);
 
+        CheckIfEndOfAnimation(ball);
         Debug.Log("Ball is out of hand, carefull");
     }
 
@@ -160,16 +161,32 @@ public class BallController : MonoBehaviour
 
     public void Throw(ViolaController.ThrowType throwType, ViolaController.HandType hand)
     {
-        AkSoundEngine.SetRTPCValue("rightCollider", 0.0f);
+
         var ball = GetBallToThrow(hand);
         if (ball == null) return;
 
-        if (hand == ViolaController.HandType.Left)
-            AkSoundEngine.PostEvent("ColliderLeft_event", gameObject);
-        else if (hand == ViolaController.HandType.Right)
-            AkSoundEngine.PostEvent("ColliderRight_event", gameObject);
-
         Rigidbody ballRigidBody = ball.GetComponent<Rigidbody>();
+        
+
+        AkSoundEngine.SetRTPCValue("rightCollider", 0.0f);
+
+        PlayCorrectAnimation(throwType, hand, ball);
+
+        if (hand == ViolaController.HandType.Left)
+        {
+            AkSoundEngine.PostEvent("ColliderLeft_event", gameObject);
+            Debug.Log("gottem");
+
+        }
+        else if (hand == ViolaController.HandType.Right)
+        {
+            AkSoundEngine.PostEvent("ColliderRight_event", gameObject);
+            Debug.Log("gottem");
+
+        }
+
+
+
         ballRigidBody.isKinematic = true;
 
         ball.GetComponent<Ball>().wasPerfectlyThrown = GotPerfectCatch(ball);
@@ -177,8 +194,10 @@ public class BallController : MonoBehaviour
         Vector3 throwVector = GetThrowForce(throwType, ball);
         SetThrowDirection(hand, ref throwVector, ballRigidBody);
         ballRigidBody.isKinematic = false;
+
         if (ballRigidBody.drag > 0)
             ballRigidBody.drag = 0;
+
         ballRigidBody.AddForce(throwVector);
         BallLeavesHand(ball.GetComponent<Collider>());
         throwCount++;
@@ -283,5 +302,78 @@ public class BallController : MonoBehaviour
     {
         Debug.Log("Goes to delay");
         yield return new WaitForSeconds(seconds);
+    }
+
+    public void PlayCorrectAnimation(ViolaController.ThrowType throwType, ViolaController.HandType hand, GameObject ball)
+    {
+        Animator ballAnimator = ball.GetComponent<Animator>();
+
+        if (hand == ViolaController.HandType.Left)
+        {
+
+            if(throwType == ViolaController.ThrowType.HighThrow)
+            {
+                ballAnimator.Play("leftToRightUP", 0, 0f);
+            }
+            else if (throwType == ViolaController.ThrowType.MidThrow)
+            {
+
+            }
+            else if (throwType == ViolaController.ThrowType.FloorBounce)
+            {
+
+            }
+
+            
+            Debug.Log("gottem");
+
+        }
+        else if (hand == ViolaController.HandType.Right)
+        {
+
+            if (throwType == ViolaController.ThrowType.HighThrow)
+            {
+                ballAnimator.Play("leftToRightUP", 0, 0f);
+            }
+            else if (throwType == ViolaController.ThrowType.MidThrow)
+            {
+                ballAnimator.Play("leftToRightMiddle", 0, 0f);
+
+            }
+            else if (throwType == ViolaController.ThrowType.FloorBounce)
+            {
+                ballAnimator.Play("leftToRightDown", 0, 0f);
+
+            }
+            Debug.Log("gottem");
+
+        }
+
+    }
+
+    public bool CheckIfEndOfAnimation(GameObject ball)
+    {
+        if (ball.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.7f)
+        {
+            EnablePhysics(ball);
+            Debug.Log("got in");
+            return true;
+        }
+        else
+        {
+            Debug.Log("didnt got in");
+            return false;
+        }
+
+        
+    }
+    public void EnablePhysics(GameObject ball)
+    {
+        Rigidbody rb = ball.GetComponent<Rigidbody>();
+        Animator anim = ball.GetComponent<Animator>();
+
+        anim.enabled = false;
+        rb.isKinematic = false;
+        rb.useGravity = true;
     }
 }
