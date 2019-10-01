@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8055690247554419436
+--- !u!114 &-4328927194825446329
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HangingLight02_Mat
+  m_Name: HangingLight03_Mat
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _EMISSION _NORMALMAP
   m_LightmapFlags: 2
@@ -34,19 +34,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 52efaa6987b1148819ca7a8ad61e6fd2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5584b2520a3d948c98e640bb576b1b65, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: e15bb039f961f4807be865292a18754e, type: 3}
+        m_Texture: {fileID: 2800000, guid: ddad38db8143845859a8fbbbf97af1ad, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 52efaa6987b1148819ca7a8ad61e6fd2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5584b2520a3d948c98e640bb576b1b65, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 52efaa6987b1148819ca7a8ad61e6fd2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5584b2520a3d948c98e640bb576b1b65, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
