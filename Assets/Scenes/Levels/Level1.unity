@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -385,6 +385,10 @@ PrefabInstance:
       propertyPath: lifeSpawnPoint
       value: 
       objectReference: {fileID: 960094154}
+    - target: {fileID: 857906305, guid: 6bb3aab886bd2994684e4d94011acf0c, type: 3}
+      propertyPath: maxLives
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bb3aab886bd2994684e4d94011acf0c, type: 3}
 --- !u!1 &1648833304
@@ -483,21 +487,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DevilDealController
       objectReference: {fileID: 0}
-    - target: {fileID: 1808715076024527199, guid: 6a953dd836e5fb5479418c83a3de4587,
-        type: 3}
-      propertyPath: devilDealCanvas
-      value: 
-      objectReference: {fileID: 7781361177337173347}
-    - target: {fileID: 1808715076024527199, guid: 6a953dd836e5fb5479418c83a3de4587,
-        type: 3}
-      propertyPath: descriptionText
-      value: 
-      objectReference: {fileID: 7781361177337173346}
-    - target: {fileID: 1808715076024527199, guid: 6a953dd836e5fb5479418c83a3de4587,
-        type: 3}
-      propertyPath: devilSkullSpawnPoint
-      value: 
-      objectReference: {fileID: 7781361177337173348}
     - target: {fileID: 4625034394326983814, guid: 6a953dd836e5fb5479418c83a3de4587,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -553,6 +542,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1808715076024527199, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: devilDealCanvas
+      value: 
+      objectReference: {fileID: 7781361177337173347}
+    - target: {fileID: 1808715076024527199, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 7781361177337173346}
+    - target: {fileID: 1808715076024527199, guid: 6a953dd836e5fb5479418c83a3de4587,
+        type: 3}
+      propertyPath: devilSkullSpawnPoint
+      value: 
+      objectReference: {fileID: 7781361177337173348}
     - target: {fileID: 1464220514811936704, guid: 6a953dd836e5fb5479418c83a3de4587,
         type: 3}
       propertyPath: SinisterFlashingImage
@@ -857,6 +861,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: BallController
       objectReference: {fileID: 0}
+    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
+      propertyPath: leftHand
+      value: 
+      objectReference: {fileID: 1871473972}
+    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
+      propertyPath: rightHand
+      value: 
+      objectReference: {fileID: 1868659884}
+    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
+      propertyPath: leftPerfectCatch
+      value: 
+      objectReference: {fileID: 1871473971}
+    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
+        type: 3}
+      propertyPath: rightPerfectCatch
+      value: 
+      objectReference: {fileID: 1868659883}
     - target: {fileID: 2622422234614047189, guid: b4e71392584e97a40b5fecb8aa9ece25,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -912,26 +936,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: leftHand
-      value: 
-      objectReference: {fileID: 1871473972}
-    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: rightHand
-      value: 
-      objectReference: {fileID: 1868659884}
-    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: leftPerfectCatch
-      value: 
-      objectReference: {fileID: 1871473971}
-    - target: {fileID: 2622422234614047190, guid: b4e71392584e97a40b5fecb8aa9ece25,
-        type: 3}
-      propertyPath: rightPerfectCatch
-      value: 
-      objectReference: {fileID: 1868659883}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4e71392584e97a40b5fecb8aa9ece25, type: 3}
 --- !u!1001 &2652069135451615258
@@ -1228,16 +1232,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 563729173}
-    - target: {fileID: 8036416574188392589, guid: 9ef84af383f0d9f4aa6fbe6346a24096,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1709196995}
-    - target: {fileID: 8036416575506997996, guid: 9ef84af383f0d9f4aa6fbe6346a24096,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1709196995}
     - target: {fileID: 7781361177382459034, guid: 9ef84af383f0d9f4aa6fbe6346a24096,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1248,6 +1242,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoToPauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 8036416574188392589, guid: 9ef84af383f0d9f4aa6fbe6346a24096,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1709196995}
+    - target: {fileID: 8036416575506997996, guid: 9ef84af383f0d9f4aa6fbe6346a24096,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1709196995}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ef84af383f0d9f4aa6fbe6346a24096, type: 3}
 --- !u!114 &7781361177337173343 stripped
