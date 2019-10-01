@@ -793,12 +793,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1658358283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd0c852637fff434896adcc80566d8ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 7507ceb84a78a8c4f98f0b49be0db4a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _companyName: {fileID: 0}
-  _gameTitle: {fileID: 0}
-  _fadeDuration: 0
+  _companyName: {fileID: 394962030}
+  _gameTitle: {fileID: 1129732442}
+  _fadeDuration: 2
 --- !u!4 &1658358285
 Transform:
   m_ObjectHideFlags: 0

@@ -5,6 +5,8 @@ using DG.Tweening;
 
 public class SinisterFlashes : MonoBehaviour
 {
+    private SceneController SceneController;
+
     public Image SinisterFlashingImage;
 
     public float Interval;
@@ -17,6 +19,11 @@ public class SinisterFlashes : MonoBehaviour
     [SerializeField]
     private bool startFlashing;
     private float timer;
+
+    private void Awake()
+    {
+        SceneController = FindObjectOfType<SceneController>();
+    }
 
     private void Start()
     {
@@ -31,6 +38,9 @@ public class SinisterFlashes : MonoBehaviour
 
     private void Update()
     {
+        if (SceneController.GameEnded)
+            return;
+
         if (Time.timeScale != 0)
             timer += Time.deltaTime * (1 / Time.timeScale);
 
