@@ -204,6 +204,8 @@ MonoBehaviour:
   BallPrefab:
   - {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab, type: 3}
   distanceBetweenSpawnedBalls: 0.1
+  lerpRightHandTarget: {x: -0.523, y: 1.558, z: -0.165}
+  lerpLeftHandTarget: {x: 0.523, y: 1.558, z: -0.165}
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
   leftPerfectCatch: {fileID: 0}
@@ -222,6 +224,7 @@ MonoBehaviour:
   slowDownTime: 4
   spawnInRandomHand: 0
   respawnYAxis: 10
+  spawnAllIntervals: 0
 --- !u!1 &2988204327289175520
 GameObject:
   m_ObjectHideFlags: 0
