@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_Distortion2
+  m_Shader: {fileID: -6465566751694194690, guid: 9f9dbb02fb0232c49b8632a62659a924,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_C1C290DC:
+        m_Texture: {fileID: 2800000, guid: 37cadce81b6a02949a761446033a37ad, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_3289CDEF: 0.5
+    m_Colors:
+    - Vector2_C28BED0A: {r: 2, g: 2, b: 0, a: 0}
+    - Vector2_F3CFDBCB: {r: 1, g: 1, b: 0, a: 0}
+    - Vector4_4F236EB2: {r: 1, g: 1, b: 0, a: 0}

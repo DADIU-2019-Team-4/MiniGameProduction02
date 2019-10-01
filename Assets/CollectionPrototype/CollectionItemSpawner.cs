@@ -33,10 +33,14 @@ public class CollectionItemSpawner : MonoBehaviour
     private TutorialManager TutorialManager;
     private bool _firstAreaSpawned;
     private bool _tutorialLevel;
+    private bool _fisrtCollectSound = false;
+    private bool _secondCollectSound = false;
+    private bool _thirdCollectSound = false;
 
     private void Awake()
     {
         SceneController = FindObjectOfType<SceneController>();
+
         if (FindObjectOfType<TutorialManager>() != null)
         {
             TutorialManager = FindObjectOfType<TutorialManager>();
@@ -98,12 +102,24 @@ public class CollectionItemSpawner : MonoBehaviour
     public void IncrementItemsCollected(bool wasPerfectlyThrown)
     {
         ItemsCollected++;
-        if ((ItemsCollected / NumberOfItemsToGoal) * 100<0.26f && (ItemsCollected / NumberOfItemsToGoal) *100 > 0.245f )
-            AkSoundEngine.PostEvent("PlateCount" + 1 + "_event", gameObject);
-        if ((ItemsCollected / NumberOfItemsToGoal) * 100 < 0.51f && (ItemsCollected / NumberOfItemsToGoal) * 100 > 0.495f)
-            AkSoundEngine.PostEvent("PlateCount" + 2 + "_event", gameObject);
-        if ((ItemsCollected / NumberOfItemsToGoal) * 100 < 0.76f && (ItemsCollected / NumberOfItemsToGoal) * 100 > 0.745f)
-            AkSoundEngine.PostEvent("PlateCount" + 3 + "_event", gameObject);
+        if ((ItemsCollected*100 / NumberOfItemsToGoal) > 25 && !_fisrtCollectSound)
+        {
+            AkSoundEngine.PostEvent("PlateCount1_event", gameObject);
+            Debug.Log("FirstSound");
+            _fisrtCollectSound = true;
+        }
+        if ((ItemsCollected*100 / NumberOfItemsToGoal) >50 && !_secondCollectSound)
+        {
+            AkSoundEngine.PostEvent("PlateCount2_event", gameObject);
+            Debug.Log("SecondSound");
+            _secondCollectSound = true;
+        }
+        if ((ItemsCollected*100 / NumberOfItemsToGoal)> 75 && !_thirdCollectSound)
+        {
+            AkSoundEngine.PostEvent("PlateCount3_event", gameObject);
+            Debug.Log("ThirdSound");
+            _thirdCollectSound = true;
+        }
         UpdateText();
         ScoreController.IncrementScore(wasPerfectlyThrown);
 
