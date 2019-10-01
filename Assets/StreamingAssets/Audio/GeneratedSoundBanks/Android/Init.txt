@@ -1,10 +1,24 @@
 State Group	ID	Name			Wwise Object Path	Notes
 	739838848	dia_lang			\Default Work Unit\dia_lang	
+	1767628673	SoundVol			\Default Work Unit\SoundVol	
+	3325673733	MusicVol			\Default Work Unit\MusicVol	
 
 State	ID	Name	State Group			Notes
 	0	None	dia_lang			
 	1819748192	EN	dia_lang			
 	1836525760	DA	dia_lang			
+	0	None	SoundVol			
+	930712164	Off	SoundVol			
+	1651971902	On	SoundVol			
+	0	None	MusicVol			
+	545371365	Low	MusicVol			
+	930712164	Off	MusicVol			
+	3550808449	High	MusicVol			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	176437394	Off	MusicVol	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music		
+	223090095	Low	MusicVol	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music		
+	668293269	Off	SoundVol	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Environments		
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	504532776	Brick			\Factory Reflect Acoustic Textures\Textures\Brick	

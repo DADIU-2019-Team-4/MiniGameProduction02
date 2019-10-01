@@ -77,6 +77,29 @@ namespace AK
             } // namespace STATE
         } // namespace DIA_LANG
 
+        namespace MUSICVOL
+        {
+            static const AkUniqueID GROUP = 3325673733U;
+
+            namespace STATE
+            {
+                static const AkUniqueID HIGH = 3550808449U;
+                static const AkUniqueID LOW = 545371365U;
+                static const AkUniqueID OFF = 930712164U;
+            } // namespace STATE
+        } // namespace MUSICVOL
+
+        namespace SOUNDVOL
+        {
+            static const AkUniqueID GROUP = 1767628673U;
+
+            namespace STATE
+            {
+                static const AkUniqueID OFF = 930712164U;
+                static const AkUniqueID ON = 1651971902U;
+            } // namespace STATE
+        } // namespace SOUNDVOL
+
     } // namespace STATES
 
     namespace GAME_PARAMETERS
