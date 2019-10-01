@@ -105,18 +105,18 @@ public class CollectionItemSpawner : MonoBehaviour
     public void IncrementItemsCollected(bool wasPerfectlyThrown)
     {
         ItemsCollected++;
-        if ((ItemsCollected / NumberOfItemsToGoal) * 100 < 0.25f && !_fisrtCollectSound)
+        if ((ItemsCollected / NumberOfItemsToGoal) * 100 > 0.25f && !_fisrtCollectSound)
         {
             AkSoundEngine.PostEvent("PlateCount" + 1 + "_event", gameObject);
             Debug.Log("FirstSound");
             _fisrtCollectSound = true;
         }
-        if ((ItemsCollected / NumberOfItemsToGoal) * 100 < 0.50f && !_secondCollectSound)
+        if ((ItemsCollected / NumberOfItemsToGoal) * 100 > 0.50f && !_secondCollectSound)
         {
             AkSoundEngine.PostEvent("PlateCount" + 2 + "_event", gameObject);
             _secondCollectSound = true;
         }
-        if ((ItemsCollected / NumberOfItemsToGoal) * 100 < 0.75f && !_thirdCollectSound)
+        if ((ItemsCollected / NumberOfItemsToGoal) * 100 > 0.75f && !_thirdCollectSound)
         {
             AkSoundEngine.PostEvent("PlateCount" + 3 + "_event", gameObject);
             _thirdCollectSound = true;
