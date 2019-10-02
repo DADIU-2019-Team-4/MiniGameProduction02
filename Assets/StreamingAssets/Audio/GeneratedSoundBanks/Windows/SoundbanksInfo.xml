@@ -32,7 +32,7 @@
 				<Event Id="4073134012" Name="DDIntro_event" ObjectPath="\Events\Default Work Unit\DevilDeals\DDIntro_event" DurationType="OneShot" DurationMin="3.503333" DurationMax="3.503333"/>
 				<Event Id="234395941" Name="DDNegative_event" ObjectPath="\Events\Default Work Unit\DevilDeals\DDNegative_event" DurationType="OneShot" DurationMin="3.255828" DurationMax="3.255828"/>
 				<Event Id="35633437" Name="DDPositive_event" ObjectPath="\Events\Default Work Unit\DevilDeals\DDPositive_event" DurationType="OneShot" DurationMin="3.083991" DurationMax="8.409592"/>
-				<Event Id="3514774441" Name="DevilDealMusic_event" ObjectPath="\Events\Default Work Unit\Music\DevilDealMusic_event" DurationType="OneShot" DurationMin="96.500000" DurationMax="96.500000"/>
+				<Event Id="3514774441" Name="DevilDealMusic_event" ObjectPath="\Events\Default Work Unit\Music\DevilDealMusic_event" DurationType="OneShot" DurationMin="174.000000" DurationMax="174.000000"/>
 				<Event Id="1999513135" Name="FailSound_event" ObjectPath="\Events\Default Work Unit\Win_n_Fail\FailSound_event" DurationType="OneShot" DurationMin="4.701157" DurationMax="Infinite"/>
 				<Event Id="1944912667" Name="FillSound_event1" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event1" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1944912664" Name="FillSound_event2" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event2" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -42,20 +42,22 @@
 				<Event Id="1944912668" Name="FillSound_event6" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event6" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1937231702" Name="FinalFail_event" ObjectPath="\Events\Default Work Unit\Win_n_Fail\FinalFail_event" DurationType="OneShot" DurationMin="5.701157" DurationMax="5.701157"/>
 				<Event Id="3639969466" Name="FinalWin_event" ObjectPath="\Events\Default Work Unit\Win_n_Fail\FinalWin_event" DurationType="OneShot" DurationMin="5.701157" DurationMax="5.701157"/>
-				<Event Id="2916292526" Name="FlashScreen_level" ObjectPath="\Events\Default Work Unit\FlashScreen_level" DurationType="OneShot" DurationMin="4.159592" DurationMax="4.159592"/>
+				<Event Id="626623716" Name="FlashScreen_event" ObjectPath="\Events\Default Work Unit\FlashScreen_event" DurationType="OneShot" DurationMin="0.375556" DurationMax="0.375556"/>
 				<Event Id="3462943351" Name="GameTitleSplash_event" ObjectPath="\Events\Default Work Unit\SplashScreens\GameTitleSplash_event" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2125813393" Name="InGameMusic1_event" ObjectPath="\Events\Default Work Unit\Music\InGameMusic1_event" DurationType="OneShot" DurationMin="113.212677" DurationMax="113.212677"/>
-				<Event Id="1704362654" Name="InGameMusic2_event" ObjectPath="\Events\Default Work Unit\Music\InGameMusic2_event" DurationType="OneShot" DurationMin="169.411774" DurationMax="169.411774"/>
+				<Event Id="2125813393" Name="InGameMusic1_event" ObjectPath="\Events\Default Work Unit\Music\InGameMusic1_event" DurationType="OneShot" DurationMin="182.443451" DurationMax="182.443451"/>
+				<Event Id="1704362654" Name="InGameMusic2_event" ObjectPath="\Events\Default Work Unit\Music\InGameMusic2_event" DurationType="OneShot" DurationMin="156.380096" DurationMax="156.380096"/>
 				<Event Id="3036127557" Name="LevelCompleted_event" ObjectPath="\Events\Default Work Unit\Win_n_Fail\LevelCompleted_event" DurationType="Unknown"/>
 				<Event Id="1069674504" Name="MenuIN_event" ObjectPath="\Events\Default Work Unit\UI\MenuIN_event" DurationType="OneShot" DurationMin="0.604354" DurationMax="0.604354"/>
-				<Event Id="679636833" Name="MenuMusic" ObjectPath="\Events\Default Work Unit\Music\MenuMusic" DurationType="OneShot" DurationMin="96.500000" DurationMax="96.500000"/>
+				<Event Id="679636833" Name="MenuMusic" ObjectPath="\Events\Default Work Unit\Music\MenuMusic" DurationType="OneShot" DurationMin="174.000000" DurationMax="174.000000"/>
 				<Event Id="1960384521" Name="MenuOUT_event" ObjectPath="\Events\Default Work Unit\UI\MenuOUT_event" DurationType="OneShot" DurationMin="0.498186" DurationMax="0.788798"/>
+				<Event Id="1105161895" Name="menuPause_event" ObjectPath="\Events\Default Work Unit\Menu\menuPause_event" DurationType="OneShot" DurationMin="0.604354" DurationMax="0.604354"/>
+				<Event Id="2008163460" Name="menuResume_event" ObjectPath="\Events\Default Work Unit\Menu\menuResume_event" DurationType="OneShot" DurationMin="0.498186" DurationMax="0.788798"/>
 				<Event Id="3869548328" Name="PerfectCatch_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PerfectCatch_event" DurationType="OneShot" DurationMin="1.333583" DurationMax="1.860476"/>
-				<Event Id="154525524" Name="PlateCount1_event" ObjectPath="\Events\Default Work Unit\PlateCounter\PlateCount1_event" DurationType="OneShot" DurationMin="3.720952" DurationMax="3.720952"/>
+				<Event Id="154525524" Name="PlateCount1_event" ObjectPath="\Events\Default Work Unit\PlateCounter\PlateCount1_event" DurationType="OneShot" DurationMin="3.720952" DurationMax="3.919320"/>
 				<Event Id="2273360275" Name="PlateCount2_event" ObjectPath="\Events\Default Work Unit\PlateCounter\PlateCount2_event" DurationType="OneShot" DurationMin="5.116281" DurationMax="5.116281"/>
-				<Event Id="2234946426" Name="PlateCount3_event" ObjectPath="\Events\Default Work Unit\PlateCounter\PlateCount3_event" DurationType="OneShot" DurationMin="3.720952" DurationMax="3.720952"/>
+				<Event Id="2234946426" Name="PlateCount3_event" ObjectPath="\Events\Default Work Unit\PlateCounter\PlateCount3_event" DurationType="OneShot" DurationMin="3.720952" DurationMax="3.919320"/>
 				<Event Id="2293628003" Name="PressButton_event" ObjectPath="\Events\Default Work Unit\UI\PressButton_event" DurationType="OneShot" DurationMin="0.465125" DurationMax="1.014875"/>
-				<Event Id="300260116" Name="ReduceLife_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ReduceLife_event" DurationType="OneShot" DurationMin="2.377982" DurationMax="2.987211"/>
+				<Event Id="300260116" Name="ReduceLife_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ReduceLife_event" DurationType="OneShot" DurationMin="3.481270" DurationMax="3.481270"/>
 				<Event Id="1399763525" Name="RoomTone_event" ObjectPath="\Events\Default Work Unit\RoomTone_event" DurationType="Infinite"/>
 				<Event Id="3921462371" Name="SwipeSound_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\SwipeSound_event" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
 				<Event Id="2128152441" Name="TargetCollect_event" ObjectPath="\Events\Default Work Unit\Items\TargetCollect_event" DurationType="OneShot" DurationMin="1.333583" DurationMax="1.860476"/>
@@ -156,14 +158,6 @@
 					<ShortName>MenuOUT+BACK3.wav</ShortName>
 					<Path>SFX\MenuOUT+BACK3_8CBF9462.wem</Path>
 				</File>
-				<File Id="253246037" Language="SFX">
-					<ShortName>DevilCircus.wav</ShortName>
-					<Path>SFX\DevilCircus_8CBF9462.wem</Path>
-				</File>
-				<File Id="274098179" Language="SFX">
-					<ShortName>GlitchScreen1.wav</ShortName>
-					<Path>SFX\GlitchScreen1_8CBF9462.wem</Path>
-				</File>
 				<File Id="278271025" Language="SFX">
 					<ShortName>Ball3.wav</ShortName>
 					<Path>SFX\Ball3_8CBF9462.wem</Path>
@@ -215,10 +209,6 @@
 				<File Id="354812407" Language="English(US)">
 					<ShortName>FinalWinScreen_positive.wav</ShortName>
 					<Path>Voices\English(US)\FinalWinScreen_positive_8CBF9462.wem</Path>
-				</File>
-				<File Id="356012221" Language="SFX">
-					<ShortName>InfernoCircus.wav</ShortName>
-					<Path>SFX\InfernoCircus_8CBF9462.wem</Path>
 				</File>
 				<File Id="359796803" Language="SFX">
 					<ShortName>Plates3.wav</ShortName>
@@ -332,6 +322,10 @@
 					<ShortName>MenuBUTTON7.wav</ShortName>
 					<Path>SFX\MenuBUTTON7_8CBF9462.wem</Path>
 				</File>
+				<File Id="631673562" Language="SFX">
+					<ShortName>DevilCircus-WIN.wav</ShortName>
+					<Path>SFX\DevilCircus-WIN_8CBF9462.wem</Path>
+				</File>
 				<File Id="637901445" Language="SFX">
 					<ShortName>Snare3.wav</ShortName>
 					<Path>SFX\Snare3_8CBF9462.wem</Path>
@@ -343,10 +337,6 @@
 				<File Id="644996573" Language="English(US)">
 					<ShortName>3_da.wav</ShortName>
 					<Path>Voices\English(US)\3_da_8CBF9462.wem</Path>
-				</File>
-				<File Id="658325346" Language="SFX">
-					<ShortName>BurningCircus.wav</ShortName>
-					<Path>SFX\BurningCircus_8CBF9462.wem</Path>
 				</File>
 				<File Id="665386558" Language="SFX">
 					<ShortName>Ball5.wav</ShortName>
@@ -400,6 +390,10 @@
 					<ShortName>Ball13.wav</ShortName>
 					<Path>SFX\Ball13_8CBF9462.wem</Path>
 				</File>
+				<File Id="822509650" Language="SFX">
+					<ShortName>InfernoCircus-FINAL.wav</ShortName>
+					<Path>SFX\InfernoCircus-FINAL_8CBF9462.wem</Path>
+				</File>
 				<File Id="822983069" Language="English(US)">
 					<ShortName>EndeligWinScreen_bitter.wav</ShortName>
 					<Path>Voices\English(US)\EndeligWinScreen_bitter_8CBF9462.wem</Path>
@@ -428,6 +422,10 @@
 					<ShortName>1_da.wav</ShortName>
 					<Path>Voices\English(US)\1_da_8CBF9462.wem</Path>
 				</File>
+				<File Id="887967556" Language="SFX">
+					<ShortName>BurningCircus-FINAL.wav</ShortName>
+					<Path>SFX\BurningCircus-FINAL_8CBF9462.wem</Path>
+				</File>
 				<File Id="899294540" Language="English(US)">
 					<ShortName>Devil Deals intro DA.wav</ShortName>
 					<Path>Voices\English(US)\Devil Deals intro DA_8CBF9462.wem</Path>
@@ -435,6 +433,10 @@
 				<File Id="906945915" Language="SFX">
 					<ShortName>VictorySound4.wav</ShortName>
 					<Path>SFX\VictorySound4_8CBF9462.wem</Path>
+				</File>
+				<File Id="917045389" Language="SFX">
+					<ShortName>GlitchScreen2-short.wav</ShortName>
+					<Path>SFX\GlitchScreen2-short_8CBF9462.wem</Path>
 				</File>
 				<File Id="941862658" Language="SFX">
 					<ShortName>MenuBUTTON9.wav</ShortName>

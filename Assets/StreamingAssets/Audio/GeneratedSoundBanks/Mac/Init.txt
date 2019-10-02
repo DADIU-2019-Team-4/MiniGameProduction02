@@ -44,6 +44,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	2077253480	Room			\Default Work Unit\Master Audio Bus\Environments\Room	
 	2687559867	UI+Feedback			\Default Work Unit\Master Audio Bus\Environments\UI+Feedback	
 	3165269336	Win+Fail			\Default Work Unit\Master Audio Bus\Environments\UI+Feedback\Win+Fail	
+	3606156562	uiButtons			\Default Work Unit\Master Audio Bus\uiButtons	
 	3761286811	Environments			\Default Work Unit\Master Audio Bus\Environments	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	

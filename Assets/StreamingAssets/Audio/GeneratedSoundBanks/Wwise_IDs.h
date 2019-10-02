@@ -34,7 +34,7 @@ namespace AK
         static const AkUniqueID FILLSOUND_EVENT6 = 1944912668U;
         static const AkUniqueID FINALFAIL_EVENT = 1937231702U;
         static const AkUniqueID FINALWIN_EVENT = 3639969466U;
-        static const AkUniqueID FLASHSCREEN_LEVEL = 2916292526U;
+        static const AkUniqueID FLASHSCREEN_EVENT = 626623716U;
         static const AkUniqueID GAMETITLESPLASH_EVENT = 3462943351U;
         static const AkUniqueID INGAMEMUSIC1_EVENT = 2125813393U;
         static const AkUniqueID INGAMEMUSIC2_EVENT = 1704362654U;
@@ -42,6 +42,8 @@ namespace AK
         static const AkUniqueID MENUIN_EVENT = 1069674504U;
         static const AkUniqueID MENUMUSIC = 679636833U;
         static const AkUniqueID MENUOUT_EVENT = 1960384521U;
+        static const AkUniqueID MENUPAUSE_EVENT = 1105161895U;
+        static const AkUniqueID MENURESUME_EVENT = 2008163460U;
         static const AkUniqueID PERFECTCATCH_EVENT = 3869548328U;
         static const AkUniqueID PLATECOUNT1_EVENT = 154525524U;
         static const AkUniqueID PLATECOUNT2_EVENT = 2273360275U;
@@ -145,6 +147,7 @@ namespace AK
         static const AkUniqueID ROOM = 2077253480U;
         static const AkUniqueID THROWING = 4234308485U;
         static const AkUniqueID UI_FEEDBACK = 2687559867U;
+        static const AkUniqueID UIBUTTONS = 3606156562U;
         static const AkUniqueID VOICEBUS = 2045367873U;
         static const AkUniqueID WIN_FAIL = 3165269336U;
     } // namespace BUSSES

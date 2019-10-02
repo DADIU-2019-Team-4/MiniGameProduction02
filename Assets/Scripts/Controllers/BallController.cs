@@ -197,8 +197,7 @@ public class BallController : MonoBehaviour
         }
         throwCount = 0;
         //ballsInCatchZone.Clear();
-
-        // If no Devil Deal is offered
+        AkSoundEngine.PostEvent("ReduceLife_event", gameObject);    // If no Devil Deal is offered
         if (!LifeManager.IsDevilDealTime())
         {
             StartCoroutine(Delay(delayTime));

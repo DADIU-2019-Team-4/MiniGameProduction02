@@ -88,6 +88,7 @@ public class MenuController : MonoBehaviour
 
     public void GoToLevel(int level)
     {
+        AkSoundEngine.PostEvent("PressButton_event", gameObject);
         SceneManager.LoadScene("Level" + level);
         //SceneManager.LoadScene("Prototype");
     }
@@ -105,6 +106,7 @@ public class MenuController : MonoBehaviour
 
     public void GoToLevelSelectScene()
     {
+        AkSoundEngine.PostEvent("PressButton_event", gameObject);
         SceneManager.LoadScene("Level Select");
     }
 
@@ -115,6 +117,7 @@ public class MenuController : MonoBehaviour
 
     public void SwitchLanguageToDanish()
     {
+        AkSoundEngine.PostEvent("PressButton_event", gameObject);
         PlayerPrefs.SetString("Lang", "Danish");
         Debug.Log("Changed Lang to danish");
 
@@ -125,6 +128,7 @@ public class MenuController : MonoBehaviour
 
     public void SwitchLanguageToEnglish()
     {
+        AkSoundEngine.PostEvent("PressButton_event", gameObject);
         PlayerPrefs.SetString("Lang", "English");
 
         Debug.Log("Changed Lang to English");
@@ -136,41 +140,42 @@ public class MenuController : MonoBehaviour
 
     public void MusicChangeToLow()
     {
+        AkSoundEngine.PostEvent("PressButton_event", gameObject);
         PlayerPrefs.SetString("MusVol", "Low");
         MenuUpdate();
     }
 
     public void MusicChangeToHigh()
     {
-
+        AkSoundEngine.PostEvent("PressButton_event", gameObject);
         PlayerPrefs.SetString("MusVol", "High");
         MenuUpdate();
     }
 
     public void MusicChangeToOff()
     {
-
+        AkSoundEngine.PostEvent("PressButton_event", gameObject);
         PlayerPrefs.SetString("MusVol", "Off");
         MenuUpdate();
     }
 
     public void SoundTurnOff()
     {
-
+        AkSoundEngine.PostEvent("PressButton_event", gameObject);
         PlayerPrefs.SetString("SoundOnOff", "Off");
         MenuUpdate();
     }
 
     public void SoundTurnOn()
     {
-
+        AkSoundEngine.PostEvent("PressButton_event", gameObject);
         PlayerPrefs.SetString("SoundOnOff", "On");
         MenuUpdate();
     }
 
     public void GoToRestartMenu()
     {
-
+        AkSoundEngine.PostEvent("PressButton_event", gameObject);
         resetMenu.SetActive(true);
         Time.timeScale = ballController.TimeScale;
     }
@@ -191,7 +196,6 @@ public class MenuController : MonoBehaviour
     public void GoToPauseMenu()
     {
         pauseMenu.SetActive(true);
-
         optionsMenu.SetActive(false);
         Time.timeScale = 0;
 
@@ -200,12 +204,14 @@ public class MenuController : MonoBehaviour
 
     public void GoToOptionsMenu()
     {
+        AkSoundEngine.PostEvent("PressButton_event", gameObject);
         optionsMenu.SetActive(true);
         resetMenu.SetActive(false);
     }
 
     public void RestartGameProgress()
     {
+        AkSoundEngine.PostEvent("PressButton_event", gameObject);
         Debug.Log("Game Progress is restarted");
         // todo merge devil deal save branch into Develop to get restart code
         GoToLevelSelectScene();
