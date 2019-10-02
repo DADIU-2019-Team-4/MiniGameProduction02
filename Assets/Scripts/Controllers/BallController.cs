@@ -159,8 +159,10 @@ public class BallController : MonoBehaviour
     {
         var ball = collider.gameObject;
         if (!ballsInCatchZone.Contains(ball))
+        {
+            Debug.Log("Adds Ball");
             ballsInCatchZone.Add(ball);
-        PlayDistanceSound(ball);
+        }
 
         if (_tutorialLevel)
         {
@@ -178,7 +180,10 @@ public class BallController : MonoBehaviour
     {
         var ball = collider.gameObject;
         if (ballsInCatchZone.Contains(ball))
+        {
+            Debug.Log("Removes Ball");
             ballsInCatchZone.Remove(ball);
+        }
 
         CheckIfEndOfAnimation(ball);
     }
@@ -344,32 +349,6 @@ public class BallController : MonoBehaviour
         ball.GetComponent<Rigidbody>().isKinematic = true;
     }
 
-    #endregion
-
-    #region Distance between perfect catch and a ball
-    public void PlayDistanceSound(GameObject obj)
-    {
-        Rigidbody rigid = obj.GetComponent<Rigidbody>();
-        var velocity = obj.transform.InverseTransformDirection(rigid.velocity);
-        float yAxis = velocity.y;
-
-        if (yAxis < 0 && obj.transform.position.y > rightHand.position.y)
-        {
-            if (obj.transform.position.x < 0)
-            {
-                float distance = Vector3.Distance(rightHand.position, obj.transform.position);
-
-                AkSoundEngine.PostEvent("ColliderRight_event", gameObject);
-                AkSoundEngine.SetRTPCValue("rightCollider", 1 - distance);
-            }
-            else
-            {
-                float distance = Vector3.Distance(leftHand.position, obj.transform.position);
-                AkSoundEngine.PostEvent("ColliderLeft_event", gameObject);
-                AkSoundEngine.SetRTPCValue("leftCollider", 1 - distance);
-            }
-        }
-    }
     #endregion
 
     IEnumerator Delay(float seconds)

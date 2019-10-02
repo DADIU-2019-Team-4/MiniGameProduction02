@@ -103,8 +103,11 @@ public class InputController : MonoBehaviour
                 ViolaController.Throw(throwType, screenSide);
                 TutorialManager.RemoveTutorialUI(2);
             }
-            if(_tutorialLevel && TutorialManager._previousTutorialStage >=3  && TutorialManager._previousTutorialStage != 5)
+            if (_tutorialLevel && TutorialManager._previousTutorialStage > 3 && TutorialManager._previousTutorialStage != 5)
+            {
+                Debug.Log("Throw funcking ball");
                 ViolaController.Throw(throwType, screenSide);
+            }
 
         }
 
