@@ -42,6 +42,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3057537678	Count1_event			\Default Work Unit\JuggleCountdown\Count1_event	
 	3084875603	CountJuggle_event			\Default Work Unit\JuggleCountdown\CountJuggle_event	
 	3283252857	TicketFeedback_event			\Default Work Unit\TicketFeedback_event	
+	3354407555	LevelSelector_event			\Default Work Unit\LevelSelector_event	
 	3458164205	TutorialMusic_event			\Default Work Unit\Music\TutorialMusic_event	
 	3462943351	GameTitleSplash_event			\Default Work Unit\SplashScreens\GameTitleSplash_event	
 	3514774441	DevilDealMusic_event			\Default Work Unit\Music\DevilDealMusic_event	
@@ -103,6 +104,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	149321038	ReduceLife-Light1	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\ReduceLife-Light1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\ReduceLife\ReduceLife-Light1		84559
 	157121198	negativeSpeak4	E:\WWise projekter\DADIU-MGP2\.cache\Android\Voices\English(US)\negativeSpeak4_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomNegativeVoice\negativeSpeak4		103421
 	159001376	EndeligWinScreen_positiv	E:\WWise projekter\DADIU-MGP2\.cache\Android\Voices\English(US)\EndeligWinScreen_positiv_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\DA\EndeligWinScreen_positiv		65580
+	166045822	MessyCircus	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\MessyCircus_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\MessyCircus		4222832
 	200055660	MenuOUT+BACK5	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\MenuOUT+BACK5_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuBack+Out\MenuOUT+BACK5		19806
 	208803079	MenuBUTTON5	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\MenuBUTTON5_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuButton\MenuBUTTON5		25378
 	230764660	Ball4	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball4_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball4		16205

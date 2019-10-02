@@ -184,7 +184,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 8815b517eb3c5b48afd823745c897b3c
     GuidInternal: 
-    m_lastTime: -8586316686914775808
+    m_lastTime: -8586316000254775808
     List:
     - name: LargeVerb
       guid: 703787adef1f8a46b86972665a3624f1
@@ -213,7 +213,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: eb168f1bc853a14e93cddc21cc4175c8
     GuidInternal: 
-    m_lastTime: -8586316667414775808
+    m_lastTime: -8586315949874775808
     List:
     - name: Default_SoundBank2
       guid: 8b460617b4f80c42b7ee2bde6f93088d
@@ -229,7 +229,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 2fc73608756b5a4788b5e60fc1e2e442
     GuidInternal: 
-    m_lastTime: -8586316667594775808
+    m_lastTime: -8586315944414775808
     List:
     - name: BallBounce_event
       guid: 39ce77e367a64d4a8ecb93925bb18b3a
@@ -397,8 +397,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Music\DevilDealMusic_event
       maxAttenuation: 0
-      maxDuration: 96500000
-      minDuration: 96500000
+      maxDuration: 174000000
+      minDuration: 174000000
     - name: FailSound_event
       guid: 4d448e3f27a2ec46892345edf13e578c
       id: 1999513135
@@ -533,8 +533,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Win_n_Fail\FinalFail_event
       maxAttenuation: 0
-      maxDuration: 5701157
-      minDuration: 5701157
+      maxDuration: 102642860
+      minDuration: 102642860
     - name: FinalWin_event
       guid: 9146f04897fd2a49956a732cdd3c2303
       id: 3639969466
@@ -547,20 +547,20 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Win_n_Fail\FinalWin_event
       maxAttenuation: 0
-      maxDuration: 5701157
-      minDuration: 5701157
-    - name: FlashScreen_level
+      maxDuration: 102642860
+      minDuration: 102642860
+    - name: FlashScreen_event
       guid: afeec90bcdf8b346b6594c6daad55aeb
-      id: 2916292526
+      id: 626623716
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: FlashScreen_level
+      - ElementName: FlashScreen_event
         ObjectType: 3
-      Path: Default Work Unit\FlashScreen_level
+      Path: Default Work Unit\FlashScreen_event
       maxAttenuation: 0
-      maxDuration: 4159592
-      minDuration: 4159592
+      maxDuration: 375556
+      minDuration: 375556
     - name: GameTitleSplash_event
       guid: 32cd502f709e374ea50cb2d319636772
       id: 3462943351
@@ -587,8 +587,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Music\InGameMusic1_event
       maxAttenuation: 0
-      maxDuration: 113212680
-      minDuration: 113212680
+      maxDuration: 182443460
+      minDuration: 182443460
     - name: InGameMusic2_event
       guid: fda8e6055523c34982b3eceb6871cd6e
       id: 1704362654
@@ -601,8 +601,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Music\InGameMusic2_event
       maxAttenuation: 0
-      maxDuration: 169411780
-      minDuration: 169411780
+      maxDuration: 156380100
+      minDuration: 156380100
     - name: LevelCompleted_event
       guid: 69cda1b866b3724b939543e8a2542dc8
       id: 3036127557
@@ -617,6 +617,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: LevelSelector_event
+      guid: 4721e86e49dc9b45a2c096fd83bee4ec
+      id: 3354407555
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: LevelSelector_event
+        ObjectType: 3
+      Path: Default Work Unit\LevelSelector_event
+      maxAttenuation: 0
+      maxDuration: 174000000
+      minDuration: 174000000
     - name: MenuIN_event
       guid: 6abc52fb94f19d4a8080bea800f97016
       id: 1069674504
@@ -643,8 +655,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Music\MenuMusic
       maxAttenuation: 0
-      maxDuration: 96500000
-      minDuration: 96500000
+      maxDuration: 174000000
+      minDuration: 174000000
     - name: MenuOUT_event
       guid: b7bb32d16374f74e8084c8b92af4f4d4
       id: 1960384521
@@ -656,6 +668,34 @@ MonoBehaviour:
       - ElementName: MenuOUT_event
         ObjectType: 3
       Path: Default Work Unit\UI\MenuOUT_event
+      maxAttenuation: 0
+      maxDuration: 788798
+      minDuration: 498186
+    - name: menuPause_event
+      guid: db061662bc4a0b498c48c54c46d354c8
+      id: 1105161895
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Menu
+        ObjectType: 4
+      - ElementName: menuPause_event
+        ObjectType: 3
+      Path: Default Work Unit\Menu\menuPause_event
+      maxAttenuation: 0
+      maxDuration: 604354
+      minDuration: 604354
+    - name: menuResume_event
+      guid: d9538e74fc2fa8479abdb6a0a444683c
+      id: 2008163460
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Menu
+        ObjectType: 4
+      - ElementName: menuResume_event
+        ObjectType: 3
+      Path: Default Work Unit\Menu\menuResume_event
       maxAttenuation: 0
       maxDuration: 788798
       minDuration: 498186
@@ -685,7 +725,7 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\PlateCounter\PlateCount1_event
       maxAttenuation: 0
-      maxDuration: 3720952
+      maxDuration: 3919320
       minDuration: 3720952
     - name: PlateCount2_event
       guid: ef06878a2d94ac419747e94ad36ebd7d
@@ -713,7 +753,7 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\PlateCounter\PlateCount3_event
       maxAttenuation: 0
-      maxDuration: 3720952
+      maxDuration: 3919320
       minDuration: 3720952
     - name: PressButton_event
       guid: 0fbc52d0eb48674fa6d15e521fd727cb
@@ -741,8 +781,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\FeedbackSounds\ReduceLife_event
       maxAttenuation: 0
-      maxDuration: 2987211
-      minDuration: 2377982
+      maxDuration: 3481270
+      minDuration: 3481270
     - name: RoomTone_event
       guid: 205d5bf464c4784c86b66b454ffaf98e
       id: 1399763525
@@ -1207,7 +1247,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: eefb481237622645b240019f4b3dfb7f
     GuidInternal: 
-    m_lastTime: -8586316901354775808
+    m_lastTime: -8586316633814775808
     List:
     - name: dia_lang
       guid: 126d25ef223ec84ca4db1f1b92e143f0
@@ -1236,6 +1276,74 @@ MonoBehaviour:
         id: 748895195
         PathAndIcons:
         - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: MusicVol
+      guid: 7b588845306ea04495e46df022474222
+      id: 3325673733
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MusicVol
+        ObjectType: 9
+      Path: Default Work Unit\MusicVol
+      values:
+      - name: High
+        guid: d27ea848f00c2b4d959286826f28dfbc
+        id: 3550808449
+        PathAndIcons:
+        - ElementName: High
+          ObjectType: 8
+      - name: Low
+        guid: 7ed12027e1c71549b790550eed473f3d
+        id: 545371365
+        PathAndIcons:
+        - ElementName: Low
+          ObjectType: 8
+      - name: None
+        guid: d46ffbc3ffaa2840afa401453e72ec50
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Off
+        guid: 871ad4d07238864c867c58719a99c8f0
+        id: 930712164
+        PathAndIcons:
+        - ElementName: Off
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: SoundVol
+      guid: fdf254b585d175409a56840b57ef76ba
+      id: 1767628673
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SoundVol
+        ObjectType: 9
+      Path: Default Work Unit\SoundVol
+      values:
+      - name: None
+        guid: f6f509dd8a720941b053fbb746f048fe
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Off
+        guid: 11157ea3ab585646bf423c9fac4a50cf
+        id: 930712164
+        PathAndIcons:
+        - ElementName: Off
+          ObjectType: 8
+      - name: On
+        guid: bef3946fa2671644ab3bdbc04e3c7f3b
+        id: 1651971902
+        PathAndIcons:
+        - ElementName: On
           ObjectType: 8
       ValueGuids: []
       ValueIcons: []
