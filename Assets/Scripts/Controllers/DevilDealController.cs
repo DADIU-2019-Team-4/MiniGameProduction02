@@ -73,8 +73,8 @@ public class DevilDealController : MonoBehaviour
         TitleDanish = GameObject.Find("Background_Danish");
         ChoicesEnglish = GameObject.Find("Choice_English");
         ChoicesDanish = GameObject.Find("Choice_Danish");
-        if (TitleEnglish != null)
-            ChangeLanguage();
+
+        ChangeLanguage();
 
         devilDealCanvas.SetActive(false);
 
