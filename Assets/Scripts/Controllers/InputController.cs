@@ -72,6 +72,12 @@ public class InputController : MonoBehaviour
 
         if (throwType != ViolaController.ThrowType.None)
         {
+            if (!_tutorialLevel)
+            {
+                ViolaController.Throw(throwType, screenSide);
+                return;
+            }
+
             if (_tutorialLevel && throwType == ViolaController.ThrowType.HighThrow)
             {
                 if (TutorialManager._previousTutorialStage == 0)
@@ -99,8 +105,7 @@ public class InputController : MonoBehaviour
             }
             if(_tutorialLevel && TutorialManager._previousTutorialStage >=3  && TutorialManager._previousTutorialStage != 5)
                 ViolaController.Throw(throwType, screenSide);
-            if (!_tutorialLevel)
-                ViolaController.Throw(throwType, screenSide);
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space))

@@ -6,10 +6,10 @@ public class SceneController : MonoBehaviour
     private Endings endings;
 
     [SerializeField]
-    private GameObject levelFailedText;
+    private GameObject levelFailed;
 
     [SerializeField]
-    private GameObject levelCompletedText;
+    private GameObject levelCompleted;
 
     public bool IsPlaying { get; set; }
 
@@ -29,7 +29,7 @@ public class SceneController : MonoBehaviour
     public void LevelFailed()
     {
         AkSoundEngine.PostEvent("FailSound_event", gameObject);
-        levelFailedText.SetActive(true);
+        levelFailed.SetActive(true);
         Time.timeScale = 0;
         IsPlaying = false; // Stops background rotation
 
@@ -40,7 +40,7 @@ public class SceneController : MonoBehaviour
     public void LevelCompleted()
     {
         AkSoundEngine.PostEvent("LevelCompleted_event", gameObject);
-        levelCompletedText.SetActive(true);
+        levelCompleted.SetActive(true);
         Time.timeScale = 0;
         IsPlaying = false; // Stops background rotation
 

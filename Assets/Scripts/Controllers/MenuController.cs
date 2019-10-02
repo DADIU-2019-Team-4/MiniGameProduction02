@@ -10,6 +10,7 @@ public class MenuController : MonoBehaviour
     private BallController ballController;
     private Canvas levelSelectMenu;
     private SaveController saveC;
+
     public GameObject pauseMenu;
     public GameObject optionsMenu;
     public GameObject resetMenu;
@@ -73,6 +74,9 @@ public class MenuController : MonoBehaviour
     {
         if (ChangeLanguageEvent == null)
             ChangeLanguageEvent = new UnityEvent();
+
+        if (levelSelectMenu == null)
+            return;
 
         Button[] levelbuttons = levelSelectMenu.transform.GetChild(0).GetComponentsInChildren<Button>();
         foreach (Button button in levelbuttons)

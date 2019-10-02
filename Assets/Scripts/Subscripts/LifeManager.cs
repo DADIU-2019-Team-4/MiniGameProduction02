@@ -13,7 +13,8 @@ public class LifeManager : MonoBehaviour
     private GameObject lifeSpawnPoint;
 
     public int maxLives = 3;
-    public int CurrentLives { get; set; }
+
+    public int CurrentLives;// { get; set; }
 
     [SerializeField]
     private float offset = 15;

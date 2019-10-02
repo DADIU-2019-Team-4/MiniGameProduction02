@@ -26,7 +26,8 @@ public class CollectionItemSpawner : MonoBehaviour
 
     private string mostRecentPosition;
 
-    public Text CollectableText;
+    public Text CollectedText;
+    public Text GoalText;
 
     private ScoreController ScoreController;
     private SceneController SceneController;
@@ -55,7 +56,7 @@ public class CollectionItemSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CollectableText.text = $"{ItemsCollected}\\{NumberOfItemsToGoal}";
+        UpdateText();
     }
 
     // Update is called once per frame
@@ -129,7 +130,8 @@ public class CollectionItemSpawner : MonoBehaviour
 
     public void UpdateText()
     {
-        CollectableText.text = $"{ItemsCollected}\\{NumberOfItemsToGoal}";
+        CollectedText.text = ItemsCollected.ToString();
+        GoalText.text = NumberOfItemsToGoal.ToString();
     }
 
     public void DroppedItem()

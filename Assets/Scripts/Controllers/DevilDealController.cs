@@ -29,7 +29,7 @@ public class DevilDealController : MonoBehaviour
     private GameObject devilSkullSpawnPoint;
     [SerializeField]
     private GameObject devilSkull;
-     
+
     [SerializeField]
     private List<DevilDeal> devilDeals = new List<DevilDeal>();
     private DevilDeal chosenNegativeDevilDeal;
@@ -73,7 +73,8 @@ public class DevilDealController : MonoBehaviour
         TitleDanish = GameObject.Find("Background_Danish");
         ChoicesEnglish = GameObject.Find("Choice_English");
         ChoicesDanish = GameObject.Find("Choice_Danish");
-        ChangeLanguage();
+        if (TitleEnglish != null)
+            ChangeLanguage();
 
         devilDealCanvas.SetActive(false);
 
@@ -149,7 +150,10 @@ public class DevilDealController : MonoBehaviour
             }
 
         // Trigger the Animation. After it is finished, it will call ContinueAfterDevilDealPanel()
-        DirectorController.PlayDDIntroAnimation();
+        if (DirectorController != null)
+            DirectorController.PlayDDIntroAnimation();
+        else
+            ContinueAfterDevilDealPanel();
 
         // Remove remaining Balls and stop new ones from spawning
         BallController.Stop();
@@ -241,7 +245,8 @@ public class DevilDealController : MonoBehaviour
     public void ContinuePlaying()
     {
         // Trigger the Animation (don't wait for it to finish)
-        DirectorController.PlayDDOutroAnimation();
+        if (DirectorController != null)
+            DirectorController.PlayDDOutroAnimation();
         Time.timeScale = BallController.TimeScale;
         BallController.Restart();
         SceneController.IsPlaying = true;
