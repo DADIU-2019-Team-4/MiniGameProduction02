@@ -1,0 +1,198 @@
+Event	ID	Name			Wwise Object Path	Notes
+	35633437	DDPositive_event			\Default Work Unit\DevilDeals\DDPositive_event	
+	154525524	PlateCount1_event			\Default Work Unit\PlateCounter\PlateCount1_event	
+	234395941	DDNegative_event			\Default Work Unit\DevilDeals\DDNegative_event	
+	300260116	ReduceLife_event			\Default Work Unit\FeedbackSounds\ReduceLife_event	
+	626623716	FlashScreen_event			\Default Work Unit\FlashScreen_event	
+	679636833	MenuMusic			\Default Work Unit\Music\MenuMusic	
+	724436544	VoiceOverWelcome_event			\Default Work Unit\VoiceOverWelcome_event	
+	982237770	TargetSpawn_event			\Default Work Unit\Items\TargetSpawn_event	
+	1069674504	MenuIN_event			\Default Work Unit\UI\MenuIN_event	
+	1105161895	menuPause_event			\Default Work Unit\Menu\menuPause_event	
+	1117629447	BallBounce_event			\Default Work Unit\Items\BallBounce_event	
+	1118806522	UnfillSound_event5			\Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event5	
+	1118806523	UnfillSound_event4			\Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event4	
+	1118806524	UnfillSound_event3			\Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event3	
+	1118806525	UnfillSound_event2			\Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event2	
+	1118806526	UnfillSound_event1			\Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event1	
+	1118806527	UnfillSound_event0			\Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event0	
+	1399763525	RoomTone_event			\Default Work Unit\RoomTone_event	
+	1704362654	InGameMusic2_event			\Default Work Unit\Music\InGameMusic2_event	
+	1937231702	FinalFail_event			\Default Work Unit\Win_n_Fail\FinalFail_event	
+	1944912664	FillSound_event2			\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event2	
+	1944912665	FillSound_event3			\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event3	
+	1944912667	FillSound_event1			\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event1	
+	1944912668	FillSound_event6			\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event6	
+	1944912670	FillSound_event4			\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event4	
+	1944912671	FillSound_event5			\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event5	
+	1955518600	Count3_event			\Default Work Unit\JuggleCountdown\Count3_event	
+	1960384521	MenuOUT_event			\Default Work Unit\UI\MenuOUT_event	
+	1999513135	FailSound_event			\Default Work Unit\Win_n_Fail\FailSound_event	
+	2008163460	menuResume_event			\Default Work Unit\Menu\menuResume_event	
+	2021650241	Count2_event			\Default Work Unit\JuggleCountdown\Count2_event	
+	2125813393	InGameMusic1_event			\Default Work Unit\Music\InGameMusic1_event	
+	2128152441	TargetCollect_event			\Default Work Unit\Items\TargetCollect_event	
+	2234946426	PlateCount3_event			\Default Work Unit\PlateCounter\PlateCount3_event	
+	2273360275	PlateCount2_event			\Default Work Unit\PlateCounter\PlateCount2_event	
+	2293628003	PressButton_event			\Default Work Unit\UI\PressButton_event	
+	3020012974	CompanyName_event			\Default Work Unit\SplashScreens\CompanyName_event	
+	3022112561	TargetDestroy_event			\Default Work Unit\Items\TargetDestroy_event	
+	3036127557	LevelCompleted_event			\Default Work Unit\Win_n_Fail\LevelCompleted_event	
+	3046129007	ColliderLeft_event			\Default Work Unit\FeedbackSounds\ColliderLeft_event	
+	3057537678	Count1_event			\Default Work Unit\JuggleCountdown\Count1_event	
+	3084875603	CountJuggle_event			\Default Work Unit\JuggleCountdown\CountJuggle_event	
+	3283252857	TicketFeedback_event			\Default Work Unit\TicketFeedback_event	
+	3458164205	TutorialMusic_event			\Default Work Unit\Music\TutorialMusic_event	
+	3462943351	GameTitleSplash_event			\Default Work Unit\SplashScreens\GameTitleSplash_event	
+	3514774441	DevilDealMusic_event			\Default Work Unit\Music\DevilDealMusic_event	
+	3639969466	FinalWin_event			\Default Work Unit\Win_n_Fail\FinalWin_event	
+	3838495408	ColliderRight_event			\Default Work Unit\FeedbackSounds\ColliderRight_event	
+	3869548328	PerfectCatch_event			\Default Work Unit\FeedbackSounds\PerfectCatch_event	
+	3921462371	SwipeSound_event			\Default Work Unit\FeedbackSounds\SwipeSound_event	
+	4073134012	DDIntro_event			\Default Work Unit\DevilDeals\DDIntro_event	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	739838848	dia_lang			\Default Work Unit\dia_lang	
+
+State	ID	Name	State Group			Notes
+	0	None	dia_lang			
+	1819748192	EN	dia_lang			
+	1836525760	DA	dia_lang			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	384475276	DA	dia_lang	\Actor-Mixer Hierarchy\Default Work Unit\Voice\EN		
+	425571384	EN	dia_lang	\Actor-Mixer Hierarchy\Default Work Unit\Voice\DA		
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2420075157	Swipe			\Default Work Unit\Swipe	
+
+Modulator Envelope	ID	Name			Wwise Object Path	Notes
+	439201672	Modulator Envelope (Custom)				
+	742332726	Modulator Envelope (Custom)				
+
+Effect plug-ins	ID	Name	Type				Notes
+	614061984	Wwise_Harmonizer_(Custom)	Wwise Harmonizer			
+	979765101	Win	Wwise Harmonizer			
+	1416967478	All_Buttons_IN	Wwise Compressor			
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	116223719	FailSound	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\Wins_n_Fails\LevelFailSound\FailSound	
+	156647033	SoundSeed Air Woosh	SoundSeed Air Woosh		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\SwipeSounds\SwipeSound_03\SoundSeed Air Woosh	
+	194597245	SoundSeed Air Woosh	SoundSeed Air Woosh		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\SwipeSounds\SwipeSound_05\SoundSeed Air Woosh	
+	205845272	WinSound	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\Wins_n_Fails\LevelWinSound\WinSound	
+	289280295	SoundSeed Air Woosh	SoundSeed Air Woosh		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\SwipeSounds\SwipeSound_02\SoundSeed Air Woosh	
+	544357139	SoundSeed Air Woosh	SoundSeed Air Woosh		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\SwipeSounds\SwipeSound_06\SoundSeed Air Woosh	
+	575491011	SoundSeed Air Woosh	SoundSeed Air Woosh		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\SwipeSounds\SwipeSound_07\SoundSeed Air Woosh	
+	905444136	SoundSeed Air Woosh	SoundSeed Air Woosh		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\SwipeSounds\SwipeSound_01\SoundSeed Air Woosh	
+	934851526	SoundSeed Air Woosh	SoundSeed Air Woosh		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\SwipeSounds\SwipeSound_04\SoundSeed Air Woosh	
+	957623765	SoundSeed Air Woosh	SoundSeed Air Woosh		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\SwipeSounds\SwipeSound\SoundSeed Air Woosh	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	2758428	FinalWinScreen_bitter	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\FinalWinScreen_bitter_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\EN\FinalWinScreen_bitter		116583
+	3159177	positiveSpeak3	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\positiveSpeak3_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomPositiveVoice\positiveSpeak3		96153
+	17878026	positiveSpeak1	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\positiveSpeak1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomPositiveVoice\positiveSpeak1		69214
+	31781730	MenuIN1	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuIN1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuIn\MenuIN1		22992
+	58457526	Spotlight #1	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Spotlight #1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\PlateSpawn\Spotlight #1		113227
+	97445037	Some other time #1 (Devil Deals negative)	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\Some other time #1 (Devil Deals negative)_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\EN\Some other time #1 (Devil Deals negative)		119733
+	102664388	Laugh4	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\Laugh4_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomLaughs\Laugh4		172174
+	106327183	VictorySound2-Serum	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\VictorySound2-Serum_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crowd\VictoryCrowd\VictorySound2-Serum		146846
+	107041349	Laugh1	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\Laugh1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomLaughs\Laugh1		189247
+	110140386	ReduceLife-Light5	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\ReduceLife-Light5_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\ReduceLife\ReduceLife-Light5		86773
+	147215849	Snare2	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Snare2_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\DrumRolls\Snare2		49558
+	149296219	positiveSpeak4	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\positiveSpeak4_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomPositiveVoice\positiveSpeak4		61319
+	149321038	ReduceLife-Light1	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\ReduceLife-Light1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\ReduceLife\ReduceLife-Light1		84559
+	157121198	negativeSpeak4	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\negativeSpeak4_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomNegativeVoice\negativeSpeak4		103421
+	159001376	EndeligWinScreen_positiv	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\EndeligWinScreen_positiv_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\DA\EndeligWinScreen_positiv		65580
+	200055660	MenuOUT+BACK5	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuOUT+BACK5_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuBack+Out\MenuOUT+BACK5		19806
+	208803079	MenuBUTTON5	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuBUTTON5_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuButton\MenuBUTTON5		25378
+	230764660	Ball4	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Ball4_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball4		16205
+	231968685	negativeSpeak5	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\negativeSpeak5_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomNegativeVoice\negativeSpeak5		62730
+	240664223	MenuOUT+BACK2	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuOUT+BACK2_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuBack+Out\MenuOUT+BACK2		21539
+	249492962	MenuOUT+BACK3	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuOUT+BACK3_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuBack+Out\MenuOUT+BACK3		26934
+	278271025	Ball3	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Ball3_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball3		16593
+	286559839	Ball2	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Ball2_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball2		16314
+	294082959	ReduceLife-Light3	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\ReduceLife-Light3_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\ReduceLife\ReduceLife-Light3		84694
+	295205555	positiveSpeak2	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\positiveSpeak2_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomPositiveVoice\positiveSpeak2		79242
+	303410168	Ball14	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Ball14_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball14		16123
+	309135186	positiveSpeak5	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\positiveSpeak5_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomPositiveVoice\positiveSpeak5		103023
+	317483349	Victory(ApplauseViola)	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\Victory(ApplauseViola)_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\EN\Victory(ApplauseViola)		129853
+	318687930	positiveSpeak6	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\positiveSpeak6_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomPositiveVoice\positiveSpeak6		107102
+	319127506	Laugh6	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\Laugh6_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomLaughs\Laugh6		285249
+	326921933	negativeSpeak2	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\negativeSpeak2_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomNegativeVoice\negativeSpeak2		70300
+	346428609	MenuBUTTON2	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuBUTTON2_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuButton\MenuBUTTON2		29318
+	348022414	TicketFeedback	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\TicketFeedback_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\TicketFeedback		190760
+	354812407	FinalWinScreen_positive	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\FinalWinScreen_positive_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\EN\FinalWinScreen_positive		135875
+	359796803	Plates3	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Plates3_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\PlateCollect\Plates3		32328
+	377344929	VictorySound3	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\VictorySound3_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crowd\VictoryCrowd\VictorySound3		97087
+	380739088	MenuBUTTON3	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuBUTTON3_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuButton\MenuBUTTON3		31346
+	401923719	ReduceLife-Light4	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\ReduceLife-Light4_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\ReduceLife\ReduceLife-Light4		86027
+	410092202	Juggle_en	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\Juggle_en_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\EN\CountdownEN\Juggle_en		47333
+	426149657	FailSound1	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\FailSound1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crowd\FailCrowd\FailSound1		120828
+	443403329	LevelSejr	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\LevelSejr_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\DA\LevelSejr		98764
+	465430774	VictorySound2	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\VictorySound2_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crowd\VictoryCrowd\VictorySound2		158429
+	468550532	Laugh5	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\Laugh5_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomLaughs\Laugh5		271817
+	475655860	2_da	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\2_da_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\DA\CountdownDA\2_da		66650
+	478338151	positiveSpeak8	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\positiveSpeak8_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomPositiveVoice\positiveSpeak8		71544
+	485746140	MenuBUTTON8	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuBUTTON8_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuButton\MenuBUTTON8		28616
+	488708768	2_en	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\2_en_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\EN\CountdownEN\2_en		58980
+	494639428	negativeSpeak6	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\negativeSpeak6_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomNegativeVoice\negativeSpeak6		48624
+	496697747	Ball15	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Ball15_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball15		16536
+	506526052	Ball10	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Ball10_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball10		16005
+	525045717	Velkommen	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\Velkommen_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\DA\Velkommen		518223
+	526906597	PositiveCircus	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\PositiveCircus_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\PositiveCircus		5018772
+	531462315	MenuOUT+BACK6	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuOUT+BACK6_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuBack+Out\MenuOUT+BACK6		29362
+	544754195	Ball9	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Ball9_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball9		16536
+	569492267	Ball7	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Ball7_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball7		16213
+	579068450	En anden gang #1 (Devil Deals negativ)	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\En anden gang #1 (Devil Deals negativ)_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\DA\DD_negative\En anden gang #1 (Devil Deals negativ)		112056
+	594514291	MenuBUTTON6	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuBUTTON6_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuButton\MenuBUTTON6		28615
+	606071114	Ball8	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Ball8_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball8		16008
+	614457241	Laugh2	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\Laugh2_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomLaughs\Laugh2		216609
+	617619245	Plates5	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Plates5_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\PlateCollect\Plates5		40356
+	622215191	Welcome	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\Welcome_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\EN\Welcome		524593
+	628245132	MenuBUTTON7	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuBUTTON7_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuButton\MenuBUTTON7		33179
+	631673562	DevilCircus	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\DevilCircus-WIN_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\DevilCircus		6693461
+	637901445	Snare3	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Snare3_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\DrumRolls\Snare3		47054
+	638935931	Ball11	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Ball11_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball11		16157
+	644996573	3_da	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\3_da_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\DA\CountdownDA\3_da		72833
+	665386558	Ball5	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Ball5_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball5		16511
+	667928321	MenuOUT+BACK4	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuOUT+BACK4_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuBack+Out\MenuOUT+BACK4		21058
+	683241596	VictorySound1	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\VictorySound1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crowd\VictoryCrowd\VictorySound1		207535
+	709874983	1_en	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\1_en_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\EN\CountdownEN\1_en		68939
+	713299935	Værsgo_da	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\Værsgo_da_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\DA\CountdownDA\Værsgo_da		71562
+	732446568	VictorySound4-Serum	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\VictorySound4-Serum_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crowd\VictoryCrowd\VictorySound4-Serum		199299
+	739577633	Laugh7	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\Laugh7_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomLaughs\Laugh7		243322
+	747336055	Ball1	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Ball1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball1		16492
+	758204009	Ball12	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Ball12_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball12		16142
+	764044488	Laugh3	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\Laugh3_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomLaughs\Laugh3		118190
+	765947332	Snare1	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Snare1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\DrumRolls\Snare1		61229
+	783569748	VictorySound1-Serum	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\VictorySound1-Serum_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crowd\VictoryCrowd\VictorySound1-Serum		143770
+	795879079	Ball13	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Ball13_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball13		16098
+	822509650	InfernoCircus	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\InfernoCircus-FINAL_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\InfernoCircus		6145891
+	822983069	EndeligWinScreen_bitter	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\EndeligWinScreen_bitter_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\DA\EndeligWinScreen_bitter		59288
+	832502747	negativeSpeak3	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\negativeSpeak3_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomNegativeVoice\negativeSpeak3		85551
+	839249387	MenuOUT+BACK1	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuOUT+BACK1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuBack+Out\MenuOUT+BACK1		27316
+	843322810	Devil Deals intro EN	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\Devil Deals intro EN_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\EN\Devil Deals intro EN		139350
+	854427841	positiveSpeak7	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\positiveSpeak7_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomPositiveVoice\positiveSpeak7		135823
+	866720910	RoomTone	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MGP2_Room2_8663AA8C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\RoomTone		146619
+	885100807	1_da	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\1_da_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\DA\CountdownDA\1_da		79335
+	887967556	BurningCircus	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\BurningCircus-FINAL_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\BurningCircus		7001195
+	899294540	Devil Deals intro DA	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\Devil Deals intro DA_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\DA\Devil Deals intro DA		115791
+	906945915	VictorySound4	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\VictorySound4_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crowd\VictoryCrowd\VictorySound4		104531
+	917045389	FlashScreen	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\GlitchScreen2-short_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\FlashScreen		19802
+	941862658	MenuBUTTON9	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuBUTTON9_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuButton\MenuBUTTON9		34643
+	943302951	positiveSpeak9	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\positiveSpeak9_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomPositiveVoice\positiveSpeak9		73883
+	946482215	ReduceLife-LightSAMLET	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\ReduceLife-LightSAMLET_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\ReduceLife-LightSAMLET		5303
+	964181006	negativeSpeak1	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\negativeSpeak1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Universals\RandomNoises\RandomNegativeVoice\negativeSpeak1		80652
+	975721413	MenuBUTTON1	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuBUTTON1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuButton\MenuBUTTON1		19820
+	982975328	ReduceLife-Light2	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\ReduceLife-Light2_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\ReduceLife\ReduceLife-Light2		84832
+	991598321	En anden gang #2 (Devil Deals negativ)	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\En anden gang #2 (Devil Deals negativ)_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\DA\DD_negative\En anden gang #2 (Devil Deals negativ)		99420
+	994559218	Plates7	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Plates7_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\PlateCollect\Plates7		31550
+	1001748452	MenuBUTTON10	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuBUTTON10_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuButton\MenuBUTTON10		39259
+	1015679304	VictorySound3-Serum	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\VictorySound3-Serum_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crowd\VictoryCrowd\VictorySound3-Serum		148278
+	1017538280	MenuBUTTON4	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\MenuBUTTON4_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuButton\MenuBUTTON4		29144
+	1018737315	Plates4	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Plates4_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\PlateCollect\Plates4		18938
+	1030349145	Ball6	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Ball6_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball6		16011
+	1042566513	PlateDestroy	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\PlateDestroy_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\PlateDestroy\PlateDestroy		58847
+	1047563840	3_en	E:\WWise projekter\DADIU-MGP2\.cache\Windows\Voices\English(US)\3_en_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\EN\CountdownEN\3_en		67074
+	1070768303	Plates6	E:\WWise projekter\DADIU-MGP2\.cache\Windows\SFX\Plates6_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\PlateCollect\Plates6		65380
+

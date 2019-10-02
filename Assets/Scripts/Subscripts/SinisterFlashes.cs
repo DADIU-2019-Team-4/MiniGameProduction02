@@ -53,6 +53,7 @@ public class SinisterFlashes : MonoBehaviour
 
     private IEnumerator Flash()
     {
+        AkSoundEngine.PostEvent("FlashScreen_event", gameObject);
         SinisterFlashingImage.gameObject.SetActive(true);
         SinisterFlashingImage.DOFade(maxAlphaValue, lengthOfFlash / 2);
         yield return new WaitForSeconds(lengthOfFlash / 2);
