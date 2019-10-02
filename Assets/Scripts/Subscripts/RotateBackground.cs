@@ -6,6 +6,7 @@ public class RotateBackground : MonoBehaviour
 
     [SerializeField]
     private GameObject Background;
+    private GameObject Lighting;
 
     public float RotationSpeed = 7;
 
@@ -15,6 +16,7 @@ public class RotateBackground : MonoBehaviour
     {
         sceneController = FindObjectOfType<SceneController>();
         value = 0;
+        Lighting = GameObject.Find("Lighting");
     }
 
     private void Update()
@@ -28,7 +30,9 @@ public class RotateBackground : MonoBehaviour
         if (Background != null)
         {
             value += Time.deltaTime * (1 / Time.timeScale);
-            Background.GetComponent<Transform>().eulerAngles = new Vector3(0, value * RotationSpeed, 0);
+            Vector3 rotation = new Vector3(0, -180 + value * RotationSpeed, 0);
+            Background.GetComponent<Transform>().eulerAngles = rotation;
+            Lighting.GetComponent<Transform>().eulerAngles = rotation;
         }
     }
 }

@@ -1,33 +1,51 @@
-﻿using UnityEngine;
+﻿using Boo.Lang;
+using UnityEngine;
 
 public class FaceManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject head;
+    private GameObject face1;
+    [SerializeField]
+    private GameObject face2;
+    [SerializeField]
+    private GameObject face3;
+    [SerializeField]
+    private GameObject face4;
+    [SerializeField]
+    private GameObject face5;
 
-    [SerializeField]
-    private Mesh face1;
-    [SerializeField]
-    private Mesh face2;
-    [SerializeField]
-    private Mesh face3;
-    [SerializeField]
-    private Mesh face4;
-    [SerializeField]
-    private Mesh face5;
+    private List<GameObject> faces = new List<GameObject>();
+
+    private void Start()
+    {
+        faces.Add(face1);
+        faces.Add(face2);
+        faces.Add(face3);
+        faces.Add(face4);
+        faces.Add(face5);
+    }
+
+    private void DeleteFaces()
+    {
+        foreach (GameObject face in faces)
+        {
+            face.SetActive(false);
+        }
+    }
 
     public void ChangeFace(int stageNumber)
     {
-        MeshFilter face = head.GetComponent<MeshFilter>();
+        DeleteFaces();
+
         if (stageNumber == 1)
-            face.mesh = face1;
+            face1.SetActive(true);
         else if (stageNumber == 2)
-            face.mesh = face2;
+            face2.SetActive(true);
         else if (stageNumber == 3)
-            face.mesh = face3;
+            face3.SetActive(true);
         else if (stageNumber == 4)
-            face.mesh = face4;
+            face4.SetActive(true);
         else
-            face.mesh = face5;
+            face5.SetActive(true);
     }
 }

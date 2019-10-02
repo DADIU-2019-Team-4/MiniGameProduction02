@@ -6,6 +6,9 @@ public class ScoreController : MonoBehaviour
     public Text scoreText;
     [SerializeField]
     private int score;
+
+    public int publicScore { get { return score; } }
+
     private int receivedPoints;
     [SerializeField]
     private int itemHitCombo = 1;

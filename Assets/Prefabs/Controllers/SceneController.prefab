@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267635558868094373}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelFailed: {fileID: 0}
   levelCompleted: {fileID: 0}
+  scoreText: {fileID: 0}
 --- !u!114 &7723828974934822010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,8 +64,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7ddcb2c62304768a3f9f823e019e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTime: 1
-  maxTime: 3
+  minTime: 2
+  maxTime: 4
   spawnPosTop: {fileID: 5057437222277374894}
   spawnPosMid: {fileID: 3483119880243383578}
   spawnPosBottom: {fileID: 2420649766845651243}
@@ -75,8 +76,8 @@ MonoBehaviour:
   currentActivePlates: 0
   maxActivePlates: 2
   ItemsCollected: 0
-  NumberOfItemsToGoal: 20
-  timeUntilItemsDissappear: 4
+  NumberOfItemsToGoal: 15
+  timeUntilItemsDissappear: 3
   CollectedText: {fileID: 0}
   GoalText: {fileID: 0}
 --- !u!114 &5554352687557745370
