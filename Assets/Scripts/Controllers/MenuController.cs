@@ -10,16 +10,16 @@ public class MenuController : MonoBehaviour
     private BallController ballController;
     private Canvas levelSelectMenu;
     private SaveController saveC;
-
-    public GameObject pauseMenu;
-    public GameObject optionsMenu;
-    public GameObject resetMenu;
+    private GameObject pauseMenu;
+    private GameObject optionsMenu;
+    private GameObject resetMenu;
+    [HideInInspector]
     public string language;
-    public string musicVolume;
-    public string soundOnOff;
+    private string musicVolume;
+    private string soundOnOff;
 
     //test variables
-    public int levelSelector = 0;
+    //public int levelSelector = 0;
 
 
     #region menuvariables
@@ -48,11 +48,11 @@ public class MenuController : MonoBehaviour
 
     #endregion
 
+    [HideInInspector]
     public UnityEvent ChangeLanguageEvent;
 
     private void Awake()
     {
-
         RefferenceMenuVariables();
         MenuUpdate(); //setup menu
         saveC = FindObjectOfType<SaveController>();
@@ -66,8 +66,6 @@ public class MenuController : MonoBehaviour
         pauseMenu.SetActive(false);
 
         ballController = FindObjectOfType<BallController>();
-
-
     }
 
     void Start()
@@ -78,12 +76,13 @@ public class MenuController : MonoBehaviour
         if (levelSelectMenu == null)
             return;
 
-        Button[] levelbuttons = levelSelectMenu.transform.GetChild(0).GetComponentsInChildren<Button>();
-        foreach (Button button in levelbuttons)
-        {
-            button.interactable = false;
-        }
-        UpdatePauseMenu();
+        //Button[] levelbuttons = levelSelectMenu.transform.GetChild(0).GetComponentsInChildren<Button>();
+        //foreach (Button button in levelbuttons)
+        //{
+        //    button.interactable = false;
+        //}
+
+        //UpdatePauseMenu();
     }
 
     public void GoToLevel(int level)
