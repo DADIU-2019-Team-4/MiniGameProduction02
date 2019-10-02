@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772310026319952408e5ada90b98d468, type: 3}
   m_Name: 18015BE1-80DD-4AEC-9A2B-9854FDE70688
   m_EditorClassIdentifier: 
-  objectName: LeftCollider_event
-  id: 357743971
+  objectName: ColliderLeft_event
+  id: 3046129007
   guid: 18015BE1-80DD-4AEC-9A2B-9854FDE70688
