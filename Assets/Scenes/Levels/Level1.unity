@@ -348,6 +348,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 209339936}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &209339946 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8263658659779239632, guid: 0acdb7abc0b6a9248b2c6dc315d85f0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 209339936}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &563729173 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1267635558868094372, guid: 8217b052d62188241932da549938efdf,
@@ -778,16 +790,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4821467527989269366, guid: 6bb3aab886bd2994684e4d94011acf0c,
-        type: 3}
-      propertyPath: lifeSpawnPoint
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821467527989269366, guid: 6bb3aab886bd2994684e4d94011acf0c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 857906305, guid: 6bb3aab886bd2994684e4d94011acf0c, type: 3}
       propertyPath: lifeSpawnPoint
       value: 
@@ -798,6 +800,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 857906305, guid: 6bb3aab886bd2994684e4d94011acf0c, type: 3}
       propertyPath: maxLives
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821467527989269366, guid: 6bb3aab886bd2994684e4d94011acf0c,
+        type: 3}
+      propertyPath: lifeSpawnPoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821467527989269366, guid: 6bb3aab886bd2994684e4d94011acf0c,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1032,6 +1044,11 @@ PrefabInstance:
       propertyPath: levelCompleted
       value: 
       objectReference: {fileID: 1214428567}
+    - target: {fileID: 1267635558868094372, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 209339946}
     - target: {fileID: 1267635558868094371, guid: 8217b052d62188241932da549938efdf,
         type: 3}
       propertyPath: m_RootOrder
