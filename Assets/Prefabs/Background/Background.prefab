@@ -849,11 +849,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3084054382046101121}
     m_Modifications:
-    - target: {fileID: 2885108177616318900, guid: c271bc36fb024444a8b7bc55ec47337b,
-        type: 3}
-      propertyPath: m_Name
-      value: CircusEnvironment
-      objectReference: {fileID: 0}
     - target: {fileID: 2885108177616318901, guid: c271bc36fb024444a8b7bc55ec47337b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -908,6 +903,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2885108177616318900, guid: c271bc36fb024444a8b7bc55ec47337b,
+        type: 3}
+      propertyPath: m_Name
+      value: CircusEnvironment
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568530346363571390, guid: c271bc36fb024444a8b7bc55ec47337b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568530345856708397, guid: c271bc36fb024444a8b7bc55ec47337b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c271bc36fb024444a8b7bc55ec47337b, type: 3}
