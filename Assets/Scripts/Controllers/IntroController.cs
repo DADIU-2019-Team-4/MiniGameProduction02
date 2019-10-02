@@ -13,6 +13,7 @@ public class IntroController : MonoBehaviour
         DirectorController = FindObjectOfType<DirectorController>();
 
         // Initiate Manager's intro Animation
+        AkSoundEngine.PostEvent("VoiceOverWelcome_event", gameObject);
         DirectorController.PlayIntroAnimation();
 
     }
