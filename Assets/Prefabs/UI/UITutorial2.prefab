@@ -607,7 +607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4400118226496973223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -736,7 +736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4400118226718723934
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1121,6 +1121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Score
+      objectReference: {fileID: 0}
+    - target: {fileID: 535764862052069326, guid: b1bfc27270d34024792fbccdbc27d3f7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 535764862052069327, guid: b1bfc27270d34024792fbccdbc27d3f7,
         type: 3}
@@ -1517,6 +1522,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Devil Skulls Spawn Point
       objectReference: {fileID: 0}
+    - target: {fileID: 8439923794351355134, guid: 0d3062f26b8c33646831c59a13376659,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4310339813771301843, guid: 0d3062f26b8c33646831c59a13376659,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1641,6 +1651,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SinisterFlashImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168072816289679512, guid: 3e5b5b6bbaa5f854393defc3b3384f02,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3089335472996812040, guid: 3e5b5b6bbaa5f854393defc3b3384f02,
         type: 3}
@@ -1947,6 +1962,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables
       objectReference: {fileID: 0}
+    - target: {fileID: 7736292835205574537, guid: 9dd85e0bbbd5ba64489fce522e54bb55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7736292835205574536, guid: 9dd85e0bbbd5ba64489fce522e54bb55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2071,6 +2091,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LifeSpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 2528513265288229112, guid: e93620c7621efb54da6bd1c97b000ee5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7553742510844039743, guid: e93620c7621efb54da6bd1c97b000ee5,
         type: 3}

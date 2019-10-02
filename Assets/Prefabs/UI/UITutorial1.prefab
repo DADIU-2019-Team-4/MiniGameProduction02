@@ -608,7 +608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2226521619884110475
 RectTransform:
   m_ObjectHideFlags: 0
@@ -814,7 +814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2226521620064965746
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1195,6 +1195,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2226521619336388100}
     m_Modifications:
+    - target: {fileID: 718454276406605781, guid: 1848420aea989d14c95f1363c6b0f3fa,
+        type: 3}
+      propertyPath: m_Name
+      value: Level Failed
+      objectReference: {fileID: 0}
     - target: {fileID: 718454276406605770, guid: 1848420aea989d14c95f1363c6b0f3fa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1299,11 +1304,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 718454276406605781, guid: 1848420aea989d14c95f1363c6b0f3fa,
-        type: 3}
-      propertyPath: m_Name
-      value: Level Failed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1848420aea989d14c95f1363c6b0f3fa, type: 3}
@@ -1445,6 +1445,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2226521619336388100}
     m_Modifications:
+    - target: {fileID: 535764862052069326, guid: b1bfc27270d34024792fbccdbc27d3f7,
+        type: 3}
+      propertyPath: m_Name
+      value: Score
+      objectReference: {fileID: 0}
+    - target: {fileID: 535764862052069326, guid: b1bfc27270d34024792fbccdbc27d3f7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 535764862052069327, guid: b1bfc27270d34024792fbccdbc27d3f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1550,11 +1560,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 535764862052069326, guid: b1bfc27270d34024792fbccdbc27d3f7,
-        type: 3}
-      propertyPath: m_Name
-      value: Score
-      objectReference: {fileID: 0}
     - target: {fileID: 535764862052069320, guid: b1bfc27270d34024792fbccdbc27d3f7,
         type: 3}
       propertyPath: m_Color.r
@@ -1594,6 +1599,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Devil Skulls Spawn Point
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439923794351355134, guid: 0d3062f26b8c33646831c59a13376659,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4310339813771301843, guid: 0d3062f26b8c33646831c59a13376659,
         type: 3}
@@ -1715,6 +1725,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2226521619336388100}
     m_Modifications:
+    - target: {fileID: 7736292835205574537, guid: 9dd85e0bbbd5ba64489fce522e54bb55,
+        type: 3}
+      propertyPath: m_Name
+      value: Collectables
+      objectReference: {fileID: 0}
+    - target: {fileID: 7736292835205574537, guid: 9dd85e0bbbd5ba64489fce522e54bb55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7736292835205574536, guid: 9dd85e0bbbd5ba64489fce522e54bb55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1820,11 +1840,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7736292835205574537, guid: 9dd85e0bbbd5ba64489fce522e54bb55,
-        type: 3}
-      propertyPath: m_Name
-      value: Collectables
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dd85e0bbbd5ba64489fce522e54bb55, type: 3}
 --- !u!224 &3031218414616251623 stripped
@@ -1840,6 +1855,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2226521619336388100}
     m_Modifications:
+    - target: {fileID: 2528513265288229112, guid: e93620c7621efb54da6bd1c97b000ee5,
+        type: 3}
+      propertyPath: m_Name
+      value: LifeSpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 2528513265288229112, guid: e93620c7621efb54da6bd1c97b000ee5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7553742510844039743, guid: e93620c7621efb54da6bd1c97b000ee5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1945,11 +1970,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2528513265288229112, guid: e93620c7621efb54da6bd1c97b000ee5,
-        type: 3}
-      propertyPath: m_Name
-      value: LifeSpawnPoint
-      objectReference: {fileID: 0}
     - target: {fileID: 1252667112078340382, guid: e93620c7621efb54da6bd1c97b000ee5,
         type: 3}
       propertyPath: m_IsActive
@@ -1970,6 +1990,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2226521619336388100}
     m_Modifications:
+    - target: {fileID: 1168072816289679512, guid: 3e5b5b6bbaa5f854393defc3b3384f02,
+        type: 3}
+      propertyPath: m_Name
+      value: SinisterFlashImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168072816289679512, guid: 3e5b5b6bbaa5f854393defc3b3384f02,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3089335472996812040, guid: 3e5b5b6bbaa5f854393defc3b3384f02,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2075,11 +2105,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1168072816289679512, guid: 3e5b5b6bbaa5f854393defc3b3384f02,
-        type: 3}
-      propertyPath: m_Name
-      value: SinisterFlashImage
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5b5b6bbaa5f854393defc3b3384f02, type: 3}
 --- !u!224 &5581772375977834805 stripped
@@ -2095,6 +2120,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5890237317869041930}
     m_Modifications:
+    - target: {fileID: 7017731355362783356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_Name
+      value: Devil Deal Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017731355362783356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7017731355362783353, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2198,16 +2233,6 @@ PrefabInstance:
     - target: {fileID: 7017731355362783353, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7017731355362783356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_Name
-      value: Devil Deal Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 7017731355362783356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7017731355446611356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
