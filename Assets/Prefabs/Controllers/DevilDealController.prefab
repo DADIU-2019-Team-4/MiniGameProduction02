@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4625034394326983814}
   - component: {fileID: 1808715076024527199}
   - component: {fileID: 1464220514811936704}
+  - component: {fileID: 754624791}
   m_Layer: 0
   m_Name: DevilDealController
   m_TagString: Untagged
@@ -78,3 +79,20 @@ MonoBehaviour:
   lengthOfFlash: 0.2
   maxAlphaValue: 0.5
   startFlashing: 0
+--- !u!114 &754624791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3186511382523634058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853dc1d703d5e6e4491cbd335f6c3c55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face1: {fileID: 0}
+  face2: {fileID: 0}
+  face3: {fileID: 0}
+  face4: {fileID: 0}
+  face5: {fileID: 0}
