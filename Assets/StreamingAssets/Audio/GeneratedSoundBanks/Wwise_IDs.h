@@ -39,6 +39,7 @@ namespace AK
         static const AkUniqueID INGAMEMUSIC1_EVENT = 2125813393U;
         static const AkUniqueID INGAMEMUSIC2_EVENT = 1704362654U;
         static const AkUniqueID LEVELCOMPLETED_EVENT = 3036127557U;
+        static const AkUniqueID LEVELSELECTOR_EVENT = 3354407555U;
         static const AkUniqueID MENUIN_EVENT = 1069674504U;
         static const AkUniqueID MENUMUSIC = 679636833U;
         static const AkUniqueID MENUOUT_EVENT = 1960384521U;

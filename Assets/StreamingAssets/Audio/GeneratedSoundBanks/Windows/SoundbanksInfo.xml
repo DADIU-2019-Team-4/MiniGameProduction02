@@ -40,13 +40,14 @@
 				<Event Id="1944912670" Name="FillSound_event4" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event4" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1944912671" Name="FillSound_event5" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event5" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1944912668" Name="FillSound_event6" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event6" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1937231702" Name="FinalFail_event" ObjectPath="\Events\Default Work Unit\Win_n_Fail\FinalFail_event" DurationType="OneShot" DurationMin="5.701157" DurationMax="5.701157"/>
-				<Event Id="3639969466" Name="FinalWin_event" ObjectPath="\Events\Default Work Unit\Win_n_Fail\FinalWin_event" DurationType="OneShot" DurationMin="5.701157" DurationMax="5.701157"/>
+				<Event Id="1937231702" Name="FinalFail_event" ObjectPath="\Events\Default Work Unit\Win_n_Fail\FinalFail_event" DurationType="OneShot" DurationMin="102.642860" DurationMax="102.642860"/>
+				<Event Id="3639969466" Name="FinalWin_event" ObjectPath="\Events\Default Work Unit\Win_n_Fail\FinalWin_event" DurationType="OneShot" DurationMin="102.642860" DurationMax="102.642860"/>
 				<Event Id="626623716" Name="FlashScreen_event" ObjectPath="\Events\Default Work Unit\FlashScreen_event" DurationType="OneShot" DurationMin="0.375556" DurationMax="0.375556"/>
 				<Event Id="3462943351" Name="GameTitleSplash_event" ObjectPath="\Events\Default Work Unit\SplashScreens\GameTitleSplash_event" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2125813393" Name="InGameMusic1_event" ObjectPath="\Events\Default Work Unit\Music\InGameMusic1_event" DurationType="OneShot" DurationMin="182.443451" DurationMax="182.443451"/>
 				<Event Id="1704362654" Name="InGameMusic2_event" ObjectPath="\Events\Default Work Unit\Music\InGameMusic2_event" DurationType="OneShot" DurationMin="156.380096" DurationMax="156.380096"/>
 				<Event Id="3036127557" Name="LevelCompleted_event" ObjectPath="\Events\Default Work Unit\Win_n_Fail\LevelCompleted_event" DurationType="Unknown"/>
+				<Event Id="3354407555" Name="LevelSelector_event" ObjectPath="\Events\Default Work Unit\LevelSelector_event" DurationType="OneShot" DurationMin="174.000000" DurationMax="174.000000"/>
 				<Event Id="1069674504" Name="MenuIN_event" ObjectPath="\Events\Default Work Unit\UI\MenuIN_event" DurationType="OneShot" DurationMin="0.604354" DurationMax="0.604354"/>
 				<Event Id="679636833" Name="MenuMusic" ObjectPath="\Events\Default Work Unit\Music\MenuMusic" DurationType="OneShot" DurationMin="174.000000" DurationMax="174.000000"/>
 				<Event Id="1960384521" Name="MenuOUT_event" ObjectPath="\Events\Default Work Unit\UI\MenuOUT_event" DurationType="OneShot" DurationMin="0.498186" DurationMax="0.788798"/>
@@ -133,6 +134,10 @@
 				<File Id="159001376" Language="English(US)">
 					<ShortName>EndeligWinScreen_positiv.wav</ShortName>
 					<Path>Voices\English(US)\EndeligWinScreen_positiv_8CBF9462.wem</Path>
+				</File>
+				<File Id="166045822" Language="SFX">
+					<ShortName>MessyCircus.wav</ShortName>
+					<Path>SFX\MessyCircus_8CBF9462.wem</Path>
 				</File>
 				<File Id="200055660" Language="SFX">
 					<ShortName>MenuOUT+BACK5.wav</ShortName>
