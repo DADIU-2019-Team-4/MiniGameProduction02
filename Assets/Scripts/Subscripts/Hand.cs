@@ -19,8 +19,8 @@ public class Hand : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        BallController.BallEntersHand(other);
-        BallController.PlayDistanceSound(other.gameObject);
+        if(other.gameObject.tag == "Ball")
+            BallController.BallEntersHand(other);
     }
 
     private void OnTriggerExit(Collider other)
@@ -28,8 +28,4 @@ public class Hand : MonoBehaviour
         BallController.BallLeavesHand(other);
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        BallController.PlayDistanceSound(other.gameObject);
-    }
 }
