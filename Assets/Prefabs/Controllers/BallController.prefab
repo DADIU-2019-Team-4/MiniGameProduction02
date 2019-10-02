@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2988204326396515020
 Transform:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2988204326433693380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.37, y: 0, z: 0}
+  m_LocalPosition: {x: -1.049, y: 2.446, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2988204326431243030}
@@ -181,8 +181,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2988204327018603915}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0047100782, y: 2.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.23, z: 0}
+  m_LocalScale: {x: 1.8, y: 1.7, z: 1.8}
   m_Children:
   - {fileID: 2988204326396515020}
   - {fileID: 2988204326433693381}
@@ -202,8 +202,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BallPrefab:
-  - {fileID: 7496779614026164388, guid: 342b96d3f9c6ec9498e041e66d15f9ab, type: 3}
+  - {fileID: 468645933400917529, guid: a0a6bfb02fdc2324aad97a90e0cc4ba5, type: 3}
+  - {fileID: 468645933400917529, guid: a0a6bfb02fdc2324aad97a90e0cc4ba5, type: 3}
+  - {fileID: 468645933400917529, guid: a0a6bfb02fdc2324aad97a90e0cc4ba5, type: 3}
   distanceBetweenSpawnedBalls: 0.1
+  lerpRightHandTarget: {x: 0, y: 0, z: 0}
+  lerpLeftHandTarget: {x: 0, y: 0, z: 0}
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
   leftPerfectCatch: {fileID: 0}
@@ -213,7 +217,7 @@ MonoBehaviour:
   FloorBounceForce: {fileID: 2988204327289175521}
   throwForceMultiplier: 350
   gravityYaxis: -9.81
-  TimeScale: 0.5
+  TimeScale: 1
   BalloonFloatStrength: 0.6
   balloonThrowDown: {x: 0, y: -5, z: 0}
   ballonThrowMid: {x: 10, y: -5, z: 0}
@@ -222,6 +226,7 @@ MonoBehaviour:
   slowDownTime: 4
   spawnInRandomHand: 0
   respawnYAxis: 10
+  spawnAllIntervals: 3
 --- !u!1 &2988204327289175520
 GameObject:
   m_ObjectHideFlags: 0
