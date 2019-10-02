@@ -27,6 +27,6 @@ public class IntroController : MonoBehaviour
     public void Finish()
     {
         // After the Intro is complete, start the next Scene
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level Select");
     }
 }
