@@ -935,6 +935,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: CircusEnvironment
       objectReference: {fileID: 0}
+    - target: {fileID: 6568530346363571390, guid: c271bc36fb024444a8b7bc55ec47337b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568530345856708397, guid: c271bc36fb024444a8b7bc55ec47337b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c271bc36fb024444a8b7bc55ec47337b, type: 3}
 --- !u!4 &4842131269385922452 stripped

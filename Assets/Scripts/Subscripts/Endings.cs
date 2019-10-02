@@ -31,7 +31,7 @@ public class Endings : MonoBehaviour
         string sceneName = SceneManager.GetActiveScene().name;
         int levelNumber = int.Parse(sceneName.Substring(sceneName.Length - 1));
 
-        if (levelNumber != GlobalVariables.totalNumberOfLevels - 1) return;
+        if (levelNumber != 0) return;
 
         if (DevilDealController.AcceptedNegativeDealsCount == 0)
             StartCoroutine(HappyEnding());
