@@ -12,6 +12,8 @@ public class SplashScreenController : MonoBehaviour
     [SerializeField]
     private Image _gameTitle;
     [SerializeField]
+    private Image _headphones;
+    [SerializeField]
     private float _fadeDuration;
 
     // Start is called before the first frame update
@@ -34,6 +36,12 @@ public class SplashScreenController : MonoBehaviour
         _gameTitle.DOFade(1f, _fadeDuration);
         yield return new WaitForSeconds(_fadeDuration);
         _gameTitle.DOFade(0f, _fadeDuration);
+        yield return new WaitForSeconds(_fadeDuration);
+
+        AkSoundEngine.PostEvent("GameTitle_event", gameObject);
+        _headphones.DOFade(1f, _fadeDuration);
+        yield return new WaitForSeconds(_fadeDuration);
+        _headphones.DOFade(0f, _fadeDuration);
         yield return new WaitForSeconds(_fadeDuration);
 
         SceneManager.LoadScene("Intro Scene");
