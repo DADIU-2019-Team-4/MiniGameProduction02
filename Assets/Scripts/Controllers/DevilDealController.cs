@@ -13,6 +13,7 @@ public class DevilDealController : MonoBehaviour
     private SceneController SceneController;
     private SinisterFlashes SinisterFlashes;
     private MenuController MenuController;
+    private FaceManager FaceManager;
 
     [SerializeField]
     private GameObject devilDealCanvas;
@@ -57,6 +58,8 @@ public class DevilDealController : MonoBehaviour
     [SerializeField]
     private float maxFlashAlphaValue = 0.8f;
 
+    private int stageNumber = 1;
+
     private void Awake()
     {
         DirectorController = FindObjectOfType<DirectorController>();
@@ -65,6 +68,7 @@ public class DevilDealController : MonoBehaviour
         SceneController = FindObjectOfType<SceneController>();
         SinisterFlashes = FindObjectOfType<SinisterFlashes>();
         MenuController = FindObjectOfType<MenuController>();
+        FaceManager = FindObjectOfType<FaceManager>();
     }
 
     private void Start()
@@ -83,7 +87,7 @@ public class DevilDealController : MonoBehaviour
 
         imageWidth = devilSkull.GetComponent<RectTransform>().rect.width;
         SpawnDevilSkulls();
-
+        FaceManager.ChangeFace(stageNumber);
         ActivateDevilDeals();
 
         if (MenuController.ChangeLanguageEvent == null)
@@ -231,7 +235,13 @@ public class DevilDealController : MonoBehaviour
         SinisterFlashes.SinisterFlashingImage.DOFade(maxFlashAlphaValue, lengthOfFlash / 2);
         yield return new WaitForSeconds(lengthOfFlash / 2);
 
-        // todo insert code for changing viola's face to the next stage
+        if (AcceptedNegativeDealsCount % 2 == 0)
+        {
+            // todo save stageNumber for long term
+            stageNumber++;
+            FaceManager.ChangeFace(stageNumber);
+        }
+
         chosenNegativeDevilDeal.ApplyDevilDeal();
 
         SinisterFlashes.SinisterFlashingImage.DOFade(0, lengthOfFlash / 2);
