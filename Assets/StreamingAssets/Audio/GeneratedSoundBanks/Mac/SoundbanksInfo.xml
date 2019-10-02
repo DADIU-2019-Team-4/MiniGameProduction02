@@ -16,42 +16,491 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3614528216" Language="SFX">
+		<SoundBank Id="3614528216" Language="English(US)">
 			<ObjectPath>\SoundBanks\Default Work Unit\Default_SoundBank2</ObjectPath>
 			<ShortName>Default_SoundBank2</ShortName>
-			<Path>Default_SoundBank2.bnk</Path>
+			<Path>English(US)\Default_SoundBank2.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3046129007" Name="ColliderLeft_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ColliderLeft_event" DurationType="Unknown"/>
-				<Event Id="3838495408" Name="ColliderRight_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ColliderRight_event" DurationType="Unknown"/>
-				<Event Id="1999513135" Name="FailSound_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\Win_n_Fail\FailSound_event" DurationType="Unknown"/>
-				<Event Id="1944912667" Name="FillSound_event1" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event1" DurationType="Unknown"/>
-				<Event Id="1944912664" Name="FillSound_event2" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event2" DurationType="Unknown"/>
-				<Event Id="1944912665" Name="FillSound_event3" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event3" DurationType="Unknown"/>
-				<Event Id="1944912670" Name="FillSound_event4" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event4" DurationType="Unknown"/>
-				<Event Id="1944912671" Name="FillSound_event5" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event5" DurationType="Unknown"/>
-				<Event Id="1944912668" Name="FillSound_event6" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event6" DurationType="Unknown"/>
-				<Event Id="3036127557" Name="LevelCompleted_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\Win_n_Fail\LevelCompleted_event" DurationType="Unknown"/>
-				<Event Id="1069674504" Name="MenuIN_event" ObjectPath="\Events\Default Work Unit\UI\MenuIN_event" DurationType="OneShot" DurationMin="0.125488" DurationMax="0.125488"/>
-				<Event Id="1960384521" Name="MenuOUT_event" ObjectPath="\Events\Default Work Unit\UI\MenuOUT_event" DurationType="OneShot" DurationMin="0.125488" DurationMax="0.125488"/>
-				<Event Id="3869548328" Name="PerfectCatch_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PerfectCatch_event" DurationType="Unknown"/>
-				<Event Id="2293628003" Name="PressButton_event" ObjectPath="\Events\Default Work Unit\UI\PressButton_event" DurationType="OneShot" DurationMin="0.125488" DurationMax="0.125488"/>
+				<Event Id="1117629447" Name="BallBounce_event" ObjectPath="\Events\Default Work Unit\Items\BallBounce_event" DurationType="OneShot" DurationMin="0.465125" DurationMax="0.465125"/>
+				<Event Id="3046129007" Name="ColliderLeft_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ColliderLeft_event" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3838495408" Name="ColliderRight_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ColliderRight_event" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3020012974" Name="CompanyName_event" ObjectPath="\Events\Default Work Unit\SplashScreens\CompanyName_event" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3057537678" Name="Count1_event" ObjectPath="\Events\Default Work Unit\JuggleCountdown\Count1_event" DurationType="OneShot" DurationMin="2.311542" DurationMax="2.311542"/>
+				<Event Id="2021650241" Name="Count2_event" ObjectPath="\Events\Default Work Unit\JuggleCountdown\Count2_event" DurationType="OneShot" DurationMin="1.995034" DurationMax="1.995034"/>
+				<Event Id="1955518600" Name="Count3_event" ObjectPath="\Events\Default Work Unit\JuggleCountdown\Count3_event" DurationType="OneShot" DurationMin="1.860748" DurationMax="1.860748"/>
+				<Event Id="3084875603" Name="CountJuggle_event" ObjectPath="\Events\Default Work Unit\JuggleCountdown\CountJuggle_event" DurationType="OneShot" DurationMin="1.932676" DurationMax="1.932676"/>
+				<Event Id="4073134012" Name="DDIntro_event" ObjectPath="\Events\Default Work Unit\DevilDeals\DDIntro_event" DurationType="OneShot" DurationMin="3.503333" DurationMax="3.503333"/>
+				<Event Id="234395941" Name="DDNegative_event" ObjectPath="\Events\Default Work Unit\DevilDeals\DDNegative_event" DurationType="OneShot" DurationMin="3.255828" DurationMax="3.255828"/>
+				<Event Id="35633437" Name="DDPositive_event" ObjectPath="\Events\Default Work Unit\DevilDeals\DDPositive_event" DurationType="OneShot" DurationMin="3.083991" DurationMax="8.409592"/>
+				<Event Id="3514774441" Name="DevilDealMusic_event" ObjectPath="\Events\Default Work Unit\Music\DevilDealMusic_event" DurationType="OneShot" DurationMin="174.000000" DurationMax="174.000000"/>
+				<Event Id="1999513135" Name="FailSound_event" ObjectPath="\Events\Default Work Unit\Win_n_Fail\FailSound_event" DurationType="OneShot" DurationMin="4.701157" DurationMax="Infinite"/>
+				<Event Id="1944912667" Name="FillSound_event1" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event1" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1944912664" Name="FillSound_event2" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event2" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1944912665" Name="FillSound_event3" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event3" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1944912670" Name="FillSound_event4" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event4" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1944912671" Name="FillSound_event5" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event5" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1944912668" Name="FillSound_event6" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event6" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1937231702" Name="FinalFail_event" ObjectPath="\Events\Default Work Unit\Win_n_Fail\FinalFail_event" DurationType="OneShot" DurationMin="5.701157" DurationMax="5.701157"/>
+				<Event Id="3639969466" Name="FinalWin_event" ObjectPath="\Events\Default Work Unit\Win_n_Fail\FinalWin_event" DurationType="OneShot" DurationMin="5.701157" DurationMax="5.701157"/>
+				<Event Id="626623716" Name="FlashScreen_event" ObjectPath="\Events\Default Work Unit\FlashScreen_event" DurationType="OneShot" DurationMin="0.375556" DurationMax="0.375556"/>
+				<Event Id="3462943351" Name="GameTitleSplash_event" ObjectPath="\Events\Default Work Unit\SplashScreens\GameTitleSplash_event" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2125813393" Name="InGameMusic1_event" ObjectPath="\Events\Default Work Unit\Music\InGameMusic1_event" DurationType="OneShot" DurationMin="182.443451" DurationMax="182.443451"/>
+				<Event Id="1704362654" Name="InGameMusic2_event" ObjectPath="\Events\Default Work Unit\Music\InGameMusic2_event" DurationType="OneShot" DurationMin="156.380096" DurationMax="156.380096"/>
+				<Event Id="3036127557" Name="LevelCompleted_event" ObjectPath="\Events\Default Work Unit\Win_n_Fail\LevelCompleted_event" DurationType="Unknown"/>
+				<Event Id="1069674504" Name="MenuIN_event" ObjectPath="\Events\Default Work Unit\UI\MenuIN_event" DurationType="OneShot" DurationMin="0.604354" DurationMax="0.604354"/>
+				<Event Id="679636833" Name="MenuMusic" ObjectPath="\Events\Default Work Unit\Music\MenuMusic" DurationType="OneShot" DurationMin="174.000000" DurationMax="174.000000"/>
+				<Event Id="1960384521" Name="MenuOUT_event" ObjectPath="\Events\Default Work Unit\UI\MenuOUT_event" DurationType="OneShot" DurationMin="0.498186" DurationMax="0.788798"/>
+				<Event Id="1105161895" Name="menuPause_event" ObjectPath="\Events\Default Work Unit\Menu\menuPause_event" DurationType="OneShot" DurationMin="0.604354" DurationMax="0.604354"/>
+				<Event Id="2008163460" Name="menuResume_event" ObjectPath="\Events\Default Work Unit\Menu\menuResume_event" DurationType="OneShot" DurationMin="0.498186" DurationMax="0.788798"/>
+				<Event Id="3869548328" Name="PerfectCatch_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PerfectCatch_event" DurationType="OneShot" DurationMin="1.333583" DurationMax="1.860476"/>
+				<Event Id="154525524" Name="PlateCount1_event" ObjectPath="\Events\Default Work Unit\PlateCounter\PlateCount1_event" DurationType="OneShot" DurationMin="3.720952" DurationMax="3.919320"/>
+				<Event Id="2273360275" Name="PlateCount2_event" ObjectPath="\Events\Default Work Unit\PlateCounter\PlateCount2_event" DurationType="OneShot" DurationMin="5.116281" DurationMax="5.116281"/>
+				<Event Id="2234946426" Name="PlateCount3_event" ObjectPath="\Events\Default Work Unit\PlateCounter\PlateCount3_event" DurationType="OneShot" DurationMin="3.720952" DurationMax="3.919320"/>
+				<Event Id="2293628003" Name="PressButton_event" ObjectPath="\Events\Default Work Unit\UI\PressButton_event" DurationType="OneShot" DurationMin="0.465125" DurationMax="1.014875"/>
+				<Event Id="300260116" Name="ReduceLife_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ReduceLife_event" DurationType="OneShot" DurationMin="3.481270" DurationMax="3.481270"/>
 				<Event Id="1399763525" Name="RoomTone_event" ObjectPath="\Events\Default Work Unit\RoomTone_event" DurationType="Infinite"/>
 				<Event Id="3921462371" Name="SwipeSound_event" ObjectPath="\Events\Default Work Unit\FeedbackSounds\SwipeSound_event" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
-				<Event Id="1118806527" Name="UnfillSound_event0" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event0" DurationType="Unknown"/>
-				<Event Id="1118806526" Name="UnfillSound_event1" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event1" DurationType="Unknown"/>
-				<Event Id="1118806525" Name="UnfillSound_event2" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event2" DurationType="Unknown"/>
-				<Event Id="1118806524" Name="UnfillSound_event3" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event3" DurationType="Unknown"/>
-				<Event Id="1118806523" Name="UnfillSound_event4" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event4" DurationType="Unknown"/>
-				<Event Id="1118806522" Name="UnfillSound_event5" ObjectPath="\Events\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event5" DurationType="Unknown"/>
+				<Event Id="2128152441" Name="TargetCollect_event" ObjectPath="\Events\Default Work Unit\Items\TargetCollect_event" DurationType="OneShot" DurationMin="1.333583" DurationMax="1.860476"/>
+				<Event Id="3022112561" Name="TargetDestroy_event" ObjectPath="\Events\Default Work Unit\Items\TargetDestroy_event" DurationType="OneShot" DurationMin="1.977652" DurationMax="1.977652"/>
+				<Event Id="982237770" Name="TargetSpawn_event" ObjectPath="\Events\Default Work Unit\Items\TargetSpawn_event" DurationType="OneShot" DurationMin="3.386463" DurationMax="3.386463"/>
+				<Event Id="3283252857" Name="TicketFeedback_event" ObjectPath="\Events\Default Work Unit\TicketFeedback_event" DurationType="OneShot" DurationMin="4.701157" DurationMax="4.701157"/>
+				<Event Id="3458164205" Name="TutorialMusic_event" ObjectPath="\Events\Default Work Unit\Music\TutorialMusic_event" DurationType="OneShot" DurationMin="128.478271" DurationMax="128.478271"/>
+				<Event Id="1118806527" Name="UnfillSound_event0" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event0" DurationType="Unknown"/>
+				<Event Id="1118806526" Name="UnfillSound_event1" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event1" DurationType="Unknown"/>
+				<Event Id="1118806525" Name="UnfillSound_event2" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event2" DurationType="Unknown"/>
+				<Event Id="1118806524" Name="UnfillSound_event3" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event3" DurationType="Unknown"/>
+				<Event Id="1118806523" Name="UnfillSound_event4" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event4" DurationType="Unknown"/>
+				<Event Id="1118806522" Name="UnfillSound_event5" ObjectPath="\Events\Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event5" DurationType="Unknown"/>
+				<Event Id="724436544" Name="VoiceOverWelcome_event" ObjectPath="\Events\Default Work Unit\VoiceOverWelcome_event" DurationType="OneShot" DurationMin="13.575601" DurationMax="13.575601"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
-				<File Id="215503673" Language="SFX">
-					<ShortName>XF_SynPerc_003.wav</ShortName>
-					<Path>SFX\XF_SynPerc_003_8CBF9462.wem</Path>
+				<File Id="2758428" Language="English(US)">
+					<ShortName>FinalWinScreen_bitter.wav</ShortName>
+					<Path>Voices\English(US)\FinalWinScreen_bitter_8CBF9462.wem</Path>
+				</File>
+				<File Id="3159177" Language="English(US)">
+					<ShortName>positiveSpeak3.wav</ShortName>
+					<Path>Voices\English(US)\positiveSpeak3_8CBF9462.wem</Path>
+				</File>
+				<File Id="17878026" Language="English(US)">
+					<ShortName>positiveSpeak1.wav</ShortName>
+					<Path>Voices\English(US)\positiveSpeak1_8CBF9462.wem</Path>
+				</File>
+				<File Id="31781730" Language="SFX">
+					<ShortName>MenuIN1.wav</ShortName>
+					<Path>SFX\MenuIN1_8CBF9462.wem</Path>
+				</File>
+				<File Id="58457526" Language="SFX">
+					<ShortName>Spotlight #1.wav</ShortName>
+					<Path>SFX\Spotlight #1_8CBF9462.wem</Path>
+				</File>
+				<File Id="97445037" Language="English(US)">
+					<ShortName>Some other time #1 (Devil Deals negative).wav</ShortName>
+					<Path>Voices\English(US)\Some other time #1 (Devil Deals negative)_8CBF9462.wem</Path>
+				</File>
+				<File Id="102664388" Language="English(US)">
+					<ShortName>Laugh4.wav</ShortName>
+					<Path>Voices\English(US)\Laugh4_8CBF9462.wem</Path>
+				</File>
+				<File Id="106327183" Language="SFX">
+					<ShortName>VictorySound2-Serum.wav</ShortName>
+					<Path>SFX\VictorySound2-Serum_8CBF9462.wem</Path>
+				</File>
+				<File Id="107041349" Language="English(US)">
+					<ShortName>Laugh1.wav</ShortName>
+					<Path>Voices\English(US)\Laugh1_8CBF9462.wem</Path>
+				</File>
+				<File Id="110140386" Language="SFX">
+					<ShortName>ReduceLife-Light5.wav</ShortName>
+					<Path>SFX\ReduceLife-Light5_8CBF9462.wem</Path>
+				</File>
+				<File Id="147215849" Language="SFX">
+					<ShortName>Snare2.wav</ShortName>
+					<Path>SFX\Snare2_8CBF9462.wem</Path>
+				</File>
+				<File Id="149296219" Language="English(US)">
+					<ShortName>positiveSpeak4.wav</ShortName>
+					<Path>Voices\English(US)\positiveSpeak4_8CBF9462.wem</Path>
+				</File>
+				<File Id="149321038" Language="SFX">
+					<ShortName>ReduceLife-Light1.wav</ShortName>
+					<Path>SFX\ReduceLife-Light1_8CBF9462.wem</Path>
+				</File>
+				<File Id="157121198" Language="English(US)">
+					<ShortName>negativeSpeak4.wav</ShortName>
+					<Path>Voices\English(US)\negativeSpeak4_8CBF9462.wem</Path>
+				</File>
+				<File Id="159001376" Language="English(US)">
+					<ShortName>EndeligWinScreen_positiv.wav</ShortName>
+					<Path>Voices\English(US)\EndeligWinScreen_positiv_8CBF9462.wem</Path>
+				</File>
+				<File Id="200055660" Language="SFX">
+					<ShortName>MenuOUT+BACK5.wav</ShortName>
+					<Path>SFX\MenuOUT+BACK5_8CBF9462.wem</Path>
+				</File>
+				<File Id="208803079" Language="SFX">
+					<ShortName>MenuBUTTON5.wav</ShortName>
+					<Path>SFX\MenuBUTTON5_8CBF9462.wem</Path>
+				</File>
+				<File Id="230764660" Language="SFX">
+					<ShortName>Ball4.wav</ShortName>
+					<Path>SFX\Ball4_8CBF9462.wem</Path>
+				</File>
+				<File Id="231968685" Language="English(US)">
+					<ShortName>negativeSpeak5.wav</ShortName>
+					<Path>Voices\English(US)\negativeSpeak5_8CBF9462.wem</Path>
+				</File>
+				<File Id="240664223" Language="SFX">
+					<ShortName>MenuOUT+BACK2.wav</ShortName>
+					<Path>SFX\MenuOUT+BACK2_8CBF9462.wem</Path>
+				</File>
+				<File Id="249492962" Language="SFX">
+					<ShortName>MenuOUT+BACK3.wav</ShortName>
+					<Path>SFX\MenuOUT+BACK3_8CBF9462.wem</Path>
+				</File>
+				<File Id="278271025" Language="SFX">
+					<ShortName>Ball3.wav</ShortName>
+					<Path>SFX\Ball3_8CBF9462.wem</Path>
+				</File>
+				<File Id="286559839" Language="SFX">
+					<ShortName>Ball2.wav</ShortName>
+					<Path>SFX\Ball2_8CBF9462.wem</Path>
+				</File>
+				<File Id="294082959" Language="SFX">
+					<ShortName>ReduceLife-Light3.wav</ShortName>
+					<Path>SFX\ReduceLife-Light3_8CBF9462.wem</Path>
+				</File>
+				<File Id="295205555" Language="English(US)">
+					<ShortName>positiveSpeak2.wav</ShortName>
+					<Path>Voices\English(US)\positiveSpeak2_8CBF9462.wem</Path>
+				</File>
+				<File Id="303410168" Language="SFX">
+					<ShortName>Ball14.wav</ShortName>
+					<Path>SFX\Ball14_8CBF9462.wem</Path>
+				</File>
+				<File Id="309135186" Language="English(US)">
+					<ShortName>positiveSpeak5.wav</ShortName>
+					<Path>Voices\English(US)\positiveSpeak5_8CBF9462.wem</Path>
+				</File>
+				<File Id="317483349" Language="English(US)">
+					<ShortName>Victory(ApplauseViola).wav</ShortName>
+					<Path>Voices\English(US)\Victory(ApplauseViola)_8CBF9462.wem</Path>
+				</File>
+				<File Id="318687930" Language="English(US)">
+					<ShortName>positiveSpeak6.wav</ShortName>
+					<Path>Voices\English(US)\positiveSpeak6_8CBF9462.wem</Path>
+				</File>
+				<File Id="319127506" Language="English(US)">
+					<ShortName>Laugh6.wav</ShortName>
+					<Path>Voices\English(US)\Laugh6_8CBF9462.wem</Path>
+				</File>
+				<File Id="326921933" Language="English(US)">
+					<ShortName>negativeSpeak2.wav</ShortName>
+					<Path>Voices\English(US)\negativeSpeak2_8CBF9462.wem</Path>
+				</File>
+				<File Id="346428609" Language="SFX">
+					<ShortName>MenuBUTTON2.wav</ShortName>
+					<Path>SFX\MenuBUTTON2_8CBF9462.wem</Path>
+				</File>
+				<File Id="348022414" Language="SFX">
+					<ShortName>TicketFeedback.wav</ShortName>
+					<Path>SFX\TicketFeedback_8CBF9462.wem</Path>
+				</File>
+				<File Id="354812407" Language="English(US)">
+					<ShortName>FinalWinScreen_positive.wav</ShortName>
+					<Path>Voices\English(US)\FinalWinScreen_positive_8CBF9462.wem</Path>
+				</File>
+				<File Id="359796803" Language="SFX">
+					<ShortName>Plates3.wav</ShortName>
+					<Path>SFX\Plates3_8CBF9462.wem</Path>
+				</File>
+				<File Id="377344929" Language="SFX">
+					<ShortName>VictorySound3.wav</ShortName>
+					<Path>SFX\VictorySound3_8CBF9462.wem</Path>
+				</File>
+				<File Id="380739088" Language="SFX">
+					<ShortName>MenuBUTTON3.wav</ShortName>
+					<Path>SFX\MenuBUTTON3_8CBF9462.wem</Path>
+				</File>
+				<File Id="401923719" Language="SFX">
+					<ShortName>ReduceLife-Light4.wav</ShortName>
+					<Path>SFX\ReduceLife-Light4_8CBF9462.wem</Path>
+				</File>
+				<File Id="410092202" Language="English(US)">
+					<ShortName>Juggle_en.wav</ShortName>
+					<Path>Voices\English(US)\Juggle_en_8CBF9462.wem</Path>
+				</File>
+				<File Id="426149657" Language="SFX">
+					<ShortName>FailSound1.wav</ShortName>
+					<Path>SFX\FailSound1_8CBF9462.wem</Path>
+				</File>
+				<File Id="443403329" Language="English(US)">
+					<ShortName>LevelSejr.wav</ShortName>
+					<Path>Voices\English(US)\LevelSejr_8CBF9462.wem</Path>
+				</File>
+				<File Id="465430774" Language="SFX">
+					<ShortName>VictorySound2.wav</ShortName>
+					<Path>SFX\VictorySound2_8CBF9462.wem</Path>
+				</File>
+				<File Id="468550532" Language="English(US)">
+					<ShortName>Laugh5.wav</ShortName>
+					<Path>Voices\English(US)\Laugh5_8CBF9462.wem</Path>
+				</File>
+				<File Id="475655860" Language="English(US)">
+					<ShortName>2_da.wav</ShortName>
+					<Path>Voices\English(US)\2_da_8CBF9462.wem</Path>
+				</File>
+				<File Id="478338151" Language="English(US)">
+					<ShortName>positiveSpeak8.wav</ShortName>
+					<Path>Voices\English(US)\positiveSpeak8_8CBF9462.wem</Path>
+				</File>
+				<File Id="485746140" Language="SFX">
+					<ShortName>MenuBUTTON8.wav</ShortName>
+					<Path>SFX\MenuBUTTON8_8CBF9462.wem</Path>
+				</File>
+				<File Id="488708768" Language="English(US)">
+					<ShortName>2_en.wav</ShortName>
+					<Path>Voices\English(US)\2_en_8CBF9462.wem</Path>
+				</File>
+				<File Id="494639428" Language="English(US)">
+					<ShortName>negativeSpeak6.wav</ShortName>
+					<Path>Voices\English(US)\negativeSpeak6_8CBF9462.wem</Path>
+				</File>
+				<File Id="496697747" Language="SFX">
+					<ShortName>Ball15.wav</ShortName>
+					<Path>SFX\Ball15_8CBF9462.wem</Path>
+				</File>
+				<File Id="506526052" Language="SFX">
+					<ShortName>Ball10.wav</ShortName>
+					<Path>SFX\Ball10_8CBF9462.wem</Path>
+				</File>
+				<File Id="525045717" Language="English(US)">
+					<ShortName>Velkommen.wav</ShortName>
+					<Path>Voices\English(US)\Velkommen_8CBF9462.wem</Path>
+				</File>
+				<File Id="526906597" Language="SFX">
+					<ShortName>PositiveCircus.wav</ShortName>
+					<Path>SFX\PositiveCircus_8CBF9462.wem</Path>
+				</File>
+				<File Id="531462315" Language="SFX">
+					<ShortName>MenuOUT+BACK6.wav</ShortName>
+					<Path>SFX\MenuOUT+BACK6_8CBF9462.wem</Path>
+				</File>
+				<File Id="544754195" Language="SFX">
+					<ShortName>Ball9.wav</ShortName>
+					<Path>SFX\Ball9_8CBF9462.wem</Path>
+				</File>
+				<File Id="569492267" Language="SFX">
+					<ShortName>Ball7.wav</ShortName>
+					<Path>SFX\Ball7_8CBF9462.wem</Path>
+				</File>
+				<File Id="579068450" Language="English(US)">
+					<ShortName>En anden gang #1 (Devil Deals negativ).wav</ShortName>
+					<Path>Voices\English(US)\En anden gang #1 (Devil Deals negativ)_8CBF9462.wem</Path>
+				</File>
+				<File Id="594514291" Language="SFX">
+					<ShortName>MenuBUTTON6.wav</ShortName>
+					<Path>SFX\MenuBUTTON6_8CBF9462.wem</Path>
+				</File>
+				<File Id="606071114" Language="SFX">
+					<ShortName>Ball8.wav</ShortName>
+					<Path>SFX\Ball8_8CBF9462.wem</Path>
+				</File>
+				<File Id="614457241" Language="English(US)">
+					<ShortName>Laugh2.wav</ShortName>
+					<Path>Voices\English(US)\Laugh2_8CBF9462.wem</Path>
+				</File>
+				<File Id="617619245" Language="SFX">
+					<ShortName>Plates5.wav</ShortName>
+					<Path>SFX\Plates5_8CBF9462.wem</Path>
+				</File>
+				<File Id="622215191" Language="English(US)">
+					<ShortName>Welcome.wav</ShortName>
+					<Path>Voices\English(US)\Welcome_8CBF9462.wem</Path>
+				</File>
+				<File Id="628245132" Language="SFX">
+					<ShortName>MenuBUTTON7.wav</ShortName>
+					<Path>SFX\MenuBUTTON7_8CBF9462.wem</Path>
+				</File>
+				<File Id="631673562" Language="SFX">
+					<ShortName>DevilCircus-WIN.wav</ShortName>
+					<Path>SFX\DevilCircus-WIN_8CBF9462.wem</Path>
+				</File>
+				<File Id="637901445" Language="SFX">
+					<ShortName>Snare3.wav</ShortName>
+					<Path>SFX\Snare3_8CBF9462.wem</Path>
+				</File>
+				<File Id="638935931" Language="SFX">
+					<ShortName>Ball11.wav</ShortName>
+					<Path>SFX\Ball11_8CBF9462.wem</Path>
+				</File>
+				<File Id="644996573" Language="English(US)">
+					<ShortName>3_da.wav</ShortName>
+					<Path>Voices\English(US)\3_da_8CBF9462.wem</Path>
+				</File>
+				<File Id="665386558" Language="SFX">
+					<ShortName>Ball5.wav</ShortName>
+					<Path>SFX\Ball5_8CBF9462.wem</Path>
+				</File>
+				<File Id="667928321" Language="SFX">
+					<ShortName>MenuOUT+BACK4.wav</ShortName>
+					<Path>SFX\MenuOUT+BACK4_8CBF9462.wem</Path>
+				</File>
+				<File Id="683241596" Language="SFX">
+					<ShortName>VictorySound1.wav</ShortName>
+					<Path>SFX\VictorySound1_8CBF9462.wem</Path>
+				</File>
+				<File Id="709874983" Language="English(US)">
+					<ShortName>1_en.wav</ShortName>
+					<Path>Voices\English(US)\1_en_8CBF9462.wem</Path>
+				</File>
+				<File Id="713299935" Language="English(US)">
+					<ShortName>Værsgo_da.wav</ShortName>
+					<Path>Voices\English(US)\Værsgo_da_8CBF9462.wem</Path>
+				</File>
+				<File Id="732446568" Language="SFX">
+					<ShortName>VictorySound4-Serum.wav</ShortName>
+					<Path>SFX\VictorySound4-Serum_8CBF9462.wem</Path>
+				</File>
+				<File Id="739577633" Language="English(US)">
+					<ShortName>Laugh7.wav</ShortName>
+					<Path>Voices\English(US)\Laugh7_8CBF9462.wem</Path>
+				</File>
+				<File Id="747336055" Language="SFX">
+					<ShortName>Ball1.wav</ShortName>
+					<Path>SFX\Ball1_8CBF9462.wem</Path>
+				</File>
+				<File Id="758204009" Language="SFX">
+					<ShortName>Ball12.wav</ShortName>
+					<Path>SFX\Ball12_8CBF9462.wem</Path>
+				</File>
+				<File Id="764044488" Language="English(US)">
+					<ShortName>Laugh3.wav</ShortName>
+					<Path>Voices\English(US)\Laugh3_8CBF9462.wem</Path>
+				</File>
+				<File Id="765947332" Language="SFX">
+					<ShortName>Snare1.wav</ShortName>
+					<Path>SFX\Snare1_8CBF9462.wem</Path>
+				</File>
+				<File Id="783569748" Language="SFX">
+					<ShortName>VictorySound1-Serum.wav</ShortName>
+					<Path>SFX\VictorySound1-Serum_8CBF9462.wem</Path>
+				</File>
+				<File Id="795879079" Language="SFX">
+					<ShortName>Ball13.wav</ShortName>
+					<Path>SFX\Ball13_8CBF9462.wem</Path>
+				</File>
+				<File Id="822509650" Language="SFX">
+					<ShortName>InfernoCircus-FINAL.wav</ShortName>
+					<Path>SFX\InfernoCircus-FINAL_8CBF9462.wem</Path>
+				</File>
+				<File Id="822983069" Language="English(US)">
+					<ShortName>EndeligWinScreen_bitter.wav</ShortName>
+					<Path>Voices\English(US)\EndeligWinScreen_bitter_8CBF9462.wem</Path>
+				</File>
+				<File Id="832502747" Language="English(US)">
+					<ShortName>negativeSpeak3.wav</ShortName>
+					<Path>Voices\English(US)\negativeSpeak3_8CBF9462.wem</Path>
+				</File>
+				<File Id="839249387" Language="SFX">
+					<ShortName>MenuOUT+BACK1.wav</ShortName>
+					<Path>SFX\MenuOUT+BACK1_8CBF9462.wem</Path>
+				</File>
+				<File Id="843322810" Language="English(US)">
+					<ShortName>Devil Deals intro EN.wav</ShortName>
+					<Path>Voices\English(US)\Devil Deals intro EN_8CBF9462.wem</Path>
+				</File>
+				<File Id="854427841" Language="English(US)">
+					<ShortName>positiveSpeak7.wav</ShortName>
+					<Path>Voices\English(US)\positiveSpeak7_8CBF9462.wem</Path>
 				</File>
 				<File Id="866720910" Language="SFX">
 					<ShortName>MGP2_Room2.wav</ShortName>
 					<Path>SFX\MGP2_Room2_8663AA8C.wem</Path>
+				</File>
+				<File Id="885100807" Language="English(US)">
+					<ShortName>1_da.wav</ShortName>
+					<Path>Voices\English(US)\1_da_8CBF9462.wem</Path>
+				</File>
+				<File Id="887967556" Language="SFX">
+					<ShortName>BurningCircus-FINAL.wav</ShortName>
+					<Path>SFX\BurningCircus-FINAL_8CBF9462.wem</Path>
+				</File>
+				<File Id="899294540" Language="English(US)">
+					<ShortName>Devil Deals intro DA.wav</ShortName>
+					<Path>Voices\English(US)\Devil Deals intro DA_8CBF9462.wem</Path>
+				</File>
+				<File Id="906945915" Language="SFX">
+					<ShortName>VictorySound4.wav</ShortName>
+					<Path>SFX\VictorySound4_8CBF9462.wem</Path>
+				</File>
+				<File Id="917045389" Language="SFX">
+					<ShortName>GlitchScreen2-short.wav</ShortName>
+					<Path>SFX\GlitchScreen2-short_8CBF9462.wem</Path>
+				</File>
+				<File Id="941862658" Language="SFX">
+					<ShortName>MenuBUTTON9.wav</ShortName>
+					<Path>SFX\MenuBUTTON9_8CBF9462.wem</Path>
+				</File>
+				<File Id="943302951" Language="English(US)">
+					<ShortName>positiveSpeak9.wav</ShortName>
+					<Path>Voices\English(US)\positiveSpeak9_8CBF9462.wem</Path>
+				</File>
+				<File Id="946482215" Language="SFX">
+					<ShortName>ReduceLife-LightSAMLET.wav</ShortName>
+					<Path>SFX\ReduceLife-LightSAMLET_8CBF9462.wem</Path>
+				</File>
+				<File Id="964181006" Language="English(US)">
+					<ShortName>negativeSpeak1.wav</ShortName>
+					<Path>Voices\English(US)\negativeSpeak1_8CBF9462.wem</Path>
+				</File>
+				<File Id="975721413" Language="SFX">
+					<ShortName>MenuBUTTON1.wav</ShortName>
+					<Path>SFX\MenuBUTTON1_8CBF9462.wem</Path>
+				</File>
+				<File Id="982975328" Language="SFX">
+					<ShortName>ReduceLife-Light2.wav</ShortName>
+					<Path>SFX\ReduceLife-Light2_8CBF9462.wem</Path>
+				</File>
+				<File Id="991598321" Language="English(US)">
+					<ShortName>En anden gang #2 (Devil Deals negativ).wav</ShortName>
+					<Path>Voices\English(US)\En anden gang #2 (Devil Deals negativ)_8CBF9462.wem</Path>
+				</File>
+				<File Id="994559218" Language="SFX">
+					<ShortName>Plates7.wav</ShortName>
+					<Path>SFX\Plates7_8CBF9462.wem</Path>
+				</File>
+				<File Id="1001748452" Language="SFX">
+					<ShortName>MenuBUTTON10.wav</ShortName>
+					<Path>SFX\MenuBUTTON10_8CBF9462.wem</Path>
+				</File>
+				<File Id="1015679304" Language="SFX">
+					<ShortName>VictorySound3-Serum.wav</ShortName>
+					<Path>SFX\VictorySound3-Serum_8CBF9462.wem</Path>
+				</File>
+				<File Id="1017538280" Language="SFX">
+					<ShortName>MenuBUTTON4.wav</ShortName>
+					<Path>SFX\MenuBUTTON4_8CBF9462.wem</Path>
+				</File>
+				<File Id="1018737315" Language="SFX">
+					<ShortName>Plates4.wav</ShortName>
+					<Path>SFX\Plates4_8CBF9462.wem</Path>
+				</File>
+				<File Id="1030349145" Language="SFX">
+					<ShortName>Ball6.wav</ShortName>
+					<Path>SFX\Ball6_8CBF9462.wem</Path>
+				</File>
+				<File Id="1042566513" Language="SFX">
+					<ShortName>PlateDestroy.wav</ShortName>
+					<Path>SFX\PlateDestroy_8CBF9462.wem</Path>
+				</File>
+				<File Id="1047563840" Language="English(US)">
+					<ShortName>3_en.wav</ShortName>
+					<Path>Voices\English(US)\3_en_8CBF9462.wem</Path>
+				</File>
+				<File Id="1070768303" Language="SFX">
+					<ShortName>Plates6.wav</ShortName>
+					<Path>SFX\Plates6_8CBF9462.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
