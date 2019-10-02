@@ -2684,6 +2684,7 @@ GameObject:
   - component: {fileID: 1245274196788608172}
   - component: {fileID: 2658865176854108865}
   - component: {fileID: 857906305}
+  - component: {fileID: 8097838753860159148}
   m_Layer: 0
   m_Name: Viola
   m_TagString: Untagged
@@ -2740,6 +2741,23 @@ MonoBehaviour:
   maxLives: 4
   CurrentLives: 0
   offset: 15
+--- !u!114 &8097838753860159148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3387400380596688685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853dc1d703d5e6e4491cbd335f6c3c55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face1: {fileID: 8639589573325729735}
+  face2: {fileID: 1845333193058938045}
+  face3: {fileID: 8124500348779064622}
+  face4: {fileID: 4015999109559493818}
+  face5: {fileID: 8173055019146046371}
 --- !u!1 &3430601116907612870
 GameObject:
   m_ObjectHideFlags: 0
