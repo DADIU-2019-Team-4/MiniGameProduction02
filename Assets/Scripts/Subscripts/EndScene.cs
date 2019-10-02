@@ -23,10 +23,12 @@ public class EndScene : MonoBehaviour
     private void Awake()
     {
         MenuController = FindObjectOfType<MenuController>();
+
     }
 
     private void Start()
     {
+        AkSoundEngine.PostEvent("FinalWin_event", gameObject);
         if (MenuController.language == "English")
         {
             buttonsEnglish.SetActive(true);
