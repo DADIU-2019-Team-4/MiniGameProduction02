@@ -50,10 +50,16 @@ public class BallController : MonoBehaviour
     public float spawnAllIntervals;
 
     //Test of shaderFlames
-    public Vector4 displacementAmounts;
-    public Vector4 endingAmount =new Vector4(0, 0, 0, 0);
+    public Vector2 displacementAmounts;
+    public float alphaTreshold;
+    public float endingAlpha = 8;
+    public Vector2 endingAmount =new Vector2(0, 0);
     MeshRenderer meshRender;
     public GameObject flameMeshShader;
+    public Material flameMat;
+
+    //for vibration
+    public long shakeDur = 10; 
 
     public bool IsAlwaysPerfectCatch { get; set; }
 
@@ -74,7 +80,8 @@ public class BallController : MonoBehaviour
             _tutorialLevel = false;
 
         //test
-        meshRender = flameMeshShader.GetComponent<MeshRenderer>(); 
+        meshRender = flameMeshShader.GetComponent<MeshRenderer>();
+       // flameMat = flameMeshShader.GetComponent<Material>();
     }
 
 
@@ -84,10 +91,29 @@ public class BallController : MonoBehaviour
         //if (item.tag == "Balloon")
         // item.GetComponent<Rigidbody>().AddForce(new Vector3(0, BalloonFloatStrength, 0));
 
+        /*float duration = 5;
+        float journey = 0f;
+
+        while (journey <= duration)
+        {
+            float percent = journey / duration;
+            journey += Time.deltaTime;
+            displacementAmounts = Vector2.Lerp(displacementAmounts, endingAmount, percent);
+            meshRender.material.SetVector("scrollingDirection1", displacementAmounts);
+            meshRender.material.SetVector("scrollingDirection2", displacementAmounts);
+            Debug.Log(meshRender.material.GetVector("scrollingDirection1"));
+
+        }*/
+        float duration = 5;
+       
+
         // displacementAmounts = Mathf.Lerp(displacementAmounts, 0, Time.deltaTime);
-        displacementAmounts = Vector4.Lerp(displacementAmounts, endingAmount, Time.deltaTime);
-        meshRender.material.SetVector("scrollingDirection1", displacementAmounts);
-        meshRender.material.SetVector("scrollingDirection2", displacementAmounts);
+        //displacementAmounts = Vector2.Lerp(displacementAmounts, endingAmount, Time.deltaTime);
+         alphaTreshold = Mathf.Lerp(alphaTreshold, endingAlpha, Time.deltaTime / 2f); 
+        //flameMat.SetVector("Vector2_1A69BC93", displacementAmounts);
+        //flameMat.SetVector("Vector2_8E43C0B2", displacementAmounts);
+        flameMat.SetFloat("Vector1_65A0DC95", alphaTreshold);
+
     }
 
     private void Start()
@@ -227,9 +253,15 @@ public class BallController : MonoBehaviour
         ball.GetComponent<Ball>().wasPerfectlyThrown = perfect;
         if (perfect)
         {
-            flameMeshShader.SetActive(true);
-            displacementAmounts += new Vector4(0, 0, -2, 0);
-            Debug.Log("happened");
+            Vibration.Vibrate(shakeDur);
+            //flameMeshShader.SetActive(true);
+            
+            //displacementAmounts += new Vector2(-1, -1);
+            alphaTreshold = 0f;
+            flameMat.SetFloat("Vector1_65A0DC95", alphaTreshold);
+           // flameMat.SetVector("Vector2_1A69BC93", displacementAmounts);
+            //flameMat.SetVector("Vector2_8E43COB2", displacementAmounts);
+             
         }
 
         Vector3 throwVector = GetThrowForce(throwType, ball);
@@ -344,5 +376,66 @@ public class BallController : MonoBehaviour
     {
         Debug.Log("Goes to delay");
         yield return new WaitForSeconds(seconds);
+    }
+}
+
+
+
+public static class Vibration
+{
+
+#if UNITY_ANDROID && !UNITY_EDITOR
+    public static AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+    public static AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+    public static AndroidJavaObject vibrator = currentActivity.Call<AndroidJavaObject>("getSystemService", "vibrator");
+#else
+    public static AndroidJavaClass unityPlayer;
+    public static AndroidJavaObject currentActivity;
+    public static AndroidJavaObject vibrator;
+#endif
+
+    public static void Vibrate()
+    {
+        if (isAndroid())
+            vibrator.Call("vibrate");
+        else
+            Handheld.Vibrate();
+    }
+
+
+    public static void Vibrate(long milliseconds)
+    {
+        if (isAndroid())
+            vibrator.Call("vibrate", milliseconds);
+        else
+            Handheld.Vibrate();
+    }
+
+    public static void Vibrate(long[] pattern, int repeat)
+    {
+        if (isAndroid())
+            vibrator.Call("vibrate", pattern, repeat);
+        else
+            Handheld.Vibrate();
+    }
+
+    public static bool HasVibrator()
+    {
+        return isAndroid();
+    }
+
+    public static void Cancel()
+    {
+        if (isAndroid())
+            vibrator.Call("cancel");
+    }
+
+    private static bool isAndroid()
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
+	return true;
+#else
+        return false;
+#endif
     }
 }
