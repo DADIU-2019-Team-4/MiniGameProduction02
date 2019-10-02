@@ -1807,11 +1807,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Devil Deal Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7017731355362783356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7017731355362783353, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1917,120 +1912,45 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7017731355446611427, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 7017731355446611427, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 150
-      objectReference: {fileID: 0}
     - target: {fileID: 7017731355237260114, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1000
+      value: 865
       objectReference: {fileID: 0}
     - target: {fileID: 7017731355237260114, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 900
+      value: 615
       objectReference: {fileID: 0}
-    - target: {fileID: 7017731354115473404, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+    - target: {fileID: 7017731355446611427, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 504
       objectReference: {fileID: 0}
-    - target: {fileID: 7017731354115473404, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+    - target: {fileID: 7017731355446611427, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 7017731355446611356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7017731355446611356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AcceptDevilDeal
-      objectReference: {fileID: 0}
-    - target: {fileID: 7017731355446611356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7017731355446611356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7017731355446611356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
+      value: 237
       objectReference: {fileID: 0}
     - target: {fileID: 7017731355237260115, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 90
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 7017731355237260115, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
         type: 3}
       propertyPath: m_FontData.m_MaxSize
-      value: 90
+      value: 120
       objectReference: {fileID: 0}
-    - target: {fileID: 7017731354115473405, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+    - target: {fileID: 7017731354115473404, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      propertyPath: m_SizeDelta.x
+      value: 504
       objectReference: {fileID: 0}
-    - target: {fileID: 7017731354115473405, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+    - target: {fileID: 7017731354115473404, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DeclineDevilDeal
-      objectReference: {fileID: 0}
-    - target: {fileID: 7017731354115473405, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7017731354115473405, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7017731354115473405, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2214391258891403627, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2214391258891403627, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DeclineDevilDeal
-      objectReference: {fileID: 0}
-    - target: {fileID: 2214391258891403627, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2214391258891403627, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2214391258891403627, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
+      propertyPath: m_SizeDelta.y
+      value: 237
       objectReference: {fileID: 0}
     - target: {fileID: 947642714337927993, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
         type: 3}
@@ -2053,6 +1973,81 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 947642714337927993, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214391258891403627, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214391258891403627, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeclineDevilDeal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214391258891403627, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214391258891403627, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214391258891403627, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017731355446611356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017731355446611356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AcceptDevilDeal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017731355446611356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017731355446611356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017731355446611356, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017731354115473405, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017731354115473405, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeclineDevilDeal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017731354115473405, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017731354115473405, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017731354115473405, guid: 674e7d1bf586c3b4f8fa69ef75d96db5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -2286,7 +2281,7 @@ PrefabInstance:
     - target: {fileID: 7553742510844039743, guid: e93620c7621efb54da6bd1c97b000ee5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -100
+      value: -568
       objectReference: {fileID: 0}
     - target: {fileID: 7553742510844039743, guid: e93620c7621efb54da6bd1c97b000ee5,
         type: 3}
@@ -2327,6 +2322,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012903172096525472, guid: e93620c7621efb54da6bd1c97b000ee5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -447
       objectReference: {fileID: 0}
     - target: {fileID: 1252667112078340382, guid: e93620c7621efb54da6bd1c97b000ee5,
         type: 3}

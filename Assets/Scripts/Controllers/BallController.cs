@@ -22,10 +22,6 @@ public class BallController : MonoBehaviour
     public Vector3 lerpRightHandTarget;
     public Vector3 lerpLeftHandTarget;
 
-
-
-
-
     // TODO: Make these private and programmatically retrieve these.
     // These should NOT available in the editor; This is bloat for Level Designers.
     public Transform leftHand;
@@ -229,6 +225,10 @@ public class BallController : MonoBehaviour
         var ball = GetBallToThrow(hand);
         if (ball == null) return;
 
+        var anim = ball.GetComponent<Animator>();
+        if (anim.isActiveAndEnabled && ball.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime < 0.5)
+            return;
+
         //Rigidbody ballRigidBody = ball.GetComponent<Rigidbody>();
 
         //ball.GetComponent<Animator>().enabled = true;
@@ -429,7 +429,7 @@ public class BallController : MonoBehaviour
 
     public bool CheckIfEndOfAnimation(GameObject ball)
     {
-        if (ball.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.7f)
+        if (ball.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
         {
             if (ball.GetComponent<Transform>().position.x < 0)
                 EnablePhysicsAndApplyForce(ball, new Vector3(-1, 0, 0), 50f);

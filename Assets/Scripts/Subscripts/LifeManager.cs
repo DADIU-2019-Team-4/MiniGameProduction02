@@ -14,7 +14,7 @@ public class LifeManager : MonoBehaviour
 
     public int maxLives = 3;
 
-    public int CurrentLives;// { get; set; }
+    public int CurrentLives;
 
     [SerializeField]
     private float offset = 15;

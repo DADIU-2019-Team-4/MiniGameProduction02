@@ -29,23 +29,27 @@ public class SceneController : MonoBehaviour
     public void LevelFailed()
     {
         AkSoundEngine.PostEvent("FailSound_event", gameObject);
-        levelFailed.SetActive(true);
         Time.timeScale = 0;
         IsPlaying = false; // Stops background rotation
 
         endings.CheckGameFailedEnding();
         GameEnded = endings.GameEnded;
+
+        if (!GameEnded)
+            levelFailed.SetActive(true);
     }
 
     public void LevelCompleted()
     {
         AkSoundEngine.PostEvent("LevelCompleted_event", gameObject);
-        levelCompleted.SetActive(true);
         Time.timeScale = 0;
         IsPlaying = false; // Stops background rotation
 
         endings.CheckGameCompletedEnding();
         GameEnded = endings.GameEnded;
+
+        if (!GameEnded)
+            levelCompleted.SetActive(true);
     }
 
     public void GoToLevelSelect()
