@@ -27,12 +27,12 @@ public class RotateBackground : MonoBehaviour
 
     private void RotateScenery()
     {
-        if (Background != null)
+        if (Background != null && Time.timeScale != 0)
         {
             value += Time.deltaTime * (1 / Time.timeScale);
             Vector3 rotation = new Vector3(0, -180 + value * RotationSpeed, 0);
             Background.GetComponent<Transform>().eulerAngles = rotation;
-            Lighting.GetComponent<Transform>().eulerAngles = rotation;
+            //Lighting.GetComponent<Transform>().eulerAngles = rotation;
         }
     }
 }

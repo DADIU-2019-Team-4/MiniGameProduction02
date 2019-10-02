@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Splash Screen Scene.unity
     guid: e4bf9682e11319c4897ce717235fc716
   - enabled: 1
+    path: Assets/Scenes/Intro Scene.unity
+    guid: 5252581b34165874aabb1a5344a57084
+  - enabled: 1
     path: Assets/Scenes/Level Select.unity
     guid: af41a9a47c008424d9fd70820e839c83
   - enabled: 1

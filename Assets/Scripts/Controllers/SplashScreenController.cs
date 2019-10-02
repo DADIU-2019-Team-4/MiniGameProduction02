@@ -44,6 +44,6 @@ public class SplashScreenController : MonoBehaviour
         _headphones.DOFade(0f, _fadeDuration);
         yield return new WaitForSeconds(_fadeDuration);
 
-        SceneManager.LoadScene("Level Select");
+        SceneManager.LoadScene("Intro Scene");
     }
 }
