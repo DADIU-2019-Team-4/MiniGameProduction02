@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: d02436a52b352423b97dfcc180732f14,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -127,6 +127,30 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 966599028}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &278648722 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2869148510622893615, guid: b661b29d0c35b1f489599c68d69ce023,
+    type: 3}
+  m_PrefabInstance: {fileID: 966599028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &402335389 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2869148509522130615, guid: b661b29d0c35b1f489599c68d69ce023,
+    type: 3}
+  m_PrefabInstance: {fileID: 966599028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &563729173 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1267635558868094372, guid: 8217b052d62188241932da549938efdf,
@@ -669,6 +693,26 @@ PrefabInstance:
       propertyPath: m_FontData.m_MaxSize
       value: 96
       objectReference: {fileID: 0}
+    - target: {fileID: 8398375617478975318, guid: b661b29d0c35b1f489599c68d69ce023,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 595062722}
+    - target: {fileID: 8398375617478975318, guid: b661b29d0c35b1f489599c68d69ce023,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToLevelSelectScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398375617784769463, guid: b661b29d0c35b1f489599c68d69ce023,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 563729173}
+    - target: {fileID: 8398375617784769463, guid: b661b29d0c35b1f489599c68d69ce023,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b661b29d0c35b1f489599c68d69ce023, type: 3}
 --- !u!1 &966599029 stripped
@@ -835,6 +879,18 @@ PrefabInstance:
       objectReference: {fileID: 966599029}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68421bde4d4cf65448d7f4e404a10c16, type: 3}
+--- !u!114 &1279280322 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5804652498473236591, guid: b661b29d0c35b1f489599c68d69ce023,
+    type: 3}
+  m_PrefabInstance: {fileID: 966599028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1309899574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,6 +1295,26 @@ PrefabInstance:
       propertyPath: maxActivePlates
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: CollectedText
+      value: 
+      objectReference: {fileID: 402335389}
+    - target: {fileID: 7723828974934822010, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: GoalText
+      value: 
+      objectReference: {fileID: 278648722}
+    - target: {fileID: 5554352687557745370, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: Background
+      value: 
+      objectReference: {fileID: 2342401213739994542}
+    - target: {fileID: 2014781252036918564, guid: 8217b052d62188241932da549938efdf,
+        type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 1279280322}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8217b052d62188241932da549938efdf, type: 3}
 --- !u!1001 &2342401213739994541
