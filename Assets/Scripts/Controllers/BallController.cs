@@ -24,6 +24,7 @@ public class BallController : MonoBehaviour
 
     // TODO: Make these private and programmatically retrieve these.
     // These should NOT available in the editor; This is bloat for Level Designers.
+
     public Transform leftHand;
     public Transform rightHand;
     public GameObject leftPerfectCatch;
@@ -40,6 +41,7 @@ public class BallController : MonoBehaviour
     public Vector3 balloonThrowDown;
     public Vector3 ballonThrowMid;
     public int ballSelectorInt = 0;
+    [Range(0,1)]
     public float delayTime;
     [Header("Falling Ball Settings")]
     public float slowDownTime;

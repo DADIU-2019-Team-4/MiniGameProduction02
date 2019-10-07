@@ -49,7 +49,6 @@ public class DevilDealController : MonoBehaviour
     private float offset = 40;
     private float imageWidth;
 
-    [SerializeField, TextArea(10, 100)]
     private string dealDescription;
 
     [SerializeField]

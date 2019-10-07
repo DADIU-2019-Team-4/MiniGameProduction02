@@ -57,7 +57,7 @@ public class SceneController : MonoBehaviour
         if (!GameEnded)
         {
             levelCompleted.SetActive(true);
-            scoreText.text = ScoreController.publicScore.ToString();
+            scoreText.text = ScoreController.Score.ToString();
         }
     }
 

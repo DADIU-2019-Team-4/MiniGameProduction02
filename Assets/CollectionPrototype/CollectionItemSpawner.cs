@@ -14,12 +14,17 @@ public class CollectionItemSpawner : MonoBehaviour
 
     public GameObject prefab;
 
+    [HideInInspector]
     public bool isTop = false;
+    [HideInInspector]
     public bool isMid = false;
+    [HideInInspector]
     public bool isBottom = false;
 
+    [HideInInspector]
     public int currentActivePlates;
     public int maxActivePlates;
+    [HideInInspector]
     public int ItemsCollected;
     public int NumberOfItemsToGoal;
     public float timeUntilItemsDissappear;

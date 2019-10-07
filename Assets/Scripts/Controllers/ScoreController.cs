@@ -4,10 +4,8 @@ using UnityEngine.UI;
 public class ScoreController : MonoBehaviour
 {
     public Text scoreText;
-    [SerializeField]
-    private int score;
 
-    public int publicScore { get { return score; } }
+    public int Score;
 
     private int receivedPoints;
     [SerializeField]
@@ -24,15 +22,15 @@ public class ScoreController : MonoBehaviour
             // when multiplier devil deal is activated, only build up multiplier when perfect throw.
             if (!MultiplierDevilDealActivated)
                 itemHitCombo++;
-            score += itemHitCombo;
+            Score += itemHitCombo;
         }
         else
         {
             // Code for perfect throws. Not entirely decided on yet.
-            score += itemHitCombo * 2;
+            Score += itemHitCombo * 2;
             itemHitCombo++;
         }
-        scoreText.text = score.ToString();
+        scoreText.text = Score.ToString();
     }
 
     public void ResetMultiplier()
