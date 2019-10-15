@@ -1,15 +1,30 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject levelFailedText;
+    private Endings endings;
+    private ScoreController ScoreController;
 
     [SerializeField]
-    private GameObject levelCompletedText;
+    private GameObject levelFailed;
+
+    [SerializeField]
+    private GameObject levelCompleted;
+
+    [SerializeField]
+    private Text scoreText;
 
     public bool IsPlaying { get; set; }
+
+    public bool GameEnded { get; set; }
+
+    private void Awake()
+    {
+        endings = FindObjectOfType<Endings>();
+        ScoreController = FindObjectOfType<ScoreController>();
+    }
 
     public void ResetScene()
     {
@@ -19,14 +34,31 @@ public class SceneController : MonoBehaviour
 
     public void LevelFailed()
     {
-        levelFailedText.SetActive(true);
+        AkSoundEngine.PostEvent("FailSound_event", gameObject);
         Time.timeScale = 0;
+        IsPlaying = false; // Stops background rotation
+
+        endings.CheckGameFailedEnding();
+        GameEnded = endings.GameEnded;
+
+        if (!GameEnded)
+            levelFailed.SetActive(true);
     }
 
     public void LevelCompleted()
     {
-        levelCompletedText.SetActive(true);
+        AkSoundEngine.PostEvent("LevelCompleted_event", gameObject);
         Time.timeScale = 0;
+        IsPlaying = false; // Stops background rotation
+
+        endings.CheckGameCompletedEnding();
+        GameEnded = endings.GameEnded;
+
+        if (!GameEnded)
+        {
+            levelCompleted.SetActive(true);
+            scoreText.text = ScoreController.publicScore.ToString();
+        }
     }
 
     public void GoToLevelSelect()

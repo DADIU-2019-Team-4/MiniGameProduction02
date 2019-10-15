@@ -6,6 +6,9 @@ public class ClockController : MonoBehaviour
     private SceneController sceneController;
 
     [SerializeField]
+    private Text timerText;
+
+    [SerializeField]
     private Image filling;
 
     [SerializeField]
@@ -13,10 +16,13 @@ public class ClockController : MonoBehaviour
 
     [SerializeField]
     private float timerValue = 60f;
+    public GameObject Background;
 
     private float currentTimerValue;
 
     private float arrowEndValueInDegrees = 360;
+
+    private int prevSecond = 6;
 
     private void Awake()
     {
@@ -27,7 +33,7 @@ public class ClockController : MonoBehaviour
     {
         currentTimerValue = timerValue;
         UpdateArrow();
-        filling.fillAmount = 1;
+        UpdateClock();
     }
 
     private void Update()
@@ -38,9 +44,16 @@ public class ClockController : MonoBehaviour
 
     private void UpdateArrow()
     {
-        float timeRatio = currentTimerValue / timerValue;
+        float timeRatio = currentTimerValue / 60;
         float value = arrowEndValueInDegrees - arrowEndValueInDegrees * timeRatio;
         arrow.transform.eulerAngles = new Vector3(0, 0, value);
+        RotateScenery(value);
+    }
+
+    private void RotateScenery(float value)
+    {
+        if (Background != null)
+            Background.GetComponent<Transform>().eulerAngles = new Vector3(0, value, 0);
     }
 
     private void UpdateTimer()
@@ -48,6 +61,16 @@ public class ClockController : MonoBehaviour
         if (Time.timeScale != 0)
         {
             currentTimerValue -= Time.deltaTime * (1 / Time.timeScale);
+
+            if(currentTimerValue<=5.0f)
+            {
+                int second = Mathf.RoundToInt(currentTimerValue);
+                if (second<prevSecond)
+                {
+                    AkSoundEngine.PostEvent("TimerSound_event" + second, gameObject);
+                    prevSecond = second;
+                }
+            }
 
             if (currentTimerValue <= 0)
                 sceneController.LevelCompleted();
@@ -59,7 +82,14 @@ public class ClockController : MonoBehaviour
 
     private void UpdateClock()
     {
-        float fillingValue = currentTimerValue / timerValue;
+        // update the analog clock
+        float fillingValue = currentTimerValue / 60;
         filling.fillAmount = fillingValue;
+
+        // update the digital clock
+        string minutes = Mathf.Floor(currentTimerValue / 60).ToString("00");
+        string seconds = (currentTimerValue % 60).ToString("00");
+
+        timerText.text = $"{minutes}:{seconds}";
     }
 }

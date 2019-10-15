@@ -19,11 +19,13 @@ public class Hand : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        BallController.BallEntersHand(other);
+        if(other.gameObject.tag == "Ball")
+            BallController.BallEntersHand(other);
     }
 
     private void OnTriggerExit(Collider other)
     {
         BallController.BallLeavesHand(other);
     }
+
 }

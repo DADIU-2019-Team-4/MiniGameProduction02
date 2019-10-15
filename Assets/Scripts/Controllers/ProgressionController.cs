@@ -43,6 +43,9 @@ public class ProgressionController : MonoBehaviour
 
     public CrowdHappiness CurrentCrowdHappiness;
 
+    private int prevPartsToFill;
+    private bool startOfLevel;
+
     private void Awake()
     {
         SceneController = FindObjectOfType<SceneController>();
@@ -56,11 +59,14 @@ public class ProgressionController : MonoBehaviour
         degreesPerStep = arrowEndValueInDegrees / totalSteps;
         stepsPerColor = totalSteps / totalColors;
         currentSteps = arrowStartInSteps;
+        prevPartsToFill = 0;
+        startOfLevel = true;
 
         // setting up parts and arrow
         UpdateParts();
         UpdateArrow(currentSteps);    
         DeterminePartType();
+        startOfLevel = false;
     }
 
     public void UpdateProgression(ScoreController.CatchType catchType)
@@ -75,6 +81,7 @@ public class ProgressionController : MonoBehaviour
                 break;
 
             case ScoreController.CatchType.Perfect:
+                AkSoundEngine.PostEvent("PerfectCatch_event", gameObject);
                 currentSteps += perfectCatchStep;
                 if (currentSteps > totalSteps)
                     currentSteps = totalSteps;
@@ -82,6 +89,7 @@ public class ProgressionController : MonoBehaviour
 
             case ScoreController.CatchType.Failed:
                 currentSteps += failStep;
+
                 if (currentSteps <= 0)
                 {
                     currentSteps = 0;
@@ -113,13 +121,27 @@ public class ProgressionController : MonoBehaviour
     private void UpdateArrow(int value)
     {
         arrow.transform.eulerAngles = new Vector3(0, 0, value * degreesPerStep);
+        if(!startOfLevel)
+            AkSoundEngine.PostEvent("ClockArrowSound_event", gameObject);
     }
 
     private void UpdateParts()
     {
         int partsToFill = Mathf.FloorToInt((float)currentSteps / stepsPerPart);
+        if (prevPartsToFill == 0)
+        {
+            prevPartsToFill = partsToFill;
+        }
+        if (prevPartsToFill < partsToFill)
+        {
+            AkSoundEngine.PostEvent("FillSound_event" + partsToFill, gameObject);
+            prevPartsToFill = partsToFill;
+        }
+        else if(prevPartsToFill > partsToFill)
+        {
+            AkSoundEngine.PostEvent("UnfillSound_event" + partsToFill, gameObject);
+            prevPartsToFill = partsToFill;
+        }
         filling.fillAmount = (float)partsToFill / totalParts;
     }
-
-
 }

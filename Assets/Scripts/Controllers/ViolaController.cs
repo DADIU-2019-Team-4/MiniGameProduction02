@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class ViolaController : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class ViolaController : MonoBehaviour
 
     private BallController BallController;
     //private ScoreController ScoreController;
+    private Animator ViolaAnimator;
 
     //private Hand leftHand;
     //private Hand rightHand;
@@ -35,11 +37,30 @@ public class ViolaController : MonoBehaviour
     void Start()
     {
         //AssignHands("LeftHandCollider");
+        ViolaAnimator = gameObject.GetComponent<Animator>();
     }
 
     public void Throw(ThrowType throwType, HandType handType)
     {
         BallController.Throw(throwType, handType);
+
+        // Compose Trigger's name (direction + hand)
+        String TriggerName = "throw";
+        TriggerName +=
+            (throwType == ThrowType.HighThrow) ? "Up" :
+            (throwType == ThrowType.MidThrow) ? "Side" :
+            (throwType == ThrowType.FloorBounce) ? "Down" :
+            "INVALID";
+
+        // Note that Triggers L&R follow user's perspective, while Hands Viola's
+        TriggerName +=
+            (handType == HandType.Left) ? "R" :
+            (handType == HandType.Right) ? "L" :
+            "INVALID";
+
+        // Trigger throwing Animation
+        if (name != "Viola")
+            ViolaAnimator.SetTrigger(TriggerName);
 
         //Debug.Log(throwType.ToString() + " | " + handType.ToString());
         //return;

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243c1eddbc8879543ab8f57278379f7e, type: 3}
+  m_Name: Devil Deal Invert Controls
+  m_EditorClassIdentifier: 
+  dealDescriptionEnglish: "Need help again, huh? Just know, what is now right, will
+    be left,\r and left will be right. Do you accept?"
+  dealDescriptionDanish: "Brug for hj\xE6lp igen, ikke? Bare ved, hvad der nu er rigtigt,
+    vil v\xE6re tilbage,\r og venstre vil v\xE6re h\xF8jre. Accepterer du?"

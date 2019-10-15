@@ -17,13 +17,13 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 73ddc3ee32bdb0489f6974c6f21b63f1
     GuidInternal: 
-    m_lastTime: -8586322953934775808
+    m_lastTime: -8586321109974775808
     List: []
   - PhysicalPath: Virtual Acoustics\Factory Reflect Acoustic Textures.wwu
     ParentPhysicalPath: 
     guid: 6b663d46a83ca54f8b4a5fef12b883f6
     GuidInternal: 
-    m_lastTime: -8586325566354775808
+    m_lastTime: -8586321109974775808
     List:
     - name: Acoustic_Banner
       guid: f2532d2fccda8e408b8898b1b52a26d6
@@ -184,7 +184,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 8815b517eb3c5b48afd823745c897b3c
     GuidInternal: 
-    m_lastTime: -8586322751574775808
+    m_lastTime: -8586316000254775808
     List:
     - name: LargeVerb
       guid: 703787adef1f8a46b86972665a3624f1
@@ -213,7 +213,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: eb168f1bc853a14e93cddc21cc4175c8
     GuidInternal: 
-    m_lastTime: -8586322714314775808
+    m_lastTime: -8586315949874775808
     List:
     - name: Default_SoundBank2
       guid: 8b460617b4f80c42b7ee2bde6f93088d
@@ -229,36 +229,406 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 2fc73608756b5a4788b5e60fc1e2e442
     GuidInternal: 
-    m_lastTime: -8586322716794775808
+    m_lastTime: -8586315944414775808
     List:
-    - name: CircleColliderLeft_event
+    - name: BallBounce_event
+      guid: 39ce77e367a64d4a8ecb93925bb18b3a
+      id: 1117629447
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Items
+        ObjectType: 4
+      - ElementName: BallBounce_event
+        ObjectType: 3
+      Path: Default Work Unit\Items\BallBounce_event
+      maxAttenuation: 0
+      maxDuration: 465125
+      minDuration: 465125
+    - name: ColliderLeft_event
       guid: e15b0118dd80ec4a9a2b9854fde70688
-      id: 4158355351
+      id: 3046129007
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: FeedbackSounds
         ObjectType: 4
-      - ElementName: CircleColliderLeft_event
+      - ElementName: ColliderLeft_event
         ObjectType: 3
-      Path: Default Work Unit\FeedbackSounds\CircleColliderLeft_event
+      Path: Default Work Unit\FeedbackSounds\ColliderLeft_event
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: CircleColliderRight_event
+      maxDuration: 0
+      minDuration: 0
+    - name: ColliderRight_event
       guid: 653ff7ab7a86bb4a99319e605df8e8b0
-      id: 4277209144
+      id: 3838495408
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: FeedbackSounds
         ObjectType: 4
-      - ElementName: CircleColliderRight_event
+      - ElementName: ColliderRight_event
         ObjectType: 3
-      Path: Default Work Unit\FeedbackSounds\CircleColliderRight_event
+      Path: Default Work Unit\FeedbackSounds\ColliderRight_event
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: CompanyName_event
+      guid: d7b2cf10f37d924eb894762111d20cf6
+      id: 3020012974
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SplashScreens
+        ObjectType: 4
+      - ElementName: CompanyName_event
+        ObjectType: 3
+      Path: Default Work Unit\SplashScreens\CompanyName_event
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Count1_event
+      guid: ab0269137ec18541ad931b1ba3375740
+      id: 3057537678
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: JuggleCountdown
+        ObjectType: 4
+      - ElementName: Count1_event
+        ObjectType: 3
+      Path: Default Work Unit\JuggleCountdown\Count1_event
+      maxAttenuation: 0
+      maxDuration: 2311542
+      minDuration: 2311542
+    - name: Count2_event
+      guid: 04b6a640b1b76747a01be067f0f2fe76
+      id: 2021650241
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: JuggleCountdown
+        ObjectType: 4
+      - ElementName: Count2_event
+        ObjectType: 3
+      Path: Default Work Unit\JuggleCountdown\Count2_event
+      maxAttenuation: 0
+      maxDuration: 1995034
+      minDuration: 1995034
+    - name: Count3_event
+      guid: f55de8bbc8db3047b61d608854f63cc1
+      id: 1955518600
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: JuggleCountdown
+        ObjectType: 4
+      - ElementName: Count3_event
+        ObjectType: 3
+      Path: Default Work Unit\JuggleCountdown\Count3_event
+      maxAttenuation: 0
+      maxDuration: 1860748
+      minDuration: 1860748
+    - name: CountJuggle_event
+      guid: 43bfe3912a8675408657e27996e976ce
+      id: 3084875603
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: JuggleCountdown
+        ObjectType: 4
+      - ElementName: CountJuggle_event
+        ObjectType: 3
+      Path: Default Work Unit\JuggleCountdown\CountJuggle_event
+      maxAttenuation: 0
+      maxDuration: 1932676
+      minDuration: 1932676
+    - name: DDIntro_event
+      guid: c8956e2f19f16b4493161d2ee100af5b
+      id: 4073134012
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: DevilDeals
+        ObjectType: 4
+      - ElementName: DDIntro_event
+        ObjectType: 3
+      Path: Default Work Unit\DevilDeals\DDIntro_event
+      maxAttenuation: 0
+      maxDuration: 3503333
+      minDuration: 3503333
+    - name: DDNegative_event
+      guid: d984bbd4b753b54e818c3f8760a032fa
+      id: 234395941
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: DevilDeals
+        ObjectType: 4
+      - ElementName: DDNegative_event
+        ObjectType: 3
+      Path: Default Work Unit\DevilDeals\DDNegative_event
+      maxAttenuation: 0
+      maxDuration: 3255828
+      minDuration: 3255828
+    - name: DDPositive_event
+      guid: e5f90934ef26a143a978f5bc9a5d7c0b
+      id: 35633437
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: DevilDeals
+        ObjectType: 4
+      - ElementName: DDPositive_event
+        ObjectType: 3
+      Path: Default Work Unit\DevilDeals\DDPositive_event
+      maxAttenuation: 0
+      maxDuration: 8409592
+      minDuration: 3083991
+    - name: DevilDealMusic_event
+      guid: 748c86591c1b1549a65eacfe16ea244b
+      id: 3514774441
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: DevilDealMusic_event
+        ObjectType: 3
+      Path: Default Work Unit\Music\DevilDealMusic_event
+      maxAttenuation: 0
+      maxDuration: 174000000
+      minDuration: 174000000
+    - name: FailSound_event
+      guid: 4d448e3f27a2ec46892345edf13e578c
+      id: 1999513135
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Win_n_Fail
+        ObjectType: 4
+      - ElementName: FailSound_event
+        ObjectType: 3
+      Path: Default Work Unit\Win_n_Fail\FailSound_event
+      maxAttenuation: 0
+      maxDuration: Infinity
+      minDuration: 4701157
+    - name: FillSound_event1
+      guid: 99d1e9a44fb345418e94a32fbde6c714
+      id: 1944912667
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FeedbackSounds
+        ObjectType: 4
+      - ElementName: PlateCounter
+        ObjectType: 4
+      - ElementName: FillSound
+        ObjectType: 4
+      - ElementName: FillSound_event1
+        ObjectType: 3
+      Path: Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event1
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: FillSound_event2
+      guid: d2942278ee0af745960ee43a62881408
+      id: 1944912664
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FeedbackSounds
+        ObjectType: 4
+      - ElementName: PlateCounter
+        ObjectType: 4
+      - ElementName: FillSound
+        ObjectType: 4
+      - ElementName: FillSound_event2
+        ObjectType: 3
+      Path: Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event2
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: FillSound_event3
+      guid: 6b935b2eeb780842b777672c56a78b85
+      id: 1944912665
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FeedbackSounds
+        ObjectType: 4
+      - ElementName: PlateCounter
+        ObjectType: 4
+      - ElementName: FillSound
+        ObjectType: 4
+      - ElementName: FillSound_event3
+        ObjectType: 3
+      Path: Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: FillSound_event4
+      guid: dbb35ab525a6984aabb146967174285b
+      id: 1944912670
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FeedbackSounds
+        ObjectType: 4
+      - ElementName: PlateCounter
+        ObjectType: 4
+      - ElementName: FillSound
+        ObjectType: 4
+      - ElementName: FillSound_event4
+        ObjectType: 3
+      Path: Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event4
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: FillSound_event5
+      guid: e67fb3fdfa24b24eab1237087663a56a
+      id: 1944912671
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FeedbackSounds
+        ObjectType: 4
+      - ElementName: PlateCounter
+        ObjectType: 4
+      - ElementName: FillSound
+        ObjectType: 4
+      - ElementName: FillSound_event5
+        ObjectType: 3
+      Path: Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event5
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: FillSound_event6
+      guid: 85bb9bf55361124b81d79bd132b125b1
+      id: 1944912668
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FeedbackSounds
+        ObjectType: 4
+      - ElementName: PlateCounter
+        ObjectType: 4
+      - ElementName: FillSound
+        ObjectType: 4
+      - ElementName: FillSound_event6
+        ObjectType: 3
+      Path: Default Work Unit\FeedbackSounds\PlateCounter\FillSound\FillSound_event6
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: FinalFail_event
+      guid: 5a0ab8ddad80d245a9a658cf5d4c0f2b
+      id: 1937231702
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Win_n_Fail
+        ObjectType: 4
+      - ElementName: FinalFail_event
+        ObjectType: 3
+      Path: Default Work Unit\Win_n_Fail\FinalFail_event
+      maxAttenuation: 0
+      maxDuration: 102642860
+      minDuration: 102642860
+    - name: FinalWin_event
+      guid: 9146f04897fd2a49956a732cdd3c2303
+      id: 3639969466
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Win_n_Fail
+        ObjectType: 4
+      - ElementName: FinalWin_event
+        ObjectType: 3
+      Path: Default Work Unit\Win_n_Fail\FinalWin_event
+      maxAttenuation: 0
+      maxDuration: 102642860
+      minDuration: 102642860
+    - name: FlashScreen_event
+      guid: afeec90bcdf8b346b6594c6daad55aeb
+      id: 626623716
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FlashScreen_event
+        ObjectType: 3
+      Path: Default Work Unit\FlashScreen_event
+      maxAttenuation: 0
+      maxDuration: 375556
+      minDuration: 375556
+    - name: GameTitleSplash_event
+      guid: 32cd502f709e374ea50cb2d319636772
+      id: 3462943351
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SplashScreens
+        ObjectType: 4
+      - ElementName: GameTitleSplash_event
+        ObjectType: 3
+      Path: Default Work Unit\SplashScreens\GameTitleSplash_event
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: InGameMusic1_event
+      guid: c65ec38451758243b7d21e3ccdf7f563
+      id: 2125813393
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: InGameMusic1_event
+        ObjectType: 3
+      Path: Default Work Unit\Music\InGameMusic1_event
+      maxAttenuation: 0
+      maxDuration: 182443460
+      minDuration: 182443460
+    - name: InGameMusic2_event
+      guid: fda8e6055523c34982b3eceb6871cd6e
+      id: 1704362654
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: InGameMusic2_event
+        ObjectType: 3
+      Path: Default Work Unit\Music\InGameMusic2_event
+      maxAttenuation: 0
+      maxDuration: 156380100
+      minDuration: 156380100
+    - name: LevelCompleted_event
+      guid: 69cda1b866b3724b939543e8a2542dc8
+      id: 3036127557
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Win_n_Fail
+        ObjectType: 4
+      - ElementName: LevelCompleted_event
+        ObjectType: 3
+      Path: Default Work Unit\Win_n_Fail\LevelCompleted_event
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: LevelSelector_event
+      guid: 4721e86e49dc9b45a2c096fd83bee4ec
+      id: 3354407555
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: LevelSelector_event
+        ObjectType: 3
+      Path: Default Work Unit\LevelSelector_event
+      maxAttenuation: 0
+      maxDuration: 174000000
+      minDuration: 174000000
     - name: MenuIN_event
       guid: 6abc52fb94f19d4a8080bea800f97016
       id: 1069674504
@@ -271,8 +641,22 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\UI\MenuIN_event
       maxAttenuation: 0
-      maxDuration: 125488
-      minDuration: 125488
+      maxDuration: 604354
+      minDuration: 604354
+    - name: MenuMusic
+      guid: 8222aef8df0a064484bd35219abf45a1
+      id: 679636833
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: MenuMusic
+        ObjectType: 3
+      Path: Default Work Unit\Music\MenuMusic
+      maxAttenuation: 0
+      maxDuration: 174000000
+      minDuration: 174000000
     - name: MenuOUT_event
       guid: b7bb32d16374f74e8084c8b92af4f4d4
       id: 1960384521
@@ -285,8 +669,92 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\UI\MenuOUT_event
       maxAttenuation: 0
-      maxDuration: 125488
-      minDuration: 125488
+      maxDuration: 788798
+      minDuration: 498186
+    - name: menuPause_event
+      guid: db061662bc4a0b498c48c54c46d354c8
+      id: 1105161895
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Menu
+        ObjectType: 4
+      - ElementName: menuPause_event
+        ObjectType: 3
+      Path: Default Work Unit\Menu\menuPause_event
+      maxAttenuation: 0
+      maxDuration: 604354
+      minDuration: 604354
+    - name: menuResume_event
+      guid: d9538e74fc2fa8479abdb6a0a444683c
+      id: 2008163460
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Menu
+        ObjectType: 4
+      - ElementName: menuResume_event
+        ObjectType: 3
+      Path: Default Work Unit\Menu\menuResume_event
+      maxAttenuation: 0
+      maxDuration: 788798
+      minDuration: 498186
+    - name: PerfectCatch_event
+      guid: 81d4898de7aaa641b7c8978f35ca2497
+      id: 3869548328
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FeedbackSounds
+        ObjectType: 4
+      - ElementName: PerfectCatch_event
+        ObjectType: 3
+      Path: Default Work Unit\FeedbackSounds\PerfectCatch_event
+      maxAttenuation: 0
+      maxDuration: 1860476
+      minDuration: 1333583
+    - name: PlateCount1_event
+      guid: b0a2e928e055474ca6ea7bf240796b65
+      id: 154525524
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PlateCounter
+        ObjectType: 4
+      - ElementName: PlateCount1_event
+        ObjectType: 3
+      Path: Default Work Unit\PlateCounter\PlateCount1_event
+      maxAttenuation: 0
+      maxDuration: 3919320
+      minDuration: 3720952
+    - name: PlateCount2_event
+      guid: ef06878a2d94ac419747e94ad36ebd7d
+      id: 2273360275
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PlateCounter
+        ObjectType: 4
+      - ElementName: PlateCount2_event
+        ObjectType: 3
+      Path: Default Work Unit\PlateCounter\PlateCount2_event
+      maxAttenuation: 0
+      maxDuration: 5116281
+      minDuration: 5116281
+    - name: PlateCount3_event
+      guid: a6215c3842a2f74789a187859e1a0265
+      id: 2234946426
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PlateCounter
+        ObjectType: 4
+      - ElementName: PlateCount3_event
+        ObjectType: 3
+      Path: Default Work Unit\PlateCounter\PlateCount3_event
+      maxAttenuation: 0
+      maxDuration: 3919320
+      minDuration: 3720952
     - name: PressButton_event
       guid: 0fbc52d0eb48674fa6d15e521fd727cb
       id: 2293628003
@@ -299,8 +767,22 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\UI\PressButton_event
       maxAttenuation: 0
-      maxDuration: 125488
-      minDuration: 125488
+      maxDuration: 1014875
+      minDuration: 465125
+    - name: ReduceLife_event
+      guid: 6d1c773bf88a0b468eab918273d0a4c8
+      id: 300260116
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FeedbackSounds
+        ObjectType: 4
+      - ElementName: ReduceLife_event
+        ObjectType: 3
+      Path: Default Work Unit\FeedbackSounds\ReduceLife_event
+      maxAttenuation: 0
+      maxDuration: 3481270
+      minDuration: 3481270
     - name: RoomTone_event
       guid: 205d5bf464c4784c86b66b454ffaf98e
       id: 1399763525
@@ -325,33 +807,252 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\FeedbackSounds\SwipeSound_event
       maxAttenuation: 0
-      maxDuration: 1000000
-      minDuration: 1000000
+      maxDuration: 500000
+      minDuration: 500000
+    - name: TargetCollect_event
+      guid: 8e1bb1a85ce85b47b85ff24026241c1b
+      id: 2128152441
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Items
+        ObjectType: 4
+      - ElementName: TargetCollect_event
+        ObjectType: 3
+      Path: Default Work Unit\Items\TargetCollect_event
+      maxAttenuation: 0
+      maxDuration: 1860476
+      minDuration: 1333583
+    - name: TargetDestroy_event
+      guid: f6cc17ef8d2214439243dc563f4b8aec
+      id: 3022112561
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Items
+        ObjectType: 4
+      - ElementName: TargetDestroy_event
+        ObjectType: 3
+      Path: Default Work Unit\Items\TargetDestroy_event
+      maxAttenuation: 0
+      maxDuration: 1977652
+      minDuration: 1977652
+    - name: TargetSpawn_event
+      guid: a81ec4150ce2f042b74a17e97d45bd76
+      id: 982237770
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Items
+        ObjectType: 4
+      - ElementName: TargetSpawn_event
+        ObjectType: 3
+      Path: Default Work Unit\Items\TargetSpawn_event
+      maxAttenuation: 0
+      maxDuration: 3386463
+      minDuration: 3386463
+    - name: TicketFeedback_event
+      guid: cf6f34c412bb6441b8285f4696ba1bb1
+      id: 3283252857
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: TicketFeedback_event
+        ObjectType: 3
+      Path: Default Work Unit\TicketFeedback_event
+      maxAttenuation: 0
+      maxDuration: 4701157
+      minDuration: 4701157
+    - name: TutorialMusic_event
+      guid: b79d997241927f4baa05956270b37b02
+      id: 3458164205
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: TutorialMusic_event
+        ObjectType: 3
+      Path: Default Work Unit\Music\TutorialMusic_event
+      maxAttenuation: 0
+      maxDuration: 128478270
+      minDuration: 128478270
+    - name: UnfillSound_event0
+      guid: 3dec714c860b744a910a2c42c64120ee
+      id: 1118806527
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FeedbackSounds
+        ObjectType: 4
+      - ElementName: PlateCounter
+        ObjectType: 4
+      - ElementName: UnfillSound
+        ObjectType: 4
+      - ElementName: UnfillSound_event0
+        ObjectType: 3
+      Path: Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event0
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UnfillSound_event1
+      guid: cf1390462173314cadfab82ed41d6f7b
+      id: 1118806526
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FeedbackSounds
+        ObjectType: 4
+      - ElementName: PlateCounter
+        ObjectType: 4
+      - ElementName: UnfillSound
+        ObjectType: 4
+      - ElementName: UnfillSound_event1
+        ObjectType: 3
+      Path: Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UnfillSound_event2
+      guid: 4a9274cc9de02b4e8ef4fbc38ac9f7ac
+      id: 1118806525
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FeedbackSounds
+        ObjectType: 4
+      - ElementName: PlateCounter
+        ObjectType: 4
+      - ElementName: UnfillSound
+        ObjectType: 4
+      - ElementName: UnfillSound_event2
+        ObjectType: 3
+      Path: Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UnfillSound_event3
+      guid: 1c4ea2b0bfa4ef42b81bf433a13c3dc0
+      id: 1118806524
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FeedbackSounds
+        ObjectType: 4
+      - ElementName: PlateCounter
+        ObjectType: 4
+      - ElementName: UnfillSound
+        ObjectType: 4
+      - ElementName: UnfillSound_event3
+        ObjectType: 3
+      Path: Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event3
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UnfillSound_event4
+      guid: d12b9194b773a4439867574f5707b72e
+      id: 1118806523
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FeedbackSounds
+        ObjectType: 4
+      - ElementName: PlateCounter
+        ObjectType: 4
+      - ElementName: UnfillSound
+        ObjectType: 4
+      - ElementName: UnfillSound_event4
+        ObjectType: 3
+      Path: Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event4
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UnfillSound_event5
+      guid: 92ee4660b4e462428d68fe278a785502
+      id: 1118806522
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: FeedbackSounds
+        ObjectType: 4
+      - ElementName: PlateCounter
+        ObjectType: 4
+      - ElementName: UnfillSound
+        ObjectType: 4
+      - ElementName: UnfillSound_event5
+        ObjectType: 3
+      Path: Default Work Unit\FeedbackSounds\PlateCounter\UnfillSound\UnfillSound_event5
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: VoiceOverWelcome_event
+      guid: 9872de2a3197e54e9c380703da25d6c8
+      id: 724436544
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VoiceOverWelcome_event
+        ObjectType: 3
+      Path: Default Work Unit\VoiceOverWelcome_event
+      maxAttenuation: 0
+      maxDuration: 13575601
+      minDuration: 13575601
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 9360f84c9b09d04e8e72415da3d9a500
     GuidInternal: 
-    m_lastTime: -8586322751574775808
+    m_lastTime: -8586316875634775808
     List:
-    - name: BallColliderLeft
-      guid: 17d4b21bb9187e40a8666a0030f55716
-      id: 3470665837
+    - name: GameTime
+      guid: 28e10e64066e8944924e4a8463ea569e
+      id: 1395127868
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: BallColliderLeft
+      - ElementName: GameTime
         ObjectType: 13
-      Path: Default Work Unit\BallColliderLeft
-    - name: BallColliderRight
+      Path: Default Work Unit\GameTime
+    - name: leftCollider
       guid: d89f913284817d43a8a0edcb07823b87
-      id: 4002590168
+      id: 1375352018
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: BallColliderRight
+      - ElementName: leftCollider
         ObjectType: 13
-      Path: Default Work Unit\BallColliderRight
+      Path: Default Work Unit\leftCollider
+    - name: MusicVolume
+      guid: f91fe23c262e8b458580a134ee02e288
+      id: 2346531308
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volume
+        ObjectType: 4
+      - ElementName: MusicVolume
+        ObjectType: 13
+      Path: Default Work Unit\Volume\MusicVolume
+    - name: rightCollider
+      guid: 17d4b21bb9187e40a8666a0030f55716
+      id: 535276317
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: rightCollider
+        ObjectType: 13
+      Path: Default Work Unit\rightCollider
+    - name: SFXVolume
+      guid: a7fbb2b69fc1484693d829e3365fb655
+      id: 988953028
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volume
+        ObjectType: 4
+      - ElementName: SFXVolume
+        ObjectType: 13
+      Path: Default Work Unit\Volume\SFXVolume
     - name: Swipe
       guid: abcb03ff7c26af4dba6e8f1d7fc3477e
       id: 2420075157
@@ -365,7 +1066,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 225213d7dbd1d042adc0930743567776
     GuidInternal: 
-    m_lastTime: -8586325566334775808
+    m_lastTime: -8586321109974775808
     List:
     - name: Playback_Rate
       guid: e37e38283ac11643b9c3db5c521624af
@@ -389,7 +1090,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 5577163b42fb8b4598bf96f557afb3b9
     GuidInternal: 
-    m_lastTime: -8586325566554775808
+    m_lastTime: -8586321109974775808
     List:
     - name: SS_Air_Fear
       guid: 59062ef746431c4ea1b1dab46a05101e
@@ -485,7 +1186,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 97bdcb0b5177774a85bb6ac940f8cc3f
     GuidInternal: 
-    m_lastTime: -8586325551914775808
+    m_lastTime: -8586321109974775808
     List:
     - name: Density_FA_SSGrain
       guid: 9ef2b363f3048748ba1a4d7694644b24
@@ -546,17 +1247,17 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: eefb481237622645b240019f4b3dfb7f
     GuidInternal: 
-    m_lastTime: -8586322950014775808
+    m_lastTime: -8586316633814775808
     List:
-    - name: Language
+    - name: dia_lang
       guid: 126d25ef223ec84ca4db1f1b92e143f0
-      id: 2441027675
+      id: 739838848
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Language
+      - ElementName: dia_lang
         ObjectType: 9
-      Path: Default Work Unit\Language
+      Path: Default Work Unit\dia_lang
       values:
       - name: DA
         guid: f3cbf1f682bc0f4c873b39f210fd2b44
@@ -579,22 +1280,94 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+    - name: MusicVol
+      guid: 7b588845306ea04495e46df022474222
+      id: 3325673733
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MusicVol
+        ObjectType: 9
+      Path: Default Work Unit\MusicVol
+      values:
+      - name: High
+        guid: d27ea848f00c2b4d959286826f28dfbc
+        id: 3550808449
+        PathAndIcons:
+        - ElementName: High
+          ObjectType: 8
+      - name: Low
+        guid: 7ed12027e1c71549b790550eed473f3d
+        id: 545371365
+        PathAndIcons:
+        - ElementName: Low
+          ObjectType: 8
+      - name: None
+        guid: d46ffbc3ffaa2840afa401453e72ec50
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Off
+        guid: 871ad4d07238864c867c58719a99c8f0
+        id: 930712164
+        PathAndIcons:
+        - ElementName: Off
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: SoundVol
+      guid: fdf254b585d175409a56840b57ef76ba
+      id: 1767628673
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SoundVol
+        ObjectType: 9
+      Path: Default Work Unit\SoundVol
+      values:
+      - name: None
+        guid: f6f509dd8a720941b053fbb746f048fe
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Off
+        guid: 11157ea3ab585646bf423c9fac4a50cf
+        id: 930712164
+        PathAndIcons:
+        - ElementName: Off
+          ObjectType: 8
+      - name: On
+        guid: bef3946fa2671644ab3bdbc04e3c7f3b
+        id: 1651971902
+        PathAndIcons:
+        - ElementName: On
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 8e388ad7ac60554bac84b89da11dc3e9
     GuidInternal: 
-    m_lastTime: -8586322953934775808
+    m_lastTime: -8586321109974775808
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 4caf63d78809744b906a7d75b2e922d8
     GuidInternal: 
-    m_lastTime: -8586322953914775808
+    m_lastTime: -8586321109974775808
     List: []
   ExpandedItems:
   - /DADIU-MGP2
+  - /DADIU-MGP2/Events
+  - /DADIU-MGP2/Events/Default Work Unit
+  - /DADIU-MGP2/Events/Default Work Unit/Music
+  - /DADIU-MGP2/Events/Default Work Unit/Win_n_Fail
   - /DADIU-MGP2/SoundBanks
   - /DADIU-MGP2/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1

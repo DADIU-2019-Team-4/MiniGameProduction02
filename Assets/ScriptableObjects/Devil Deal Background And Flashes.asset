@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d3b59ff0023eb44b5cf14cb85d8cdd, type: 3}
+  m_Name: Devil Deal Background And Flashes
+  m_EditorClassIdentifier: 
+  dealDescriptionEnglish: "Fine, I'll help you out once more, the circus would spin
+    even faster and you can see more my world!\r Do you accept?"
+  dealDescriptionDanish: "Fint, jeg hj\xE6lper dig endnu en gang, cirkuset ville spin
+    endnu hurtigere, og du kan se mere min verden!\r Accepterer du?"
+  rotationSpeedMultiplier: 3
+  interval: 5

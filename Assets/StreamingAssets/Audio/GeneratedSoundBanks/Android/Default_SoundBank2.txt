@@ -1,30 +1,114 @@
 Event	ID	Name			Wwise Object Path	Notes
+	374096863	SabreStuck_event			\Default Work Unit\Items\SabreStuck_event	
 	1069674504	MenuIN_event			\Default Work Unit\UI\MenuIN_event	
+	1117629447	BallBounce_event			\Default Work Unit\Items\BallBounce_event	
+	1118806522	UnfillSound_event5			\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event5	
+	1118806523	UnfillSound_event4			\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event4	
+	1118806524	UnfillSound_event3			\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event3	
+	1118806525	UnfillSound_event2			\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event2	
+	1118806526	UnfillSound_event1			\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event1	
+	1118806527	UnfillSound_event0			\Default Work Unit\FeedbackSounds\ProgressBar\UnfillSound\UnfillSound_event0	
 	1399763525	RoomTone_event			\Default Work Unit\RoomTone_event	
+	1666774236	BalloonFly_event			\Default Work Unit\Items\BalloonFly_event	
+	1833472760	ClockArrowSound_event			\Default Work Unit\FeedbackSounds\ProgressBar\ClockArrowSound_event	
+	1944912664	FillSound_event2			\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event2	
+	1944912665	FillSound_event3			\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event3	
+	1944912667	FillSound_event1			\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event1	
+	1944912668	FillSound_event6			\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event6	
+	1944912670	FillSound_event4			\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event4	
+	1944912671	FillSound_event5			\Default Work Unit\FeedbackSounds\ProgressBar\FillSound\FillSound_event5	
 	1960384521	MenuOUT_event			\Default Work Unit\UI\MenuOUT_event	
+	1999513135	FailSound_event			\Default Work Unit\FeedbackSounds\ProgressBar\Win_n_Fail\FailSound_event	
 	2293628003	PressButton_event			\Default Work Unit\UI\PressButton_event	
+	2361353312	Bomb_event			\Default Work Unit\Items\Bomb_event	
+	2473288672	TimerSound_event4			\Default Work Unit\Timer\TimerSound_event4	
+	2473288673	TimerSound_event5			\Default Work Unit\Timer\TimerSound_event5	
+	2473288676	TimerSound_event0			\Default Work Unit\Timer\TimerSound_event0	
+	2473288677	TimerSound_event1			\Default Work Unit\Timer\TimerSound_event1	
+	2473288678	TimerSound_event2			\Default Work Unit\Timer\TimerSound_event2	
+	2473288679	TimerSound_event3			\Default Work Unit\Timer\TimerSound_event3	
+	2510806423	BalloonBounce_event			\Default Work Unit\Items\BalloonBounce_event	
+	2762707244	Anvil_event			\Default Work Unit\Items\Anvil_event	
+	3036127557	LevelCompleted_event			\Default Work Unit\FeedbackSounds\ProgressBar\Win_n_Fail\LevelCompleted_event	
+	3046129007	ColliderLeft_event			\Default Work Unit\FeedbackSounds\ColliderLeft_event	
+	3838495408	ColliderRight_event			\Default Work Unit\FeedbackSounds\ColliderRight_event	
+	3869548328	PerfectCatch_event			\Default Work Unit\FeedbackSounds\PerfectCatch_event	
 	3921462371	SwipeSound_event			\Default Work Unit\FeedbackSounds\SwipeSound_event	
-	4158355351	CircleColliderLeft_event			\Default Work Unit\FeedbackSounds\CircleColliderLeft_event	
-	4277209144	CircleColliderRight_event			\Default Work Unit\FeedbackSounds\CircleColliderRight_event	
+	3940236850	BalloonPop_event			\Default Work Unit\Items\BalloonPop_event	
+	4195921398	MusicTEST			\Default Work Unit\MusicTEST	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	129	MIDI note velocity			\MIDI note velocity	
 	2420075157	Swipe			\Default Work Unit\Swipe	
-	3470665837	BallColliderLeft			\Default Work Unit\BallColliderLeft	
 
 Modulator LFO	ID	Name			Wwise Object Path	Notes
-	231527962	Modulator LFO (Custom)				
-	715588599	Modulator LFO (Custom)				
+	81454691	Modulator LFO (Custom)				
+	225432817	Modulator LFO (Custom)				
+	496137095	Modulator LFO (Custom)				
+	698503819	Modulator LFO (Custom)				
+	930416198	Modulator LFO (Custom)				
+	1060507665	Modulator LFO (Custom)				
+
+Modulator Envelope	ID	Name			Wwise Object Path	Notes
+	35876461	Modulator Envelope (Custom)				
+	67679404	Modulator Envelope (Custom)				
+	68481237	Modulator Envelope (Custom)				
+	92161007	Modulator Envelope (Custom)				
+	119774965	Modulator Envelope (Custom)				
+	278601030	Modulator Envelope (Custom)				
+	292434612	Modulator Envelope (Custom)				
+	439201672	Modulator Envelope (Custom)				
+	449427917	Modulator Envelope (Custom)				
+	484672839	Modulator Envelope (Custom)				
+	555210315	Modulator Envelope (Custom)				
+	742332726	Modulator Envelope (Custom)				
+	757409765	Modulator Envelope (Custom)				
+	837869552	Modulator Envelope (Custom)				
+	909132484	Modulator Envelope (Custom)				
 
 Effect plug-ins	ID	Name	Type				Notes
-	2568359573	Secret_message	Wwise Harmonizer			
-	3342250202	Repeat_after_me2	Wwise Harmonizer			
+	979765101	Win	Wwise Harmonizer			
 
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
-	196588648	SoundSeed Air Woosh	SoundSeed Air Woosh		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\SwipeSound\SoundSeed Air Woosh	
-	477103689	Wwise Synth One	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\CircleColliderRight\Wwise Synth One	Triangle for right hand
-	695406858	Wwise Synth One	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\CircleColliderLeft\Wwise Synth One	Sine for left hand
+	26975135	FillSound5	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\ProgressBar\FillSounds\FillSound5\FillSound5	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
+	116223719	FailSound	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\Wins_n_Fails\LevelFailSound\FailSound	
+	205845272	WinSound	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\Wins_n_Fails\LevelWinSound\WinSound	
+	206603437	UnfillSound4	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\ProgressBar\UnfillSounds\UnfillSound4\UnfillSound4	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
+	244084858	UnfillSound0	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\ProgressBar\UnfillSounds\UnfillSound0\UnfillSound0	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
+	340677071	UnfillSound5	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\ProgressBar\UnfillSounds\UnfillSound5\UnfillSound5	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
+	549286709	FillSound3	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\ProgressBar\FillSounds\FillSound3\FillSound3	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
+	632400131	FillSound4	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\ProgressBar\FillSounds\FillSound4\FillSound4	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
+	635473053	FillSound2	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\ProgressBar\FillSounds\FillSound2\FillSound2	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
+	650085291	UnfillSound1	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\ProgressBar\UnfillSounds\UnfillSound1\UnfillSound1	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
+	690358032	UnfillSound3	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\ProgressBar\UnfillSounds\UnfillSound3\UnfillSound3	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
+	760203948	CONFIRM 01	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\PerfectCatch\CONFIRM 01	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
+	790086102	FillSound6	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\ProgressBar\FillSounds\FillSound6\FillSound6	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
+	957623765	SoundSeed Air Woosh	SoundSeed Air Woosh		\Actor-Mixer Hierarchy\Default Work Unit\FeedbackSounds\SwipeSound\SoundSeed Air Woosh	
+	1033641852	FillSound1	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\ProgressBar\FillSounds\FillSound1\FillSound1	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
+	1053137384	UnfillSound2	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\ProgressBar\UnfillSounds\UnfillSound2\UnfillSound2	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	230764660	Ball4	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball4_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball4		16205
+	261131446	Balloon3	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Balloon3_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BalloonBounce\Balloon3		23793
+	278271025	Ball3	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball3_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball3		16593
+	286559839	Ball2	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball2_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball2		16314
+	303410168	Ball14	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball14_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball14		16123
+	496697747	Ball15	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball15_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball15		16536
+	506526052	Ball10	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball10_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball10		16005
+	526906597	PositiveCircus	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\PositiveCircus_8CBF9462.wem		\Actor-Mixer Hierarchy\MusicTEST\PositiveCircus		5018772
+	540162654	Balloon2	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Balloon2_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BalloonBounce\Balloon2		21709
+	544754195	Ball9	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball9_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball9		16536
+	569492267	Ball7	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball7_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball7		16213
+	606071114	Ball8	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball8_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball8		16008
+	638935931	Ball11	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball11_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball11		16157
+	665386558	Ball5	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball5_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball5		16511
+	747336055	Ball1	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball1		16492
+	758204009	Ball12	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball12_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball12		16142
+	795879079	Ball13	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball13_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball13		16098
+	851732437	Balloon1	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Balloon1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BalloonBounce\Balloon1		22918
 	866720910	RoomTone	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\MGP2_Room2_8663AA8C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\RoomTone		146619
 	910387677	MenuIN	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\XF_SynPerc_003_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\MenuIN		4230
+	922219395	BalloonFly	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\221508__qubodup__letting-air-out-of-balloon-short1_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BalloonFly		154003
+	930420305	BalloonPop	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\415125__laumark__balloon-pop_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BalloonPop		13829
+	1030349145	Ball6	E:\WWise projekter\DADIU-MGP2\.cache\Android\SFX\Ball6_8CBF9462.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\BallBounce\Ball6		16011
 
